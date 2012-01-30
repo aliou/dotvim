@@ -1,5 +1,5 @@
 " Pretty !
-colorsheme molokai
+color molokai
 
 " MacVim
 if has("gui_macvim")
