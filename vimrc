@@ -22,6 +22,9 @@ set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
 
+" ===========================
+" GENERAL CONFIG
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
