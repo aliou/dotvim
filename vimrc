@@ -25,9 +25,6 @@ call pathogen#helptags()
 " ===========================
 " GENERAL CONFIG
 
-" Make backspace behave in a sane manner.
-set backspace=indent,eol,start
-
 " Switch syntax highlighting on
 syntax on
 
@@ -42,6 +39,23 @@ set showcmd
 
 " Reload files changed outside of vim
 set autoread
+
+" No swapfile
+set noswapfile
+set nobackup
+set nowb
+
+" ===========================
+" INDENT
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
 
 " ===========================
 
