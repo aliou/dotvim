@@ -12,12 +12,12 @@ endif
 " Status Line
 
 set laststatus=2
-set statusline=%t%h%y%m%r
-set statusline+=%= 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*  
-set statusline+=%c,%l/%L\ %P\ 
+" set statusline=%t%h%y%m%r
+" set statusline+=%= 
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*  
+" set statusline+=%c,%l/%L\ %P\ 
 
 " Visual Cues
 

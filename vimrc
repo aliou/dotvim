@@ -45,6 +45,9 @@ set noswapfile
 set nobackup
 set nowb
 
+" Encoding
+set encoding=utf-8
+
 " ===========================
 " INDENT
 
