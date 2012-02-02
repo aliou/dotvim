@@ -10,3 +10,6 @@ nmap <silent> <leader>rl :so $MYVIMRC<CR>
 " Don't save and quit
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'w' : 'x'
 
+" Indent all file
+map <Leader>f gg=G''
+
