@@ -20,3 +20,6 @@ inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
 " Clear last search
 map <silent> <leader>qs <Esc>:noh<CR>
 
+" Close Quickfix window (,qq)
+map <leader>qq :cclose<CR>
+
