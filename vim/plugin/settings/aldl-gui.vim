@@ -44,3 +44,4 @@ set scrolloff=5
 " set cursorline
 
 
+set gdefault " By default add g flag to search/replace. Add g to toggle.
