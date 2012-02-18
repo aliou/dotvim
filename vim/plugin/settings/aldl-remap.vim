@@ -17,3 +17,6 @@ map <Leader>f gg=G''
 nmap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
 inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER> 
 
+" Clear last search
+map <silent> <leader>qs <Esc>:noh<CR>
+
