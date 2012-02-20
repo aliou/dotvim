@@ -1,7 +1,9 @@
 " ===========================
 
 " Pretty !
-color molokai
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 " MacVim
 if has("gui_macvim")

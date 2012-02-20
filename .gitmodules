@@ -22,3 +22,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/vim-solarized"]
+	path = vim/bundle/vim-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
