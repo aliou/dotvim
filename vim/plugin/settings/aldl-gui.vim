@@ -16,6 +16,7 @@ endif
 
 " Visual Cues
 
+set laststatus=2               " Status Line
 set showmatch                  " brackets/braces that is
 set mat=5                      " duration to show matching brace (1/10 sec)
 set visualbell                 " shut the fuck up
