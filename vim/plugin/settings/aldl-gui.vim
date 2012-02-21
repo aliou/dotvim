@@ -7,8 +7,9 @@ colorscheme solarized
 
 " MacVim
 if has("gui_macvim")
-	" Hides MacVim toolbar.
-	set go-=T
+  " Hides MacVim toolbar.
+  set go-=T
+  " colorscheme molokai
 endif
 
 " Status Line
