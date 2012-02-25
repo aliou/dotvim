@@ -3,7 +3,7 @@
 " Pretty !
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme badwolf
 
 " MacVim
 if has("gui_macvim")
@@ -29,7 +29,7 @@ set ruler                      " show the cursor position all the time
 set showcmd                    " displays incomplete commands
 set nolazyredraw               " turn off lazy redraw
 set wildmenu                   " turn on wild menu
-set wildmode=list:longest,full
+set wildmode=list:longest,full                " 
 set wildignore=*.o,.DS_Store   " Ignore C objects files.
 set ch=3                       " command line height
 set backspace=2                " allow backspacing over everything in insert mode
