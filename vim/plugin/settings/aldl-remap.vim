@@ -35,8 +35,6 @@ map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-" Search and replace word under cursor (,*)
-:nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 " Search and replace word under cursor (,;)
 :nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
