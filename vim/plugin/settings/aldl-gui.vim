@@ -9,6 +9,10 @@ colorscheme badwolf
 if has("gui_macvim")
   " Hides MacVim toolbar.
   set go-=T
+  set go-=l
+  set go-=L
+  set go-=r
+  set go-=R
   " colorscheme molokai
 endif
 
