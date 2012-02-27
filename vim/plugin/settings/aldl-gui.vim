@@ -10,6 +10,8 @@ if has("gui_macvim")
   " Hides MacVim toolbar.
   set go-=T
   set go-=l
+  set go-=T " Hides toolbar.
+  set go-=l " Hides scrollbars.
   set go-=L
   set go-=r
   set go-=R
