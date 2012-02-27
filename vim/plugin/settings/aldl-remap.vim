@@ -38,3 +38,8 @@ map <C-L> <C-W>l
 " Search and replace word under cursor (,;)
 :nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
+" Select all text in current buffer
+map <Leader>a ggVG
+
+" Open last / alternate buffer.
+noremap <Leader><Leader> <C-^>
