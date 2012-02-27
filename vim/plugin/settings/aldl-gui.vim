@@ -2,10 +2,16 @@
 
 " Pretty !
 let g:solarized_termcolors=256
+set t_Co=256
 set background=dark
 colorscheme badwolf
 
 " MacVim
+if has('gui_running')
+  colorscheme molokai
+else
+  colorscheme badwolf
+endif
 if has("gui_macvim")
   " Hides MacVim toolbar.
   set go-=T
