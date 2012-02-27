@@ -12,6 +12,7 @@ if has('gui_running')
 else
   colorscheme badwolf
 endif
+
 if has("gui_macvim")
   " Hides MacVim toolbar.
   set go-=T
