@@ -13,9 +13,6 @@
 [submodule "vim/bundle/ack-vim"]
 	path = vim/bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/snipmate-vim"]
-	path = vim/bundle/snipmate-vim
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
