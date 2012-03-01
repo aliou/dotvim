@@ -4,9 +4,10 @@ set t_Co=256
 set background=dark
 
 if has('gui_running')
-  colorscheme molokai
+  colorscheme sift
 else
   colorscheme badwolf
+  set cursorline
 endif
 
 if has("gui_macvim")
@@ -40,6 +41,5 @@ set shortmess=filtIoOA         " shorten messages
 set report=0                   " tell us about changes
 set nostartofline              " don't jump to the start of line when scrolling
 set scrolloff=5
-set cursorline                 " Highlights the current line.
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
 
