@@ -25,3 +25,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/color-festoon"]
+	path = vim/bundle/color-festoon
+	url = git://github.com/vim-scripts/Festoon.git
