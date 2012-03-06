@@ -3,6 +3,10 @@
 " Lead with ,
 let mapleader = ","
 
+" Ugh.
+nnoremap ; :
+vnoremap ; :
+
 " Edit and source ~/.vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rl :so $MYVIMRC<CR>
