@@ -17,4 +17,9 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 
+  " Save on loss of focus when using a GUI.
+  if has("gui")
+    autocmd FocusLost * silent! wa
+  endif
+
 endif
