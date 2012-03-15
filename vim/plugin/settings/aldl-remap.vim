@@ -63,3 +63,10 @@ map <Leader>a ggVG
 " Open last / alternate buffer.
 noremap <Leader><Leader> <C-^>
 
+" Yank to OS X pasteboard.
+noremap <leader>y "*y
+
+" Paste from OS X pasteboard without messing up indent.
+noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
+noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
+
