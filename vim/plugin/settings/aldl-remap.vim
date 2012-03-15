@@ -16,7 +16,6 @@ if has('gui_running')
   cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'w' : 'x'
 endif
 
-
 " Indent all file
 map <Leader>f gg=G''
 
@@ -24,6 +23,9 @@ map <Leader>f gg=G''
 nmap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
 inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER> 
 
+" Quick (v)split.
+nnoremap <silent> ss :split<CR>
+nnoremap <silent> vv :vsplit<CR>
 
 " Close Quickfix window (,qq)
 map <leader>qq :cclose<CR>
