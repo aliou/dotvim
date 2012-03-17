@@ -28,6 +28,6 @@
 [submodule "vim/bundle/color-festoon"]
 	path = vim/bundle/color-festoon
 	url = git://github.com/vim-scripts/Festoon.git
-[submodule "vim/plugin/gists/chrome-reload"]
-	path = vim/plugin/gists/chrome-reload
-	url = git://gist.github.com/2001993.git
+[submodule "vim/bundle/golden-ratio"]
+	path = vim/bundle/golden-ratio
+	url = git://github.com/roman/golden-ratio.git
