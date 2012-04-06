@@ -1,4 +1,4 @@
-This directory contains settings for various vim plugins and vim itself.
+This directory contains settings for various vim plugins and vim itself. This is shamelessly stolen from [@skwp](https://github.com/skwp) dotfiles.
 
 ## Plugin Settings
 
