@@ -31,12 +31,6 @@
 [submodule "vim/bundle/golden-ratio"]
 	path = vim/bundle/golden-ratio
 	url = git://github.com/roman/golden-ratio.git
-[submodule "vim/bundle/clam.vim"]
-	path = vim/bundle/clam.vim
-	url = git://github.com/sjl/clam.vim.git
-[submodule "vim/bundle/gist-ChromeReload"]
-	path = vim/bundle/gist-ChromeReload
-	url = git@gist.github.com:2369894.git
 [submodule "vim/plugin/gits-cr"]
 	path = vim/plugin/gits-cr
 	url = git@gist.github.com:2369894.git
