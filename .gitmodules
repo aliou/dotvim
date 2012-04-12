@@ -34,3 +34,6 @@
 [submodule "vim/bundle/clam.vim"]
 	path = vim/bundle/clam.vim
 	url = git://github.com/sjl/clam.vim.git
+[submodule "vim/plugin/gists/ChromeReload-vim"]
+	path = vim/plugin/gists/ChromeReload-vim
+	url = git@gist.github.com:2369894.git
