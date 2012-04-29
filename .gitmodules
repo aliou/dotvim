@@ -34,3 +34,6 @@
 [submodule "vim/plugin/gits-cr"]
 	path = vim/plugin/gits-cr
 	url = git@gist.github.com:2369894.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
