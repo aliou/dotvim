@@ -16,6 +16,7 @@ if has("gui_macvim")
   set go-=L
   set go-=r
   set go-=R
+  set guifont=Inconsolata:h16"
 endif
 
 " Visual Cues
