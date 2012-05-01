@@ -6,7 +6,7 @@ if has("autocmd")
   " autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ') 
 
   " Adds spellchecking to plain text files
-  autocmd BufEnter *.txt set spell
+  " autocmd BufEnter *.txt set spell
 
   " Yeah, whatever.
   autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab 
