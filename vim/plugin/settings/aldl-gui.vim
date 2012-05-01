@@ -33,7 +33,7 @@ set ruler                      " show the cursor position all the time
 set showcmd                    " displays incomplete commands
 set nolazyredraw               " turn off lazy redraw
 set wildmenu                   " turn on wild menu
-set wildmode=list:longest,full                " 
+set wildmode=list:longest,full "
 set wildignore=*.o,.DS_Store   " Ignore C objects files.
 set ch=3                       " command line height
 set backspace=2                " allow backspacing over everything in insert mode
@@ -43,4 +43,5 @@ set report=0                   " tell us about changes
 set nostartofline              " don't jump to the start of line when scrolling
 set scrolloff=5
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
+set textwidth=80               " Last but not least.
 
