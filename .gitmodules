@@ -31,9 +31,9 @@
 [submodule "vim/bundle/golden-ratio"]
 	path = vim/bundle/golden-ratio
 	url = git://github.com/roman/golden-ratio.git
-[submodule "vim/plugin/gits-cr"]
-	path = vim/plugin/gits-cr
-	url = git@gist.github.com:2369894.git
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/plugin/chromereload-vim"]
+	path = vim/plugin/chromereload-vim
+	url = git://gist.github.com/2369894.git
