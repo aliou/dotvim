@@ -37,3 +37,6 @@
 [submodule "vim/plugin/chromereload-vim"]
 	path = vim/plugin/chromereload-vim
 	url = git://gist.github.com/2369894.git
+[submodule "vim/bundle/csapprox"]
+	path = vim/bundle/csapprox
+	url = https://github.com/bukzor/csapprox.git
