@@ -1,5 +1,3 @@
-" =====================
-
 " Syntax check on opening and saving buffers.
 let g:syntastic_check_on_open=1
 
