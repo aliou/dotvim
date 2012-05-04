@@ -1,5 +1,3 @@
-" ===========================
-
 set t_Co=256
 set background=dark
 
@@ -7,7 +5,7 @@ if has('gui_running')
   colorscheme sift
 else
   colorscheme badwolf
-  set cursorline
+  " set cursorline
 endif
 
 if has("gui_macvim")
@@ -16,7 +14,7 @@ if has("gui_macvim")
   set go-=L
   set go-=r
   set go-=R
-  set guifont=Inconsolata:h16"
+  set guifont=Inconsolata:h16
 endif
 
 " Visual Cues
