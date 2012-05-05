@@ -5,6 +5,9 @@ let mapleader = ","
 nnoremap ; :
 vnoremap ; :
 
+" Remap jj to <ESC> because the button is really far.
+inoremap jj <ESC>
+
 " Don't save and quit when using gui.
 if has('gui_running')
   cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'w' : 'x'
