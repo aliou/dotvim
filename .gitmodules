@@ -40,3 +40,6 @@
 [submodule "vim/bundle/csapprox"]
 	path = vim/bundle/csapprox
 	url = https://github.com/bukzor/csapprox.git
+[submodule "vim/bundle/scratch"]
+	path = vim/bundle/scratch
+	url = git://github.com/vim-scripts/scratch.vim.git
