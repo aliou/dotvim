@@ -2,7 +2,7 @@ set t_Co=256
 set background=dark
 
 if has('gui_running')
-  colorscheme sift
+  colorscheme wombat
 else
   colorscheme badwolf
   " set cursorline
@@ -14,7 +14,7 @@ if has("gui_macvim")
   set go-=L
   set go-=r
   set go-=R
-  set guifont=Inconsolata:h16
+  set guifont=Inconsolata:h15
 endif
 
 " Visual Cues
@@ -39,7 +39,7 @@ set whichwrap+=<,>,h,l,[,]     " backspace and cursor keys wrap to
 set shortmess=filtIoOA         " shorten messages
 set report=0                   " tell us about changes
 set nostartofline              " don't jump to the start of line when scrolling
-set scrolloff=5
+set scrolloff=3
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
 set textwidth=80               " Last but not least.
 
