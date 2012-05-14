@@ -52,7 +52,7 @@ imap <c-h> <c-o>h
 imap <c-u> <c-o>u
 
 " Search and replace word under cursor (,;)
-:nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
+:nnoremap <leader>; :%s/<C-r><C-w>//<Left>
 
 " Select all text in current buffer
 map <Leader>a ggVG
