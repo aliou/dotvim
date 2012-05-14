@@ -18,7 +18,7 @@ call pathogen#helptags()
 syntax on
 
 " Enable file type detection and do language-dependent indenting.
-filetype plugin indent on
+filetype indent plugin on
 
 " Line number
 set number
