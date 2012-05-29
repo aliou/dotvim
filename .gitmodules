@@ -43,3 +43,6 @@
 [submodule "vim/bundle/scratch"]
 	path = vim/bundle/scratch
 	url = git://github.com/vim-scripts/scratch.vim.git
+[submodule "vim/plugin/html5-vim"]
+	path = vim/plugin/html5-vim
+	url = git://gist.github.com/390929.git
