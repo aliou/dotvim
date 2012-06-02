@@ -4,7 +4,7 @@ set background=dark
 if has('gui_running')
   colorscheme wombat
 else
-  colorscheme badwolf
+  colorscheme smyck
   " set cursorline
 endif
 
