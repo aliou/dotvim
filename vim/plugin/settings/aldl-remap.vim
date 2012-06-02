@@ -18,7 +18,7 @@ map <Leader>f gg=G''
 
 " Remap F3 key to :make for c and c++ projects.
 nmap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
-inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER> 
+inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
 
 " Quick (v)split.
 nnoremap <silent> ss :split<CR>
@@ -60,6 +60,11 @@ map <Leader>a ggVG
 " Open last / alternate buffer.
 noremap <Leader><Leader> <C-^>
 
+" Move back and forth through previous and next buffers
+" with ,z and ,x
+nnoremap <silent> <Leader>z :bp<CR>
+nnoremap <silent> <Leader>x :bn<CR>
+
 " Yank to OS X pasteboard.
 noremap <leader>y "*y
 
@@ -67,3 +72,8 @@ noremap <leader>y "*y
 noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
 noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
 
+" Clear current search highlight by double tapping
+nmap <silent> // :nohlsearch<CR>
+
+"(v)im (r)eload
+nmap <silent> <Leader>vr :so %<CR>
