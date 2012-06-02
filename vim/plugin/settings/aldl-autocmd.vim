@@ -14,10 +14,12 @@ if has("autocmd")
   autocmd Filetype markdown set spell
 
   " Restore cursor position
-  autocmd BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
+  if &filetype != "gitcommit"
+    autocmd BufReadPost *
+          \ if line("'\"") > 1 && line("'\"") <= line("$") |
+          \   exe "normal! g`\"" |
+          \ endif
+  endif
 
   " Save on loss of focus when using a GUI.
   if has("gui")
