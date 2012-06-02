@@ -1,10 +1,12 @@
 " Muscle memory.
-map <Leader>t <C-p>
+let g:ctrlp_map = '<Leader>t'
 
-" Change the listing order of the files in the match window. The default setting
-" (1) is from bottom to top: >
+" Additional mapping for buffer search
+nnoremap <Leader>b :CtrlPBuffer<cr>
+nnoremap <C-b> :CtrlPBuffer<cr>
+
+" Change the listing order of the files in the match window.
 let g:ctrlp_match_window_reversed = 0
-
 
 " The maximum number of files to scan, set to 0 for no limit: >
 let g:ctrlp_max_files = 10000
