@@ -65,9 +65,6 @@ noremap <Leader><Leader> <C-^>
 nnoremap <silent> <Leader>z :bp<CR>
 nnoremap <silent> <Leader>x :bn<CR>
 
-" Yank to OS X pasteboard.
-noremap <leader>y "*y
-
 " Paste from OS X pasteboard without messing up indent.
 noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
 noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>

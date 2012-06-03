@@ -51,4 +51,5 @@ set expandtab
 
 " ===========================
 
+set clipboard=unamed
 
