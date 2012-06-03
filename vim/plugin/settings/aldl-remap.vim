@@ -8,16 +8,11 @@ vnoremap ; :
 " Remap jj to <ESC> because the button is really far.
 inoremap jj <ESC>
 
-" Don't save and quit when using gui.
-if has('gui_running')
-  cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'w' : 'x'
-endif
-
 " Indent all file
-map <Leader>f gg=G''
+noremap <Leader>f gg=G''zz
 
 " Remap F3 key to :make for c and c++ projects.
-nmap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
+nnoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
 inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
 
 " Quick (v)split.
@@ -25,7 +20,7 @@ nnoremap <silent> ss :split<CR>
 nnoremap <silent> vv :vsplit<CR>
 
 " Close Quickfix window (,qq)
-map <leader>qq :cclose<CR>
+noremap <leader>qq :cclose<CR>
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
@@ -34,25 +29,22 @@ if bufwinnr(1)
 endif
 
 " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
 
 " c-d deletes characters in insert mode
-imap <c-d> <c-o>x
+inoremap <c-d> <c-o>x
 
 " c-{jklh} moves around in insert mode
-imap <c-j> <c-o>j
-imap <c-k> <c-o>k
-imap <c-l> <c-o>l
-imap <c-h> <c-o>h
+inoremap <c-j> <c-o>j
+inoremap <c-k> <c-o>k
+inoremap <c-l> <c-o>l
+inoremap <c-h> <c-o>h
 
 " c-u undoes what you just did
-imap <c-u> <c-o>u
-
-" Search and replace word under cursor (,;)
-:nnoremap <leader>; :%s/<C-r><C-w>//<Left>
+inoremap <c-u> <c-o>u
 
 " Select all text in current buffer
 map <Leader>a ggVG
@@ -65,12 +57,8 @@ noremap <Leader><Leader> <C-^>
 nnoremap <silent> <Leader>z :bp<CR>
 nnoremap <silent> <Leader>x :bn<CR>
 
-" Paste from OS X pasteboard without messing up indent.
-noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
-noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
-
 " Clear current search highlight by double tapping
 nmap <silent> // :nohlsearch<CR>
 
 "(v)im (r)eload
-nmap <silent> <Leader>vr :so %<CR>
+nmap <silent> <Leader>rv :so %<CR>
