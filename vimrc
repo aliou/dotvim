@@ -54,5 +54,5 @@ set tabstop=2
 set expandtab
 
 " Yank to OS clipboard.
-set clipboard="unnamed"
+set clipboard=unnamed
 
