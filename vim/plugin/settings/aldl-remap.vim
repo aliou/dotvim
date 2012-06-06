@@ -60,5 +60,18 @@ nnoremap <silent> <Leader>x :bn<CR>
 " Clear current search highlight by double tapping
 nmap <silent> // :nohlsearch<CR>
 
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Don't move on *
+nnoremap * *<c-o>
+
 "(v)im (r)eload
 nmap <silent> <Leader>rv :so %<CR>
+
+" Marks and Quotes
+noremap ' `
+noremap æ '
+noremap ` <C-^>
+
