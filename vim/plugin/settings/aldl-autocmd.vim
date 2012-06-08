@@ -8,7 +8,7 @@ if has("autocmd")
         \ set ft=ruby
 
   " These are markdown files.
-  autocmd BufRead,BufNewFile {md,markdown,mdown} set ft=markdown
+  autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
   autocmd Filetype markdown setlocal spell
 
   autocmd filetype gitcommit setlocal textwidth=72
