@@ -9,7 +9,9 @@ if has("autocmd")
 
   " These are markdown files.
   autocmd BufRead,BufNewFile {md,markdown,mdown} set ft=markdown
-  autocmd Filetype markdown set spell
+  autocmd Filetype markdown setlocal spell
+
+  autocmd filetype gitcommit setlocal textwidth=72
 
   " Restore cursor position.
   autocmd BufReadPost *

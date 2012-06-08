@@ -1,8 +1,4 @@
-" A minimal vimrc for new vim users to start with.
-" Referenced here: http://vimuniversity.com/samples/your-first-vimrc-should-be-nearly-empty
-
 " Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 call pathogen#infect()

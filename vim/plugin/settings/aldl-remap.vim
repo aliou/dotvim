@@ -11,10 +11,6 @@ inoremap jj <ESC>
 " Indent all file
 noremap <Leader>f gg=G''zz
 
-" Remap F3 key to :make for c and c++ projects.
-nnoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
-inoremap <F3> :w<ENTER>:!make > /dev/null<ENTER>:!./test<ENTER>
-
 " Quick (v)split.
 nnoremap <silent> ss :split<CR>
 nnoremap <silent> vv :vsplit<CR>
@@ -58,7 +54,7 @@ nnoremap <silent> <Leader>z :bp<CR>
 nnoremap <silent> <Leader>x :bn<CR>
 
 " Clear current search highlight by double tapping
-nmap <silent> // :nohlsearch<CR>
+nnoremap <silent> // :nohlsearch<CR>
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
@@ -68,10 +64,16 @@ nnoremap N Nzzzv
 nnoremap * *<c-o>
 
 "(v)im (r)eload
-nmap <silent> <Leader>rv :so %<CR>
+nnoremap <silent> <Leader>rv :so %<CR>
 
 " Marks and Quotes
 noremap ' `
 noremap æ '
 noremap ` <C-^>
+
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Change directory to the directory of current open file.
+nnoremap <silent> <leader>d :cd %:p:h<cr>
 
