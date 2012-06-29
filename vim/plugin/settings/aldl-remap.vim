@@ -77,3 +77,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Change directory to the directory of current open file.
 nnoremap <silent> <leader>d :cd %:p:h<cr>
 
+" Use sane regexes.
+nnoremap / /\v
+vnoremap / /\v
+
