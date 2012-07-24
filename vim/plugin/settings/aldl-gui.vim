@@ -1,10 +1,6 @@
 set t_Co=256
 set background=dark
-if has("gui")
-  colorscheme badwolf
-else
-  colorscheme smyck
-endif
+colorscheme smyck
 
 if has("gui_macvim")
   set go-=T " Hides toolbar.
