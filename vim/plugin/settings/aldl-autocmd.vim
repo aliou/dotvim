@@ -24,4 +24,6 @@ if has("autocmd")
     autocmd FocusLost * silent! wa
   endif
 
+  autocmd filetype css inoremap { <space>{<CR>}<esc>O
+
 endif
