@@ -3,12 +3,13 @@ set background=dark
 colorscheme smyck
 
 if has("gui_macvim")
+  colorscheme sift
   set go-=T " Hides toolbar.
   set go-=l " Hides scrollbars.
   set go-=L
   set go-=r
   set go-=R
-  set guifont=Menlo:h15
+  set guifont=Menlo:h13
 endif
 
 " Visual Cues
