@@ -44,7 +44,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=2
+set tabstop=4
 
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
@@ -52,3 +52,8 @@ set expandtab
 " Yank to OS clipboard.
 set clipboard=unnamed
 
+" Set time strings to us_en style.
+language time en_us
+
+" Hides files instead of closing them.
+set hidden
