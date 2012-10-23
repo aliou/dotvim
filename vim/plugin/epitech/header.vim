@@ -96,7 +96,7 @@ function s:LineUpdate(lnum, newline)
 endfunction
 
 function HeaderUpdate()
-  silent execute! "1,9s/^ //"
+  " silent execute! "1,9s/^ //"
   if s:GetComStr()
     let lnum = s:LineFind(s:cc . s:txt_last)
     if lnum
@@ -192,9 +192,9 @@ function InsertPrototypes()
   endif
 endfunction
 
-autocmd BufWritePre *.c call RemoveSpace()
-autocmd BufNewFile *.c call HeaderCreate(1)
-autocmd BufWritePre,FileWritePre *.c call HeaderUpdate()
+autocmd BufWritePre *.c,*.h call RemoveSpace()
+autocmd BufNewFile *.c,*.h call HeaderCreate(1)
+autocmd BufWritePre,FileWritePre *.c,*.h call HeaderUpdate()
 
 " autocmd BufWritePre *.cpp call RemoveSpace()
 " autocmd BufNewFile *.cpp call HeaderCreate(1)
