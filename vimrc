@@ -52,8 +52,5 @@ set expandtab
 " Yank to OS clipboard.
 set clipboard=unnamed
 
-" Set time strings to us_en style.
-" language time en_us
-
 " Hides files instead of closing them.
 set hidden
