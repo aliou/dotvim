@@ -44,7 +44,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=4
+set tabstop=2
 
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
