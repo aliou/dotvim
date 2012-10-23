@@ -53,7 +53,7 @@ set expandtab
 set clipboard=unnamed
 
 " Set time strings to us_en style.
-language time en_us
+" language time en_us
 
 " Hides files instead of closing them.
 set hidden
