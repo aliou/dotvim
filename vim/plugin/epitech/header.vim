@@ -9,9 +9,9 @@ function! RemoveSpace()
   execute pos
 endfunction
 
-" function Testremove()
-"   execute "1,9s/^ //"
-" endfunction
+function! DeleteSpaces()
+  silent execute "1,9s/^ //"
+endfunction
 
 let s:login		= "diallo_e"
 let s:name		= "aliou diallo"
@@ -153,7 +153,7 @@ function s:ProtectHeaders()
   let filename = substitute(toupper(expand("%:t")), "\\.", "_", "g") . "_"
     execute "normal! Go" .
       \ '#ifndef '. filename . "\n".
-      \ '#  define ' . filename . "\n".
+      \ '#define ' . filename . "\n".
       \ "\n\n\n".
       \ '#endif /* !' . filename . ' */'
   normal! kk
