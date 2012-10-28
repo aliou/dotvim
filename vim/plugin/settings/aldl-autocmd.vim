@@ -26,4 +26,8 @@ if has("autocmd")
 
   autocmd filetype css inoremap { <space>{<CR>}<esc>O
 
+  " Restore foldings.
+  autocmd BufWinLeave * silent! mkview
+  autocmd BufWinEnter * silent! loadview
+
 endif
