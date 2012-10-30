@@ -49,3 +49,6 @@
 [submodule "vim/bundle/csapprox"]
 	path = vim/bundle/csapprox
 	url = git://github.com/bukzor/csapprox.git
+[submodule "vim/bundle/clam"]
+	path = vim/bundle/clam
+	url = git://github.com/sjl/clam.vim.git
