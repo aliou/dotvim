@@ -25,9 +25,6 @@
 [submodule "vim/bundle/color-festoon"]
 	path = vim/bundle/color-festoon
 	url = git://github.com/vim-scripts/Festoon.git
-[submodule "vim/bundle/golden-ratio"]
-	path = vim/bundle/golden-ratio
-	url = git://github.com/roman/golden-ratio.git
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
