@@ -52,5 +52,3 @@ set expandtab
 " Yank to OS clipboard.
 set clipboard=unnamed
 
-" Hides files instead of closing them.
-set hidden
