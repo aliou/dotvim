@@ -37,4 +37,5 @@ set nostartofline              " don't jump to the start of line when scrolling
 set scrolloff=3
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
 set textwidth=80               " Last but not least.
+set foldmethod=syntax          " The foldings follows the syntax higlighting.
 
