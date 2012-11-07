@@ -5,15 +5,18 @@ let mapleader = ","
 nnoremap ; :
 vnoremap ; :
 
-" Remap jj to <ESC> because the button is really far.
+" I'm lazy as fuck.
 inoremap jj <ESC>
+inoremap kk <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " Indent all file
 noremap <Leader>f gg=G''zz
 
 " Quick (v)split.
-nnoremap <silent> ss :split<CR>
-nnoremap <silent> vv :vsplit<CR>
+nnoremap <silent> ss :split<CR><C-W>j
+nnoremap <silent> vv :vsplit<CR><S-W>l
 
 " Close Quickfix window (,qq)
 noremap <leader>qq :cclose<CR>
@@ -81,3 +84,5 @@ nnoremap <silent> <leader>d :cd %:p:h<cr>
 nnoremap / /\v
 vnoremap / /\v
 
+" Always open help on vertical split.
+cnoremap help vert bo help
