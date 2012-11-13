@@ -13,9 +13,6 @@ function! DeleteSpaces()
   silent execute "1,9s/^ //"
 endfunction
 
-let s:login		= "diallo_e"
-let s:name		= "aliou diallo"
-
 let s:txt_made_by	= "Made by "
 let s:txt_login		= "Login   "
 let s:txt_mail_s	= "<"
