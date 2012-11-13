@@ -25,6 +25,7 @@ let g:ctrlp_max_files = 10000
 "       \ }
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v([\/]\.(git|hg|svn)|view)$',
+  \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp)$',
   \ 'file': '\v\.(o|exe|netrwhist)$',
   \ }
+let g:ctrlp_extensions = ['tag']
