@@ -1,3 +1,4 @@
+" Found somewhere online, I don't even know what half of this does.
 function! RemoveSpace()
   let pos = line(".")
   let ext = expand("%:e")
