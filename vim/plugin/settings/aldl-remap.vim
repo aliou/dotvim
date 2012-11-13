@@ -16,7 +16,7 @@ noremap <Leader>f gg=G''zz
 
 " Quick (v)split.
 nnoremap <silent> ss :split<CR><C-W>j
-nnoremap <silent> vv :vsplit<CR><S-W>l
+nnoremap <silent> vv :vsplit<CR><C-W>l
 
 " Close Quickfix window (,qq)
 noremap <leader>qq :cclose<CR>
