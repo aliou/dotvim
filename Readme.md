@@ -10,7 +10,7 @@
 
 ## Epitech
 
-If you are an Epitech student, remember to change [lines][l1] with your login
+If you are an Epitech student, remember to change these [lines][l1] with your login
 and name.
 
 [l1]: https://github.com/aldl/dotvim/blob/master/vim/plugin/epitech/header.vim#L17-18
