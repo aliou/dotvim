@@ -34,7 +34,7 @@ set whichwrap+=<,>,h,l,[,]     " backspace and cursor keys wrap to
 set shortmess=filtIoOA         " shorten messages
 set report=0                   " tell us about changes
 set nostartofline              " don't jump to the start of line when scrolling
-set scrolloff=3
+set scrolloff=100000           " Always keep current line in the middle of the window.
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
 set textwidth=80               " Last but not least.
 set foldmethod=syntax          " The foldings follows the syntax higlighting.
