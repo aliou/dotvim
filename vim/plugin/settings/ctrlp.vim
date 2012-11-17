@@ -4,9 +4,13 @@ let g:ctrlp_map = '<Leader>t'
 " Uses the current working directory as root folder.
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
+" Additional mapping for tag search
+nnoremap <Leader>y :CtrlPTag<cr>
+nnoremap <C-y> :CtrlPTag<cr>
+
 " Additional mapping for buffer search
-nnoremap <Leader>b :CtrlPBuffer<cr>
-nnoremap <C-b> :CtrlPBuffer<cr>
+nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <c-b> :CtrlPBuffer<cr>
 
 " Change the listing order of the files in the match window.
 let g:ctrlp_match_window_reversed = 0
