@@ -34,20 +34,21 @@ set autoindent
 set smartindent
 
 " Insert blanks according to shiftwidth when <Tab> in front of a line. 
-set smarttab
+" set smarttab
 
 " Number of spaces to use for each step of (auto)indent.
 set shiftwidth=2
 
-" Number of spaces that a <Tab> counts for while performing editing
-" operations.
-set softtabstop=2
+" Number of spaces that a <Tab> counts for while performing editing operations.
+" set softtabstop=2
 
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=2
+" set tabstop=2
 
 " Use the appropriate number of spaces to insert a <Tab>.
-set expandtab
+" set expandtab
+
+set noexpandtab
 
 " Yank to OS clipboard.
 set clipboard=unnamed

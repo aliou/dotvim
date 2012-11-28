@@ -1,4 +1,5 @@
 " inoremap <c-v><c-i> <m-i>
+inoremap <TAB> <c-i>
 let ext = expand("%:e")
 " 
 if (ext == "h" || ext == "c" || ext == "hpp" || ext == "cpp")
