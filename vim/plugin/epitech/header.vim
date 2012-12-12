@@ -193,12 +193,8 @@ function InsertPrototypes()
   endif
 endfunction
 
-autocmd BufWritePre *.c,*.h,Makefile call RemoveSpace()
-autocmd BufNewFile *.c,*.h,Makefile call HeaderCreate(1)
-autocmd BufWritePre,FileWritePre *.c,*.h,Makefile call HeaderUpdate()
+autocmd BufWritePre *.c,*.h,Makefile,*.cpp call RemoveSpace()
+autocmd BufNewFile *.c,*.h,Makefile,*.cpp call HeaderCreate(1)
+autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp call HeaderUpdate()
 
-" autocmd BufWritePre *.cpp call RemoveSpace()
-" autocmd BufNewFile *.cpp call HeaderCreate(1)
-" autocmd BufWritePre,FileWritePre *.cpp call HeaderUpdate()
-
-" nnoremap <F9>	:call InsertPrototypes()<cr>
+inoremap <TAB> <c-i>
