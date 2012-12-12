@@ -53,3 +53,4 @@ set noexpandtab
 " Yank to OS clipboard.
 set clipboard=unnamed
 
+set shell=/bin/bash
