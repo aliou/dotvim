@@ -1,9 +1,7 @@
 set t_Co=256
 set background=dark
-colorscheme smyck
 
 if has("gui_macvim")
-  colorscheme sift
   set go-=T " Hides toolbar.
   set go-=l " Hides scrollbars.
   set go-=L
