@@ -1,17 +1,7 @@
 set t_Co=256
 set background=dark
 
-if has("gui_macvim")
-  set go-=T " Hides toolbar.
-  set go-=l " Hides scrollbars.
-  set go-=L
-  set go-=r
-  set go-=R
-  set guifont=Menlo:h13
-endif
-
 " Visual Cues
-
 set laststatus=2               " Status Line
 set showmatch                  " brackets/braces that is
 set mat=5                      " duration to show matching brace (1/10 sec)
