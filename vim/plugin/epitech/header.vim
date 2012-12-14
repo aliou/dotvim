@@ -154,7 +154,7 @@ function s:ProtectHeaders()
   let filename = substitute(toupper(expand("%:t")), "\\.", "_", "g") . "_"
     execute "normal! Go" .
       \ '#ifndef '. filename . "\n".
-      \ '#define ' . filename . "\n".
+      \ '# define ' . filename . "\n".
       \ "\n\n\n".
       \ '#endif /* !' . filename . ' */'
   normal! kk
