@@ -18,18 +18,9 @@ let g:ctrlp_match_window_reversed = 0
 " The maximum number of files to scan, set to 0 for no limit: >
 let g:ctrlp_max_files = 10000
 
-" Specify an external tool to use for listing files instead of using Vim’s
-" |globpath()|. Use %s in place of the target directory: >
-" let g:ctrlp_user_command = {
-"       \   'types': {
-"       \       1: ['.git/', 'cd %s && git ls-files'],
-"       \       2: ['.hg/', 'hg --cwd %s locate -I .']
-"       \   },
-"       \   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
-"       \ }
-
+" Ignore these specific files and folders..
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp)$',
-  \ 'file': '\v\.(o|exe|netrwhist)$',
+  \ 'file': '\v\.(o|exe|netrwhist)|tags$',
   \ }
 let g:ctrlp_extensions = ['tag']
