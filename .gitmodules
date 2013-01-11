@@ -46,3 +46,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/vim-clojure"]
+	path = vim/bundle/vim-clojure
+	url = git://github.com/vim-scripts/VimClojure.git
