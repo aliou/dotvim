@@ -30,46 +30,22 @@ let s:date_format	= "%a %b %d %H:%M:%S %Y"
 
 function s:GetComStr()
   let hascom = 1
-  if &ft == "c" || expand("%:e") == "h" || &ft == "css"
+  if &ft == "c" || expand("%:e") == "h"
     let s:cs = "/\*"
     let s:cc = "\*\* "
     let s:ce = "\*/"
-  elseif &ft == "cpp" || &ft == "java" || &ft == "pov"
+  elseif &ft == "cpp" || &ft == "hh" || &ft == "hpp"
+    let s:cs = "//"
+    let s:cc = "// "
+    let s:ce = "//"
+  elseif &ft == "java"
     let s:cs = "/\*"
     let s:cc = "\*\* "
     let s:ce = "\*/"
-  elseif &ft == "make" || &ft == "text"
+  elseif &ft == "make"
     let s:cs = "##"
     let s:cc = "## "
     let s:ce = "##"
-  elseif &ft == "php"
-    let s:cs = "#!/usr/local/bin/php\n<?php\n/\*"
-    let s:cc = "\*\* "
-    let s:ce = "\*/"
-  elseif &ft == "ruby"
-    let s:cs = "#!/usr/local/bin/ruby"
-    let s:cc = "## "
-    let s:ce = "##"
-  elseif &ft == "perl"
-    let s:cs = "#!/usr/local/bin/perl -w"
-    let s:cc = "## "
-    let s:ce = "##"
-  elseif &ft == "pascal"
-    let s:cs = "{ "
-    let s:cc = "   "
-    let s:ce = "}"
-  elseif &ft == "latex"
-    let s:cs = "%%"
-    let s:cc = "%% "
-    let s:ce = "%%"
-  elseif &ft == "lisp"
-    let s:cs = ";;"
-    let s:cc = ";; "
-    let s:ce = ";;"
-  elseif &ft == "xdefault"
-    let s:cs = "!!"
-    let s:cc = "!! "
-    let s:ce = "!!"
   else
     let hascom = 0
   endif
@@ -97,7 +73,6 @@ function s:LineUpdate(lnum, newline)
 endfunction
 
 function HeaderUpdate()
-  " silent execute! "1,9s/^ //"
   if s:GetComStr()
     let lnum = s:LineFind(s:cc . s:txt_last)
     if lnum
@@ -196,5 +171,3 @@ endfunction
 autocmd BufWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call RemoveSpace()
 autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderCreate(1)
 autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderUpdate()
-
-inoremap <TAB> <c-i>
