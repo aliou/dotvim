@@ -16,7 +16,7 @@ nnoremap <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_match_window_reversed = 0
 
 " The maximum number of files to scan, set to 0 for no limit: >
-let g:ctrlp_max_files = 10000
+let g:ctrlp_max_files = 2500
 
 " Ignore these specific files and folders..
 let g:ctrlp_custom_ignore = {

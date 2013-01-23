@@ -5,7 +5,7 @@ set background=dark
 set laststatus=2               " Status Line
 set showmatch                  " brackets/braces that is
 set mat=5                      " duration to show matching brace (1/10 sec)
-set visualbell                 " shut the fuck up
+set novisualbell                 " shut the fuck up
 set hlsearch                   " highlight matches
 set incsearch                  " incremental searching
 set ignorecase                 " searches are case insensitive...
@@ -22,7 +22,6 @@ set whichwrap+=<,>,h,l,[,]     " backspace and cursor keys wrap to
 set shortmess=filtIoOA         " shorten messages
 set report=0                   " tell us about changes
 set nostartofline              " don't jump to the start of line when scrolling
-set scrolloff=100000           " Always keep current line in the middle of the window.
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
 set foldmethod=syntax          " The foldings follows the syntax higlighting.
 set textwidth=80               " Last but not least.
