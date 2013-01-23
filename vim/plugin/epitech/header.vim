@@ -132,7 +132,7 @@ function HeaderCreate(new)
     endif
     setl fo+=o fo+=r fo+=a fo+=c
     setl autoindent smartindent cindent
-    if expand("%:e") == "h" && a:new
+    if (expand("%:e") == "h" || expand("%:e") == "hh" || expand("%:e") == "hpp") && a:new
       call s:ProtectHeaders()
       call InsertPrototypes()
     else
@@ -161,7 +161,7 @@ function s:ProtectHeaders()
 endfunction
 
 function InsertPrototypes()
-  if expand("%:e") != "h" && input("Ce fichier n'est pas un header C, inclure quand meme ? (y/n)", "") != "y"
+  if (expand("%:e") != "h")
     return
   endif
   let cfile = expand("%:p:r") . ".c"
@@ -193,8 +193,8 @@ function InsertPrototypes()
   endif
 endfunction
 
-autocmd BufWritePre *.c,*.h,Makefile,*.cpp call RemoveSpace()
-autocmd BufNewFile *.c,*.h,Makefile,*.cpp call HeaderCreate(1)
-autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp call HeaderUpdate()
+autocmd BufWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call RemoveSpace()
+autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderCreate(1)
+autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderUpdate()
 
 inoremap <TAB> <c-i>
