@@ -2,7 +2,7 @@
 
 ## Install
     
-    git clone git://github.com/aldl/dotvim.git ~/.dotvim
+    git clone git://github.com/aliou/dotvim.git ~/.dotvim
     ln -s ~/.dotvim/vim ~/.vim
     ln -s ~/.dotvim/vimrc ~/.vimrc
     cd ~/.dotvim
