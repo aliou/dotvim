@@ -8,8 +8,6 @@ vnoremap ; :
 " I'm lazy as fuck.
 inoremap jj <ESC>
 inoremap kk <ESC>
-inoremap jk <ESC>
-inoremap kj <ESC>
 
 " Indent all file
 noremap <Leader>f gg=G''zz
@@ -19,19 +17,13 @@ nnoremap <silent> ss :split<CR><C-W>j
 nnoremap <silent> vv :vsplit<CR><C-W>l
 
 " Close Quickfix window (,qq)
-noremap <leader>qq :cclose<CR>
+nnoremap <leader>qq :cclose<CR>
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
   map + <C-W>+
   map - <C-W>-
 endif
-
-" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-H> <C-W>h
-noremap <C-L> <C-W>l
 
 " c-d deletes characters in insert mode
 inoremap <c-d> <c-o>x
@@ -66,9 +58,6 @@ nnoremap N Nzzzv
 " Don't move on *
 nnoremap * *<c-o>
 
-"(v)im (r)eload
-nnoremap <silent> <Leader>rv :so %<CR>
-
 " Marks and Quotes
 noremap ' `
 noremap æ '
@@ -85,4 +74,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 " Always open help on vertical split.
-cnoremap help vert bo help
+cnoremap vhelp vert bo help
+
+" Paste mode toggle.
+nnoremap <F10> :set paste!<cr>
