@@ -77,4 +77,5 @@ vnoremap / /\v
 cnoremap vhelp vert bo help
 
 " Paste mode toggle.
-nnoremap <F10> :set paste!<cr>
+nnoremap <F10> :set paste!<CR>
+inoremap <F10> <ESC>:set paste!<CR>i
