@@ -52,3 +52,6 @@
 [submodule "vim/bundle/nrrwrgn"]
 	path = vim/bundle/nrrwrgn
 	url = https://github.com/chrisbra/NrrwRgn
+[submodule "vim/bundle/vim-seek"]
+	path = vim/bundle/vim-seek
+	url = git://github.com/goldfeld/vim-seek.git
