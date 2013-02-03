@@ -9,6 +9,11 @@ vnoremap ; :
 inoremap jj <ESC>
 inoremap kk <ESC>
 
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
 " Indent all file
 noremap <Leader>f gg=G''zz
 
@@ -73,7 +78,7 @@ nnoremap <silent> <leader>d :cd %:p:h<cr>
 nnoremap / /\v
 vnoremap / /\v
 
-" Always open help on vertical split.
+" Open help on vertical split.
 cnoremap vhelp vert bo help
 
 " Paste mode toggle.

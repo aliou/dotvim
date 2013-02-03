@@ -24,6 +24,9 @@ if has("autocmd")
     autocmd FocusLost * silent! wa
   endif
 
+  " Resize splits when window is resized.
+  autocmd VimResized * :wincmd =
+
   autocmd filetype css inoremap { <space>{<CR>}<esc>O
 
   " Restore foldings.
