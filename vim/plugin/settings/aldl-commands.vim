@@ -1,1 +1,0 @@
-command! SS set spell!

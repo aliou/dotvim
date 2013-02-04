@@ -1,5 +1,5 @@
 if has("autocmd")
-
+  " Files ----------------------------------------------------------------- {{{
   " makefiles do not like spaces.
   autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab 
 
@@ -13,6 +13,9 @@ if has("autocmd")
 
   autocmd filetype gitcommit setlocal textwidth=72
 
+  autocmd filetype css inoremap { <space>{<CR>}<esc>O
+  " }}}
+  " Interface ------------------------------------------------------------- {{{
   " Restore cursor position.
   autocmd BufReadPost *
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -27,10 +30,15 @@ if has("autocmd")
   " Resize splits when window is resized.
   autocmd VimResized * :wincmd =
 
-  autocmd filetype css inoremap { <space>{<CR>}<esc>O
 
   " Restore foldings.
   autocmd BufWinLeave * silent! mkview
   autocmd BufWinEnter * silent! loadview
-
+  " }}}
+  " Folds ----------------------------------------------------------------- {{{
+  autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
+  autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType html setlocal foldmethod=manual
+  autocmd FileType ruby setlocal foldmethod=syntax
+  " }}}
 endif

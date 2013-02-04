@@ -24,6 +24,5 @@ set report=0                   " tell us about changes
 set nostartofline              " don't jump to the start of line when scrolling
 set scrolloff=5		       " cool story bro.
 set gdefault                   " By default add g flag to search/replace. Add g to toggle.
-" set foldmethod=syntax          " The foldings follows the syntax higlighting.
 set textwidth=80               " Last but not least.
 set colorcolumn=+1             " Highlights column after textwidth.

@@ -1,43 +1,32 @@
-" Use Vim settings, rather than Vi settings (much better!).
+" vimrc
+" Author: Aliou Diallo <aliou.diallo@me.com>
+" Source: https://github.com/aliou/dotvim/blob/master/vimrc
+
+" Init -------------------------------------------------------------------- {{{
 set nocompatible
 
 call pathogen#infect()
 call pathogen#helptags()
-
-" Switch syntax highlighting on.
 syntax on
-
-" Enable file type detection and do language-dependent indenting.
 filetype indent plugin on
 
-" Line number.
+" }}}
+" Basic options ----------------------------------------------------------- {{{
+
 set number
-
-" Show incomplet command.
 set showcmd
-
-" Reload files changed outside of vim.
 set autoread
-
-" No swapfile nor backups.
-set noswapfile
-set nobackup
-set nowb
-
-" Encoding.
 set encoding=utf-8
-
-" Copy indent from current line when starting a new line.
+set clipboard=unnamed
+set shell=/bin/bash
+" }}}
+" Indent and tabs --------------------------------------------------------- {{{
 set autoindent
-
-" Do smart autoindenting when starting a new line.
 set smartindent
+set shiftwidth=2
 
 " Insert blanks according to shiftwidth when <Tab> in front of a line. 
 " set smarttab
-
-" Number of spaces to use for each step of (auto)indent.
-set shiftwidth=2
 
 " Number of spaces that a <Tab> counts for while performing editing operations.
 " set softtabstop=2
@@ -48,9 +37,4 @@ set shiftwidth=2
 " Use the appropriate number of spaces to insert a <Tab>.
 " set expandtab
 
-set noexpandtab
-
-" Yank to OS clipboard.
-set clipboard=unnamed
-
-set shell=/bin/bash
+" }}}
