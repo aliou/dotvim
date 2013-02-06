@@ -1,5 +1,4 @@
-" Muscle memory.
-let g:ctrlp_map = '<Leader>t'
+nnoremap <Leader>t :CtrlP<cr>
 
 " Uses the current working directory as root folder.
 let g:ctrlp_cmd = 'CtrlPCurWD'
