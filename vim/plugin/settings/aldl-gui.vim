@@ -2,10 +2,11 @@ set t_Co=256
 set background=dark
 
 " Visual Cues
-set laststatus=2               " Status Line
+" Status Line
+set laststatus=2
 set showmatch                  " brackets/braces that is
 set mat=5                      " duration to show matching brace (1/10 sec)
-set novisualbell                 " shut the fuck up
+set novisualbell               " shut the fuck up
 set hlsearch                   " highlight matches
 set incsearch                  " incremental searching
 set ignorecase                 " searches are case insensitive...
