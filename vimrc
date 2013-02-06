@@ -5,6 +5,19 @@
 " Init -------------------------------------------------------------------- {{{
 set nocompatible
 
+"   Vundle --------------------------------------------- {{{
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
+
+" }}}
+
 syntax on
 filetype indent plugin on
 
