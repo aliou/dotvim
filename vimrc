@@ -5,8 +5,6 @@
 " Init -------------------------------------------------------------------- {{{
 set nocompatible
 
-call pathogen#infect()
-call pathogen#helptags()
 syntax on
 filetype indent plugin on
 
