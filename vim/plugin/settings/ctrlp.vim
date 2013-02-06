@@ -15,6 +15,9 @@ nnoremap <c-b> :CtrlPBuffer<cr>
 " Change the listing order of the files in the match window.
 let g:ctrlp_match_window_reversed = 0
 
+" Search by filename instead of full path.
+let g:ctrlp_by_filename = 1
+
 " The maximum number of files to scan, set to 0 for no limit: >
 let g:ctrlp_max_files = 2500
 

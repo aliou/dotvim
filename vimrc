@@ -15,6 +15,13 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'chrisbra/NrrwRgn'
+Bundle 'sjl/clam.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'Rip-Rip/clang_complete'
 
 " }}}
 
