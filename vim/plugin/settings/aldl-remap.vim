@@ -16,6 +16,7 @@ nnoremap <silent> vv :vsplit<CR><C-W>l
 
 nnoremap <leader>qq :cclose<CR>
 nnoremap <Leader><Leader> <C-^>
+
 nnoremap <silent> <Leader>z :bp<CR>
 nnoremap <silent> <Leader>x :bn<CR>
 
