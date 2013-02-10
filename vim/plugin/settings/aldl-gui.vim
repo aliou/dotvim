@@ -1,29 +1,24 @@
-set t_Co=256
-set background=dark
-
-" Visual Cues
-" Status Line
 set laststatus=2
-set showmatch                  " brackets/braces that is
-set mat=5                      " duration to show matching brace (1/10 sec)
-set novisualbell               " shut the fuck up
-set hlsearch                   " highlight matches
-set incsearch                  " incremental searching
-set ignorecase                 " searches are case insensitive...
-set smartcase                  " ... unless they contain at least one capital letter
-set ruler                      " show the cursor position all the time
-set showcmd                    " displays incomplete commands
-set nolazyredraw               " turn off lazy redraw
-set wildmenu                   " turn on wild menu
-set wildmode=list:longest,full "
-set wildignore=*.o,.DS_Store   " Ignore C objects files.
-set ch=3                       " command line height
-set backspace=2                " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,]     " backspace and cursor keys wrap to
-set shortmess=filtIoOA         " shorten messages
-set report=0                   " tell us about changes
-set nostartofline              " don't jump to the start of line when scrolling
-set scrolloff=5		       " cool story bro.
-set gdefault                   " By default add g flag to search/replace. Add g to toggle.
-set textwidth=80               " Last but not least.
-set colorcolumn=+1             " Highlights column after textwidth.
+set ch=3
+set showmatch
+set mat=5
+set novisualbell
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set ruler
+set showcmd
+set nolazyredraw
+set wildmenu
+set wildmode=list:longest,full
+set wildignore=*.o,.DS_Store
+set backspace=2
+set whichwrap+=<,>,h,l,[,]
+set shortmess=filtIoOA
+set report=0
+set nostartofline
+set scrolloff=5	
+set gdefault
+set textwidth=80
+set colorcolumn=+1

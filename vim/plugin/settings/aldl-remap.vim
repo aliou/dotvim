@@ -22,8 +22,8 @@ nnoremap <silent> <Leader>x :bn<CR>
 
 nnoremap <silent> // :nohlsearch<CR>
 
-nnoremap > >gv
-nnoremap < <gv
+vnoremap > >gv
+vnoremap < <gv
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
