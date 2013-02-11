@@ -25,10 +25,16 @@ Bundle 'Rip-Rip/clang_complete'
 
 " }}}
 
+Bundle 'holokai'
+Bundle 'sjl/badwolf'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'tomasr/molokai'
+
 syntax on
 filetype indent plugin on
 
 " }}}
+
 " Basic options ----------------------------------------------------------- {{{
 
 set number
@@ -38,6 +44,7 @@ set encoding=utf-8
 set clipboard=unnamed
 set shell=/bin/bash
 " }}}
+
 " Indent and tabs --------------------------------------------------------- {{{
 set autoindent
 set smartindent
