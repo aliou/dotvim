@@ -24,11 +24,16 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'holokai'
+Bundle 'sjl/badwolf'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'tomasr/molokai'
 
 syntax on
 filetype indent plugin on
 
 " }}}
+
 " Basic options ----------------------------------------------------------- {{{
 
 set number
@@ -39,6 +44,7 @@ set clipboard=unnamed
 set shell=/bin/bash
 
 " }}}
+
 " Indent and tabs --------------------------------------------------------- {{{
 
 set autoindent
