@@ -15,20 +15,23 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'chrisbra/NrrwRgn'
+
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'Rip-Rip/clang_complete'
+Bundle 'kien/ctrlp.vim'
+Bundle 'chrisbra/NrrwRgn'
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Rip-Rip/clang_complete'
+
+" Colors
 Bundle 'holokai'
 Bundle 'sjl/badwolf'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'tomasr/molokai'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 syntax on
 filetype indent plugin on
@@ -59,19 +62,39 @@ set shiftwidth=2
 " set softtabstop=2
 
 " Number of spaces that a <Tab> in the file counts for.
-" set tabstop=2
+set tabstop=8
 
 " Use the appropriate number of spaces to insert a <Tab>.
 " set expandtab
 
 " }}}
 
-" Color scheme ------------------------------------------------------------ {{{
+" GUI -------------------------------------------------------------------- {{{
 
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 set t_Co=256
 set background=dark
 colorscheme molokai
+set laststatus=2
+set ch=3
+set showmatch
+set mat=5
+set novisualbell
+set ruler
+set showcmd
+set nolazyredraw
+set scrolloff=5
+set textwidth=80
+set colorcolumn=+1
+
+if has("gui")
+  set go-=m
+  set go-=T
+  set go-=l
+  set go-=L
+  set go-=r
+  set go-=R
+endif
 
 " }}}
 
@@ -110,8 +133,8 @@ colorscheme molokai
 
 
   " Restore foldings.
-  autocmd BufWinLeave * silent! mkview
-  autocmd BufWinEnter * silent! loadview
+  " autocmd BufWinLeave * silent! mkview
+  " autocmd BufWinEnter * silent! loadview
   " }}}
   " Folds -------------------------------------------------------------- {{{
   autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}

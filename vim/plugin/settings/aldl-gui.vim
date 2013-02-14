@@ -1,15 +1,7 @@
-set laststatus=2
-set ch=3
-set showmatch
-set mat=5
-set novisualbell
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-set ruler
-set showcmd
-set nolazyredraw
 set wildmenu
 set wildmode=list:longest,full
 set wildignore=*.o,.DS_Store
@@ -18,7 +10,4 @@ set whichwrap+=<,>,h,l,[,]
 set shortmess=filtIoOA
 set report=0
 set nostartofline
-set scrolloff=5	
 set gdefault
-set textwidth=80
-set colorcolumn=+1
