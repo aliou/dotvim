@@ -24,7 +24,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'Lokaltog/vim-powerline'
-" Bundle 'Rip-Rip/clang_complete'
 
 " Colors
 Bundle 'holokai'
