@@ -78,7 +78,7 @@ set laststatus=2
 set ch=3
 set showmatch
 set mat=5
-set novisualbell
+set vb t_vb=
 set ruler
 set showcmd
 set nolazyredraw
