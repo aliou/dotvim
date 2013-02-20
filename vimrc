@@ -86,15 +86,6 @@ set scrolloff=5
 set textwidth=80
 set colorcolumn=+1
 
-if has("gui")
-  set go-=m
-  set go-=T
-  set go-=l
-  set go-=L
-  set go-=r
-  set go-=R
-endif
-
 " }}}
 
 " autocmd ----------------------------------------------------------------- {{{
@@ -121,11 +112,6 @@ endif
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
-
-  " Save on loss of focus when using a GUI.
-  if has("gui")
-    autocmd FocusLost * silent! wa
-  endif
 
   " Resize splits when window is resized.
   autocmd VimResized * :wincmd =
