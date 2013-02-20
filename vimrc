@@ -58,6 +58,7 @@
   set showmatch			" Highlight matching braces
   set matchtime=5			" 
   set vb t_vb=			" SHUT THE FUCK UP.
+  set novisualbell		" SHUT THE FUCK UP.
   set encoding=utf-8		" Character encoding.
   set shortmess=filtIoOA	" Short message.
   set report=0			" Report all changes.
@@ -68,6 +69,7 @@
 
 " Backups ----------------------------------------------------------------- {{{
   set backup			" Enable backups for Gundo (AKA Lifesaver).
+  set undofile			" Save the file.
   set noswapfile		" HOW ABOUT FUCK YOU.
 
   set undodir=~/.vim/tmp/undo//	" Undodir
@@ -137,8 +139,8 @@
   vnoremap < <gv
 
   " Stay in middle of window.
-  nnoremap n nzzzv
-  nnoremap N Nzzzv
+  " nnoremap n nzzzv
+  " nnoremap N Nzzzv
 
   noremap <Leader>f gg=G''zz		" Indent all file.
   noremap <Leader>a ggVG		" Select all file.
