@@ -5,6 +5,7 @@
     git clone git://github.com/aliou/dotvim.git ~/.dotvim
     ln -s ~/.dotvim/vim ~/.vim
     ln -s ~/.dotvim/vimrc ~/.vimrc
+    ln -s ~/.dotvim/gvimrc ~/.gvimrc
     cd ~/.dotvim
 
 Then install [Vundle][l2] and run 
