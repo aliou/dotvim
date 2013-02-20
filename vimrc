@@ -13,6 +13,7 @@
 
   Bundle 'gmarik/vundle'
 
+  Bundle 'omlet.vim'
   Bundle 'sjl/clam.vim'
   Bundle 'sjl/gundo.vim'
   Bundle 'kien/ctrlp.vim'
@@ -21,9 +22,9 @@
   Bundle 'tpope/vim-fugitive'
   Bundle 'scrooloose/nerdtree'
   Bundle 'tomtom/tcomment_vim'
+  Bundle 'scrooloose/syntastic'
   Bundle 'Lokaltog/vim-powerline'
 
-  Bundle 'scrooloose/syntastic'
 
   " Colors
   Bundle 'holokai'
@@ -57,11 +58,10 @@
   set showmatch			" Highlight matching braces
   set matchtime=5			" 
   set vb t_vb=			" SHUT THE FUCK UP.
-  set title			" Set the title for gvim.
   set encoding=utf-8		" Character encoding.
   set shortmess=filtIoOA	" Short message.
   set report=0			" Report all changes.
-  set shell=/usr/bin/zsh
+  set shell=/bin/bash\ --login
 
 " set clipboard=unnamed		" Use system clipboard.
 " }}}
