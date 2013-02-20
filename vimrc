@@ -319,8 +319,11 @@
  
 " }}}
 
+" Local ------------------------------------------------------------------- {{{
 " Source local file if it exists.
 if filereadable(glob("~/.vimrc.local")) 
-  source ~/.vimrc.local
+  let $MYLOCALVIMRC="~/.vimrc.local"
+  source $MYLOCALVIMRC
 endif
 
+" }}}
