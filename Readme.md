@@ -8,8 +8,9 @@
     ln -s ~/.dotvim/gvimrc ~/.gvimrc
     cd ~/.dotvim
 
-Then install [Vundle][l2] and run 
+Then install [Vundle][l2] and the plugins by running:
 
+    git clone git@github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
 
 ## Epitech
