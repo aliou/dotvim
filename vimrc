@@ -20,11 +20,11 @@
   Bundle 'chrisbra/NrrwRgn'
   Bundle 'majutsushi/tagbar'
   Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-surround'
   Bundle 'scrooloose/nerdtree'
   Bundle 'tomtom/tcomment_vim'
   Bundle 'scrooloose/syntastic'
   Bundle 'Lokaltog/vim-powerline'
-
 
   " Colors
   Bundle 'holokai'
@@ -72,7 +72,7 @@
   set undofile			" Save the file.
   set noswapfile		" HOW ABOUT FUCK YOU.
 
-  set undodir=~/.vim/tmp/undo//	" Undodir
+  set undodir=~/.vim/tmp/undo//		" Undodir
   set backupdir=~/.vim/tmp/backup//	" Backupdir.
   set directory=~/.vim/tmp/swap//	" Swapfile.
 
