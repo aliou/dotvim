@@ -13,7 +13,6 @@
 
   Bundle 'gmarik/vundle'
 
-  Bundle 'omlet.vim'
   Bundle 'sjl/clam.vim'
   Bundle 'sjl/gundo.vim'
   Bundle 'kien/ctrlp.vim'
@@ -25,6 +24,7 @@
   Bundle 'tomtom/tcomment_vim'
   Bundle 'scrooloose/syntastic'
   Bundle 'Lokaltog/vim-powerline'
+  Bundle 'airblade/vim-gitgutter'
 
   " Colors
   Bundle 'holokai'
@@ -96,6 +96,14 @@
   set nostartofline			" Don't go back to the start of the line.
   set gdefault				" sed is global by default. g to toggle.
   match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'	" Match git conflict shit.
+
+  " Visual search. Stolen from @sjl.
+  function! s:VSetSearch()
+    let temp = @@
+    norm! gvy
+    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    let @@ = temp
+  endfunction
 " }}}
 
 " Tabs -------------------------------------------------------------------- {{{
@@ -197,6 +205,10 @@
   " Tabs
   nnoremap H :tabprev<cr>
   nnoremap L :tabnext<cr>
+
+  " Search for visual block.
+  vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+  vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " }}}
 
 " autocmd ----------------------------------------------------------------- {{{
