@@ -330,6 +330,10 @@
       inoremap <F2> <esc>:NERDTreeToggle<CR>
       let NERDTreeWinPos = "right"
   " }}}
+
+  " Ocaml Fold {{{
+      let g:ocaml_folding = 1
+  " }}}
  
 " }}}
 
