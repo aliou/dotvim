@@ -43,7 +43,7 @@
   set autoread			" Update modified files outside of VIM.
   set textwidth=80		" Character limit.
   set colorcolumn=+1		" Highlight character limit.
-  " set hidden			" Allow buffers to be in the background without saving.
+  set hidden			" Allow buffers to be in the background without saving.
   set laststatus=2		" Show status bar.
   set ch=3			" Status line height.
   set number			" Show line number.
@@ -203,6 +203,7 @@
   nnoremap <silent>gt <C-]>		" Go to tag under cursor.
 
   " Tabs
+  nnoremap T :tabnew<cr>
   nnoremap H :tabprev<cr>
   nnoremap L :tabnext<cr>
 
@@ -329,6 +330,7 @@
       noremap <F2> :NERDTreeToggle<CR>
       inoremap <F2> <esc>:NERDTreeToggle<CR>
       let NERDTreeWinPos = "right"
+      let NERDTreeIgnore = ['\.vim$', '\~$', '*.o']
   " }}}
 
   " Ocaml Fold {{{
