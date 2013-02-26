@@ -192,7 +192,6 @@
   inoremap <c-l> <c-o>l
   inoremap <c-h> <c-o>h
 
-
   " Sudo to write
   cnoremap w!! w !sudo tee % >/dev/null
 
@@ -200,7 +199,8 @@
   cnoremap vhelp vert bo help
   command! SS set spell!
 
-  nnoremap <silent>gt <C-]>		" Go to tag under cursor.
+  " Go to tag under cursor.
+  nnoremap <silent>gt <C-]>
 
   " Tabs
   nnoremap T :tabnew<cr>
@@ -249,11 +249,11 @@
   " }}}
 
   " Folds -------------------------------------------------------------- {{{
-  autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
-  autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
-  autocmd Filetype vim setlocal foldmethod=marker
-  autocmd FileType html setlocal foldmethod=manual
-  autocmd FileType ruby setlocal foldmethod=syntax
+      autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
+      autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
+      autocmd Filetype vim setlocal foldmethod=marker
+      autocmd FileType html setlocal foldmethod=manual
+      autocmd FileType ruby setlocal foldmethod=syntax
   " }}}
 
 " }}}
@@ -330,20 +330,20 @@
       noremap <F2> :NERDTreeToggle<CR>
       inoremap <F2> <esc>:NERDTreeToggle<CR>
       let NERDTreeWinPos = "right"
-      let NERDTreeIgnore = ['\.vim$', '\~$', '*.o']
+      let NERDTreeIgnore = ['\~$', '*.o']
   " }}}
 
   " Ocaml Fold {{{
-      let g:ocaml_folding = 1
+      autocmd FileType ocaml let g:ocaml_folding = 1
   " }}}
  
 " }}}
 
 " Local ------------------------------------------------------------------- {{{
-" Source local file if it exists.
-if filereadable(glob("~/.vimrc.local")) 
-  let $MYLOCALVIMRC="~/.vimrc.local"
-  source $MYLOCALVIMRC
-endif
+  " Source local file if it exists.
+  if filereadable(glob("~/.vimrc.local")) 
+    let $MYLOCALVIMRC="~/.vimrc.local"
+    source $MYLOCALVIMRC
+  endif
 
 " }}}
