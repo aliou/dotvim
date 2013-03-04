@@ -171,10 +171,6 @@
   nnoremap / /\v
   vnoremap / /\v
 
-  " PAAAASTE
-  nnoremap <F10> :set paste!<CR>
-  inoremap <F10> <ESC>:set paste!<CR>i
-
   " Resize splits.
   if bufwinnr(1)
     noremap + <C-W>+
@@ -209,6 +205,18 @@
   vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " }}}
 
+" <Fx> Maps {{{
+"
+  " PAAAASTE
+  inoremap <F2> <ESC>:NERDTreeToggle<CR>
+  nnoremap <F2> :NERDTreeToggle<CR>
+  nnoremap <F3> :w<cr>:! clear ; echo '\#use "%";;' \| ocaml<cr>
+  inoremap <F4> <ESC>:set paste!<CR>i
+  nnoremap <F4> :set paste!<CR>
+  nnoremap <F5> :GundoToggle<CR>
+
+" }}}
+
 " autocmd ----------------------------------------------------------------- {{{
 
   " Files ------------------------------------------------------------- {{{
@@ -224,9 +232,13 @@
   autocmd Filetype markdown setlocal spell
 
   autocmd filetype gitcommit setlocal textwidth=72
+  autocmd filetype gitcommit setlocal spell
 
   autocmd filetype css inoremap { <space>{<CR>}<esc>O
-  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp silent! !ctags -R &	" tag file.
+  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp silent! !ctags -R
+
+  " I use a cvs anyway.
+  autocmd FileType * autocmd InsertLeave * silent! wa
   " }}}
 
   " Interface --------------------------------------------------------- {{{
@@ -246,11 +258,13 @@
   " }}}
 
   " Folds -------------------------------------------------------------- {{{
+      set foldlevelstart=1
       autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
       autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
       autocmd Filetype vim setlocal foldmethod=marker
       autocmd FileType html setlocal foldmethod=manual
       autocmd FileType ruby setlocal foldmethod=syntax
+      autocmd Filetype ocaml setlocal foldmethod=expr foldexpr=OMLetFoldLevel(v:lnum)
   " }}}
 
 " }}}
@@ -267,7 +281,7 @@
       nnoremap <Leader>t :CtrlP<cr>
 
       " Uses the current working directory as root folder.
-      " let g:ctrlp_cmd = 'CtrlPCurWD'
+      let g:ctrlp_cmd = 'CtrlPCurWD'
 
       " Additional mapping for tag search
       nnoremap <Leader>y :CtrlPTag<cr>
@@ -291,7 +305,6 @@
   " }}}
 
   " Gundo {{{
-      nnoremap <F5> :GundoToggle<CR>
   " }}}
 
   " Syntastic {{{
@@ -313,19 +326,12 @@
 
   " }}}
 
-  " Tagbar {{{
-      nnoremap <F8> :TagbarToggle<CR>
-      inoremap <F8> <ESC>:TagbarToggle<CR>i
-  " }}}
-
   " tComment {{{
       " Comment current line or selection.
       map <Leader>c <C-_><C-_>
   " }}}
 
   " NERDTree {{{
-      noremap <F2> :NERDTreeToggle<CR>
-      inoremap <F2> <esc>:NERDTreeToggle<CR>
       let NERDTreeWinPos = "right"
       let NERDTreeIgnore = ['\~$', '*.o']
   " }}}
