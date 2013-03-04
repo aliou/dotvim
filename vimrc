@@ -16,15 +16,12 @@
   Bundle 'sjl/clam.vim'
   Bundle 'sjl/gundo.vim'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'chrisbra/NrrwRgn'
-  Bundle 'majutsushi/tagbar'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
   Bundle 'scrooloose/nerdtree'
   Bundle 'tomtom/tcomment_vim'
   Bundle 'scrooloose/syntastic'
   Bundle 'Lokaltog/vim-powerline'
-  Bundle 'airblade/vim-gitgutter'
 
   " Colors
   Bundle 'holokai'
