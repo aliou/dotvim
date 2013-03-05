@@ -210,9 +210,11 @@
   " PAAAASTE
   inoremap <F2> <ESC>:NERDTreeToggle<CR>
   nnoremap <F2> :NERDTreeToggle<CR>
+  inoremap <F3> <ESC>:w<CR>:! clear ; echo '\#use "%";;' \| ocaml<cr>
   nnoremap <F3> :w<cr>:! clear ; echo '\#use "%";;' \| ocaml<cr>
   inoremap <F4> <ESC>:set paste!<CR>i
   nnoremap <F4> :set paste!<CR>
+  inoremap <F5> <ESC>:GundoToggle<CR>
   nnoremap <F5> :GundoToggle<CR>
 
 " }}}
