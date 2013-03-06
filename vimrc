@@ -21,7 +21,6 @@
   Bundle 'scrooloose/nerdtree'
   Bundle 'tomtom/tcomment_vim'
   Bundle 'scrooloose/syntastic'
-  Bundle 'Lokaltog/vim-powerline'
 
   " Colors
   Bundle 'holokai'
@@ -43,6 +42,7 @@
   set hidden			" Allow buffers to be in the background without saving.
   set laststatus=2		" Show status bar.
   set ch=3			" Status line height.
+  set noshowmode		" Hide current mode.
   set number			" Show line number.
   set showcmd			" Show current command.
   set list			" Show invisible characters.
@@ -203,11 +203,12 @@
   " Search for visual block.
   vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
   vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+  " SHUT THE FUCK UP.
+  nnoremap Q <NOP
 " }}}
 
 " <Fx> Maps {{{
-"
-  " PAAAASTE
   inoremap <F2> <ESC>:NERDTreeToggle<CR>
   nnoremap <F2> :NERDTreeToggle<CR>
   inoremap <F3> <ESC>:w<CR>:! clear ; echo '\#use "%";;' \| ocaml<cr>
@@ -341,7 +342,7 @@
   " Ocaml Fold {{{
       autocmd FileType ocaml let g:ocaml_folding = 1
   " }}}
- 
+
 " }}}
 
 " Local ------------------------------------------------------------------- {{{
