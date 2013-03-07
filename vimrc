@@ -26,6 +26,7 @@
   Bundle 'holokai'
   Bundle 'sjl/badwolf'
   Bundle 'tomasr/molokai'
+  Bundle 'godlygeek/csapprox'
   Bundle 'nanotech/jellybeans.vim'
   Bundle 'altercation/vim-colors-solarized'
 
