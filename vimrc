@@ -46,6 +46,7 @@
   set noshowmode		" Hide current mode.
   set number			" Show line number.
   set showcmd			" Show current command.
+  set cursorline		" Highlight current line.
   set list			" Show invisible characters.
   set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Invisible character list.
   set ruler			" Show line and column in status bar.
