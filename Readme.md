@@ -10,8 +10,10 @@
 
 Then install [Vundle][l2] and the plugins by running:
 
-    git clone git@github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
+
+Or just run [this script][l3].
 
 ## Epitech
 
@@ -20,3 +22,4 @@ and name.
 
 [l1]: https://github.com/aliou/dotvim/blob/master/vim/plugin/epitech/header.vim#L17-18
 [l2]: https://github.com/gmarik/vundle
+[l3]: https://gist.github.com/aliou/91851e576aa3917c0ab8
