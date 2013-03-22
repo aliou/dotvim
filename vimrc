@@ -13,6 +13,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'scratch.vim'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'kien/ctrlp.vim'
@@ -20,6 +21,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-obsession'
 Bundle 'scrooloose/syntastic'
 
 " Colors
@@ -28,6 +30,7 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'godlygeek/csapprox'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'chriskempson/base16-vim'
 Bundle 'altercation/vim-colors-solarized'
 
 syntax on
