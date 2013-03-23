@@ -152,7 +152,6 @@ vnoremap < <gv
 " nnoremap n nzzzv
 " nnoremap N Nzzzv
 
-noremap <Leader>f gg=G''zz		" Indent all file.
 noremap <Leader>a ggVG		" Select all file.
 
 " Splits.
@@ -171,6 +170,7 @@ nnoremap <silent> <Leader>x :bn<CR>	" Next tab.
 nnoremap * *<c-o>			" Don't go to next match.
 
 nnoremap <silent> <leader>d :cd %:p:h<cr>	" cd into current file directory.
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w	" Split current line.
 
 " Magic.
 nnoremap / /\v
@@ -245,6 +245,8 @@ autocmd filetype gitcommit setlocal spell
 autocmd filetype css inoremap { <space>{<CR>}<esc>O
 autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp silent! !ctags -R --exclude=*.so* .
 
+autocmd BufNewFile,BufRead *.t set filetype=cram
+
 " I use a cvs anyway.
 autocmd FileType * autocmd InsertLeave * silent! wa
 " }}}
@@ -257,7 +259,7 @@ autocmd BufReadPost *
       \ endif
 
 " Resize splits when window is resized.
-" autocmd VimResized * :wincmd =
+autocmd VimResized * :wincmd =
 
 
 " Restore foldings.
@@ -266,6 +268,8 @@ autocmd BufReadPost *
 " }}}
 
 " Folds -------------------------------------------------------------- {{{
+" Unfold whole file.
+nnoremap <leader>f mfggvGzO`f
 set foldlevelstart=1
 autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
 autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
