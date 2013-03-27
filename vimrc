@@ -228,55 +228,56 @@ nnoremap <F5> :GundoToggle<CR>
 " autocmd ----------------------------------------------------------------- {{{
 
 " Files ------------------------------------------------------------- {{{
-" makefiles do not like spaces.
-autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab 
+augroup someshit
+  autocmd!
+  autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab 
 
-" These are Ruby files.
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} 
-      \ set ft=ruby
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} 
+	\ set ft=ruby
 
-" These are markdown files.
-autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
-autocmd Filetype markdown setlocal spell
+  autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
+  autocmd Filetype markdown setlocal spell
 
-autocmd filetype gitcommit setlocal textwidth=72
-autocmd filetype gitcommit setlocal spell
+  autocmd filetype gitcommit setlocal textwidth=72
+  autocmd filetype gitcommit setlocal spell
 
-autocmd filetype css inoremap { <space>{<CR>}<esc>O
-autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp silent! !ctags -R --exclude=*.so* .
+  autocmd filetype css inoremap { <space>{<CR>}<esc>O
+  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp silent! !ctags -R --exclude=*.so* .
 
-autocmd BufNewFile,BufRead *.t set filetype=cram
+  autocmd BufNewFile,BufRead *.t set filetype=cram
 
-" I use a cvs anyway.
-autocmd FileType * autocmd InsertLeave * silent! wa
+  autocmd FileType * autocmd InsertLeave * silent! wa
+augroup END
 " }}}
 
 " Interface --------------------------------------------------------- {{{
-" Restore cursor position.
-autocmd BufReadPost *
-      \ if line("'\"") > 1 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
+augroup position
+  autocmd!
+  " Restore cursor position.
+  autocmd BufReadPost *
+	\ if line("'\"") > 1 && line("'\"") <= line("$") |
+	\   exe "normal! g`\"" |
+	\ endif
 
-" Resize splits when window is resized.
-autocmd VimResized * :wincmd =
-
-
-" Restore foldings.
-" autocmd BufWinLeave * silent! mkview
-" autocmd BufWinEnter * silent! loadview
+  " Resize splits when window is resized.
+  autocmd VimResized * :wincmd =
+augroup END
 " }}}
 
 " Folds -------------------------------------------------------------- {{{
 " Unfold whole file.
 nnoremap <leader>f mfggvGzO`f
 set foldlevelstart=1
-autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
-autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
-autocmd Filetype vim setlocal foldmethod=marker
-autocmd FileType html setlocal foldmethod=manual
-autocmd FileType ruby setlocal foldmethod=syntax
-autocmd Filetype ocaml setlocal foldmethod=expr foldexpr=OMLetFoldLevel(v:lnum)
+
+augroup filtypes
+  autocmd!
+  autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
+  autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
+  autocmd Filetype vim setlocal foldmethod=marker
+  autocmd FileType html setlocal foldmethod=manual
+  autocmd FileType ruby setlocal foldmethod=syntax
+  autocmd Filetype ocaml setlocal foldmethod=expr foldexpr=OMLetFoldLevel(v:lnum)
+augroup END
 " }}}
 
 " }}}
@@ -357,7 +358,10 @@ let NERDTreeIgnore = ['\~$', '*.o']
 " }}}
 
 " Ocaml Fold {{{
-autocmd FileType ocaml let g:ocaml_folding = 1
+augroup ocaml
+  autocmd!
+  autocmd FileType ocaml let g:ocaml_folding = 1
+augroup END
 " }}}
 
 " }}}
