@@ -45,11 +45,10 @@ set textwidth=80		" Character limit.
 set colorcolumn=+1		" Highlight character limit.
 set hidden			" Allow buffers to be in the background without saving.
 set laststatus=2		" Show status bar.
-set cmdheight=2		" Status line height.
-set noshowmode		" Hide current mode.
+set cmdheight=2			" Status line height.
+set noshowmode			" Hide current mode.
 set number			" Show line number.
 set showcmd			" Show current command.
-set cursorline		" Highlight current line.
 set list			" Show invisible characters.
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Invisible character list.
 set ruler			" Show line and column in status bar.
@@ -62,14 +61,12 @@ set matchtime=5			"
 set vb t_vb=			" SHUT THE FUCK UP.
 set novisualbell		" SHUT THE FUCK UP.
 set encoding=utf-8		" Character encoding.
-set shortmess=filtIoOA	" Short message.
+set shortmess=filtIoOA		" Short message.
 set report=0			" Report all changes.
 set notimeout			" Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
 set shell=/bin/bash\ --login
-
-" set clipboard=unnamed		" Use system clipboard.
 " }}}
 
 " Backups ----------------------------------------------------------------- {{{
@@ -263,7 +260,8 @@ augroup position
   autocmd!
   " Restore cursor position.
   autocmd BufReadPost *
-	\ if line("'\"") > 1 && line("'\"") <= line("$") |
+	\ if &filetype !~ '^git\c' &&
+	\ line("'\"") > 1 && line("'\"") <= line("$") |
 	\   exe "normal! g`\"" |
 	\ endif
 
@@ -321,7 +319,7 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 let g:ctrlp_match_window_reversed = 0
 
 " The maximum number of files to scan, set to 0 for no limit: >
-let g:ctrlp_max_files = 2500
+let g:ctrlp_max_files = 200
 
 " Ignore these specific files and folders..
 let g:ctrlp_custom_ignore = {
