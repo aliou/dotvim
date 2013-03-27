@@ -64,6 +64,9 @@ set novisualbell		" SHUT THE FUCK UP.
 set encoding=utf-8		" Character encoding.
 set shortmess=filtIoOA	" Short message.
 set report=0			" Report all changes.
+set notimeout			" Timeout on key codes.
+set ttimeout
+set ttimeoutlen=10
 set shell=/bin/bash\ --login
 
 " set clipboard=unnamed		" Use system clipboard.
@@ -198,7 +201,12 @@ cnoremap vhelp vert bo help
 command! SS set spell!
 
 " Go to tag under cursor.
-nnoremap <silent>gt <C-]>
+" Forget that stupid muscle memory shit.
+nnoremap <silent>gt :echo "Use <C-]>, stupid."<CR>
+
+" Jump to tags.
+nnoremap <c-]> <c-]>mzzvzz15<c-e>`z
+nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z
 
 " Tabs
 nnoremap T :tabnew<cr>
@@ -261,6 +269,13 @@ augroup position
 
   " Resize splits when window is resized.
   autocmd VimResized * :wincmd =
+augroup END
+
+augroup cursorline_
+  autocmd!
+  " Hightlight current line in current window and normal mode.
+  autocmd WinLeave,InsertEnter * set nocursorline
+  autocmd WinEnter,InsertLeave * set cursorline
 augroup END
 " }}}
 
