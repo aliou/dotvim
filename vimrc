@@ -216,6 +216,11 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " SHUT THE FUCK UP.
 nnoremap Q <NOP>
+
+" Fold maps.
+nnoremap <leader>f mfggvGzO`f
+nnoremap <Space> za
+vnoremap <Space> za
 " }}}
 
 " <Fx> Maps {{{
@@ -279,7 +284,6 @@ augroup END
 
 " Folds -------------------------------------------------------------- {{{
 " Unfold whole file.
-nnoremap <leader>f mfggvGzO`f
 set foldlevelstart=1
 
 augroup filtypes
@@ -327,14 +331,6 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\v\.(o|exe|netrwhist)|tags$',
       \ }
 let g:ctrlp_extensions = ['tag']
-
-let g:ctrlp_user_command = {
-      \ 'types': {
-      \ 1: ['.git', 'cd %s && git ls-files'],
-      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-      \ },
-      \ 'fallback': 'find %s -type f'
-      \ }
 
 " }}}
 
