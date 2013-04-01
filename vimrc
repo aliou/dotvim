@@ -220,7 +220,6 @@ nnoremap Q <NOP>
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> za
-vnoremap <Space> za
 " }}}
 
 " <Fx> Maps {{{
