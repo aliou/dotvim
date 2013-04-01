@@ -217,6 +217,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " SHUT THE FUCK UP.
 nnoremap Q <NOP>
 
+" Quick file opening.
+nnoremap <leader>lv :tabedit $MYLOCALVIMRC<cr>
+nnoremap <leader>gv :tabedit $MYVIMRC<cr>
+
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> za
