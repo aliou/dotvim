@@ -13,7 +13,10 @@ Then install [Vundle][l2] and the plugins by running:
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
 
-Or just run [this script][l3].
+Or just run the following command:
+    curl -fsSL https://raw.github.com/gist/91851e576aa3917c0ab8 | sh
+
+Read the script [here](https://gist.github.com/aliou/91851e576aa3917c0ab8).
 
 ## Epitech
 

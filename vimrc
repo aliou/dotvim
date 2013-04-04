@@ -217,6 +217,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " SHUT THE FUCK UP.
 nnoremap Q <NOP>
 
+" Quick file opening.
+nnoremap <leader>lv :tabedit $MYLOCALVIMRC<cr>
+nnoremap <leader>gv :tabedit $MYVIMRC<cr>
+
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> za
@@ -251,11 +255,17 @@ augroup someshit
   autocmd filetype gitcommit setlocal spell
 
   autocmd filetype css inoremap { <space>{<CR>}<esc>O
-  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp silent! !ctags -R --exclude=*.so* .
 
   autocmd BufNewFile,BufRead *.t set filetype=cram
 
   autocmd FileType * autocmd InsertLeave * silent! wa
+augroup END
+
+augroup dennisritchie
+  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp
+	\ silent! !ctags -R --exclude=*.so* .
+  autocmd FileType c,cpp
+	\ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
 augroup END
 " }}}
 
