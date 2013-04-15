@@ -201,9 +201,8 @@ command! SS set spell!
 " Forget that stupid muscle memory shit.
 nnoremap <silent>gt :echo "Use <C-]>, stupid."<CR>
 
-" Jump to tags.
-nnoremap <c-]> <c-]>mzzvzz15<c-e>`z
-nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z
+" Open tag in right vertical split.
+nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
 
 " Tabs
 nnoremap T :tabnew<cr>
