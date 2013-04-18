@@ -168,6 +168,8 @@ function InsertPrototypes()
   endif
 endfunction
 
-autocmd BufWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call RemoveSpace()
-autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderCreate(1)
-autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderUpdate()
+if exists('g:epitech_header')
+  autocmd BufWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call RemoveSpace()
+  autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderCreate(1)
+  autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderUpdate()
+endif
