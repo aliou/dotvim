@@ -52,12 +52,12 @@ set showcmd			" Show current command.
 set list			" Show invisible characters.
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Invisible character list.
 set ruler			" Show line and column in status bar.
-set background=dark		" 
+set background=dark		"
 set t_Co=256			" Use 256 colors.
 set scrolloff=999		" Keep the cursor centered in the screen
 set showbreak=↪			" The character to put to show a line has been wrapped
 set showmatch			" Highlight matching braces
-set matchtime=5			" 
+set matchtime=5			"
 set vb t_vb=			" SHUT THE FUCK UP.
 set novisualbell		" SHUT THE FUCK UP.
 set encoding=utf-8		" Character encoding.
@@ -242,9 +242,9 @@ nnoremap <F5> :GundoToggle<CR>
 " Files ------------------------------------------------------------- {{{
 augroup someshit
   autocmd!
-  autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab 
+  autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
-  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} 
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
 	\ set ft=ruby
 
   autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
@@ -392,7 +392,7 @@ augroup END
 
 " Local shit ------------------------------------------------------------- {{{
 " Source local file if it exists.
-if filereadable(glob("~/.vimrc.local")) 
+if filereadable(glob("~/.vimrc.local"))
   let $MYLOCALVIMRC="~/.vimrc.local"
   source $MYLOCALVIMRC
 endif
