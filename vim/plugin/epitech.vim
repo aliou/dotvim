@@ -108,7 +108,7 @@ function HeaderCreate(new)
     setl fo+=o fo+=r fo+=a fo+=c
     setl autoindent smartindent cindent
     if (expand("%:e") == "h" || expand("%:e") == "hh" || expand("%:e") == "hpp") && a:new
-      call s:ProtectHeaders()
+      call ProtectHeaders()
       call InsertPrototypes()
     else
       execute "normal! G"
@@ -125,7 +125,7 @@ function HeaderF10()
   endif
 endfunction
 
-function s:ProtectHeaders()
+function ProtectHeaders()
   let filename = substitute(toupper(expand("%:t")), "\\.", "_", "g") . "_"
     execute "normal! Go" .
       \ '#ifndef '. filename . "\n".
@@ -172,4 +172,6 @@ if exists('g:epitech_header')
   autocmd BufWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call RemoveSpace()
   autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderCreate(1)
   autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderUpdate()
+else
+  autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call ProtectHeaders()
 endif
