@@ -173,5 +173,5 @@ if exists('g:epitech_header')
   autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderCreate(1)
   autocmd BufWritePre,FileWritePre *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call HeaderUpdate()
 else
-  autocmd BufNewFile *.c,*.h,Makefile,*.cpp,*.hh,*.hpp call ProtectHeaders()
+  autocmd BufNewFile *.h,*.hh,*.hpp call ProtectHeaders()
 endif
