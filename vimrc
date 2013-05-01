@@ -222,7 +222,7 @@ nnoremap <leader>gv :tabedit $MYVIMRC<cr>
 
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
-nnoremap <Space> zA
+nnoremap <Space> za
 " }}}
 
 " <Fx> Maps {{{
