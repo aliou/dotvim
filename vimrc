@@ -296,7 +296,7 @@ set foldlevelstart=1
 
 augroup filtypes
   autocmd!
-  autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType c,cpp,cs setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype vim setlocal foldmethod=marker
   autocmd FileType html setlocal foldmethod=manual
