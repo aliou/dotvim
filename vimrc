@@ -66,7 +66,6 @@ set report=0			" Report all changes.
 set notimeout			" Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
-set shell=/bin/bash\ --login
 " }}}
 
 " Backups ----------------------------------------------------------------- {{{
