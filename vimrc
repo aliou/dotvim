@@ -13,7 +13,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'scratch.vim'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'kien/ctrlp.vim'
