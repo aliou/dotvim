@@ -18,6 +18,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'Lokaltog/powerline', { 'rtp': 'powerline/bindings/vim/' }
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-obsession'
