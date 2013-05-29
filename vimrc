@@ -229,6 +229,9 @@ nnoremap <F4> :set paste!<CR>
 inoremap <F5> <ESC>:GundoToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 
+" Remap W to w so vim shuts the fuck up.
+command W w
+
 " }}}
 
 " autocmd ----------------------------------------------------------------- {{{
