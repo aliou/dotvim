@@ -196,10 +196,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 cnoremap vhelp vert bo help
 command! SS set spell!
 
-" Go to tag under cursor.
-" Forget that stupid muscle memory shit.
-nnoremap <silent>gt :echo "Use <C-]>, stupid."<CR>
-
 " Open tag in right vertical split.
 nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
 
@@ -233,6 +229,9 @@ inoremap <F4> <ESC>:set paste!<CR>i
 nnoremap <F4> :set paste!<CR>
 inoremap <F5> <ESC>:GundoToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+
+" Remap W to w so vim shuts the fuck up.
+command W w
 
 " }}}
 
