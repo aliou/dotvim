@@ -22,6 +22,6 @@ vim +BundleInstall +qall
 If you are an Epitech student, remember to change these [lines][l1] with your login
 and name.
 
-[l1]: https://github.com/aliou/dotvim/blob/master/vim/plugin/epitech/header.vim#L17-18
+[l1]: https://github.com/aliou/dotvim/blob/master/vim/plugin/epitech.vim#L17-18
 [l2]: https://github.com/gmarik/vundle
-[l3]: https://gist.github.com/aliou/91851e576aa3917c0ab8
+
