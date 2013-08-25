@@ -66,6 +66,7 @@ set report=0			" Report all changes.
 set notimeout			" Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
+set bs=indent,eol,start		" Backspace over everything in insert mode.
 " }}}
 
 " Backups ----------------------------------------------------------------- {{{
