@@ -253,7 +253,7 @@ augroup someshit
   autocmd filetype gitcommit setlocal textwidth=72
   autocmd filetype gitcommit setlocal spell
 
-  autocmd filetype css inoremap { <space>{<CR>}<esc>O
+  autocmd filetype css inoremap { {<CR>}<esc>O
 
   autocmd BufNewFile,BufRead *.t set filetype=cram
 
