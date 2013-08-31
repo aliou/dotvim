@@ -15,7 +15,9 @@ Bundle 'gmarik/vundle'
 
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'elzr/vim-json'
 Bundle 'kien/ctrlp.vim'
+Bundle 'othree/html5.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -252,6 +254,8 @@ augroup someshit
 
   autocmd filetype gitcommit setlocal textwidth=72
   autocmd filetype gitcommit setlocal spell
+
+  autocmd BufNewFile,BufRead *.json set filetype=json
 
   autocmd filetype css inoremap { {<CR>}<esc>O
 
