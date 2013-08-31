@@ -16,9 +16,9 @@ Bundle 'gmarik/vundle'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/powerline', { 'rtp': 'powerline/bindings/vim/' }
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-obsession'
@@ -386,6 +386,11 @@ augroup ocaml
   autocmd!
   autocmd FileType ocaml let g:ocaml_folding = 1
 augroup END
+" }}}
+
+" Airline {{{
+let g:airline_theme="powerlineish"
+let g:airline_powerline_fonts = 1
 " }}}
 
 " }}}
