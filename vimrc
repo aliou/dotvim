@@ -113,7 +113,7 @@ endfunction
 " Tabs -------------------------------------------------------------------- {{{
 set autoindent			" Copy indentation for new line.
 set smartindent			" Autoindent.
-set shiftwidth=2			" Number of spaces for indent.
+set shiftwidth=2		" Number of spaces for indent.
 " }}}
 
 " Wildmenu completion  ----------------------------------------------------{{{
