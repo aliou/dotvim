@@ -1,5 +1,5 @@
 " vimrc
-" Author: Aliou Diallo <aliou.diallo@me.com>
+" Author: Aliou Diallo <aliou@aliou.me>
 " Source: https://github.com/aliou/dotvim/blob/master/vimrc
 
 " Init -------------------------------------------------------------------- {{{
@@ -97,7 +97,7 @@ set hlsearch				" Highlight results
 set ignorecase			" Ignore casing of searches
 set incsearch				" Start showing results as you type
 set smartcase				" Be smart about case sensitivity when searching
-set nostartofline			" Don't go back to the start of the line.
+set nostartofline		" Don't go back to the start of the line.
 set gdefault				" sed is global by default. g to toggle.
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'	" Match git conflict shit.
 
@@ -247,7 +247,7 @@ augroup someshit
   autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
-	\ set ft=ruby
+        \ set ft=ruby
 
   autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
   autocmd Filetype markdown setlocal spell
@@ -266,9 +266,9 @@ augroup END
 
 augroup dennisritchie
   autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp
-	\ silent! !ctags -R --exclude=*.so* .
+        \ silent! !ctags -R --exclude=*.so* .
   autocmd FileType c,cpp
-	\ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
+        \ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
 augroup END
 " }}}
 
@@ -277,10 +277,10 @@ augroup position
   autocmd!
   " Restore cursor position.
   autocmd BufReadPost *
-	\ if &filetype !~ '^git\c' &&
-	\ line("'\"") > 1 && line("'\"") <= line("$") |
-	\   exe "normal! g`\"" |
-	\ endif
+        \ if &filetype !~ '^git\c' &&
+        \ line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
 
   " Resize splits when window is resized.
   autocmd VimResized * :wincmd =
@@ -393,8 +393,12 @@ augroup END
 " }}}
 
 " Airline {{{
-let g:airline_theme="powerlineish"
+let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts = 1
+let g:airline_symbols = {}
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline#extensions#whitespace#trailing_format = '[%s]'
+let g:airline#extensions#whitespace#mixed_indent_format = '[%s]'
 " }}}
 
 " }}}
