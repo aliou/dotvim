@@ -114,6 +114,8 @@ endfunction
 set autoindent			" Copy indentation for new line.
 set smartindent			" Autoindent.
 set shiftwidth=2		" Number of spaces for indent.
+set tabstop=2
+set expandtab
 " }}}
 
 " Wildmenu completion  ----------------------------------------------------{{{
