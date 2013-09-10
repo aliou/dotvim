@@ -20,7 +20,8 @@ vim +BundleInstall +qall
 ## Epitech
 
 If you are an Epitech student, remember to change these [lines][l1] with your login
-and name.
+and name and set `g:epitech_header` so the Epitech header is automatically
+inserted.
 
 [l1]: https://github.com/aliou/dotvim/blob/master/vim/plugin/epitech.vim#L17-18
 [l2]: https://github.com/gmarik/vundle
