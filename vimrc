@@ -15,9 +15,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'elzr/vim-json'
 Bundle 'kien/ctrlp.vim'
-Bundle 'othree/html5.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -25,6 +23,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-obsession'
 Bundle 'scrooloose/syntastic'
+Bundle 'sheerun/vim-polyglot'
 
 " Colors
 Bundle 'holokai'
@@ -397,8 +396,13 @@ augroup END
 " Airline {{{
 let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts = 1
-let g:airline_symbols = {}
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.paste = 'ρ'
+
 let g:airline#extensions#whitespace#trailing_format = '[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = '[%s]'
 " }}}
