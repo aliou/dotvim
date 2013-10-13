@@ -198,7 +198,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 " Open help in vertical split.
 cnoremap vhelp vert bo help
-command! SS set spell!
 
 " Open tag in right vertical split.
 nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
@@ -222,6 +221,9 @@ nnoremap <leader>gv :tabedit $MYVIMRC<cr>
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> za
+
+command! SS set spell!
+command! TMC set list! number!
 " }}}
 
 " <Fx> Maps {{{
@@ -340,7 +342,7 @@ let g:ctrlp_max_files = 200
 
 " Ignore these specific files and folders..
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp)$',
+      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules)$',
       \ 'file': '\v\.(o|exe|netrwhist)|tags$',
       \ }
 let g:ctrlp_extensions = ['tag']
