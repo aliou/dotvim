@@ -306,7 +306,7 @@ augroup filtypes
   autocmd FileType c,cpp,cs setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype vim setlocal foldmethod=marker
-  autocmd FileType html setlocal foldmethod=manual
+  autocmd FileType html setlocal foldmethod=indent
   autocmd FileType ruby setlocal foldmethod=syntax
   autocmd Filetype ocaml setlocal foldmethod=expr foldexpr=OMLetFoldLevel(v:lnum)
 augroup END
