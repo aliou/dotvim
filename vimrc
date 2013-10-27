@@ -97,7 +97,7 @@ set ignorecase			" Ignore casing of searches
 set incsearch				" Start showing results as you type
 set smartcase				" Be smart about case sensitivity when searching
 set nostartofline		" Don't go back to the start of the line.
-set gdefault				" sed is global by default. g to toggle.
+set gdefault				" Substitution is global by default. g to toggle.
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'	" Match git conflict shit.
 
 " Visual search. Stolen from @sjl.
@@ -178,20 +178,14 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w	" Split current line.
 " Magic.
 nnoremap / /\v
 vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 
 " Resize splits.
 if bufwinnr(1)
   noremap + <C-W>+
   noremap - <C-W>-
 endif
-
-" Move in insert mode.
-inoremap <c-d> <c-o>x
-inoremap <c-u> <c-o>u
-inoremap <c-j> <c-o>j
-inoremap <c-k> <c-o>k
-inoremap <c-l> <c-o>l
-inoremap <c-h> <c-o>h
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -261,8 +255,6 @@ augroup someshit
   autocmd BufNewFile,BufRead *.json set filetype=json
 
   autocmd filetype css inoremap { {<CR>}<esc>O
-
-  autocmd BufNewFile,BufRead *.t set filetype=cram
 
   autocmd FileType * autocmd InsertLeave * silent! wa
 augroup END
@@ -362,16 +354,12 @@ let g:syntastic_enable_signs=1
 
 " Don't check syntax for these filetypes.
 let g:syntastic_mode_map = { "mode": "active",
-      \			"active_filetypes": [],
-      \			"passive_filetypes": ['html', 'css'] }
+      \ "active_filetypes": [],
+      \ "passive_filetypes": ['html', 'css'] }
 
 " Customize warning and error gutter symbols.
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_error_symbol='✗'
-
-" Specify the height of the location lists that syntastic opens.
-let g:syntastic_loc_list_height=5
-
 " }}}
 
 " tComment {{{
