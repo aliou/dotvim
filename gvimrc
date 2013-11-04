@@ -2,7 +2,7 @@
 " Author: Aliou Diallo <aliou.diallo@me.com>
 " Source: https://github.com/aliou/dotvim/blob/master/gvimrc
 
-" gvim ------------------------------------------------------------------- {{{ 
+" gvim ------------------------------------------------------------------- {{{
     set go-=m
     set go-=T
     set go-=l

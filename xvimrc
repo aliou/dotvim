@@ -1,0 +1,3 @@
+inoremap jj <esc>
+set number
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
