@@ -42,6 +42,7 @@ filetype indent plugin on
 
 let mapleader = ","		" <Leader> key.
 set autoread			" Update modified files outside of VIM.
+set cursorline " Highlight current line.
 set textwidth=80		" Character limit.
 set colorcolumn=+1		" Highlight character limit.
 set hidden			" Allow buffers to be in the background without saving.
@@ -279,13 +280,6 @@ augroup position
 
   " Resize splits when window is resized.
   autocmd VimResized * :wincmd =
-augroup END
-
-augroup cursorline_
-  autocmd!
-  " Hightlight current line in current window and normal mode.
-  autocmd WinLeave,InsertEnter * set nocursorline
-  autocmd WinEnter,InsertLeave * set cursorline
 augroup END
 " }}}
 
