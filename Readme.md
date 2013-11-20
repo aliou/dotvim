@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-# Backup your .vim and .vimrc files before running this.
+# Backup your .vim, .vimrc and .gvimrc files before running this.
 git clone git://github.com/aliou/dotvim.git ~/.dotvim
 ln -s ~/.dotvim/vim ~/.vim
 ln -s ~/.dotvim/vimrc ~/.vimrc
