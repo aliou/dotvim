@@ -249,6 +249,7 @@ augroup someshit
 
   autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
   autocmd Filetype markdown setlocal spell
+  autocmd Filetype markdown setlocal textwidth=90000
 
   autocmd filetype gitcommit setlocal textwidth=72
   autocmd filetype gitcommit setlocal spell
