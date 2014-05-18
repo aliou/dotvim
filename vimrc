@@ -329,7 +329,7 @@ let g:ctrlp_max_files = 200
 
 " Ignore these specific files and folders..
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules)$',
+      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site)$',
       \ 'file': '\v\.(o|exe|netrwhist)|tags$',
       \ }
 let g:ctrlp_extensions = ['tag']
