@@ -357,7 +357,7 @@ map <Leader>c <C-_><C-_>
 " }}}
 
 " NERDTree {{{
-let NERDTreeWinPos = "right"
+let NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\~$', '*.o']
 " }}}
 
