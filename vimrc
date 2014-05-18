@@ -63,7 +63,7 @@ set matchtime=5			"
 set vb t_vb=			" SHUT THE FUCK UP.
 set novisualbell		" SHUT THE FUCK UP.
 set encoding=utf-8		" Character encoding.
-set shortmess=filtIoOA		" Short message.
+set shortmess=filtoOA		" Short message.
 set report=0			" Report all changes.
 set notimeout			" Timeout on key codes.
 set ttimeout
