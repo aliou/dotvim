@@ -8,6 +8,7 @@ git clone git://github.com/aliou/dotvim.git ~/.dotvim
 ln -s ~/.dotvim/vim ~/.vim
 ln -s ~/.dotvim/vimrc ~/.vimrc
 ln -s ~/.dotvim/gvimrc ~/.gvimrc
+ln -s ~/.dotvim/xvimrc ~/.xvimrc
 echo "color base16-default" >> ~/.vimrc.local
 cd ~/.dotvim
 ```
