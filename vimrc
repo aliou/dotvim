@@ -253,8 +253,6 @@ augroup someshit
 
   autocmd BufNewFile,BufRead *.json set filetype=json
 
-  autocmd filetype css inoremap <buffer> { {<CR>}<esc>O
-
   autocmd FileType * autocmd InsertLeave * silent! wa
 augroup END
 
