@@ -1,3 +1,19 @@
-inoremap jj <esc>
+let mapleader = "," " Leader Key.
+
 set number
+
+inoremap jj <esc>
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+noremap ,a ggVG
+
+" Stay in visual mode when identing.
+vnoremap > >gv
+vnoremap < <gv
+
+" Qwerty keyboard.
+nnoremap ; :
+vnoremap ; :
+
+" Monkeypatching
+nnoremap ,c I//<space><esc>==
+vnoremap D VD
