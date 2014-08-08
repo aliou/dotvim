@@ -281,7 +281,7 @@ augroup END
 
 " Folds -------------------------------------------------------------- {{{
 " Unfold whole file.
-set foldlevelstart=1
+set foldlevelstart=5
 
 augroup filtypes
   autocmd!
@@ -359,25 +359,10 @@ let NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\~$', '*.o']
 " }}}
 
-" Ocaml Fold {{{
-augroup ocaml
-  autocmd!
-  autocmd FileType ocaml let g:ocaml_folding = 1
-augroup END
-" }}}
-
 " Airline {{{
 let g:airline_theme="bubblegum"
-let g:airline_powerline_fonts = 1
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.paste = 'ρ'
-
-let g:airline#extensions#whitespace#trailing_format = '[%s]'
-let g:airline#extensions#whitespace#mixed_indent_format = '[%s]'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 " }}}
 
 " }}}
