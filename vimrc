@@ -16,13 +16,13 @@ Bundle 'gmarik/vundle'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-obsession'
 Bundle 'scrooloose/syntastic'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'itchyny/lightline.vim'
 
 " Colors
 Bundle 'sjl/badwolf'
@@ -359,10 +359,10 @@ let NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\~$', '*.o']
 " }}}
 
-" Airline {{{
-let g:airline_theme="bubblegum"
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+" Lightline {{{
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 " }}}
 
 " }}}
