@@ -116,7 +116,6 @@ set expandtab
 " }}}
 
 " Wildmenu completion  ----------------------------------------------------{{{
-
 set wildmenu				" Comandline completion.
 set wildmode=list:longest,full	" Show a list and match the longest first.
 
@@ -148,12 +147,6 @@ noremap gk k
 " Stay in visual mode when identing.
 vnoremap > >gv
 vnoremap < <gv
-
-" Stay in middle of window.
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
-
-noremap <Leader>a ggVG		" Select all file.
 
 " Splits.
 nnoremap <silent> ss :split<CR><C-W>j
@@ -203,9 +196,6 @@ nnoremap L :tabnext<cr>
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
-" SHUT THE FUCK UP.
-nnoremap Q <NOP>
-
 " Quick file opening.
 nnoremap <leader>lv :tabedit $MYLOCALVIMRC<cr>
 nnoremap <leader>gv :tabedit $MYVIMRC<cr>
@@ -216,22 +206,10 @@ nnoremap <Space> za
 
 command! SS set spell!
 command! TMC set list! number!
-" }}}
-
-" <Fx> Maps {{{
-inoremap <F2> <ESC>:NERDTreeToggle<CR>
-nnoremap <F2> :NERDTreeToggle<CR>
-inoremap <F3> <ESC>:w<CR>:! clear ; echo '\#use "%";;' \| ocaml<cr>
-nnoremap <F3> :w<cr>:! clear ; echo '\#use "%";;' \| ocaml<cr>
-inoremap <F4> <ESC>:set paste!<CR>i
-nnoremap <F4> :set paste!<CR>
-inoremap <F5> <ESC>:GundoToggle<CR>
-nnoremap <F5> :GundoToggle<CR>
-
+"
 " Remap W to w and Q to q so vim shuts the fuck up.
 command W w
 command Q q
-
 " }}}
 
 " autocmd ----------------------------------------------------------------- {{{
