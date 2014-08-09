@@ -341,6 +341,10 @@ let NERDTreeIgnore = ['\~$', '*.o']
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
+let g:lightline.active = {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \           [ 'readonly', 'relativepath', 'modified' ] ] }
 " }}}
 
 " }}}
