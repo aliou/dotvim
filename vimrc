@@ -11,25 +11,25 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'sjl/clam.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-obsession'
-Bundle 'scrooloose/syntastic'
-Bundle 'sheerun/vim-polyglot'
-Bundle 'itchyny/lightline.vim'
+Plugin 'sjl/clam.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-obsession'
+Plugin 'scrooloose/syntastic'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'itchyny/lightline.vim'
 
 " Colors
-Bundle 'sjl/badwolf'
-Bundle 'tomasr/molokai'
-Bundle 'godlygeek/csapprox'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'chriskempson/base16-vim'
+Plugin 'sjl/badwolf'
+Plugin 'tomasr/molokai'
+Plugin 'godlygeek/csapprox'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'chriskempson/base16-vim'
 
 syntax on
 filetype indent plugin on
