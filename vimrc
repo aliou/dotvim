@@ -148,6 +148,8 @@ noremap gk k
 vnoremap > >gv
 vnoremap < <gv
 
+noremap <Leader>a ggVG		" Select all file.
+
 " Splits.
 nnoremap <silent> ss :split<CR><C-W>j
 nnoremap <silent> vv :vsplit<CR><C-W>l
