@@ -1,5 +1,5 @@
 " vimrc
-" Author: Aliou Diallo <aliou@aliou.me>
+" Author: Aliou Diallo <code@aliou.me>
 " Source: https://github.com/aliou/dotvim/blob/master/vimrc
 
 " Init -------------------------------------------------------------------- {{{
@@ -16,18 +16,15 @@ Plugin 'gmarik/vundle'
 Plugin 'sjl/clam.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'scrooloose/syntastic'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
 
 " Colors
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
-Plugin 'godlygeek/csapprox'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
 
@@ -159,7 +156,6 @@ nnoremap <silent> // :nohlsearch<CR>	" Remove search highligts.
 nnoremap <leader>qq :cclose<CR> 	" Close quickfix window.
 nnoremap <Leader><Leader> <C-^>	" Switch to alternate file.
 
-nnoremap <silent> <Leader>w :bp<CR>	" Previous tab. (AZERTY)
 nnoremap <silent> <Leader>z :bp<CR>	" Previous tab. (QWERTY)
 nnoremap <silent> <Leader>x :bn<CR>	" Next tab.
 
@@ -307,8 +303,6 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site)$',
       \ 'file': '\v\.(o|exe|netrwhist)|tags$',
       \ }
-let g:ctrlp_extensions = ['tag']
-
 " }}}
 
 " Syntastic {{{
