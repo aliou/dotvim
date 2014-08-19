@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'scrooloose/syntastic'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
 
 " Colors
