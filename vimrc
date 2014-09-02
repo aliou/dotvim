@@ -187,6 +187,9 @@ cnoremap vhelp vert bo help
 " Open tag in right vertical split.
 nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
 
+" Set paste remap.
+nnoremap <leader>p :set paste!<CR>
+
 " Tabs
 nnoremap T :tabnew<cr>
 nnoremap H :tabprev<cr>
