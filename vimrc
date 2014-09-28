@@ -238,10 +238,8 @@ augroup someshit
 augroup END
 
 augroup dennisritchie
-  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp
-        \ silent! !ctags -R --exclude=*.so* .
   autocmd FileType c,cpp
-        \ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
+      \ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
 augroup END
 " }}}
 
