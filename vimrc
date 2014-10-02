@@ -16,17 +16,17 @@ Plugin 'gmarik/vundle'
 Plugin 'sjl/clam.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'aliou/moriarty.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
-Plugin 'scrooloose/syntastic'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
+Plugin 'airblade/vim-gitgutter'
 
 " Colors
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
+Plugin 'aliou/moriarty.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
 
@@ -39,8 +39,6 @@ filetype indent plugin on
 let mapleader = ","		" <Leader> key.
 set autoread			" Update modified files outside of VIM.
 set cursorline " Highlight current line.
-set textwidth=80		" Character limit.
-set colorcolumn=+1		" Highlight character limit.
 set hidden			" Allow buffers to be in the background without saving.
 set laststatus=2		" Show status bar.
 set cmdheight=2			" Status line height.
@@ -88,14 +86,15 @@ if !isdirectory(expand(&directory))
 endif
 " }}}
 
-" Search ------------------------------------------------------------------ {{{
-set hlsearch				" Highlight results
-set ignorecase			" Ignore casing of searches
-set incsearch				" Start showing results as you type
-set smartcase				" Be smart about case sensitivity when searching
-set nostartofline		" Don't go back to the start of the line.
-set gdefault				" Substitution is global by default. g to toggle.
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'	" Match git conflict shit.
+" Functions --------------------------------------------------------------- {{{
+" Toggle the text width and the color column.
+function! ToggleWidth()
+  if &l:textwidth >= 80
+    set tw=0 cc=0
+  else
+    set tw=80 cc=+1
+  endif
+endfunction
 
 " Visual search. Stolen from @sjl.
 function! s:VSetSearch()
@@ -104,6 +103,16 @@ function! s:VSetSearch()
   let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
   let @@ = temp
 endfunction
+" }}}
+
+" Search ------------------------------------------------------------------ {{{
+set hlsearch				" Highlight results
+set ignorecase			" Ignore casing of searches
+set incsearch				" Start showing results as you type
+set smartcase				" Be smart about case sensitivity when searching
+set nostartofline		" Don't go back to the start of the line.
+set gdefault				" Substitution is global by default. g to toggle.
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'	" Match git conflict shit.
 " }}}
 
 " Tabs -------------------------------------------------------------------- {{{
@@ -185,7 +194,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 cnoremap vhelp vert bo help
 
 " Open tag in right vertical split.
-nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
+" nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
 
 " Set paste remap.
 nnoremap <leader>p :set paste!<CR>
@@ -207,12 +216,16 @@ nnoremap <leader>gv :tabedit $MYVIMRC<cr>
 nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> za
 
+" Quick toggle.
 command! SS set spell!
 command! TMC set list! number!
 "
 " Remap W to w and Q to q so vim shuts the fuck up.
 command W w
 command Q q
+
+" Toggle tw and cc.
+nnoremap <Leader>w :call ToggleWidth()<CR>
 " }}}
 
 " autocmd ----------------------------------------------------------------- {{{
@@ -290,7 +303,9 @@ nnoremap <Leader>t :CtrlP<cr>
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
 " Additional mapping for buffer search
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+nnoremap <leader>y :CtrlPCurWD<CR>
 
 " Change the listing order of the files in the match window.
 let g:ctrlp_match_window_reversed = 0
