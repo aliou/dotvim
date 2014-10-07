@@ -16,11 +16,11 @@ Plugin 'gmarik/vundle'
 Plugin 'sjl/clam.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 
 " Colors
@@ -348,14 +348,25 @@ let NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\~$', '*.o']
 " }}}
 
-" Lightline {{{
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+" Airline {{{
+let g:airline_theme="bubblegum"
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#hunks#enabled = 0
 
-let g:lightline.active = {
-      \ 'left': [ [ 'mode', 'paste' ],
-      \           [ 'readonly', 'relativepath', 'modified' ] ] }
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 " }}}
 
 " }}}
