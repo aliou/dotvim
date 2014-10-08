@@ -218,7 +218,7 @@ nnoremap <Space> za
 
 " Quick toggle.
 command! SS set spell!
-command! TMC set list! number!
+command! TMC set list! number! | GitGutterToggle
 "
 " Remap W to w and Q to q so vim shuts the fuck up.
 command W w
