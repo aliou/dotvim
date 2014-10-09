@@ -26,6 +26,7 @@ Plugin 'airblade/vim-gitgutter'
 " Colors
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
+Plugin 'w0ng/vim-hybrid'
 Plugin 'aliou/moriarty.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
