@@ -9,7 +9,7 @@ ln -s ~/.dotvim/vim ~/.vim
 ln -s ~/.dotvim/vimrc ~/.vimrc
 ln -s ~/.dotvim/gvimrc ~/.gvimrc
 ln -s ~/.dotvim/xvimrc ~/.xvimrc
-echo "color base16-default" >> ~/.vimrc.local
+echo "color jellybeans" >> ~/.vimrc.local
 cd ~/.dotvim
 ```
 
