@@ -370,6 +370,18 @@ let g:airline_mode_map = {
     \ }
 " }}}
 
+" Environments ----------------------------------------------------------- {{{
+if has('gui_running')
+  set go-=m
+  set go-=T
+  set go-=l
+  set go-=L
+  set go-=r
+  set go-=R
+
+  " Save on focus.
+  autocmd FocusLost * silent! wa
+endif
 " }}}
 
 " Local shit ------------------------------------------------------------- {{{
