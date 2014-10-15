@@ -64,6 +64,7 @@ set notimeout			" Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
 set bs=indent,eol,start		" Backspace over everything in insert mode.
+set lazyredraw
 " }}}
 
 " Backups ----------------------------------------------------------------- {{{
@@ -210,8 +211,8 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " Quick file opening.
-nnoremap <leader>lv :tabedit $MYLOCALVIMRC<cr>
-nnoremap <leader>gv :tabedit $MYVIMRC<cr>
+nnoremap <leader>lv :vsplit $MYLOCALVIMRC<cr><CR><C-W>l
+nnoremap <leader>gv :vsplit $MYVIMRC<cr><CR><C-W>l
 
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
