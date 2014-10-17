@@ -64,7 +64,6 @@ set notimeout			" Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
 set bs=indent,eol,start		" Backspace over everything in insert mode.
-set lazyredraw
 " }}}
 
 " Backups ----------------------------------------------------------------- {{{
@@ -351,7 +350,6 @@ let NERDTreeIgnore = ['\~$', '*.o']
 " }}}
 
 " Airline {{{
-let g:airline_theme="bubblegum"
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#hunks#enabled = 0
