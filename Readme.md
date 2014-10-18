@@ -1,4 +1,4 @@
-# Vim settings.
+## Description
 
 These are my Vim configuration files. [There are][steve-losh] [many like][pengwynn]
 [it][sanctum], but these are mine.
@@ -6,22 +6,26 @@ These are my Vim configuration files. [There are][steve-losh] [many like][pengwy
 ## Install
 
 ```sh
-# Backup your .vim, .vimrc and .gvimrc files before running this.
+# Backup your .vim and .vimrc before running this.
 git clone git://github.com/aliou/dotvim.git ~/.dotvim
 ln -s ~/.dotvim/vim ~/.vim
 ln -s ~/.dotvim/vimrc ~/.vimrc
 
-# Set a colorscheme
+# Set a colors
 echo "color hybrid" >> ~/.vimrc.local
 echo "let g:airline_theme='lucius'; >> ~/.vimrc.local
-
 
 # Then install Vundle and the other plugins:
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 ```
 
-## Epitech
+## Alternatives
+Theses files are really tailored to my use and might not be the best for you. In
+this case, I recommend @[skwp's][skwp-dotfiles] and [@sjl's][steve-losh]
+dotfiles.
+
+### Epitech
 
 If you are an Epitech student, remember to change these [lines][l1] with your login
 and name and set `g:epitech_header` so the Epitech header is automatically
@@ -32,3 +36,4 @@ inserted.
 [steve-losh]: https://bitbucket.org/sjl/dotfiles/
 [pengwynn]: https://github.com/pengwynn/dotfiles
 [sanctum]: https://github.com/tejr/dotfiles
+[skwp-dotfiles]: http://skwp.github.io/dotfiles/
