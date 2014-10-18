@@ -1,4 +1,9 @@
-" Shamelessly stolen from @dinosaure.
+" Description: Epitech Header generation file.
+" Usage:       Set the variables `s:login` and `s:name` below and add set the
+"              variable `g:epitech_header` somewhere in your vimrc.
+"
+" Notes:       This was shamelessly stolen from @dinosaure while stalking his
+"              twitter.
 function! RemoveSpace()
   let pos = line(".")
   let ext = expand("%:e")
