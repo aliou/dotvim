@@ -17,11 +17,13 @@ Plugin 'sjl/clam.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'kristijanhusak/vim-multiple-cursors'
 
 " Colors
 Plugin 'sjl/badwolf'
