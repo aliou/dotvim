@@ -13,7 +13,7 @@ ln -s ~/.dotvim/vimrc ~/.vimrc
 
 # Set a colors
 echo "color hybrid" >> ~/.vimrc.local
-echo "let g:airline_theme='lucius'; >> ~/.vimrc.local
+echo "let g:airline_theme='lucius'" >> ~/.vimrc.local
 
 # Then install Vundle and the other plugins:
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
