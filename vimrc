@@ -18,6 +18,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
@@ -369,6 +370,29 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+" }}}
+
+" Startify {{{
+" Custom header that shows the current directory's name.
+let g:startify_custom_header =
+      \ map(split(system('figlet -f slant `basename $PWD`'), '\n'),
+      \ '"   ". v:val')
+
+" Handy bookmarks.
+let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.bashrc.local']
+
+" When opening recent file, change to `%w(git svn hg).sample` root folder.
+let g:startify_change_to_vcs_root = 1
+
+let g:startify_files_number = 5
+let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
+
+let g:startify_custom_footer = [''] +
+      \ map(split(system('echo -e "\n\n" && fortune'), '\n'), '"   ". v:val') +
+      \ ['']
+
+" }}}
+
 " }}}
 
 " Environments ----------------------------------------------------------- {{{
