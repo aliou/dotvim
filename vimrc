@@ -213,8 +213,8 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " Quick file opening.
-nnoremap <leader>lv :vsplit $MYLOCALVIMRC<cr><CR><C-W>l
-nnoremap <leader>gv :vsplit $MYVIMRC<cr><CR><C-W>l
+nnoremap <leader>lv :vsplit $MYLOCALVIMRC<cr>
+nnoremap <leader>gv :vsplit $MYVIMRC<cr>
 
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
@@ -376,7 +376,7 @@ let g:airline_mode_map = {
 " Custom header that shows the current directory's name.
 let g:startify_custom_header =
       \ map(split(system('figlet -f slant `basename $PWD`'), '\n'),
-      \ '"   ". v:val')
+      \ '"   ". v:val') + ['']
 
 " Handy bookmarks.
 let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.bashrc.local']
