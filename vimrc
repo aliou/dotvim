@@ -378,6 +378,17 @@ let g:startify_custom_header =
       \ map(split(system('figlet -f slant `basename $PWD`'), '\n'),
       \ '"   ". v:val') + ['']
 
+let g:startify_list_order = [
+      \ ['   Last recently modified files in the current directory:'],
+      \ 'dir',
+      \ ['   Last recently opened files:'],
+      \ 'files',
+      \ ['   My sessions:'],
+      \ 'sessions',
+      \ ['   My bookmarks:'],
+      \ 'bookmarks',
+      \ ]
+
 " Handy bookmarks.
 let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.bashrc.local']
 
