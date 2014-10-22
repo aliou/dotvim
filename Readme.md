@@ -20,6 +20,18 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 ```
 
+### Update
+```sh
+# Download the upstream changes and apply your changes on top.
+git pull --rebase
+
+# Install eventual new plugins.
+vim +BundleInstall +qall
+
+# Remove eventual unused plugins.
+vim +BundleClean
+```
+
 ## Alternatives
 Theses files are really tailored to my use and might not be the best for you. In
 this case, I recommend @[skwp's][skwp-dotfiles] and [@sjl's][steve-losh]
