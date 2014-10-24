@@ -179,6 +179,8 @@ nnoremap * *<c-o>			" Don't go to next match.
 nnoremap <silent> <leader>d :cd %:p:h<cr>	" cd into current file directory.
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w	" Split current line.
 
+nnoremap \= :wincmd =<cr>
+
 " Magic.
 nnoremap / /\v
 vnoremap / /\v
