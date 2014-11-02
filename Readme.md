@@ -39,9 +39,14 @@ dotfiles.
 
 ### Epitech
 
-If you are an Epitech student, remember to change these [lines][l1] with your login
-and name and set `g:epitech_header` so the Epitech header is automatically
-inserted.
+If you are an Epitech student, remember to change these [lines][l1] with your
+login and name and set `g:epitech_header` so the Epitech header is automatically
+inserted for C, C++, Java and Make files like this:
+
+```vimscript
+" ~/.vimrc
+let g:epitech_header = 1
+```
 
 [l1]: https://github.com/aliou/dotvim/blob/master/vim/plugin/epitech.vim#L17-18
 [l2]: https://github.com/gmarik/vundle
