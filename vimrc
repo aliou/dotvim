@@ -319,6 +319,10 @@ let g:ctrlp_match_window_reversed = 0
 " The maximum number of files to scan, set to 0 for no limit: >
 let g:ctrlp_max_files = 0
 
+" Don't jump to already open window. This is annoying if you are maintaining
+" several Tab workspaces and want to open two windows into the same file.
+let g:ctrlp_switch_buffer = 0
+
 " Ignore these specific files and folders.
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor)$',
