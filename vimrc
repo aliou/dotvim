@@ -69,6 +69,8 @@ set ttimeoutlen=10
 set bs=indent,eol,start		" Backspace over everything in insert mode.
 " }}}
 
+runtime! ftplugin/man.vim
+
 " Backups ----------------------------------------------------------------- {{{
 set backup			" Enable backups for Gundo (AKA Lifesaver).
 set undofile			" Save the file.
@@ -132,6 +134,7 @@ set wildmenu				" Comandline completion.
 set wildmode=list:longest,full	" Show a list and match the longest first.
 
 set wildignore+=.hg,.git,.svn		" Version control
+set wildignore+=*bower_components,*node_modules
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg	" binary images
 set wildignore+=*.o,*.out		" compiled object files
 set wildignore+=*.spl			" compiled spelling word lists
@@ -325,7 +328,7 @@ let g:ctrlp_switch_buffer = 0
 
 " Ignore these specific files and folders.
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor)$',
+      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor|bower_components)$',
       \ 'file': '\v\.(o|exe|netrwhist|pdf|png|jpg|gif)|tags$',
       \ }
 " }}}
