@@ -40,45 +40,45 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
-let mapleader = ","		" <Leader> key.
-set autoread			" Update modified files outside of VIM.
-set cursorline " Highlight current line.
-set hidden			" Allow buffers to be in the background without saving.
-set laststatus=2		" Show status bar.
-set cmdheight=2			" Status line height.
-set noshowmode			" Hide current mode.
-set number			" Show line number.
-set showcmd			" Show current command.
-set list			" Show invisible characters.
+set autoread            " Update modified files outside of VIM.
+let mapleader = ","     " <Leader> key.
+set cursorline          " Highlight current line.
+set hidden              " Allow buffers to be in the background without saving.
+set laststatus=2        " Show status bar.
+set cmdheight=2         " Status line height.
+set noshowmode          " Hide current mode.
+set number              " Show line number.
+set showcmd             " Show current command.
+set list                " Show invisible characters.
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Invisible character list.
-set ruler			" Show line and column in status bar.
-set background=dark		"
-set t_Co=256			" Use 256 colors.
-set scrolloff=999		" Keep the cursor centered in the screen
-set showbreak=↪			" The character to put to show a line has been wrapped
-set showmatch			" Highlight matching braces
-set matchtime=5			"
-set vb t_vb=			" SHUT THE FUCK UP.
-set novisualbell		" SHUT THE FUCK UP.
-set encoding=utf-8		" Character encoding.
-set shortmess=filtoOA		" Short message.
-set report=0			" Report all changes.
-set notimeout			" Timeout on key codes.
+set ruler               " Show line and column in status bar.
+set background=dark
+set t_Co=256            " Use 256 colors.
+set scrolloff=999       " Keep the cursor centered in the screen
+set showbreak=↪         " The character to put to show a line has been wrapped
+set showmatch           " Highlight matching braces
+set matchtime=5
+set vb t_vb=            " SHUT THE FUCK UP.
+set novisualbell        " SHUT THE FUCK UP.
+set encoding=utf-8      " Character encoding.
+set shortmess=filtoOA   " Short message.
+set report=0            " Report all changes.
+set notimeout           " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
-set bs=indent,eol,start		" Backspace over everything in insert mode.
+set bs=indent,eol,start " Backspace over everything in insert mode.
 " }}}
 
 runtime! ftplugin/man.vim
 
 " Backups ----------------------------------------------------------------- {{{
-set backup			" Enable backups for Gundo (AKA Lifesaver).
-set undofile			" Save the file.
-set noswapfile		" HOW ABOUT FUCK YOU.
+set backup      " Enable backups for Gundo (AKA Lifesaver).
+set undofile    " Save the file.
+set noswapfile  " HOW ABOUT FUCK YOU.
 
-set undodir=~/.vim/tmp/undo//		" Undodir
-set backupdir=~/.vim/tmp/backup//	" Backupdir.
-set directory=~/.vim/tmp/swap//	" Swapfile.
+set undodir=~/.vim/tmp/undo//     " Undodir
+set backupdir=~/.vim/tmp/backup// " Backupdir.
+set directory=~/.vim/tmp/swap//   " Swapfile.
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
@@ -112,35 +112,35 @@ endfunction
 " }}}
 
 " Search ------------------------------------------------------------------ {{{
-set hlsearch				" Highlight results
-set ignorecase			" Ignore casing of searches
-set incsearch				" Start showing results as you type
-set smartcase				" Be smart about case sensitivity when searching
-set nostartofline		" Don't go back to the start of the line.
-set gdefault				" Substitution is global by default. g to toggle.
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'	" Match git conflict shit.
+set hlsearch       " Highlight results
+set ignorecase     " Ignore casing of searches
+set incsearch      " Start showing results as you type
+set smartcase      " Be smart about case sensitivity when searching
+set nostartofline  " Don't go back to the start of the line.
+set gdefault       " Substitution is global by default. g to toggle.
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Match git conflict shit.
 " }}}
 
 " Tabs -------------------------------------------------------------------- {{{
-set autoindent			" Copy indentation for new line.
-set smartindent			" Autoindent.
-set shiftwidth=2		" Number of spaces for indent.
+set autoindent    " Copy indentation for new line.
+set smartindent   " Autoindent.
+set shiftwidth=2  " Number of spaces for indent.
 set tabstop=2
 set expandtab
 " }}}
 
 " Wildmenu completion  ----------------------------------------------------{{{
-set wildmenu				" Comandline completion.
-set wildmode=list:longest,full	" Show a list and match the longest first.
+set wildmenu                                   " Comandline completion.
+set wildmode=list:longest,full                 " Show a list and match the longest first.
 
-set wildignore+=.hg,.git,.svn		" Version control
+set wildignore+=.hg,.git,.svn                  " Version control
 set wildignore+=*bower_components,*node_modules
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg	" binary images
-set wildignore+=*.o,*.out		" compiled object files
-set wildignore+=*.spl			" compiled spelling word lists
-set wildignore+=*.sw?			" Vim swap files
-set wildignore+=*.DS_Store		" OSX bullshit
-set whichwrap+=<,>,h,l,[,]		" Wrap chars.
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
+set wildignore+=*.o,*.out                      " compiled object files
+set wildignore+=*.spl                          " compiled spelling word lists
+set wildignore+=*.sw?                          " Vim swap files
+set wildignore+=*.DS_Store                     " OSX bullshit
+set whichwrap+=<,>,h,l,[,]                     " Wrap chars.
 " }}}
 
 " Map --------------------------------------------------------------------- {{{
@@ -163,24 +163,33 @@ noremap gk k
 vnoremap > >gv
 vnoremap < <gv
 
-noremap <Leader>a ggVG		" Select all file.
+" Select whole file.
+noremap <Leader>a ggVG
 
 " Splits.
 nnoremap <silent> ss :split<CR><C-W>j
 nnoremap <silent> vv :vsplit<CR><C-W>l
 
-nnoremap <silent> // :nohlsearch<CR>	" Remove search highligts.
+" Remove search highligts.
+nnoremap <silent> // :nohlsearch<CR>
 
-nnoremap <leader>qq :cclose<CR> 	" Close quickfix window.
-nnoremap <Leader><Leader> <C-^>	" Switch to alternate file.
+" Close quickfix window.
+nnoremap <leader>qq :cclose<CR>
+" Switch to alternate file.
+nnoremap <Leader><Leader> <C-^>
 
-nnoremap <silent> <Leader>z :bp<CR>	" Previous tab. (QWERTY)
-nnoremap <silent> <Leader>x :bn<CR>	" Next tab.
+" Previous and next tab.
+nnoremap <silent> <Leader>z :bp<CR>
+nnoremap <silent> <Leader>x :bn<CR>
 
-nnoremap * *<c-o>			" Don't go to next match.
+" Don't go to next match.
+nnoremap * *<c-o>
 
-nnoremap <silent> <leader>d :cd %:p:h<cr>	" cd into current file directory.
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w	" Split current line.
+" cd into current file directory.
+nnoremap <silent> <leader>d :cd %:p:h<cr>
+
+" Split current line.
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 nnoremap \= :wincmd =<cr>
 
@@ -322,8 +331,7 @@ let g:ctrlp_match_window_reversed = 0
 " The maximum number of files to scan, set to 0 for no limit: >
 let g:ctrlp_max_files = 0
 
-" Don't jump to already open window. This is annoying if you are maintaining
-" several Tab workspaces and want to open two windows into the same file.
+" Don't jump to already open window.
 let g:ctrlp_switch_buffer = 0
 
 " Ignore these specific files and folders.
@@ -405,11 +413,6 @@ let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.bashrc.local']
 let g:startify_change_to_vcs_root = 1
 
 let g:startify_files_number = 5
-let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
-
-let g:startify_custom_footer = [''] +
-      \ map(split(system('echo -e "\n\n" && fortune'), '\n'), '"   ". v:val') +
-      \ ['']
 
 let g:ctrlp_reuse_window = 'startify'
 " }}}
