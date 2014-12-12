@@ -47,6 +47,7 @@ set hidden              " Allow buffers to be in the background without saving.
 set laststatus=2        " Show status bar.
 set cmdheight=2         " Status line height.
 set noshowmode          " Hide current mode.
+set relativenumber      " Show relative line number.
 set number              " Show line number.
 set showcmd             " Show current command.
 set list                " Show invisible characters.
@@ -67,14 +68,14 @@ set notimeout           " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
 set bs=indent,eol,start " Backspace over everything in insert mode.
+
+runtime! ftplugin/man.vim " Add `:Man` command.
 " }}}
 
-runtime! ftplugin/man.vim
-
-" Backups ----------------------------------------------------------------- {{{
-set backup      " Enable backups for Gundo (AKA Lifesaver).
-set undofile    " Save the file.
-set noswapfile  " HOW ABOUT FUCK YOU.
+" Backups ---------------------------------------------------------------- {{{
+set backup     " Enable backups for Gundo (AKA Lifesaver).
+set undofile   " Save the file.
+set noswapfile " HOW ABOUT FUCK YOU.
 
 set undodir=~/.vim/tmp/undo//     " Undodir
 set backupdir=~/.vim/tmp/backup// " Backupdir.
