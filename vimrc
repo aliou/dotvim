@@ -341,24 +341,6 @@ let g:ctrlp_custom_ignore = {
       \ }
 " }}}
 
-" Syntastic {{{
-
-" Syntax check on opening and saving buffers.
-let g:syntastic_check_on_open=1
-
-" Uses the sign interface to mark syntax errors.
-let g:syntastic_enable_signs=1
-
-" Don't check syntax for these filetypes.
-let g:syntastic_mode_map = { "mode": "active",
-      \ "active_filetypes": [],
-      \ "passive_filetypes": ['html', 'css'] }
-
-" Customize warning and error gutter symbols.
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_error_symbol='✗'
-" }}}
-
 " tComment {{{
 " Comment current line or selection.
 map <Leader>c <C-_><C-_>
