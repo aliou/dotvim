@@ -40,36 +40,36 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
-set autoread            " Update modified files outside of VIM.
-let mapleader = ","     " <Leader> key.
-set cursorline          " Highlight current line.
-set hidden              " Allow buffers to be in the background without saving.
-set laststatus=2        " Show status bar.
-set cmdheight=2         " Status line height.
-set noshowmode          " Hide current mode.
-set relativenumber      " Show relative line number.
-set number              " Show line number.
-set showcmd             " Show current command.
-set list                " Show invisible characters.
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Invisible character list.
-set ruler               " Show line and column in status bar.
+set autoread                        " Update modified files outside of VIM.
+let mapleader = ","                 " <Leader> key.
+set cursorline                      " Highlight current line.
+set hidden                          " Allow buffers to be in the background without saving.
+set laststatus=2                    " Show status bar.
+set cmdheight=2                     " Status line height.
+set noshowmode                      " Hide current mode.
+set relativenumber                  " Show relative line number.
+set number                          " Show line number.
+set showcmd                         " Show current command.
+set list                            " Show invisible characters.
+set listchars=tab:▸\ ,eol:¬,trail:⋅ " Invisible character list.
+set ruler                           " Show line and column in status bar.
 set background=dark
-set t_Co=256            " Use 256 colors.
-set scrolloff=999       " Keep the cursor centered in the screen
-set showbreak=↪         " The character to put to show a line has been wrapped
-set showmatch           " Highlight matching braces
+set t_Co=256                        " Use 256 colors.
+set scrolloff=999                   " Keep the cursor centered in the screen
+set showbreak=↪                     " The character to put to show a line has been wrapped
+set showmatch                       " Highlight matching braces
 set matchtime=5
-set vb t_vb=            " SHUT THE FUCK UP.
-set novisualbell        " SHUT THE FUCK UP.
-set encoding=utf-8      " Character encoding.
-set shortmess=filtoOA   " Short message.
-set report=0            " Report all changes.
-set notimeout           " Timeout on key codes.
+set vb t_vb=                        " SHUT THE FUCK UP.
+set novisualbell                    " SHUT THE FUCK UP.
+set encoding=utf-8                  " Character encoding.
+set shortmess=filtoOA               " Short message.
+set report=0                        " Report all changes.
+set notimeout                       " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
-set bs=indent,eol,start " Backspace over everything in insert mode.
+set bs=indent,eol,start             " Backspace over everything in insert mode.
 
-runtime! ftplugin/man.vim " Add `:Man` command.
+runtime! ftplugin/man.vim           " Add `:Man` command.
 " }}}
 
 " Backups ---------------------------------------------------------------- {{{
@@ -113,19 +113,19 @@ endfunction
 " }}}
 
 " Search ------------------------------------------------------------------ {{{
-set hlsearch       " Highlight results
-set ignorecase     " Ignore casing of searches
-set incsearch      " Start showing results as you type
-set smartcase      " Be smart about case sensitivity when searching
-set nostartofline  " Don't go back to the start of the line.
-set gdefault       " Substitution is global by default. g to toggle.
+set hlsearch      " Highlight results
+set ignorecase    " Ignore casing of searches
+set incsearch     " Start showing results as you type
+set smartcase     " Be smart about case sensitivity when searching
+set nostartofline " Don't go back to the start of the line.
+set gdefault      " Substitution is global by default. g to toggle.
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Match git conflict shit.
 " }}}
 
 " Tabs -------------------------------------------------------------------- {{{
-set autoindent    " Copy indentation for new line.
-set smartindent   " Autoindent.
-set shiftwidth=2  " Number of spaces for indent.
+set autoindent   " Copy indentation for new line.
+set smartindent  " Autoindent.
+set shiftwidth=2 " Number of spaces for indent.
 set tabstop=2
 set expandtab
 " }}}
