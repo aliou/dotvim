@@ -72,7 +72,7 @@ set ttimeout
 set ttimeoutlen=10
 set bs=indent,eol,start" Backspace over everything in insert mode.
 
-runtime! ftplugin/man.vim           " Add `:Man` command.
+runtime! ftplugin/man.vim " Add `:Man` command.
 " }}}
 
 " Backups ---------------------------------------------------------------- {{{
@@ -160,10 +160,11 @@ nnoremap <silent> // :nohlsearch<CR>
 
 " Close quickfix window.
 nnoremap <leader>qq :cclose<CR>
+
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
 
-" Previous and next tab.
+" Previous and next buffer.
 nnoremap <silent> <Leader>z :bp<CR>
 nnoremap <silent> <Leader>x :bn<CR>
 
