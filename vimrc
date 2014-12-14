@@ -16,6 +16,7 @@ Plugin 'gmarik/vundle'
 Plugin 'sjl/clam.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-rails'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-startify'
@@ -24,6 +25,8 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'airblade/vim-gitgutter'
+Bundle 'junegunn/vim-easy-align'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 
 " Colors
@@ -40,34 +43,34 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
-set autoread                        " Update modified files outside of VIM.
-let mapleader = ","                 " <Leader> key.
-set cursorline                      " Highlight current line.
-set hidden                          " Allow buffers to be in the background without saving.
-set laststatus=2                    " Show status bar.
-set cmdheight=2                     " Status line height.
-set noshowmode                      " Hide current mode.
-set relativenumber                  " Show relative line number.
-set number                          " Show line number.
-set showcmd                         " Show current command.
-set list                            " Show invisible characters.
+set autoread           " Update modified files outside of VIM.
+let mapleader = ","    " <Leader> key.
+set cursorline         " Highlight current line.
+set hidden             " Allow buffers to be in the background without saving.
+set laststatus=2       " Show status bar.
+set cmdheight=2        " Status line height.
+set noshowmode         " Hide current mode.
+set relativenumber     " Show relative line number.
+set number             " Show line number.
+set showcmd            " Show current command.
+set list               " Show invisible characters.
 set listchars=tab:▸\ ,eol:¬,trail:⋅ " Invisible character list.
-set ruler                           " Show line and column in status bar.
+set ruler              " Show line and column in status bar.
 set background=dark
-set t_Co=256                        " Use 256 colors.
-set scrolloff=999                   " Keep the cursor centered in the screen
-set showbreak=↪                     " The character to put to show a line has been wrapped
-set showmatch                       " Highlight matching braces
+set t_Co=256           " Use 256 colors.
+set scrolloff=999      " Keep the cursor centered in the screen
+set showbreak=↪        " The character to put to show a line has been wrapped
+set showmatch          " Highlight matching braces
 set matchtime=5
-set vb t_vb=                        " SHUT THE FUCK UP.
-set novisualbell                    " SHUT THE FUCK UP.
-set encoding=utf-8                  " Character encoding.
-set shortmess=filtoOA               " Short message.
-set report=0                        " Report all changes.
-set notimeout                       " Timeout on key codes.
+set vb t_vb=           " SHUT THE FUCK UP.
+set novisualbell       " SHUT THE FUCK UP.
+set encoding=utf-8     " Character encoding.
+set shortmess=filtoOA  " Short message.
+set report=0           " Report all changes.
+set notimeout          " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
-set bs=indent,eol,start             " Backspace over everything in insert mode.
+set bs=indent,eol,start" Backspace over everything in insert mode.
 
 runtime! ftplugin/man.vim           " Add `:Man` command.
 " }}}
@@ -91,25 +94,6 @@ endif
 if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
 endif
-" }}}
-
-" Functions --------------------------------------------------------------- {{{
-" Toggle the text width and the color column.
-function! ToggleWidth()
-  if &l:textwidth >= 80
-    set tw=0 cc=0
-  else
-    set tw=80 cc=+1
-  endif
-endfunction
-
-" Visual search. Stolen from @sjl.
-function! s:VSetSearch()
-  let temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = temp
-endfunction
 " }}}
 
 " Search ------------------------------------------------------------------ {{{
@@ -194,12 +178,6 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 nnoremap \= :wincmd =<cr>
 
-" Magic.
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
-
 " Resize splits.
 if bufwinnr(1)
   noremap + <C-W>+
@@ -244,7 +222,20 @@ command W w
 command Q q
 
 " Toggle tw and cc.
-nnoremap <Leader>w :call ToggleWidth()<CR>
+nnoremap <Leader>w :ToggleWidth<CR>
+
+" Focus and Pulse current line.
+nnoremap <c-e> mzzMzvzz15<c-e>`z:Pulse<cr>
+
+" Duplicate current line.
+nnoremap <c-d> Yp
+
+" Make the current line Breathe.
+nnoremap <c-b> :Breathe<cr>
+
+" Source visual / current line.
+vnoremap <leader>S y:@"<CR>
+nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 " }}}
 
 " autocmd ----------------------------------------------------------------- {{{
@@ -399,8 +390,16 @@ let g:startify_files_number = 5
 
 let g:ctrlp_reuse_window = 'startify'
 " }}}
+" Easy Align {{{
 
-" @sjl's Focus {{{
+vmap <Enter> <Plug>(EasyAlign)
+vnoremap <localleader><localleader> :EasyAlign=<CR>
+
+" }}}
+
+" Functions --------------------------------------------------------------- {{{
+
+" @sjl / @stevelosh's Focus {{{
 
 " "Focus" the current line.  Basically:
 "
@@ -408,7 +407,6 @@ let g:ctrlp_reuse_window = 'startify'
 " 2. Open just the folds containing the current line.
 " 3. Move the line to a little bit (15 lines) above the center of the screen.
 " 4. Pulse the cursor line.  My eyes are bad.
-nnoremap <c-d> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 function! s:Pulse() " {{{
   redir => old_hi
@@ -437,6 +435,37 @@ function! s:Pulse() " {{{
   execute 'hi ' . old_hi
 endfunction " }}}
 command! -nargs=0 Pulse call s:Pulse()
+
+" }}}
+
+" Toggle the text width and the color column.
+function! s:ToggleWidth() " {{{
+  if &l:textwidth >= 80
+    set tw=0 cc=0
+  else
+    set tw=80 cc=+1
+  endif
+endfunction " }}}
+command! -nargs=0 ToggleWidth call s:ToggleWidth()
+
+" Visual search. Stolen from @sjl.
+function! s:VSetSearch() " {{{
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction " }}}
+
+" Breathe {{{
+" Give more room to the current line.
+"
+" TODO: Visual mode.
+function! s:Breathe() " {{{
+  call append('.', '')
+  call append(line('.') - 1, '')
+endfunction " }}}
+" }}}
+command! -nargs=0 Breathe call s:Breathe()
 
 " }}}
 
