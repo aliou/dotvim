@@ -177,7 +177,8 @@ nnoremap <silent> <leader>d :cd %:p:h<cr>
 " Split current line.
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
-nnoremap \= :wincmd =<cr>
+" Equalize splits in current tab.
+nnoremap <localleader>= :wincmd =<cr>
 
 " Resize splits.
 if bufwinnr(1)
