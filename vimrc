@@ -220,8 +220,9 @@ command! SS set spell!
 command! TMC set list! number! relativenumber! | GitGutterToggle
 "
 " Remap W to w and Q to q so vim shuts the fuck up.
-command W w
-command Q q
+cabbrev W w
+cabbrev Q q
+cabbrev E e
 
 " Toggle tw and cc.
 nnoremap <Leader>w :ToggleWidth<CR>
