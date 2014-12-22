@@ -190,7 +190,7 @@ endif
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Open help in vertical split.
-cnoremap vhelp vert bo help
+cabbrev vhelp vert bo help
 
 " Open tag in right vertical split.
 " nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
@@ -392,6 +392,7 @@ let g:startify_files_number = 5
 
 let g:ctrlp_reuse_window = 'startify'
 " }}}
+
 " Easy Align {{{
 
 vmap <Enter> <Plug>(EasyAlign)
