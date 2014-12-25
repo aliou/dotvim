@@ -1,5 +1,3 @@
-## Description
-
 These are my Vim configuration files. [There are][steve-losh] [many like][pengwynn]
 [it][sanctum], but these are mine.
 
@@ -11,7 +9,7 @@ git clone git://github.com/aliou/dotvim.git ~/.dotvim
 ln -s ~/.dotvim/vim ~/.vim
 ln -s ~/.dotvim/vimrc ~/.vimrc
 
-# Set a colors
+# Set colors
 echo "color hybrid" >> ~/.vimrc.local
 echo "let g:airline_theme='lucius'" >> ~/.vimrc.local
 
