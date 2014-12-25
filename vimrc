@@ -13,29 +13,34 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 
-Plugin 'sjl/clam.vim'
-Plugin 'sjl/gundo.vim'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'janko-m/vim-test'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
+Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-obsession'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'airblade/vim-gitgutter'
-Bundle 'junegunn/vim-easy-align'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'kristijanhusak/vim-multiple-cursors'
+Plugin 'sjl/clam.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-obsession'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rsi'
 
 " Colors
+Plugin 'aliou/moriarty.vim'
+Plugin 'bling/vim-airline'
+Plugin 'chriskempson/base16-vim'
+Plugin 'godlygeek/csapprox'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
 Plugin 'w0ng/vim-hybrid'
-Plugin 'aliou/moriarty.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'chriskempson/base16-vim'
 
 syntax on
 filetype indent plugin on
@@ -67,6 +72,8 @@ set novisualbell       " SHUT THE FUCK UP.
 set encoding=utf-8     " Character encoding.
 set shortmess=filtoOA  " Short message.
 set report=0           " Report all changes.
+set splitbelow         " Split below by default.
+set splitright         " Split right by default.
 set notimeout          " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
@@ -175,6 +182,7 @@ nnoremap * *<c-o>
 nnoremap <silent> <leader>d :cd %:p:h<cr>
 
 " Split current line.
+" TODO: Remove this. (splitjoin)
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " Equalize splits in current tab.
@@ -324,7 +332,7 @@ nnoremap <leader>y :CtrlPCurWD<CR>
 let g:ctrlp_match_window_reversed = 0
 
 " The maximum number of files to scan, set to 0 for no limit: >
-let g:ctrlp_max_files = 0
+let g:ctrlp_max_files = 5000
 
 " Don't jump to already open window.
 let g:ctrlp_switch_buffer = 0
@@ -487,6 +495,12 @@ if has('gui_running')
   " Save on focus.
   autocmd FocusLost * silent! wa
 endif
+" }}}
+
+" Herping and Derping {{{
+iabbrev funciton function
+iabbrev :hound: 🐕
+iabbrev :dog: 🐕
 " }}}
 
 " Local shit ------------------------------------------------------------- {{{
