@@ -486,6 +486,7 @@ command! -nargs=0 Breathe call s:Breathe()
 let g:test#strategy = 'dispatch'
 nnoremap <leader>rt :TestNearest<CR>
 nnoremap <leader>rT :TestFile<CR>
+nnoremap <leader>rA :Dispatch rspec<CR>
 " }}}
 
 " }}}
