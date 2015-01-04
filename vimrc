@@ -481,6 +481,42 @@ command! -nargs=0 Breathe call s:Breathe()
 
 " }}}
 
+" Rails.vim {{{
+" open
+nnoremap <leader>oc :CtrlP app/controllers/<CR>
+nnoremap <leader>om :CtrlP app/models/<CR>
+nnoremap <leader>os :CtrlP spec/<CR>
+nnoremap <leader>ov :CtrlP app/views/<CR>
+nnoremap <leader>of :CtrlP spec/factories/<CR>
+nnoremap <leader>og :Elib<CR>
+
+nnoremap <leader>oj :CtrlP app/jobs/<CR>
+nnoremap <leader>oa :CtrlP app/assets/<CR>
+
+" edit
+nnoremap <leader>ec :Econtroller<CR>
+nnoremap <leader>em :Emodel<CR>
+nnoremap <leader>es :A<CR>
+nnoremap <leader>ev :Eview<CR>
+nnoremap <leader>ef :Efactory<CR>
+nnoremap <leader>eg :Elib<CR>
+
+" split
+nnoremap <leader>sc :Scontroller<CR>
+nnoremap <leader>sm :Smodel<CR>
+nnoremap <leader>ss :AS<CR>
+nnoremap <leader>sv :Sview<CR>
+nnoremap <leader>sf :Sfactory<CR>
+nnoremap <leader>sg :Slib<CR>
+
+" vsplit
+nnoremap <leader>vc :Vcontroller<CR>
+nnoremap <leader>vm :Vmodel<CR>
+nnoremap <leader>vs :AV<CR>
+nnoremap <leader>vv :Vview<CR>
+nnoremap <leader>vf :Vfactory<CR>
+nnoremap <leader>vg :Vlib<CR>
+" }}}
 
 " vim-test {{{
 let g:test#strategy = 'dispatch'
