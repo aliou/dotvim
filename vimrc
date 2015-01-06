@@ -20,6 +20,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'mhinz/vim-startify'
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'sjl/clam.vim'
@@ -126,7 +127,7 @@ set wildmenu                                   " Comandline completion.
 set wildmode=list:longest,full                 " Show a list and match the longest first.
 
 set wildignore+=.hg,.git,.svn                  " Version control
-set wildignore+=*bower_components,*node_modules
+set wildignore+=*bower_components,*node_modules,_build
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
 set wildignore+=*.o,*.out                      " compiled object files
 set wildignore+=*.spl                          " compiled spelling word lists
@@ -310,6 +311,13 @@ augroup END
 " }}}
 
 " Plugin config ---------------------------------------------------------- {{{
+
+" Ack {{{
+" Run searches asynchronously.
+let g:ack_use_dispatch = 1
+
+cabbrev a Ack
+" }}}
 
 " Clam {{{
 " Maps ! to Clam or ClamVisual depending on the mode.
