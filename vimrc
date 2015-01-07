@@ -533,9 +533,13 @@ nnoremap <leader>vg :Vlib<CR>
 
 " vim-test {{{
 let g:test#strategy = 'dispatch'
+
 nnoremap <leader>rt :TestNearest<CR>
 nnoremap <leader>rT :TestFile<CR>
 nnoremap <leader>rA :Dispatch rspec<CR>
+nnoremap <leader>rl :TestLast<CR>
+
+let g:test#ruby#rspec#executable = "CI=1 rspec"
 " }}}
 
 " }}}
