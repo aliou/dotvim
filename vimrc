@@ -400,7 +400,12 @@ let g:startify_list_order = [
       \ ]
 
 " Handy bookmarks.
-let g:startify_bookmarks = [ '~/.vimrc', '~/.vimrc.local', '~/.bashrc.local']
+let g:startify_bookmarks = [
+      \ '~/.vimrc',
+      \ '~/.vimrc.local',
+      \ '~/.bashrc.local',
+      \ '~/.gitconfig'
+      \ ]
 
 " When opening recent file, change to `%w(git svn hg).sample` root folder.
 let g:startify_change_to_vcs_root = 1
