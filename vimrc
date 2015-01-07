@@ -555,6 +555,7 @@ if has('gui_running')
 
   " Save on focus.
   autocmd FocusLost * silent! wa
+  set guifont=Inconsolata\ for\ Powerline:h13
 endif
 " }}}
 
