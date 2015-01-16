@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'sjl/clam.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'sjl/vitality.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
@@ -123,8 +124,8 @@ set expandtab
 " }}}
 
 " Wildmenu completion  ----------------------------------------------------{{{
-set wildmenu                                   " Comandline completion.
-set wildmode=list:longest,full                 " Show a list and match the longest first.
+set wildmenu                   " Comandline completion.
+set wildmode=list:longest,full " Show a list and match the longest first.
 
 set wildignore+=.hg,.git,.svn                  " Version control
 set wildignore+=*bower_components,*node_modules,_build
@@ -208,7 +209,7 @@ cabbrev vhelp vert bo help
 nnoremap <leader>p :set paste!<CR>
 
 " Tabs
-nnoremap T :tabnew<cr>
+nnoremap T :tabnew +Startify<cr>
 nnoremap H :tabprev<cr>
 nnoremap L :tabnext<cr>
 
