@@ -15,6 +15,7 @@ Plugin 'gmarik/vundle'
 
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-go'
 Plugin 'janko-m/vim-test'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/ctrlp.vim'
@@ -258,6 +259,8 @@ augroup someshit
   autocmd!
   autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
+  autocmd FileType go setlocal ts=4 sw=4 nolist
+
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
         \ set ft=ruby
 
@@ -300,7 +303,7 @@ set foldlevelstart=5
 
 augroup filtypes
   autocmd!
-  autocmd FileType c,cpp,cs,javascript setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType c,cpp,cs,javascript,go setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype less,css,scss setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype vim setlocal foldmethod=marker
   autocmd FileType html setlocal foldmethod=indent
@@ -541,6 +544,12 @@ nnoremap <leader>rA :Dispatch rspec<CR>
 nnoremap <leader>rl :TestLast<CR>
 
 let g:test#ruby#rspec#executable = "CI=1 rspec"
+" }}}
+
+" vim-go {{{
+let g:go_bin_path = expand("~/src/.go/bin")
+let g:go_fmt_command = "goimports"
+let g:go_doc_command = "godoc"
 " }}}
 
 " }}}
