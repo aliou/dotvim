@@ -512,9 +512,6 @@ nnoremap <leader>ov :CtrlP app/views/<CR>
 nnoremap <leader>of :CtrlP spec/factories/<CR>
 nnoremap <leader>og :Elib<CR>
 
-nnoremap <leader>oj :CtrlP app/jobs/<CR>
-nnoremap <leader>oa :CtrlP app/assets/<CR>
-
 " edit
 nnoremap <leader>ec :Econtroller<CR>
 nnoremap <leader>em :Emodel<CR>
