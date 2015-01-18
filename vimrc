@@ -320,10 +320,12 @@ augroup END
 " Plugin config ---------------------------------------------------------- {{{
 
 " Ack {{{
+cabbrev a Ack
+
 " Run searches asynchronously.
 let g:ack_use_dispatch = 1
-
-cabbrev a Ack
+let g:ack_default_options =
+      \ " -s -H --nocolor --nogroup --column --smart-case"
 " }}}
 
 " Clam {{{
