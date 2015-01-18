@@ -219,8 +219,8 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " Quick file opening.
-nnoremap <leader>lv :vsplit $MYLOCALVIMRC<cr>
-nnoremap <leader>gv :vsplit $MYVIMRC<cr>
+nnoremap <leader>lv :e $MYLOCALVIMRC<cr>
+nnoremap <leader>gv :e $MYVIMRC<cr>
 
 " Fold maps.
 nnoremap <leader>f mfggvGzO`f
