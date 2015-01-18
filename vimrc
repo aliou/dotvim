@@ -31,9 +31,12 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-jdaddy'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-surround'
 
 " Colors
 Plugin 'aliou/moriarty.vim'
