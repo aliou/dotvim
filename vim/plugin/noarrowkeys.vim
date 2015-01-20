@@ -1,5 +1,3 @@
-" If you delete this file, just go back to gedit/notepad already.
-
 inoremap <Up>      <NOP>
 inoremap <Down>    <NOP>
 inoremap <Left>    <NOP>

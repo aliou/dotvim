@@ -69,7 +69,7 @@ set listchars=tab:▸\ ,eol:¬,trail:⋅ " Invisible character list.
 set ruler              " Show line and column in status bar.
 set background=dark
 set t_Co=256           " Use 256 colors.
-set scrolloff=999      " Keep the cursor centered in the screen
+" set scrolloff=999      " Keep the cursor centered in the screen
 set showbreak=↪        " The character to put to show a line has been wrapped
 set showmatch          " Highlight matching braces
 set matchtime=5
@@ -78,7 +78,6 @@ set novisualbell       " SHUT THE FUCK UP.
 set encoding=utf-8     " Character encoding.
 set shortmess=filtoOA  " Short message.
 set report=0           " Report all changes.
-set splitbelow         " Split below by default.
 set splitright         " Split right by default.
 set notimeout          " Timeout on key codes.
 set ttimeout
@@ -195,10 +194,10 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 nnoremap <localleader>= :wincmd =<cr>
 
 " Resize splits.
-if bufwinnr(1)
-  noremap + <C-W>+
-  noremap - <C-W>-
-endif
+" if bufwinnr(1)
+"   noremap + <C-W>+
+"   noremap - <C-W>-
+" endif
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -232,11 +231,11 @@ nnoremap <Space> za
 " Quick toggle.
 command! SS set spell!
 command! TMC set list! number! relativenumber! | GitGutterToggle
-"
+
 " Remap W to w and Q to q so vim shuts the fuck up.
 cabbrev W w
 cabbrev Q q
-cabbrev E e
+cabbrev E windo :e
 
 " Toggle tw and cc.
 nnoremap <Leader>w :ToggleWidth<CR>
@@ -504,6 +503,35 @@ command! -nargs=0 Breathe call s:Breathe()
 " }}}
 
 " Rails.vim {{{
+let g:rails_projections = {
+      \ "spec/factories/*.rb": {
+      \   "command":   "factory",
+      \   "affinity":  "collection",
+      \   "alternate": "app/models/%i.rb",
+      \   "related":   "db/schema.rb#%s",
+      \   "test":      "spec/models/%i_test.rb",
+      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "keywords":  "factory sequence"
+      \ },
+      \ "app/services/*.rb": {
+      \   "command":  "service",
+      \   "template": ["class %S", "end"],
+      \   "test":     "spec/services/%s_spec.rb"
+      \ },
+      \ "app/serializers/*_serializer.rb": {
+      \   "command":  "serializer",
+      \   "affinity": "model",
+      \   "test":     "spec/serializers/%s_spec.rb",
+      \   "related":  "app/models/%s.rb",
+      \   "template": "class %SSerializer < ActiveModel::Serializer\nend"
+      \ },
+      \ "app/uploaders/*_uploader.rb": {
+      \   "command":  "uploader",
+      \   "template": ["class %SUploader < CarrierWave::Uploader::Base", "end"],
+      \   "test":     "spec/models/%s_uploader_spec.rb"
+      \ }
+      \}
+
 " open
 nnoremap <leader>oc :CtrlP app/controllers/<CR>
 nnoremap <leader>om :CtrlP app/models/<CR>
