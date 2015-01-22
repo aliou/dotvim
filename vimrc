@@ -14,6 +14,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
 Plugin 'janko-m/vim-test'
