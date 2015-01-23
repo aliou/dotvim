@@ -85,7 +85,7 @@ set ttimeout
 set ttimeoutlen=10
 set bs=indent,eol,start" Backspace over everything in insert mode.
 
-runtime! ftplugin/man.vim " Add `:Man` command.
+runtime! ftplugin/man.vim " Adds `:Man` command.
 " }}}
 
 " Backups ---------------------------------------------------------------- {{{
