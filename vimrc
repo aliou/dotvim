@@ -70,7 +70,7 @@ set listchars=tab:▸\ ,eol:¬,trail:⋅ " Invisible character list.
 set ruler              " Show line and column in status bar.
 set background=dark
 set t_Co=256           " Use 256 colors.
-" set scrolloff=999      " Keep the cursor centered in the screen
+set scrolloff=999      " Keep the cursor centered in the screen
 set showbreak=↪        " The character to put to show a line has been wrapped
 set showmatch          " Highlight matching braces
 set matchtime=5
@@ -83,13 +83,13 @@ set splitright         " Split right by default.
 set notimeout          " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
-set bs=indent,eol,start" Backspace over everything in insert mode.
+set bs=indent,eol,start " Backspace over everything in insert mode.
 
 runtime! ftplugin/man.vim " Adds `:Man` command.
 " }}}
 
 " Backups ---------------------------------------------------------------- {{{
-set backup     " Enable backups for Gundo (AKA Lifesaver).
+set backup     " Enable backups for Gundo
 set undofile   " Save the file.
 set noswapfile " HOW ABOUT FUCK YOU.
 
@@ -206,9 +206,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Open help in vertical split.
 cabbrev vhelp vert bo help
 
-" Open tag in right vertical split.
-" nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
-
 " Set paste remap.
 nnoremap <leader>p :set paste!<CR>
 
@@ -236,7 +233,7 @@ command! TMC set list! number! relativenumber! | GitGutterToggle
 " Remap W to w and Q to q so vim shuts the fuck up.
 cabbrev W w
 cabbrev Q q
-cabbrev E windo :e
+cabbrev E e
 
 " Toggle tw and cc.
 nnoremap <Leader>w :ToggleWidth<CR>
@@ -246,6 +243,7 @@ nnoremap <c-e> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " Duplicate current line.
 nnoremap <c-d> Yp
+nnoremap <c-D> YP
 
 " Make the current line Breathe.
 nnoremap <c-b> :Breathe<cr>
@@ -306,12 +304,12 @@ set foldlevelstart=5
 
 augroup filtypes
   autocmd!
-  autocmd FileType c,cpp,cs,javascript,go setlocal foldmethod=marker foldmarker={,}
+  autocmd FileType c,cpp,cs,javascript,go
+        \ setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype less,css,scss setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype vim setlocal foldmethod=marker
   autocmd FileType html setlocal foldmethod=indent
   autocmd FileType ruby setlocal foldmethod=syntax
-  autocmd Filetype ocaml setlocal foldmethod=expr foldexpr=OMLetFoldLevel(v:lnum)
 augroup END
 " }}}
 
@@ -375,7 +373,6 @@ let NERDTreeIgnore = ['\~$', '*.o']
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#hunks#enabled = 0
-
 let g:airline_mode_map = {
     \ '__' : '-',
     \ 'n'  : 'N',
