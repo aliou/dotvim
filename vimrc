@@ -67,7 +67,7 @@ set relativenumber     " Show relative line number.
 set number             " Show line number.
 set showcmd            " Show current command.
 set list               " Show invisible characters.
-set listchars=tab:▸\ ,eol:¬,trail:⋅ " Invisible character list.
+set listchars=tab:›\ ,eol:¬,trail:⋅ " Invisible character list.
 set ruler              " Show line and column in status bar.
 set background=dark
 set t_Co=256           " Use 256 colors.
@@ -261,7 +261,7 @@ augroup someshit
   autocmd!
   autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
-  autocmd FileType go setlocal ts=4 sw=4 nolist
+  autocmd FileType go setlocal ts=4 sw=4
 
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
         \ set ft=ruby
