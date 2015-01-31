@@ -263,6 +263,8 @@ augroup someshit
 
   autocmd FileType go setlocal ts=4 sw=4
 
+  autocmd BufRead,BufNewFile *.js.erb set ft=javascript
+
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
         \ set ft=ruby
 
@@ -547,11 +549,6 @@ let g:rails_projections = {
       \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
       \   "keywords":  "factory sequence"
       \ },
-      \ "app/services/*.rb": {
-      \   "command":  "service",
-      \   "template": ["class %S", "end"],
-      \   "test":     "spec/services/%s_spec.rb"
-      \ },
       \ "app/serializers/*_serializer.rb": {
       \   "command":  "serializer",
       \   "affinity": "model",
@@ -565,6 +562,14 @@ let g:rails_projections = {
       \   "test":     "spec/models/%s_uploader_spec.rb"
       \ }
       \}
+
+let tmp = {
+      \   "app/services/*.rb": {
+      \     "command":  "service",
+      \     "template": ["class %S", "end"],
+      \     "test":     "spec/services/%s_spec.rb"
+      \   }
+      \ }
 
 " open
 nnoremap <leader>oc :CtrlP app/controllers/<CR>
