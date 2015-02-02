@@ -502,7 +502,7 @@ endfunction " }}}
 command! -nargs=0 Breathe call s:Breathe()
 
 " Wipeout: Remove hidden buffers {{{
-function! Wipeout()
+function! s:Wipeout()
   " list of *all* buffer numbers
   let l:buffers = range(1, bufnr('$'))
 
@@ -535,6 +535,7 @@ function! Wipeout()
   endtry
 endfunction
 " }}}
+command! -nargs=0 Wipeout call s:Wipeout()
 
 " Gtask: Run gulp tasks through dispatch. {{{
 
