@@ -536,6 +536,48 @@ function! Wipeout()
 endfunction
 " }}}
 
+" Gtask: Run gulp tasks through dispatch. {{{
+
+" Gulp function.
+"
+" Locally sets the make program to gulp <task>.
+" TODO: Set the errorformat string so the quickfix only open on error.
+function! s:GulpTask(task)
+  let &l:makeprg = "gulp " . a:task
+  Make
+endfunction
+
+" GulpTask completion function.
+"
+" Gets all the tasks by opening the gulpfile and getting all the lines defining
+" a task.
+"
+" Since we are using `-complete` instead of `-completelist`, we must return a
+" string, with the different terms separated by '\n'.
+"
+" TODO: Use `-completelist` (Meaning filtering the terms by the first argument
+" of the function. But "ain't nobody got time for that").
+function! s:ListTasks(A, L, P)
+  let tasks = []
+  let regex = '\v("([^"]*)"|''([^'']*)'')'
+
+  for line in readfile("gulpfile.js")
+    if line =~ "gulp.task"
+      let task = substitute(matchstr(line, regex), '\v("|'')', "", "g")
+      call add(tasks, task)
+    endif
+  endfor
+
+  return join(sort(tasks), "\n")
+endfunction
+
+" }}}
+" Only define The `GulpTask` and `GTask` commands if the gulpfile exists.
+if filereadable("gulpfile.js")
+  command! -complete=custom,s:ListTasks -nargs=1 GulpTask :call s:GulpTask(<f-args>)
+  command! -complete=custom,s:ListTasks -nargs=1 GTask :call s:GulpTask(<f-args>)
+endif
+
 " }}}
 
 " Rails.vim {{{
