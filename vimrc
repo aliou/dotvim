@@ -544,7 +544,8 @@ command! -nargs=0 Wipeout call s:Wipeout()
 " Locally sets the make program to gulp <task>.
 " TODO: Set the errorformat string so the quickfix only open on error.
 function! s:GulpTask(task)
-  let &l:makeprg = "gulp " . a:task
+  let &l:makeprg     = "gulp " . a:task
+  let &l:errorformat = ""
   Make
 endfunction
 
