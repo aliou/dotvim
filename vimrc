@@ -117,7 +117,8 @@ set incsearch     " Start showing results as you type
 set smartcase     " Be smart about case sensitivity when searching
 set nostartofline " Don't go back to the start of the line.
 set gdefault      " Substitution is global by default. g to toggle.
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Match git conflict shit.
+match Error '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " Match git conflict shit.
+match Error 'byebug'
 " }}}
 
 " Tabs -------------------------------------------------------------------- {{{
