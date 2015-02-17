@@ -686,6 +686,7 @@ endif
 
 " Herping and Derping {{{
 iabbrev funciton function
+iabbrev retunr return
 iabbrev :hound: 🐕
 iabbrev :dog: 🐕
 " }}}
