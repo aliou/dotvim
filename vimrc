@@ -85,6 +85,7 @@ set notimeout          " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
 set bs=indent,eol,start " Backspace over everything in insert mode.
+set completeopt=menu    " Don't show the preview buffer. (Useful for vim-go)
 
 runtime! ftplugin/man.vim " Adds `:Man` command.
 " }}}
