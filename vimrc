@@ -323,8 +323,6 @@ augroup END
 " Plugin config ---------------------------------------------------------- {{{
 
 " Ack {{{
-cabbrev a Ack
-
 " Run searches asynchronously.
 let g:ack_use_dispatch = 1
 let g:ack_default_options =
