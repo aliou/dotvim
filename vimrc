@@ -68,11 +68,10 @@ set number             " Show line number.
 set showcmd            " Show current command.
 set list               " Show invisible characters.
 set listchars=tab:›\ ,eol:¬,trail:⋅ " Invisible character list.
-set ruler              " Show line and column in status bar.
+set showbreak=↪        " The character to put to show a line has been wrapped
 set background=dark
 set t_Co=256           " Use 256 colors.
 set scrolloff=999      " Keep the cursor centered in the screen
-set showbreak=↪        " The character to put to show a line has been wrapped
 set showmatch          " Highlight matching braces
 set matchtime=5
 set vb t_vb=           " SHUT THE FUCK UP.
@@ -284,7 +283,7 @@ augroup END
 
 augroup dennisritchie
   autocmd FileType c,cpp
-      \ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
+      \ nnoremap <localleader>k :silent Man <C-r><C-w><CR>gg:set ft=man<CR>
 augroup END
 " }}}
 
@@ -542,7 +541,7 @@ command! -nargs=0 Wipeout call s:Wipeout()
 " Gulp function.
 "
 " Locally sets the make program to gulp <task>.
-" TODO: Set the errorformat string so the quickfix only open on error.
+" TODO: Set the errorformat string so the quickfix only opens on error.
 function! s:GulpTask(task)
   let &l:makeprg     = "gulp " . a:task
   let &l:errorformat = ""
