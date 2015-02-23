@@ -35,6 +35,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-jdaddy'
 Plugin 'tpope/vim-obsession'
+Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
@@ -79,7 +80,6 @@ set novisualbell       " SHUT THE FUCK UP.
 set encoding=utf-8     " Character encoding.
 set shortmess=filtoOA  " Short message.
 set report=0           " Report all changes.
-set splitright         " Split right by default.
 set notimeout          " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
@@ -392,9 +392,7 @@ let g:airline_mode_map = {
 
 " Startify {{{
 " Custom header that shows the current directory's name.
-let g:startify_custom_header =
-      \ map(split(system('figlet -f slant `basename $PWD`'), '\n'),
-      \ '"   ". v:val') + ['']
+let g:startify_custom_header = ['', '']
 
 let g:startify_list_order = [
       \ ['   Last recently modified files in the current directory:'],
