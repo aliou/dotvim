@@ -262,7 +262,7 @@ augroup someshit
   autocmd!
   autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
-  autocmd FileType go setlocal ts=4 sw=4
+  autocmd FileType go,godoc setlocal ts=4 sw=4
 
   autocmd BufRead,BufNewFile *.js.erb set ft=javascript
 
