@@ -264,7 +264,7 @@ augroup someshit
 
   autocmd FileType go,godoc setlocal ts=4 sw=4
 
-  autocmd BufRead,BufNewFile *.js.erb set ft=javascript
+  autocmd BufRead,BufNewFile *.{js.erb,es6} set ft=javascript
 
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
         \ set ft=ruby
