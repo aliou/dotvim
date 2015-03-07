@@ -88,6 +88,11 @@ set bs=indent,eol,start " Backspace over everything in insert mode.
 set completeopt=menu    " Don't show the preview buffer. (Useful for vim-go)
 
 runtime! ftplugin/man.vim " Adds `:Man` command.
+
+let g:markdown_fenced_languages =
+      \ ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript',
+      \ 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'go']
+
 " }}}
 
 " Backups ---------------------------------------------------------------- {{{
