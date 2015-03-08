@@ -1,0 +1,6 @@
+Plugin 'scrooloose/nerdtree'
+
+let NERDTreeWinPos = "left"
+let NERDTreeIgnore = ['\~$', '*.o']
+
+" vim:ft=vim

@@ -1,0 +1,9 @@
+" Ack: Integrate ack (grep replacement) into vim
+
+Plugin 'mileszs/ack.vim'
+
+let g:ack_use_dispatch = 1
+let g:ack_default_options =
+      \ " -s -H --nocolor --nogroup --column --smart-case"
+
+" vim:ft=vim

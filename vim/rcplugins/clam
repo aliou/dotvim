@@ -1,0 +1,7 @@
+" Clam: Lightweight Vim plugin to easily run shell commands.
+Plugin 'sjl/clam.vim'
+
+nnoremap ! :Clam<space>
+vnoremap ! :ClamVisual<space>
+
+" vim:ft=vim

@@ -1,65 +1,32 @@
 " vimrc
 " Author: Aliou Diallo <code@aliou.me>
-" Source: https://github.com/aliou/dotvim/blob/master/vimrc
 
-" Init -------------------------------------------------------------------- {{{
+let mapleader = ","
+
+" Stolen from @christoomey.
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.vim/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
+endfunction
+
 set nocompatible
 filetype off
-" }}}
 
-"   Vundle ---------------------------------------------------------------- {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Plugin 'gmarik/vundle'
-
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'fatih/vim-go'
-Plugin 'janko-m/vim-test'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kristijanhusak/vim-multiple-cursors'
-Plugin 'markwu/ZoomWin'
-Plugin 'mhinz/vim-startify'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'sjl/clam.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'sjl/vitality.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-jdaddy'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-surround'
-
-" Colors
-Plugin 'aliou/moriarty.vim'
-Plugin 'bling/vim-airline'
-Plugin 'chriskempson/base16-vim'
-Plugin 'godlygeek/csapprox'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'sjl/badwolf'
-Plugin 'tomasr/molokai'
-Plugin 'w0ng/vim-hybrid'
+call s:SourceConfigFilesIn('rcplugins')
 
 syntax on
 filetype indent plugin on
-" }}}
 
 " Basic options ----------------------------------------------------------- {{{
 
 set autoread           " Update modified files outside of VIM.
-let mapleader = ","    " <Leader> key.
 set cursorline         " Highlight current line.
 set hidden             " Allow buffers to be in the background without saving.
 set laststatus=2       " Show status bar.
@@ -325,115 +292,6 @@ augroup END
 
 " }}}
 
-" Plugin config ---------------------------------------------------------- {{{
-
-" Ack {{{
-" Run searches asynchronously.
-let g:ack_use_dispatch = 1
-let g:ack_default_options =
-      \ " -s -H --nocolor --nogroup --column --smart-case"
-" }}}
-
-" Clam {{{
-" Maps ! to Clam or ClamVisual depending on the mode.
-nnoremap ! :Clam<space>
-vnoremap ! :ClamVisual<space>
-" }}}
-
-" CtrlP {{{
-nnoremap <Leader>t :CtrlP<cr>
-
-" Uses the current working directory as root folder.
-let g:ctrlp_cmd = 'CtrlPCurWD'
-
-" Additional mapping for buffer search
-nnoremap <leader>b :CtrlPBuffer<CR>
-
-nnoremap <leader>y :CtrlPCurWD<CR>
-
-" Change the listing order of the files in the match window.
-let g:ctrlp_match_window_reversed = 0
-
-" The maximum number of files to scan, set to 0 for no limit: >
-let g:ctrlp_max_files = 5000
-
-" Don't jump to already open window.
-let g:ctrlp_switch_buffer = 0
-
-" Ignore these specific files and folders.
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor|bower_components)$',
-      \ 'file': '\v\.(o|exe|netrwhist|pdf|png|jpg|gif)|tags$',
-      \ }
-" }}}
-
-" tComment {{{
-" Comment current line or selection.
-map <Leader>c <C-_><C-_>
-" }}}
-
-" NERDTree {{{
-let NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['\~$', '*.o']
-" }}}
-
-" Airline {{{
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#hunks#enabled = 0
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
-" }}}
-
-" Startify {{{
-" Custom header that shows the current directory's name.
-let g:startify_custom_header = ['', '']
-
-let g:startify_list_order = [
-      \ ['   Last recently modified files in the current directory:'],
-      \ 'dir',
-      \ ['   Last recently opened files:'],
-      \ 'files',
-      \ ['   My sessions:'],
-      \ 'sessions',
-      \ ['   My bookmarks:'],
-      \ 'bookmarks',
-      \ ]
-
-" Handy bookmarks.
-let g:startify_bookmarks = [
-      \ '~/.vimrc',
-      \ '~/.vimrc.local',
-      \ '~/.bashrc.local',
-      \ '~/.gitconfig'
-      \ ]
-
-" When opening recent file, change to `%w(git svn hg).sample` root folder.
-let g:startify_change_to_vcs_root = 1
-
-let g:startify_files_number = 5
-
-let g:ctrlp_reuse_window = 'startify'
-" }}}
-
-" Easy Align {{{
-
-vmap <Enter> <Plug>(EasyAlign)
-vnoremap <localleader><localleader> :EasyAlign=<CR>
-
-" }}}
-
 " Functions --------------------------------------------------------------- {{{
 
 " @sjl / @stevelosh's Focus {{{
@@ -582,60 +440,6 @@ if filereadable("gulpfile.js")
   command! -complete=custom,s:ListTasks -nargs=1 GulpTask :call s:GulpTask(<f-args>)
   command! -complete=custom,s:ListTasks -nargs=1 GTask :call s:GulpTask(<f-args>)
 endif
-
-" }}}
-
-" Rails.vim {{{
-let g:rails_projections = {
-      \ "spec/factories/*.rb": {
-      \   "command":   "factory",
-      \   "affinity":  "collection",
-      \   "alternate": "app/models/%i.rb",
-      \   "related":   "db/schema.rb#%s",
-      \   "test":      "spec/models/%i_test.rb",
-      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
-      \   "keywords":  "factory sequence"
-      \ },
-      \ "app/serializers/*_serializer.rb": {
-      \   "command":  "serializer",
-      \   "affinity": "model",
-      \   "test":     "spec/serializers/%s_spec.rb",
-      \   "related":  "app/models/%s.rb",
-      \   "template": "class %SSerializer < ActiveModel::Serializer\nend"
-      \ },
-      \ "app/uploaders/*_uploader.rb": {
-      \   "command":  "uploader",
-      \   "template": ["class %SUploader < CarrierWave::Uploader::Base", "end"],
-      \   "test":     "spec/models/%s_uploader_spec.rb"
-      \ }
-      \}
-
-let tmp = {
-      \   "app/services/*.rb": {
-      \     "command":  "service",
-      \     "template": ["class %S", "end"],
-      \     "test":     "spec/services/%s_spec.rb"
-      \   }
-      \ }
-
-" }}}
-
-" vim-test {{{
-let g:test#strategy = 'dispatch'
-
-nnoremap <leader>rt :TestNearest<CR>
-nnoremap <leader>rT :TestFile<CR>
-nnoremap <leader>rA :Dispatch rspec<CR>
-nnoremap <leader>rl :TestLast<CR>
-
-let g:test#ruby#rspec#executable = "CI=1 rspec"
-" }}}
-
-" vim-go {{{
-let g:go_bin_path = expand("~/src/.go/bin")
-let g:go_fmt_command = "goimports"
-let g:go_doc_command = "godoc"
-" }}}
 
 " }}}
 

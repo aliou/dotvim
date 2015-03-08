@@ -1,0 +1,6 @@
+" SplitJoin: A vim plugin that simplifies the transition between multiline and
+" single-line code.
+
+Plugin 'AndrewRadev/splitjoin.vim'
+
+" vim:ft=vim
