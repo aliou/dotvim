@@ -24,6 +24,8 @@ call s:SourceConfigFilesIn('rcplugins')
 syntax on
 filetype indent plugin on
 
+call s:SourceConfigFilesIn('rcfiles')
+
 " Map --------------------------------------------------------------------- {{{
 
 " Qwerty keyboard.
