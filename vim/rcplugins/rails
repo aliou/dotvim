@@ -21,10 +21,7 @@ let g:rails_projections = {
       \   "command":  "uploader",
       \   "template": ["class %SUploader < CarrierWave::Uploader::Base", "end"],
       \   "test":     "spec/models/%s_uploader_spec.rb"
-      \ }
-      \}
-
-let tmp = {
+      \ },
       \   "app/services/*.rb": {
       \     "command":  "service",
       \     "template": ["class %S", "end"],
