@@ -3,9 +3,6 @@ Plugin 'kien/ctrlp.vim'
 
 nnoremap <Leader>t :CtrlP<cr>
 
-" Uses the current working directory as root folder.
-let g:ctrlp_cmd = 'CtrlPCurWD'
-
 " Additional mapping for buffer search
 nnoremap <leader>b :CtrlPBuffer<CR>
 
@@ -14,7 +11,7 @@ nnoremap <leader>y :CtrlPCurWD<CR>
 " Change the listing order of the files in the match window.
 let g:ctrlp_match_window_reversed = 0
 
-" The maximum number of files to scan, set to 0 for no limit: >
+" The maximum number of files to scan, set to 0 for no limit:
 let g:ctrlp_max_files = 5000
 
 " Don't jump to already open window.
@@ -25,5 +22,18 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor|bower_components)$',
       \ 'file': '\v\.(o|exe|netrwhist|pdf|png|jpg|gif)|tags$',
       \ }
+
+" Use the silver search for indexing.
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
+
+Plugin 'JazzCore/ctrlp-cmatcher'
+
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " vim:ft=vim
