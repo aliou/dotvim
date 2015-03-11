@@ -1,0 +1,5 @@
+if filereadable('.vimrc.local') && getcwd() != expand('~')
+  source .vimrc.local
+endif
+
+" vim:ft=vim
