@@ -1,0 +1,90 @@
+" Qwerty keyboard.
+nnoremap ; :
+vnoremap ; :
+
+" Out of insert mode.
+inoremap jj <ESC>
+inoremap kk <ESC>
+
+" Word wrapping.
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
+" Stay in visual mode when identing.
+vnoremap > >gv
+vnoremap < <gv
+
+" Select whole file.
+noremap <Leader>a ggVG
+
+" Splits.
+nnoremap ss :split<CR><C-W>j
+nnoremap vv :vsplit<CR><C-W>l
+
+" Remove search highligts.
+nnoremap // :nohlsearch<CR>
+
+" Close quickfix window.
+nnoremap <leader>qq :cclose<CR>
+
+" Switch to alternate file.
+nnoremap <Leader><Leader> <C-^>
+
+" Previous and next buffer.
+nnoremap <Leader>z :bp<CR>
+nnoremap <Leader>x :bn<CR>
+
+" Don't go to next match.
+nnoremap * *<c-o>
+
+" cd into current file directory.
+nnoremap <leader>d :cd %:p:h<cr>
+
+" Split current line.
+" TODO: Remove this. (splitjoin)
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+
+" Equalize splits in current tab.
+nnoremap <localleader>= :wincmd =<cr>
+
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Open help in vertical split.
+cabbrev vhelp vert bo help
+
+" Set paste remap.
+nnoremap <leader>p :set paste!<CR>
+
+" Tabs
+nnoremap T :tabnew +Startify<cr>
+" nnoremap H :tabprev<cr>
+" nnoremap L :tabnext<cr>
+
+" Quick file opening.
+nnoremap <leader>lv :e $MYLOCALVIMRC<cr>
+nnoremap <leader>gv :e $MYVIMRC<cr>
+
+" Fold maps.
+nnoremap <leader>f mfggvGzO`f
+nnoremap <Space> za
+
+" Quick toggle.
+command! SS set spell!
+command! TMC set list! number! relativenumber! | GitGutterToggle
+
+" Remap W to w and Q to q so vim shuts the fuck up.
+cabbrev W w
+cabbrev Q q
+cabbrev E e
+
+" Duplicate current line.
+nnoremap <c-d> Yp
+
+" Source visual / current line.
+vnoremap <leader>S y:@"<CR>
+nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
+
+" vim:ft=vim

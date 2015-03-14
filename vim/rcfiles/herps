@@ -1,0 +1,6 @@
+iabbrev funciton function
+iabbrev retunr return
+iabbrev :hound: 🐕
+iabbrev :dog: 🐕
+
+" vim:ft=vim

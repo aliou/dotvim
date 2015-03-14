@@ -1,3 +1,9 @@
+" Source local file if it exists.
+if filereadable(glob("~/.vimrc.local"))
+  let $MYLOCALVIMRC="~/.vimrc.local"
+  source $MYLOCALVIMRC
+endif
+
 if filereadable('.vimrc.local') && getcwd() != expand('~')
   source .vimrc.local
 endif
