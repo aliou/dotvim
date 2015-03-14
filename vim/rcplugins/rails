@@ -24,7 +24,7 @@ let g:rails_projections = {
       \ },
       \   "app/services/*.rb": {
       \     "command":  "service",
-      \     "template": ["class %S", "end"],
+      \     "template": "class %S\nend",
       \     "test":     "spec/services/%s_spec.rb"
       \   },
       \   "config/routes.rb": {
