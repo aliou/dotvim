@@ -26,6 +26,9 @@ set ttimeoutlen=10
 set bs=indent,eol,start " Backspace over everything in insert mode.
 set completeopt=menu    " Don't show the preview buffer. (Useful for vim-go)
 
+set textwidth=80        " Default text width is 80 characters.
+set colorcolumn=+1      " Highlight the column after the tw limit.
+
 runtime! ftplugin/man.vim " Adds `:Man` command.
 
 " vim:ft=vim
