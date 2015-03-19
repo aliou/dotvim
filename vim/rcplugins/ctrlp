@@ -1,21 +1,37 @@
 " CtrlP: Fuzzy file finder.
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
 
-nnoremap <Leader>t :CtrlP<cr>
+" Set default mapping to invoke CtrlP. (Old habits die hard.)
+let g:ctrlp_map = ',t'
 
 " Additional mapping for buffer search
 nnoremap <leader>b :CtrlPBuffer<CR>
 
+" Additional mapping for current working dir.
 nnoremap <leader>y :CtrlPCurWD<CR>
-
-" Change the listing order of the files in the match window.
-let g:ctrlp_match_window_reversed = 0
 
 " The maximum number of files to scan, set to 0 for no limit:
 let g:ctrlp_max_files = 5000
 
+" Max depth to search into.
+let g:ctrlp_max_depth = 40
+
 " Don't jump to already open window.
 let g:ctrlp_switch_buffer = 0
+
+" Reuse CTRLP.
+let g:ctrlp_reuse_window = 'startify'
+
+" Enable caching. Purge the cache by running <F5>.
+let g:ctrlp_use_caching = 1
+
+" Don't clear cache on exit.
+let g:ctrlp_clear_cache_on_exit = 0
+
+" Cache folder.
+let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/cache'
+
 
 " Ignore these specific files and folders.
 let g:ctrlp_custom_ignore = {
@@ -23,17 +39,7 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\v\.(o|exe|netrwhist|pdf|png|jpg|gif)|tags$',
       \ }
 
-" Use the silver search for indexing.
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
-
-Plugin 'JazzCore/ctrlp-cmatcher'
-
+" Custom C matcher. Remember to compile matcher.
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " vim:ft=vim

@@ -27,6 +27,4 @@ let g:startify_change_to_vcs_root = 1
 
 let g:startify_files_number = 5
 
-let g:ctrlp_reuse_window = 'startify'
-
 " vim:ft=vim

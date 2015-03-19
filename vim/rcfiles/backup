@@ -5,6 +5,7 @@ set noswapfile " HOW ABOUT FUCK YOU.
 set undodir=~/.vim/tmp/undo//     " Undodir
 set backupdir=~/.vim/tmp/backup// " Backupdir.
 set directory=~/.vim/tmp/swap//   " Swapfile.
+let cachedir="~/.vim/tmp/cache/"   " Swapfile.
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
@@ -15,6 +16,9 @@ if !isdirectory(expand(&backupdir))
 endif
 if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
+endif
+if !isdirectory(expand(cachedir))
+  call mkdir(expand(cachedir), "p")
 endif
 
 " vim:ft=vim
