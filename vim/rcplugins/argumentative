@@ -1,0 +1,5 @@
+" Argumentative: Function argument motions and manipulations
+
+Plugin 'PeterRincker/vim-argumentative'
+
+" vim:ft=vim
