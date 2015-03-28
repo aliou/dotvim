@@ -1,12 +1,11 @@
-Plugin 'janko-m/vim-test'
+Plugin 'thoughtbot/vim-rspec'
 
-let g:test#strategy = 'dispatch'
+nnoremap <leader>rt :call RunNearestSpec()<CR>
+nnoremap <leader>rT :call RunCurrentSpecFile()<CR>
+nnoremap <leader>rA :call RunAllSpecs()<CR>
+nnoremap <leader>rl :call RunLastSpec()<CR>
 
-nnoremap <leader>rt :TestNearest<CR>
-nnoremap <leader>rT :TestFile<CR>
-nnoremap <leader>rA :Dispatch rspec<CR>
-nnoremap <leader>rl :TestLast<CR>
-
-let g:test#ruby#rspec#executable = "CI=1 rspec"
+let g:rspec_command = "Dispatch ./bin/rspec {spec}"
+" let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 " vim:ft=vim

@@ -32,6 +32,8 @@ let g:ctrlp_clear_cache_on_exit = 0
 " Cache folder.
 let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/cache'
 
+" Reverse the listting order of the results.
+let g:ctrlp_match_window = 'bottom,order:ttb'
 
 " Ignore these specific files and folders.
 let g:ctrlp_custom_ignore = {
