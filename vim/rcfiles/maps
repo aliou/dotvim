@@ -28,6 +28,7 @@ nnoremap // :nohlsearch<CR>
 
 " Close quickfix window.
 nnoremap <leader>qq :cclose<CR>
+nnoremap <leader>qp :pclose<CR>
 
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
