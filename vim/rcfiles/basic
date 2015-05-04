@@ -30,5 +30,6 @@ set textwidth=80        " Default text width is 80 characters.
 set colorcolumn=+1      " Highlight the column after the tw limit.
 
 runtime! ftplugin/man.vim " Adds `:Man` command.
+runtime macros/matchit.vim " Required from some plugins.
 
 " vim:ft=vim
