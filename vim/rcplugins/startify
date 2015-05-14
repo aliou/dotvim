@@ -1,6 +1,5 @@
 Plugin 'mhinz/vim-startify'
 
-" Custom header that shows the current directory's name.
 let g:startify_custom_header = ['', '']
 
 let g:startify_list_order = [

@@ -1,2 +1,3 @@
-Plugin 'kristijanhusak/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
+" vim:ft=vim
