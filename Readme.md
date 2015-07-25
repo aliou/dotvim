@@ -46,7 +46,7 @@ inserted for C, C++, Java and Make files like this:
 let g:epitech_header = 1
 ```
 
-[l1]: https://github.com/aliou/dotvim/blob/master/vim/plugin/epitech.vim#L17-18
+[l1]: https://github.com/aliou/dotvim/blob/fa06a59907b81b998a1de99e96b77c8fb3c55d47/vim/plugin/epitech.vim#L22-L23
 [l2]: https://github.com/gmarik/vundle
 [steve-losh]: https://bitbucket.org/sjl/dotfiles/
 [pengwynn]: https://github.com/pengwynn/dotfiles
