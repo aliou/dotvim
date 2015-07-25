@@ -1,6 +1,0 @@
-" GitGutter: Shows a git diff in the gutter (sign column) and stages/reverts
-" hunks.
-
-Plugin 'airblade/vim-gitgutter'
-
-" vim:ft=vim

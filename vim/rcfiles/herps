@@ -1,7 +1,0 @@
-iabbrev funciton function
-iabbrev retunr return
-iabbrev :hound: 🐕
-iabbrev :dog: 🐕
-iabbrev consoe console
-
-" vim:ft=vim

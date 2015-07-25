@@ -1,6 +1,0 @@
-Plugin 'junegunn/vim-easy-align'
-
-vmap <Enter> <Plug>(EasyAlign)
-vnoremap <localleader><localleader> :EasyAlign=<CR>
-
-" vim:ft=vim

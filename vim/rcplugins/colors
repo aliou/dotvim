@@ -1,9 +1,0 @@
-Plugin 'aliou/moriarty.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'godlygeek/csapprox'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'sjl/badwolf'
-Plugin 'tomasr/molokai'
-Plugin 'w0ng/vim-hybrid'
-
-" vim:ft=vim
