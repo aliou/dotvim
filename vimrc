@@ -466,42 +466,27 @@ let g:rails_projections = {
       \     "related":  "app/models/%s.rb",
       \     "template": "class %SSerializer < ActiveModel::Serializer\nend"
       \   },
+      \   "app/uploaders/*_uploader.rb": {
+      \     "command":  "uploader",
+      \     "template": ["class %SUploader < CarrierWave::Uploader::Base", "end"],
+      \     "test":     "spec/models/%s_uploader_spec.rb"
+      \   },
+      \   "app/services/*.rb": {
+      \       "command":  "service",
+      \       "template": "class %S\nend",
+      \       "test":     "spec/services/%s_spec.rb"
+      \   },
+      \   "app/decorators/*_decorator.rb": {
+      \     "command":  "decorator",
+      \     "template": ["class {camelcase|capitalize|colons}Decorator"
+      \                  . " < Draper::Decorator", "end"],
+      \     "test": [
+      \       "test/unit/%s_decorator_test.rb",
+      \       "spec/decorators/%s_decorator_spec.rb"
+      \     ],
+      \    "affinity": "model"
+      \   },
       \ }
-"       \   "spec/factories/*.rb": {
-"       \     "command":   "factory",
-"       \     "affinity":  "collection",
-"       \     "alternate": "app/models/%i.rb",
-"       \     "related":   "db/schema.rb#%s",
-"       \     "test":      "spec/models/%i_test.rb",
-"       \     "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
-"       \     "keywords":  "factory sequence"
-"       \   },
-"       \   "app/uploaders/*_uploader.rb": {
-"       \     "command":  "uploader",
-"       \     "template": ["class %SUploader < CarrierWave::Uploader::Base", "end"],
-"       \     "test":     "spec/models/%s_uploader_spec.rb"
-"       \   },
-"       \   "app/decorators/*_decorator.rb": {
-"       \     "command":  "decorator",
-"       \     "template": ["class {camelcase|capitalize|colons}Decorator"
-"       \                  . " < Draper::Decorator", "end"],
-"       \     "test": [
-"       \       "test/unit/%s_decorator_test.rb",
-"       \       "spec/decorators/%s_decorator_spec.rb"
-"       \     ],
-"       \    "affinity": "model"
-"       \   },
-"       \   "app/services/*.rb": {
-"       \       "command":  "service",
-"       \       "template": "class %S\nend",
-"       \       "test":     "spec/services/%s_spec.rb"
-"       \   },
-"       \   "app/forms/*.rb": {
-"       \       "command":  "form",
-"       \       "template": "class %S\nend",
-"       \       "test":     "spec/forms/%s_spec.rb"
-"       \   },
-
 " }}}
 
 " vim-test {{{
