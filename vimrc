@@ -459,6 +459,9 @@ vnoremap <localleader><localleader> :EasyAlign=<CR>
 
 " Rails.vim {{{
 let g:rails_projections = {
+      \   "config/routes.rb": {
+      \     "command":  "routes"
+      \   },
       \   "app/serializers/*_serializer.rb": {
       \     "command":  "serializer",
       \     "affinity": "model",
