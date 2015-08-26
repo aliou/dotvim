@@ -371,10 +371,10 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_reuse_window = 'startify'
 
 " Enable caching. Purge the cache by running <F5>.
-let g:ctrlp_use_caching = 1
+let g:ctrlp_use_caching = 0
 
 " Don't clear cache on exit.
-let g:ctrlp_clear_cache_on_exit = 0
+" let g:ctrlp_clear_cache_on_exit = 0
 
 " Cache folder.
 let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/cache'
