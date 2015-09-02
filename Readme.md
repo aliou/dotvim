@@ -21,7 +21,7 @@ echo "let g:airline_theme='lucius'" >> ~/.vimrc.local
 ### Update
 ```sh
 # Download the upstream changes and apply your changes on top.
-git pull --rebase
+git stash && git pull --rebase && git stash pop
 
 # Install eventual new plugins.
 vim +BundleInstall +qall
