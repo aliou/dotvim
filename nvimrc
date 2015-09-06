@@ -22,16 +22,11 @@ set listchars=tab:›\ ,eol:¬,trail:⋅ " Invisible character list.
 set showbreak=↪        " The character to put to show a line has been wrapped
 set scrolloff=999      " Keep the cursor centered in the screen
 set showmatch          " Highlight matching braces
-set matchtime=5
-set vb t_vb=           " SHUT THE FUCK UP.
-set novisualbell       " SHUT THE FUCK UP.
-set encoding=utf-8     " Character encoding.
 set shortmess=filtoOA  " Short message.
 set report=0           " Report all changes.
 set notimeout          " Timeout on key codes.
 set ttimeout
 set ttimeoutlen=10
-set bs=indent,eol,start " Backspace over everything in insert mode.
 set completeopt=menu    " Don't show the preview buffer. (Useful for vim-go)
 
 set textwidth=80        " Default text width is 80 characters.
