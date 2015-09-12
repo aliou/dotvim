@@ -51,6 +51,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
+Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'markwu/ZoomWin'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -268,7 +269,7 @@ set foldlevelstart=5
 
 augroup filtypes
   autocmd!
-  autocmd FileType c,cpp,cs,javascript,go
+  autocmd FileType c,cpp,cs,javascript,go,swift
         \ setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype less,css,scss setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype vim setlocal foldmethod=marker
