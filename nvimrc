@@ -57,6 +57,7 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'simnalamburt/vim-mundo'
 Plug 'sjl/clam.vim'
 Plug 'sjl/vitality.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -141,6 +142,9 @@ vnoremap ; :
 " Out of insert mode.
 inoremap jj <ESC>
 inoremap kk <ESC>
+
+" Leave insert mode in terminal buffers.
+tnoremap <Esc> <C-\><C-n>
 
 " Word wrapping.
 noremap j gj
