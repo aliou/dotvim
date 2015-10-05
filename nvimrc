@@ -269,7 +269,7 @@ augroup position
 augroup END
 
 let g:markdown_fenced_languages =
-      \ ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript',
+      \ ['css', 'erb=eruby', 'javascript', 'js=javascript',
       \ 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'go']
 " }}}
 
