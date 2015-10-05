@@ -1,21 +1,27 @@
 These are my Vim configuration files. [There are][steve-losh] [many like][pengwynn]
 [it][sanctum], but these are mine.
 
+### Disclaimer
+This files are meant to be used with [Neovim](http://neovim.io) and
+only contains a minimal vimrc for vim.
+
 ## Install
 
 ```sh
-# Backup your .vim and .vimrc before running this.
-git clone git://github.com/aliou/dotvim.git ~/.dotvim
-ln -s ~/.dotvim/vim ~/.vim
-ln -s ~/.dotvim/vimrc ~/.vimrc
+# Backup your .nvim and .nvimrc before running this.
+
+ln -s ~/.dotvim/nvim ~/.nvim
+ln -s ~/.dotvim/nvimrc ~/.nvimrc
 
 # Then install Vundle and the other plugins:
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim +BundleInstall +qall
 
-# Set colors
-echo "color hybrid" >> ~/.vimrc.local
-echo "let g:airline_theme='lucius'" >> ~/.vimrc.local
+# Install vim-plug and the other plugins.
+curl -fLo ~/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim +PlugInstall
+
+# Setup colorscheme and airline theme.
+echo -e "color moriarty\nlet g:airline_theme='lucius'" >> ~/.nvimrc.local
 ```
 
 ### Update
@@ -24,15 +30,15 @@ echo "let g:airline_theme='lucius'" >> ~/.vimrc.local
 git stash && git pull --rebase && git stash pop
 
 # Install eventual new plugins.
-vim +BundleInstall +qall
+nvim +PlugInstall
 
 # Remove eventual unused plugins.
-vim +BundleClean
+nvim +BundleClean
 ```
 
 ## Alternatives
 Theses files are really tailored to my use and might not be the best for you. In
-this case, I recommend @[skwp's][skwp-dotfiles] and [@sjl's][steve-losh]
+this case, I recommend checking out @[skwp's][skwp-dotfiles] and [@sjl's][steve-losh]
 dotfiles.
 
 ### Epitech
@@ -42,7 +48,7 @@ login and name and set `g:epitech_header` so the Epitech header is automatically
 inserted for C, C++, Java and Make files like this:
 
 ```vimscript
-" ~/.vimrc
+" ~/.nvimrc
 let g:epitech_header = 1
 ```
 
