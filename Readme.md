@@ -10,8 +10,8 @@ only contains a minimal vimrc for `vim`.
 ```sh
 # Backup your .nvim and .nvimrc before running this.
 
-ln -s ~/.dotvim/nvim ~/.nvim
-ln -s ~/.dotvim/nvimrc ~/.nvimrc
+mkdir -p ~/.config
+ln -s ~/.dotvim/nvim ~/.config/nvim
 
 # Then install Vundle and the other plugins:
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
