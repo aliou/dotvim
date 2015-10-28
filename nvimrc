@@ -44,6 +44,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'cfdrake/vim-carthage'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'duggiefresh/vim-easydir'
 Plug 'ekalinin/Dockerfile.vim'
@@ -51,12 +52,14 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
+Plug 'keith/rspec.vim'
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'markwu/ZoomWin'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'sheerun/vim-polyglot'
 Plug 'simnalamburt/vim-mundo'
 Plug 'sjl/clam.vim'
 Plug 'sjl/vitality.vim'
@@ -344,7 +347,7 @@ let g:ctrlp_custom_ignore = {
       \ }
 
 " Custom C matcher. Remember to compile matcher.
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 " }}}
 
 " tComment {{{

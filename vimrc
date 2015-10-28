@@ -15,3 +15,5 @@ color moriarty
 let g:airline_theme='lucius'
 
 echom "You might want to use neovim: run `nvim`."
+
+inoremap jj <esc>

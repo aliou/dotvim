@@ -3,7 +3,7 @@ These are my Vim configuration files. [There are][steve-losh] [many like][pengwy
 
 ### Disclaimer
 This files are meant to be used with [Neovim](http://neovim.io) and
-only contains a minimal vimrc for vim.
+only contains a minimal vimrc for `vim`.
 
 ## Install
 
