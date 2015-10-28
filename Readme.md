@@ -20,6 +20,10 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 curl -fLo ~/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugInstall
 
+# Make sure python is installed and run for plugin compatibility
+pip install neovim
+# Compile plugins e.g. ctrlp-cmatcher
+
 # Setup colorscheme and airline theme.
 echo -e "color moriarty\nlet g:airline_theme='lucius'" >> ~/.nvimrc.local
 ```

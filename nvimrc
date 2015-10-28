@@ -347,7 +347,7 @@ let g:ctrlp_custom_ignore = {
       \ }
 
 " Custom C matcher. Remember to compile matcher.
-" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 " }}}
 
 " tComment {{{
