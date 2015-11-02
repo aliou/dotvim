@@ -10,8 +10,12 @@ only contains a minimal vimrc for `vim`.
 ```sh
 # Backup your .nvim and .nvimrc before running this.
 
+git clone https://github.com/aliou/dotvim.git ~/.dotvim
+
 mkdir -p ~/.config
 ln -s ~/.dotvim/nvim ~/.config/nvim
+ln -s ~/.dotvim/vim ~/.vim
+ln -s ~/.dotvim/vimrc ~/.vimrc
 
 # Then install Vundle and the other plugins:
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -22,7 +26,7 @@ nvim +PlugInstall
 
 # Make sure python is installed and run for plugin compatibility
 pip install neovim
-# Compile plugins e.g. ctrlp-cmatcher
+# Compile plugins e.g. [ctrlp-cmatcher](https://github.com/JazzCore/ctrlp-cmatcher/)
 
 # Setup colorscheme and airline theme.
 echo -e "color moriarty\nlet g:airline_theme='lucius'" >> ~/.nvimrc.local
@@ -37,7 +41,7 @@ git stash && git pull --rebase && git stash pop
 nvim +PlugInstall
 
 # Remove eventual unused plugins.
-nvim +BundleClean
+nvim +PlugClean
 ```
 
 ## Alternatives
