@@ -178,8 +178,11 @@ nnoremap <Leader>x :bn<CR>
 " Don't go to next match.
 nnoremap * *<c-o>
 
-" cd into current file directory.
+" cd into the current file's directory.
 nnoremap <leader>d :cd %:p:h<cr>
+
+" cd into the current file's git directory.
+nnoremap <leader>gcd :Gcd<cr>
 
 " Split current line.
 " TODO: Remove this. (splitjoin)
