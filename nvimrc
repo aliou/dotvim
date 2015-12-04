@@ -300,6 +300,12 @@ augroup END
 nnoremap <C-\> :ptag <C-R><C-W><CR>
 vnoremap <C-\> "ty:ptag <C-R>t<CR>gv
 vnoremap <C-\> "sy:Ack "<C-R>s"<CR>
+
+" Navigate between tags
+" TODO: Use the current word as current tag: for example, il you use <c-]>, move
+" and then change word, using one if these two navigates with the previous tag.
+nnoremap [t :tprevious<CR>
+nnoremap ]t :tnext<CR>
 " }}}
 
 " Plugin config ---------------------------------------------------------- {{{
