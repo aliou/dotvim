@@ -255,6 +255,8 @@ augroup localconfig
   autocmd BufNewFile,BufRead *.json set filetype=json
 
   autocmd FileType * autocmd InsertLeave * silent! wa
+
+  autocmd FileType help setlocal textwidth=0
 augroup END
 
 augroup dennisritchie
