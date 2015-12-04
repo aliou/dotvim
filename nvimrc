@@ -408,6 +408,10 @@ let g:startify_list_order = [
 let g:startify_change_to_vcs_root = 1
 
 let g:startify_files_number = 5
+
+" Append bookmarks using `call add(g:startify_bookmarks, { 'x': 'xxxx' })` in
+" custom config files.
+let g:startify_bookmarks = []
 " }}}
 
 " Easy Align {{{
