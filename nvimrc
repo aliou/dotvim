@@ -166,7 +166,7 @@ noremap <Leader>a ggVG
 nnoremap // :nohlsearch<CR>
 
 " Close quickfix window.
-nnoremap <leader>qq :cclose \| pclose<CR>
+nnoremap <leader>qq :cclose \| pclose \| helpclose<CR>
 
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
