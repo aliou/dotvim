@@ -70,7 +70,7 @@ Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-jdaddy', { 'for': 'json' }
+" Plug 'tpope/vim-jdaddy', { 'for': 'json' }
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
@@ -233,6 +233,10 @@ nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 nnoremap <localleader>ft :set ft=<CR>
 nnoremap <localleader>rs :vertical resize 110<CR>
 nnoremap <localleader>Rs :resize 45<CR>
+
+" TODO: Find a better remap / retrain my muscle memory.
+" TODO: Check if `jq` is available in the path.
+nnoremap gqaj :%!jq '.'<CR>
 " }}}
 
 " Files ------------------------------------------------------------- {{{
