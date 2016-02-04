@@ -80,6 +80,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 
 Plug 'aliou/moriarty.vim'
+Plug 'aliou/ruby-sql-heredoc.vim', { 'for': 'ruby' }
 Plug 'nanotech/jellybeans.vim'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
