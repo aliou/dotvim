@@ -238,6 +238,9 @@ nnoremap <localleader>Rs :resize 45<CR>
 " TODO: Find a better remap / retrain my muscle memory.
 " TODO: Check if `jq` is available in the path.
 nnoremap gqaj :%!jq '.'<CR>
+
+" Quickly disable the textwidth.
+nnoremap <localleader>tw :set tw=0<CR>
 " }}}
 
 " Files ------------------------------------------------------------- {{{
