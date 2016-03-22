@@ -78,7 +78,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 
 Plug 'aliou/moriarty.vim'
 Plug 'aliou/sql-heredoc.vim', { 'for': 'ruby' }
