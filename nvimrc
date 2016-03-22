@@ -224,17 +224,16 @@ cabbrev Q q
 cabbrev E e
 
 " Duplicate current line.
-nnoremap <c-d> Yp
+nnoremap <c-d> "dY"dp
 
 " Source visual / current line.
 vnoremap <leader>S y:@"<CR>
 nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 
 " Interface updates
-" TODO: Resize using the current value: eg. `+5`
 nnoremap <localleader>ft :set ft=<CR>
-nnoremap <localleader>rs :vertical resize 110<CR>
-nnoremap <localleader>Rs :resize 45<CR>
+nnoremap <localleader>rs :vertical resize +5<CR>
+nnoremap <localleader>Rs :resize +5<CR>
 
 " TODO: Find a better remap / retrain my muscle memory.
 " TODO: Check if `jq` is available in the path.
