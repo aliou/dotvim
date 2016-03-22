@@ -468,6 +468,7 @@ let g:rails_projections = {
 nnoremap <leader>rt :TestNearest<CR>
 nnoremap <leader>rT :TestFile<CR>
 nnoremap <leader>rA :TestSuite<CR>
+nnoremap <leader>rr :TestSuite<CR>
 nnoremap <leader>rl :TestLast<CR>
 
 let test#strategy = 'dispatch'
