@@ -8,6 +8,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-sensible'
 Plug 'aliou/moriarty.vim'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
