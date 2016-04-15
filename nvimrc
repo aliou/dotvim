@@ -54,7 +54,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
 Plug 'keith/rspec.vim'
-Plug 'keith/swift.vim', { 'for': 'swift' }
+Plug 'keith/swift.vim'
 Plug 'markwu/ZoomWin'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -255,6 +255,8 @@ augroup localconfig
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
         \ set ft=ruby
 
+  " TODO: Add function surrounding the selected word in a link thingy:
+  " i.e. `[<word>]()`.
   autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
   autocmd Filetype markdown setlocal spell tw=0
 
@@ -285,7 +287,7 @@ augroup position
 augroup END
 
 let g:markdown_fenced_languages =
-      \ ['css', 'erb=eruby', 'javascript', 'js=javascript',
+      \ ['css', 'erb=eruby', 'javascript', 'js=javascript', 'swift',
       \ 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'go']
 " }}}
 
@@ -309,9 +311,7 @@ nnoremap <C-\> :ptag <C-R><C-W><CR>
 vnoremap <C-\> "ty:ptag <C-R>t<CR>gv
 vnoremap <C-\> "sy:Ack "<C-R>s"<CR>
 
-" Navigate between tags
-" TODO: Use the current word as current tag: for example, il you use <c-]>, move
-" and then change word, using one if these two navigates with the previous tag.
+" Tab navigation, like hunk navigation in diff mode.
 nnoremap [t :tprevious<CR>
 nnoremap ]t :tnext<CR>
 " }}}
