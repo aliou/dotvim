@@ -95,9 +95,8 @@ set backup     " Enable backups for Gundo
 set undofile   " Save the file.
 set noswapfile " HOW ABOUT FUCK YOU.
 
-set undodir=~/.nvim/tmp/undo//     " Undodir
-set backupdir=~/.nvim/tmp/backup// " Backupdir.
-set directory=~/.nvim/tmp/swap//   " Swapfile.
+" No longer need to set the `undodir`, `backupdir` and `directory` because
+" neovim gives us cool defaults (`$XDG_DATA_HOME/nvim/<folder>`). Thanks Neovim!
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
