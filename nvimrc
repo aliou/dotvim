@@ -235,6 +235,7 @@ nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 nnoremap <localleader>ft :set ft=<CR>
 nnoremap <localleader>rs :vertical resize +5<CR>
 nnoremap <localleader>Rs :resize +5<CR>
+nnoremap <localleader>so :set scrolloff=0<CR>
 
 " TODO: Find a better remap / retrain my muscle memory.
 " TODO: Check if `jq` is available in the path.
