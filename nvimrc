@@ -152,6 +152,9 @@ inoremap kk <ESC>
 " Leave insert mode in terminal buffers.
 tnoremap <Esc> <C-\><C-n>
 
+" Open split with bash.
+cnoremap vst vs term://bash<CR>A
+
 " Word wrapping.
 noremap j gj
 noremap k gk
