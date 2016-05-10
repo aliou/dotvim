@@ -141,6 +141,11 @@ set wildignore+=*.DS_Store                     " OSX bullshit
 set whichwrap+=<,>,h,l,[,]                     " Wrap chars.
 " }}}
 
+" Spelling -----------------------------------------------------------------{{{
+set dictionary=/usr/share/dict/words " Basic stuff.
+" TODO: Add custom, version controlled, dictionary.
+" TODO: Add custom, non version controlled, local dictionary.
+" }}}
 
 " Map --------------------------------------------------------------------- {{{
 " Qwerty keyboard.
