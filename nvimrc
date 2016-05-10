@@ -99,6 +99,10 @@ set noswapfile " HOW ABOUT FUCK YOU.
 
 " No longer need to set the `undodir`, `backupdir` and `directory` because
 " neovim gives us cool defaults (`$XDG_DATA_HOME/nvim/<folder>`). Thanks Neovim!
+" Update: JK, Neovim doesn't seem to use the backupdir, but only on my work
+" computer. Huh.
+
+set backupdir=~/.local/share/nvim/backup
 
 set backupdir=~/.nvim/tmp/backup//
 
