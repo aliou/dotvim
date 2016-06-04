@@ -360,6 +360,9 @@ let g:ctrlp_switch_buffer = 0
 " Reuse CTRLP.
 let g:ctrlp_reuse_window = 'startify'
 
+" Disable caching.
+let g:ctrlp_use_caching = 0
+
 " Cache folder.
 let g:ctrlp_cache_dir = $HOME.'/.nvim/tmp/cache'
 
