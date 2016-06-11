@@ -491,6 +491,10 @@ let g:go_doc_command = "godoc"
 let g:go_dispatch_enabled = 1
 " }}}
 
+" projectionist {{{
+let g:projectionist_heuristics = {}
+" }}}
+
 " }}}
 
 " Functions --------------------------------------------------------------- {{{
