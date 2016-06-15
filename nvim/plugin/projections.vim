@@ -3,12 +3,26 @@ if !exists("g:projectionist_heuristics")
 endif
 
 " Elixir / Phoenix projections.
-" Find a way to change the project name.
+" TODO: Find a way to change the project name. (Dynamic ?)
 " TODO: Add templates.
 let g:projectionist_heuristics['mix.exs'] = {
       \   "mix.exs": {
       \     "type": "lib",
       \     "alternate": "mix.lock"
+      \   },
+      \   "web/web.ex": {
+      \     "type": "web"
+      \   },
+      \   "lib/*.ex": {
+      \     "type": "lib",
+      \     "alternate": "test/lib/{}_test.exs",
+      \     "template": [
+      \       "defmodule ProjectName.{camelcase} do",
+      \       "  @moduledoc \"\"\"",
+      \       "  \"\"\"",
+      \       "",
+      \       "end"
+      \     ]
       \   },
       \   "mix.lock": {
       \     "alternate": "mix.exs"
@@ -61,7 +75,7 @@ let g:projectionist_heuristics['mix.exs'] = {
       \     "type": "plug",
       \     "alternate": "test/plug/{}_test.exs"
       \   },
-      \   "web/views/*.ex": {
+      \   "web/views/*_view.ex": {
       \     "type": "view",
       \     "alternate": "test/views/{}_test.exs",
       \     "template": [
