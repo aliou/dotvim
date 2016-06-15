@@ -45,7 +45,7 @@ Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'cfdrake/vim-carthage'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'duggiefresh/vim-easydir'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-lang/vim-elixir'
@@ -380,9 +380,6 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor|bower_components|deps)$',
       \ 'file': '\v\.(o|exe|netrwhist|pdf|png|jpg|gif)|tags$',
       \ }
-
-" Custom C matcher. Remember to compile matcher.
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 " }}}
 
 " tComment {{{
