@@ -254,6 +254,9 @@ nnoremap gqaj :%!jq '.'<CR>
 
 " Quickly disable the textwidth.
 nnoremap <localleader>tw :set tw=0<CR>
+
+" Sort selected paragraph.
+vnoremap <leader>s :'<,'>sort<CR>
 " }}}
 
 " Files ------------------------------------------------------------- {{{
