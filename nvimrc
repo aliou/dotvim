@@ -67,6 +67,7 @@ Plug 'shmup/vim-sql-syntax'
 Plug 'sjl/clam.vim'
 Plug 'sjl/vitality.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'timakro/vim-searchant'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
@@ -84,6 +85,7 @@ Plug 'vim-ruby/vim-ruby'
 
 Plug 'aliou/moriarty.vim'
 Plug 'aliou/sql-heredoc.vim', { 'for': 'ruby' }
+Plug 'junegunn/limelight.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
@@ -304,7 +306,7 @@ augroup END
 
 let g:markdown_fenced_languages =
       \ ['css', 'erb=eruby', 'javascript', 'js=javascript', 'swift',
-      \ 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'go']
+      \ 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'go', 'sql']
 " }}}
 
 " Folds -------------------------------------------------------------- {{{
