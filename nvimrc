@@ -67,7 +67,6 @@ Plug 'shmup/vim-sql-syntax'
 Plug 'sjl/clam.vim'
 Plug 'sjl/vitality.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'timakro/vim-searchant'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber', { 'for': 'ruby' }
@@ -320,7 +319,7 @@ augroup filtypes
   autocmd Filetype less,css,scss setlocal foldmethod=marker foldmarker={,}
   autocmd Filetype vim setlocal foldmethod=marker
   autocmd FileType html setlocal foldmethod=indent
-  autocmd FileType ruby setlocal foldmethod=syntax
+  autocmd FileType ruby,elixir setlocal foldmethod=syntax
 augroup END
 " }}}
 
