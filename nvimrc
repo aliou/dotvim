@@ -577,7 +577,7 @@ nnoremap <c-b> :Breathe<cr>
 " gives you one color of highlighting.  Now you can use <leader>N where N is
 " a number from 1-6 to highlight the current word in a specific color.
 
-function! HiInterestingWord(n) " {{{
+function! HiInterestingWord(n)
     " Save our location.
     normal! mz
 
@@ -599,6 +599,15 @@ function! HiInterestingWord(n) " {{{
     " Move back to our original location.
     normal! `z
 endfunction " }}}
+
+" Markoff: Open the current file in Markoff.
+" TODO: Error message if the Markoff application doesn't exists.
+function! s:Markoff()
+  " silent! :!open -a Markoff %
+  execute "!open -a Markoff %"
+endfunction
+command! -nargs=0 Markoff call s:Markoff()
+" }}}
 
 " Mappings {{{
 
