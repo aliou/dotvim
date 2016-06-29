@@ -132,3 +132,36 @@ let g:projectionist_heuristics['mix.exs'] = {
       \     "type": "css"
       \   }
       \ }
+
+" Jekyll project.
+let g:projectionist_heuristics['_config.yml'] = {
+      \    "_config.yml": {
+      \      "type": "config"
+      \    },
+      \    "_layouts/*.html": {
+      \      "type": "layout"
+      \    },
+      \    "_includes/*.html": {
+      \      "type": "include"
+      \    },
+      \    "_posts/*.md": {
+      \      "type": "post",
+      \      "template": [
+      \        "---",
+      \        "layout: post",
+      \        "title: ",
+      \        "---"
+      \      ],
+      \      "console": "pry",
+      \      "dispatch": "pry"
+      \    },
+      \    "_drafts/*.md": {
+      \      "type": "draft",
+      \      "template": [
+      \        "---",
+      \        "layout: post",
+      \        "title: ",
+      \        "---"
+      \      ]
+      \    },
+      \  }
