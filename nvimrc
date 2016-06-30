@@ -50,6 +50,7 @@ Plug 'duggiefresh/vim-easydir'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'gfontenot/vim-xcode'
 Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
