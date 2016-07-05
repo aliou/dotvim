@@ -84,12 +84,12 @@ Plug 'vim-ruby/vim-ruby'
 
 Plug 'aliou/moriarty.vim'
 Plug 'aliou/sql-heredoc.vim', { 'for': 'ruby' }
+Plug 'aliou/vim-hybrid'
 Plug 'junegunn/limelight.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
-Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 " }}}
