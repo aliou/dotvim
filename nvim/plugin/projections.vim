@@ -17,7 +17,7 @@ let g:projectionist_heuristics['mix.exs'] = {
       \     "type": "lib",
       \     "alternate": "test/lib/{}_test.exs",
       \     "template": [
-      \       "defmodule ProjectName.{camelcase} do",
+      \       "defmodule {camelcase} do",
       \       "  @moduledoc \"\"\"",
       \       "  \"\"\"",
       \       "",
@@ -105,21 +105,21 @@ let g:projectionist_heuristics['mix.exs'] = {
       \   "test/models/*_test.exs": {
       \     "alternate": "web/models/{}.ex"
       \   },
-      \   "*": {
-      \     "make": "mix test",
-      \     "console": "iex -S mix phoenix.server",
-      \     "start": "mix phoenix.server"
+      \   "test/lib/*_test.exs": {
+      \     "alternate": "lib/{}.ex"
       \   },
       \   "test/*_test.exs": {
       \     "command": "test",
       \     "dispatch": "mix test {file}"
       \   },
+      \
       \   "priv/repo/migrations/*.exs": {
       \     "type": "migration"
       \   },
       \   "priv/repo/seeds.exs": {
       \     "type": "seed"
       \   },
+      \
       \   "web/static/js/*.js": {
       \     "type": "js",
       \     "template": [
@@ -130,6 +130,12 @@ let g:projectionist_heuristics['mix.exs'] = {
       \   },
       \   "web/static/css/*.css": {
       \     "type": "css"
+      \   },
+      \
+      \   "*": {
+      \     "make": "mix test",
+      \     "console": "iex -S mix phoenix.server",
+      \     "start": "mix phoenix.server"
       \   }
       \ }
 
