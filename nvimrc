@@ -83,14 +83,17 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 
-Plug 'aliou/moriarty.vim'
-Plug 'aliou/sql-heredoc.vim', { 'for': 'ruby' }
-Plug 'aliou/vim-hybrid'
 Plug 'junegunn/limelight.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
+
+Plug '~/code/src/github.com/aliou/moriarty.vim'
+Plug '~/code/src/github.com/aliou/sql-herdoc.vim'
+Plug '~/code/src/github.com/aliou/hybrid.vim'
+Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
+Plug '~/code/src/github.com/aliou/scratch.vim'
 
 call plug#end()
 " }}}
@@ -601,14 +604,6 @@ function! HiInterestingWord(n)
     " Move back to our original location.
     normal! `z
 endfunction " }}}
-
-" Markoff: Open the current file in Markoff.
-" TODO: Error message if the Markoff application doesn't exists.
-function! s:Markoff()
-  " silent! :!open -a Markoff %
-  execute "!open -a Markoff %"
-endfunction
-command! -nargs=0 Markoff call s:Markoff()
 " }}}
 
 " Mappings {{{
