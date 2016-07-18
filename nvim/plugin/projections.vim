@@ -7,11 +7,23 @@ endif
 " TODO: Add templates.
 let g:projectionist_heuristics['mix.exs'] = {
       \   "mix.exs": {
-      \     "type": "lib",
+      \     "type": "mix",
       \     "alternate": "mix.lock"
       \   },
       \   "web/web.ex": {
       \     "type": "web"
+      \   },
+      \   "lib/mix/tasks/*.ex": {
+      \     "type": "task",
+      \     "template": [
+      \       "defmodule Mix.Tasks.{camelcase} do",
+      \       "  use Mix.Task",
+      \       "",
+      \       "  def run(args) do",
+      \       "",
+      \       "  end",
+      \       "end"
+      \     ]
       \   },
       \   "lib/*.ex": {
       \     "type": "lib",
@@ -90,6 +102,7 @@ let g:projectionist_heuristics['mix.exs'] = {
       \   "web/router.ex": {
       \     "type": "router"
       \   },
+      \
       \   "test/test_helper.exs": {
       \     "type": "test"
       \   },
@@ -113,9 +126,6 @@ let g:projectionist_heuristics['mix.exs'] = {
       \     "dispatch": "mix test {file}"
       \   },
       \
-      \   "priv/repo/migrations/*.exs": {
-      \     "type": "migration"
-      \   },
       \   "priv/repo/seeds.exs": {
       \     "type": "seed"
       \   },
@@ -138,6 +148,10 @@ let g:projectionist_heuristics['mix.exs'] = {
       \     "start": "mix phoenix.server"
       \   }
       \ }
+
+" \   "priv/repo/migrations/*.exs": {
+" \     "type": "migration"
+" \   },
 
 " Jekyll project.
 let g:projectionist_heuristics['_config.yml'] = {
