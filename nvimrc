@@ -90,7 +90,7 @@ Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
 
 Plug '~/code/src/github.com/aliou/moriarty.vim'
-Plug '~/code/src/github.com/aliou/sql-herdoc.vim'
+Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
 Plug '~/code/src/github.com/aliou/scratch.vim'
