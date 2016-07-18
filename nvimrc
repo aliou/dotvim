@@ -33,6 +33,14 @@ set textwidth=80        " Default text width is 80 characters.
 set colorcolumn=+1      " Highlight the column after the tw limit.
 set splitbelow          " Always split below.
 
+" '1000 => Number of previously edited files for which the marks are remembered.
+" <500  => Number of lines saved for each register.
+" :500  => Number of items in the command-line history to be saved.
+" /500  => Number of items in the search pattern history to be saved.
+set viminfo='1000,<500,:500,/500
+" Previous / default value:
+" set viminfo=!,'100,<50,s10,h
+
 runtime! ftplugin/man.vim " Adds `:Man` command.
 
 " }}}
