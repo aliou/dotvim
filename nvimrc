@@ -188,7 +188,9 @@ vnoremap < <gv
 noremap <Leader>a ggVG
 
 " Remove search highligts.
-nnoremap // :nohlsearch<CR>
+" nnoremap // :nohlsearch<CR>
+" Hacking my muscle memory.
+nnoremap // :echom "Use coh / ]oh, from unimpaired."<CR>
 
 " Close quickfix window.
 nnoremap <leader>qq :cclose \| pclose \| helpclose<CR>
@@ -197,8 +199,11 @@ nnoremap <leader>qq :cclose \| pclose \| helpclose<CR>
 nnoremap <Leader><Leader> <C-^>
 
 " Previous and next buffer.
-nnoremap <Leader>z :bp<CR>
-nnoremap <Leader>x :bn<CR>
+" nnoremap <Leader>z :bp<CR>
+" nnoremap <Leader>x :bn<CR>
+" Hacking my muscle memory.
+nnoremap <Leader>z :echom "Use [b from unimpaired."<CR>
+nnoremap <Leader>x :echom "Use ]b from unimpaired."<CR>
 
 " Don't go to next match.
 nnoremap * *<c-o>
@@ -245,9 +250,6 @@ command! TMC set list! number! relativenumber! | GitGutterToggle
 cabbrev W w
 cabbrev Q q
 cabbrev E e
-
-" Duplicate current line.
-nnoremap <c-d> "dY"dp
 
 " Source visual / current line.
 vnoremap <leader>S y:@"<CR>
