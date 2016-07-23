@@ -163,10 +163,6 @@ set dictionary=/usr/share/dict/words " Basic stuff.
 
 
 " Map --------------------------------------------------------------------- {{{
-" Qwerty keyboard.
-nnoremap ; :
-vnoremap ; :
-
 " Out of insert mode.
 inoremap jj <ESC>
 inoremap kk <ESC>
