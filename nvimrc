@@ -60,7 +60,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'gfontenot/vim-xcode'
 Plug 'hashivim/vim-terraform'
-Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
@@ -98,11 +97,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
 
-Plug '~/code/src/github.com/aliou/moriarty.vim'
-Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
+Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
+Plug '~/code/src/github.com/aliou/spec-index.vim'
+Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 
 call plug#end()
 " }}}
