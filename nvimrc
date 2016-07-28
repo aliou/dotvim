@@ -11,7 +11,7 @@ set hidden             " Allow buffers to be in the background without saving.
 set laststatus=2       " Show status bar.
 set cmdheight=2        " Status line height.
 set noshowmode         " Hide current mode.
-set showcmd            " Show current command.
+" set showcmd            " Show current command.
 
 set relativenumber     " Show relative line number.
 set number             " Show line number.
@@ -98,11 +98,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
 
-Plug '~/code/src/github.com/aliou/moriarty.vim'
-Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
+Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
+Plug '~/code/src/github.com/aliou/spec-index.vim'
+Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 
 call plug#end()
 " }}}
@@ -193,7 +194,7 @@ noremap <Leader>a ggVG
 nnoremap // :echom "Use coh / ]oh, from unimpaired."<CR>
 
 " Close quickfix window.
-nnoremap <leader>qq :cclose \| pclose \| helpclose<CR>
+nnoremap <leader>qq :cclose \| pclose \| helpclose \| lclose<CR>
 
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
