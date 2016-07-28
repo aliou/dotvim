@@ -193,7 +193,7 @@ noremap <Leader>a ggVG
 nnoremap // :echom "Use coh / ]oh, from unimpaired."<CR>
 
 " Close quickfix window.
-nnoremap <leader>qq :cclose \| pclose \| helpclose<CR>
+nnoremap <leader>qq :cclose \| pclose \| helpclose \| lclose<CR>
 
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
