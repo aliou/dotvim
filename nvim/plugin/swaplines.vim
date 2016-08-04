@@ -6,23 +6,25 @@ function! s:swap_lines(n1, n2)
 endfunction
 
 function! s:swap_up()
-  let n = line('.')
-  if n == 1
-    return
-  endif
-
-  call s:swap_lines(n, n - 1)
-  exec n - 1
+  " let n = line('.')
+  " if n == 1
+  "   return
+  " endif
+  "
+  " call s:swap_lines(n, n - 1)
+  " exec n - 1
+  echom "Use [e from unimpaired"
 endfunction
 
 function! s:swap_down()
-  let n = line('.')
-  if n == line('$')
-    return
-  endif
-
-  call s:swap_lines(n, n + 1)
-  exec n + 1
+  " let n = line('.')
+  " if n == line('$')
+  "   return
+  " endif
+  "
+  " call s:swap_lines(n, n + 1)
+  " exec n + 1
+  echom "Use ]e from unimpaired"
 endfunction
 
 noremap <silent> <c-k> :call <SID>swap_up()<CR>

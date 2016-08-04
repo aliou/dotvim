@@ -573,8 +573,9 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 "
 " TODO: Visual mode.
 function! s:Breathe() " {{{
-  call append('.', '')
-  call append(line('.') - 1, '')
+  " call append('.', '')
+  " call append(line('.') - 1, '')
+  echom "Use [<Space> and ]<Space> from vim-unimpaired."
 endfunction " }}}
 " }}}
 command! -nargs=0 Breathe call s:Breathe()
