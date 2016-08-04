@@ -164,10 +164,6 @@ set dictionary=/usr/share/dict/words " Basic stuff.
 
 
 " Map --------------------------------------------------------------------- {{{
-" Out of insert mode.
-inoremap jj <ESC>
-inoremap kk <ESC>
-
 " Leave insert mode in terminal buffers.
 tnoremap <Esc> <C-\><C-n>
 
