@@ -86,6 +86,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline-themes'
@@ -96,6 +97,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sjl/badwolf'
 Plug 'tomasr/molokai'
+Plug 'jacoborus/tender'
 
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
@@ -190,7 +192,7 @@ noremap <Leader>a ggVG
 " Remove search highligts.
 " nnoremap // :nohlsearch<CR>
 " Hacking my muscle memory.
-nnoremap // :echom "Use coh / ]oh, from unimpaired."<CR>
+nnoremap // :echom "Use ]oh, from unimpaired."<CR>
 
 " Close quickfix window.
 nnoremap <leader>qq :cclose \| pclose \| helpclose \| lclose<CR>
