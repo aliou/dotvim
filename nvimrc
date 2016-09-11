@@ -108,14 +108,12 @@ call plug#end()
 " }}}
 
 " Backups ---------------------------------------------------------------- {{{
-set backup     " Enable backups for Gundo
-set undofile   " Save the file.
-set noswapfile " HOW ABOUT FUCK YOU.
+set undodir=~/.nvim/tmp/undo//     " Undodir
+set backupdir=~/.nvim/tmp/backup// " Backupdir.
+set directory=~/.nvim/tmp/swap//   " Swapfile.
 
 " No longer need to set the `undodir`, `backupdir` and `directory` because
 " neovim gives us cool defaults (`$XDG_DATA_HOME/nvim/<folder>`). Thanks Neovim!
-
-set backupdir=~/.nvim/tmp/backup//
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
@@ -127,6 +125,10 @@ endif
 if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
 endif
+
+set backup     " Enable backups for Gundo
+set undofile   " Save the file.
+set noswapfile " HOW ABOUT FUCK YOU.
 " }}}
 
 " Tabs -------------------------------------------------------------------- {{{
@@ -165,7 +167,9 @@ set dictionary=/usr/share/dict/words " Basic stuff.
 
 " Map --------------------------------------------------------------------- {{{
 " Leave insert mode in terminal buffers.
-tnoremap <Esc> <C-\><C-n>
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
 
 " Open split with bash.
 cnoremap vst vs term://bash<CR>A
