@@ -13,6 +13,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
+
 call plug#end()
 " }}}
 
