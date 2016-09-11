@@ -102,6 +102,9 @@ let g:projectionist_heuristics['mix.exs'] = {
       \   "web/router.ex": {
       \     "type": "router"
       \   },
+      \   "web/templates/*.html.eex": {
+      \     "type": "template"
+      \   },
       \
       \   "test/test_helper.exs": {
       \     "type": "test"
@@ -109,7 +112,7 @@ let g:projectionist_heuristics['mix.exs'] = {
       \   "test/controllers/*_test.exs": {
       \     "alternate": "web/controllers/{}.ex",
       \     "template": [
-      \       "defmodule ProjectName.{camelcase}ControllerTest do",
+      \       "defmodule ProjectName.{camelcase}Test do",
       \       "  use ProjectName.ConnCase",
       \       "",
       \       "end"
