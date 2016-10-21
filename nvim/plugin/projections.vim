@@ -102,7 +102,7 @@ let g:projectionist_heuristics['mix.exs'] = {
       \   "web/router.ex": {
       \     "type": "router"
       \   },
-      \   "web/templates/*.html.eex": {
+      \   "web/templates/*.eex": {
       \     "type": "template"
       \   },
       \
