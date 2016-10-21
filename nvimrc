@@ -191,9 +191,7 @@ vnoremap < <gv
 noremap <Leader>a ggVG
 
 " Remove search highligts.
-" nnoremap // :nohlsearch<CR>
-" Hacking my muscle memory.
-nnoremap // :echom "Use ]oh, from unimpaired."<CR>
+nnoremap // :nohlsearch<cr>
 
 " Close quickfix window.
 nnoremap <leader>qq :cclose \| pclose \| helpclose \| lclose<CR>
