@@ -8,6 +8,7 @@ call plug#begin('~/.vim/md/bundle')
 
 Plug 'aliou/moriarty.vim', { 'branch': 'fenced.vim' }
 Plug 'bling/vim-airline'
+Plug 'jacoborus/tender'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-sensible'
@@ -24,7 +25,7 @@ set relativenumber
 " }}}
 
 " color fenced
-color moriarty
+color tender
 
 inoremap jj <ecs>
 
