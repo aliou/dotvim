@@ -69,6 +69,7 @@ Plug 'markwu/ZoomWin'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'shmup/vim-sql-syntax'
@@ -397,7 +398,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 
 " Ignore these specific files and folders.
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor|bower_components|deps)$',
+      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp|node_modules|venv|_site|vendor|bower_components|deps|target)$',
       \ 'file': '\v\.(o|exe|netrwhist|pdf|png|jpg|gif)|tags$',
       \ }
 " }}}

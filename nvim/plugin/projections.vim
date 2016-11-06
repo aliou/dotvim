@@ -188,3 +188,18 @@ let g:projectionist_heuristics['_config.yml'] = {
       \      ]
       \    },
       \  }
+
+let g:projectionist_heuristics['Cargo.toml'] = {
+      \    "Cargo.toml": {
+      \      "type": "lib",
+      \      "alternate": "Cargo.lock"
+      \    },
+      \    "src/*.rs": {
+      \      "type": "src",
+      \      "alternate": "test/{}.rs"
+      \    },
+      \    "test/*.rs": {
+      \      "type": "test",
+      \      "alternate": "src/{}.rs"
+      \    }
+      \  }
