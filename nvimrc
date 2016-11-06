@@ -271,6 +271,9 @@ nnoremap <localleader>tw :set tw=0<CR>
 
 " Sort selected paragraph.
 vnoremap <leader>s :'<,'>sort<CR>
+
+" FUCK YOU I KNOW HOW TO TYPE :HELP
+nnoremap <F1> <nop>
 " }}}
 
 " Files ------------------------------------------------------------- {{{
