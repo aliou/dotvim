@@ -51,6 +51,7 @@ call plug#begin('~/.nvim/bundle')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
+Plug 'alcesleo/vim-uppercase-sql'
 Plug 'bling/vim-airline'
 Plug 'cfdrake/vim-carthage'
 Plug 'ctrlpvim/ctrlp.vim'
