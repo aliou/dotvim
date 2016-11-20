@@ -354,9 +354,9 @@ nnoremap ]t :tnext<CR>
 
 " Ack {{{
 " Run searches asynchronously.
-let g:ack_use_dispatch = 1
-let g:ack_default_options =
-      \ " -s -H --nocolor --nogroup --column --smart-case"
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+endif
 " }}}
 
 " Clam {{{
