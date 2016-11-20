@@ -12,6 +12,7 @@ Plug 'jacoborus/tender'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-endwise'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug '~/code/src/github.com/aliou/markoff.vim', { 'for': 'markdown' }
@@ -26,8 +27,6 @@ set relativenumber
 
 " color fenced
 color tender
-
-inoremap jj <ecs>
 
 " Airline {{{
 let g:airline_theme='lucius'
@@ -64,3 +63,6 @@ let g:markdown_fenced_languages =
 " }}}
 
 " TODO: Command preview: Open in Markoff if available.
+
+set cc=+1
+set textwidth=80
