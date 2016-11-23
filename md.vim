@@ -4,7 +4,7 @@
 set nocompatible
 
 " Plugins {{{
-call plug#begin('~/.vim/md/bundle')
+call plug#begin('~/.dotvim/md/bundle')
 
 Plug 'aliou/moriarty.vim', { 'branch': 'fenced.vim' }
 Plug 'bling/vim-airline'
