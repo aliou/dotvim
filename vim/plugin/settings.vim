@@ -1,8 +1,5 @@
-let mapleader = ","
-set cursorline         " Highlight current line.
+" set cursorline         " Highlight current line.
 set hidden             " Allow buffers to be in the background without saving.
-set laststatus=2       " Show status bar.
-set cmdheight=2        " Status line height.
 set noshowmode         " Hide current mode.
 set showcmd            " Show current command.
 
@@ -15,12 +12,8 @@ set listchars=tab:›\ ,eol:¬,trail:⋅ " Invisible character list.
 set showbreak=↪        " The character to put to show a line has been wrapped
 set scrolloff=999      " Keep the cursor centered in the screen
 set showmatch          " Highlight matching braces
-set shortmess=filtoOA  " Short message.
 set report=0           " Report all changes.
-set notimeout          " Timeout on key codes.
-set ttimeout           " See above.
-set ttimeoutlen=10     " Time in ms that is waited for a mapping to finish.
-set completeopt=menu   " Don't show the preview buffer. (Useful for vim-go)
+" set completeopt=menu   " Don't show the preview buffer. (Useful for vim-go)
 
 set textwidth=80       " Default text width is 80 characters.
 set colorcolumn=+1     " Highlight the column after the tw limit.
