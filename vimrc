@@ -34,6 +34,12 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'chriskempson/base16-vim'
+Plug 'godlygeek/csapprox'
+Plug 'wombat256.vim'
 
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim'
@@ -44,6 +50,3 @@ Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 
 call plug#end()
 " }}}
-
-set bg=dark
-color moriarty
