@@ -10,11 +10,12 @@ syntax on
 
 let mapleader = ","
 
-" Plugins"{{{
+" Plugins {{{
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'dietsche/vim-lastplace'
+Plug 'fatih/vim-go'
 Plug 'mhinz/vim-startify'
 Plug 'sjl/clam.vim'
 Plug 'tpope/vim-commentary'
