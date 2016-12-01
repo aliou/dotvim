@@ -38,6 +38,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Utils.
+Plug 'mileszs/ack.vim'
+
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/csapprox'
 Plug 'wombat256.vim'
