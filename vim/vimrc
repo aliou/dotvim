@@ -25,9 +25,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
@@ -40,6 +37,11 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Utils.
 Plug 'mileszs/ack.vim'
+
+" Projects
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
 
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/csapprox'
