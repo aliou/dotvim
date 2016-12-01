@@ -18,4 +18,6 @@ let g:startify_files_number = 5
 
 " Append bookmarks using `call add(g:startify_bookmarks, { 'x': 'xxxx' })` in
 " custom config files.
-let g:startify_bookmarks = []
+let g:startify_bookmarks = [
+                  \  { 'v': '~/.vim/vimrc' }
+                  \ ]
