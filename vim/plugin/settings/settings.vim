@@ -27,3 +27,5 @@ set splitright         " And always split right.
 set viminfo='1000,<500,:500,/500
 " Previous / default value:
 " set viminfo=!,'100,<50,s10,h
+"
+runtime macros/matchit.vim
