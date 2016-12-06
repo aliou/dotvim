@@ -9,24 +9,27 @@ let g:rails_projections = {
       \     "related":  "app/models/%s.rb",
       \     "template": "class %SSerializer < ActiveModel::Serializer\nend"
       \   },
-      \   "app/uploaders/*_uploader.rb": {
-      \     "command":  "uploader",
-      \     "template": ["class %SUploader < CarrierWave::Uploader::Base", "end"],
-      \     "test":     "spec/models/%s_uploader_spec.rb"
-      \   },
       \   "app/services/*.rb": {
       \       "command":  "service",
       \       "template": "class %S\nend",
       \       "test":     "spec/services/%s_spec.rb"
       \   },
-      \   "app/decorators/*_decorator.rb": {
-      \     "command":  "decorator",
-      \     "template": ["class {camelcase|capitalize|colons}Decorator"
-      \                  . " < Draper::Decorator", "end"],
+      \  "app/controllers/*_controller.rb": {
       \     "test": [
-      \       "test/unit/%s_decorator_test.rb",
-      \       "spec/decorators/%s_decorator_spec.rb"
+      \       "spec/requests/{}_spec.rb",
+      \       "spec/controllers/{}_controller_spec.rb",
+      \       "test/controllers/{}_controller_test.rb"
       \     ],
-      \    "affinity": "model"
+      \     "alternate": [
+      \       "spec/requests/{}_spec.rb",
+      \       "spec/controllers/{}_controller_spec.rb",
+      \       "test/controllers/{}_controller_test.rb"
+      \     ],
+      \   },
+      \   "spec/requests/*_spec.rb": {
+      \     "command": "request",
+      \     "alternate": "app/controllers/{}_controller.rb",
+      \     "template": "require 'rails_helper'\n\n" .
+      \       "RSpec.describe '{}' do\nend",
       \   },
       \ }
