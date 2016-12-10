@@ -21,6 +21,7 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wombat256.vim'
+Plug 'sjl/badwolf'
 
 " Settings
 Plug 'dietsche/vim-lastplace'
@@ -36,7 +37,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 
 " Utils.
@@ -48,8 +48,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-sleuth'
+Plug 'c-brenn/phoenix.vim'
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -58,6 +59,7 @@ Plug 'sheerun/vim-polyglot'
 " Text object.
 Plug 'kana/vim-textobj-user' | Plug 'sgur/vim-textobj-parameter'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'PeterRincker/vim-argumentative'
 
 " Tests
 Plug 'janko-m/vim-test'
