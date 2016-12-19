@@ -32,4 +32,7 @@ let g:rails_projections = {
       \     "template": "require 'rails_helper'\n\n" .
       \       "RSpec.describe '{}' do\nend",
       \   },
+      \   "db/data/*.rb": {
+      \     "command": "data"
+      \   },
       \ }
