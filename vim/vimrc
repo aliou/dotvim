@@ -34,6 +34,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 
 " Editing
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -50,14 +51,13 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-sleuth'
-Plug 'c-brenn/phoenix.vim'
+Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'sheerun/vim-polyglot'
 
 " Text object.
-Plug 'kana/vim-textobj-user' | Plug 'sgur/vim-textobj-parameter'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'PeterRincker/vim-argumentative'
 
