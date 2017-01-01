@@ -48,7 +48,7 @@ Plug 'tpope/vim-vinegar'
 " Projects
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-sleuth'
 Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
