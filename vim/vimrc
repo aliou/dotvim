@@ -61,8 +61,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'PeterRincker/vim-argumentative'
 
-" Tests
+" Tests / Lint
 Plug 'janko-m/vim-test'
+" TODO: Add ruby when rubocop is setup in snap
+Plug 'w0rp/ale', { 'for': ['javascript'] }
 
 " Local
 Plug '~/code/src/github.com/aliou/hybrid.vim'
