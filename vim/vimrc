@@ -63,7 +63,6 @@ Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-" TODO: Add ruby when rubocop is setup in snap
 Plug 'w0rp/ale'
 
 " Local
