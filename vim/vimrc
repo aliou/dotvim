@@ -64,7 +64,7 @@ Plug 'PeterRincker/vim-argumentative'
 " Tests / Lint
 Plug 'janko-m/vim-test'
 " TODO: Add ruby when rubocop is setup in snap
-Plug 'w0rp/ale', { 'for': ['javascript'] }
+Plug 'w0rp/ale'
 
 " Local
 Plug '~/code/src/github.com/aliou/hybrid.vim'
