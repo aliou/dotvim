@@ -16,12 +16,12 @@ call plug#begin('~/.vim/bundle')
 " Display
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'godlygeek/csapprox'
 Plug 'mhinz/vim-startify'
+Plug 'reedes/vim-colors-pencil'
+Plug 'sjl/badwolf'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wombat256.vim'
-Plug 'sjl/badwolf'
 
 " Settings
 Plug 'dietsche/vim-lastplace'
