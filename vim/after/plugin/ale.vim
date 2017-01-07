@@ -1,4 +1,2 @@
-" Only enable javascript for now.
-let g:ale_linters = {
-      \   'javascript': ['eslint'],
-      \}
+" Prepend linter name to the message.
+let g:ale_echo_msg_format = '[%linter%] %s'
