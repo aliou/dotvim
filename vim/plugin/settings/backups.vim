@@ -1,7 +1,7 @@
 " TODO: Disable when root user.
-set undodir=~/.vim/tmp/undo//     " Undodir
-set backupdir=~/.vim/tmp/backup// " Backupdir.
-set directory=~/.vim/tmp/swap//   " Swapfile.
+set undodir=~/.config/vim/tmp/undo//     " Undodir
+set backupdir=~/.config/vim/tmp/backup// " Backupdir.
+set directory=~/.config/vim/tmp/swap//   " Swapfile.
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
