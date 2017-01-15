@@ -14,6 +14,16 @@ let g:rails_projections = {
       \       "template": "class %S\nend",
       \       "test":     "spec/services/%s_spec.rb"
       \   },
+      \   "app/queries/*.rb": {
+      \       "command":  "query",
+      \       "template": "class %S\nend",
+      \       "test":     "spec/queries/%s_spec.rb"
+      \   },
+      \   "app/validators/*.rb": {
+      \       "command":  "validators",
+      \       "template": "class %S\nend",
+      \       "test":     "spec/validators/%s_spec.rb"
+      \   },
       \  "app/controllers/*_controller.rb": {
       \     "test": [
       \       "spec/requests/{}_spec.rb",
@@ -29,8 +39,13 @@ let g:rails_projections = {
       \   "spec/requests/*_spec.rb": {
       \     "command": "request",
       \     "alternate": "app/controllers/{}_controller.rb",
-      \     "template": "require 'rails_helper'\n\n" .
-      \       "RSpec.describe '{}' do\nend",
+      \     "template": [
+      \       "require 'rails_helper'",
+      \       "",
+      \       "Rspec.describe '{}' do",
+      \       "",
+      \       "end"
+      \     ]
       \   },
       \   "db/data/*.rb": {
       \     "command": "data"
