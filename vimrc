@@ -49,7 +49,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
+Plug 'tpope/vim-rake', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-sleuth'
 Plug 'c-brenn/phoenix.vim', { 'for': ['elixir', 'startify'] }
 
