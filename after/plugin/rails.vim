@@ -32,6 +32,7 @@ let g:rails_projections = {
       \     ],
       \     "alternate": [
       \       "spec/requests/{}_spec.rb",
+      \       "app/serializers/{}_serializer.rb",
       \       "spec/controllers/{}_controller_spec.rb",
       \       "test/controllers/{}_controller_test.rb"
       \     ],
