@@ -20,6 +20,9 @@ set colorcolumn=+1     " Highlight the column after the tw limit.
 set splitbelow         " Always split below.
 set splitright         " And always split right.
 
+" This makes :Make work with Tmux 2.3+ (for dispatch and Ack)
+set shellpipe+=\ 
+
 " '1000 => Number of previously edited files for which the marks are remembered.
 " <500  => Number of lines saved for each register.
 " :500  => Number of items in the command-line history to be saved.
