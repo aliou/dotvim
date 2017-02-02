@@ -5,3 +5,9 @@ nnoremap <Space> za
 nnoremap <leader>rt :TestNearest<CR>
 nnoremap <leader>rT :TestFile<CR>
 nnoremap <leader>rr :TestSuite<CR>
+
+" Word wrapping.
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
