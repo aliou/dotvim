@@ -3,7 +3,6 @@ set hidden             " Allow buffers to be in the background without saving.
 set noshowmode         " Hide current mode.
 set showcmd            " Show current command.
 
-set relativenumber     " Show relative line number.
 set number             " Show current line number.
 
 set list               " Show invisible characters.
