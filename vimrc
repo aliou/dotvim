@@ -47,7 +47,8 @@ Plug 'tpope/vim-vinegar'
 
 " Projects
 Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-projectionist'
+" Plug 'tpope/vim-projectionist'
+Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-rake', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-sleuth'
