@@ -50,7 +50,6 @@ Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-rake', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-sleuth'
-Plug 'c-brenn/phoenix.vim', { 'for': ['elixir', 'startify'] }
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
