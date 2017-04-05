@@ -65,6 +65,8 @@ Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 
 " Local
+Plug '~/code/src/github.com/aliou/bats.vim'
+Plug '~/code/src/github.com/aliou/dope.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim'
 Plug '~/code/src/github.com/aliou/moriarty.vim'
