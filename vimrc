@@ -19,8 +19,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'mhinz/vim-startify'
 Plug 'reedes/vim-colors-pencil'
 Plug 'sjl/badwolf'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'wombat256.vim'
 
 " Settings
