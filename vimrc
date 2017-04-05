@@ -50,6 +50,7 @@ Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-rake', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-scriptease'
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go' }
