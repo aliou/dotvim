@@ -53,6 +53,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-scriptease'
 
 " Languages
+Plug 'chr4/nginx.vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'sheerun/vim-polyglot'
 
