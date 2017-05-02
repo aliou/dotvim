@@ -56,6 +56,9 @@ Plug 'tpope/vim-scriptease'
 Plug 'chr4/nginx.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
+
+" TODO: Remove this? Benchmark loading because of this plugin.
 Plug 'sheerun/vim-polyglot'
 
 " Text object.
