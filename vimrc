@@ -30,6 +30,7 @@ Plug 'sjl/clam.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Editing
 Plug 'AndrewRadev/splitjoin.vim'
