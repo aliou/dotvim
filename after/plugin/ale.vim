@@ -5,5 +5,8 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 
+" Disable population of location list.
+let g:ale_set_loclist = 0
+
 nmap <silent> [a <Plug>(ale_previous)
 nmap <silent> ]a <Plug>(ale_next)
