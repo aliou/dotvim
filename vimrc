@@ -61,7 +61,7 @@ Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 
 " TODO: Remove this? Benchmark loading because of this plugin.
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Text object.
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock'
@@ -78,6 +78,7 @@ Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim'
 Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/jekyll.vim'
+Plug '~/code/src/github.com/aliou/phx.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/spec-index.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
