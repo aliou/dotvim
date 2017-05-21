@@ -20,6 +20,7 @@ Plug 'mhinz/vim-startify'
 Plug 'reedes/vim-colors-pencil'
 Plug 'sjl/badwolf'
 Plug 'wombat256.vim'
+Plug 'AlessandroYorba/Sierra'
 
 " Settings
 Plug 'dietsche/vim-lastplace'
