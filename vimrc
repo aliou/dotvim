@@ -41,6 +41,7 @@ Plug 'tpope/vim-surround'
 
 " Utils.
 Plug 'mileszs/ack.vim'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
