@@ -8,5 +8,8 @@ let g:ale_lint_on_text_changed = 0
 " Disable population of location list.
 let g:ale_set_loclist = 0
 
+" Let shellcheck follow external sources.
+let g:ale_sh_shellcheck_options = '-x'
+
 nmap <silent> [a <Plug>(ale_previous)
 nmap <silent> ]a <Plug>(ale_next)
