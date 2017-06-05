@@ -1,7 +1,7 @@
 " vimrc
 " Author: Aliou Diallo <code@aliou.me>
 
-" set nocompatible
+set nocompatible
 
 " Automatic, language-dependent indentation, syntax coloring and other
 " functionality.
