@@ -45,6 +45,7 @@ Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Projects
 Plug 'tpope/vim-obsession'
