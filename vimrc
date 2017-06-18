@@ -21,6 +21,7 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'sjl/badwolf'
 Plug 'wombat256.vim'
 Plug 'AlessandroYorba/Sierra'
+Plug 'rakr/vim-one'
 
 " Settings
 Plug 'dietsche/vim-lastplace'
