@@ -11,5 +11,13 @@ let g:ale_set_loclist = 0
 " Let shellcheck follow external sources.
 let g:ale_sh_shellcheck_options = '-x'
 
+" Disable Ale for Fastlane file.
+let g:ale_pattern_options =
+      \ {
+      \   'Fastfile$': { 'ale_enabled': 0 },
+      \   'Appfile$': { 'ale_enabled': 0 },
+      \   'Matchfile$': { 'ale_enabled': 0 }
+      \ }
+
 nmap <silent> [a <Plug>(ale_previous)
 nmap <silent> ]a <Plug>(ale_next)
