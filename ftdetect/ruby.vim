@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile Appfile,Deliverfile,Fastfile set filetype=ruby
+autocmd BufRead,BufNewFile Appfile,Deliverfile,Fastfile,Matchfile set filetype=ruby
