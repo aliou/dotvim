@@ -23,3 +23,6 @@ set wildignore+=*.sw?
 
 " macOS bullshit
 set wildignore+=*.DS_Store
+
+" Personal bullshift
+" set wildignore+=.tmux,.tags
