@@ -11,6 +11,8 @@ let g:ale_set_loclist = 0
 " Let shellcheck follow external sources.
 let g:ale_sh_shellcheck_options = '-x'
 
+" Use the relaxed configuration for yamllint.
+let g:ale_yaml_yamllint_options = '-d relaxed'
 
 nmap <silent> [a <Plug>(ale_previous)
 nmap <silent> ]a <Plug>(ale_next)
