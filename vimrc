@@ -49,17 +49,16 @@ Plug 'tpope/vim-vinegar'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Projects
+Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
-Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-rake', { 'for': ['ruby', 'startify'] }
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-sleuth'
 
 " Languages
 Plug 'chr4/nginx.vim'
-Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'sheerun/vim-polyglot'
 
@@ -75,9 +74,10 @@ Plug 'w0rp/ale'
 Plug '~/code/src/github.com/aliou/bats.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
-Plug '~/code/src/github.com/aliou/markoff.vim'
-Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/jekyll.vim'
+Plug '~/code/src/github.com/aliou/markoff.vim'
+Plug '~/code/src/github.com/aliou/mix.vim'
+Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/phx.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/spec-index.vim'
