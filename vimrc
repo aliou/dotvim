@@ -50,6 +50,7 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " Projects
 Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
