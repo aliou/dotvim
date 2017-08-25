@@ -1,9 +1,6 @@
 " Set default mapping to invoke CtrlP. (Old habits die hard.)
 let g:ctrlp_map = ',t'
 
-" Additional mapping for buffer search
-nnoremap <leader>b :CtrlPBuffer<CR>
-
 " Reuse CTRLP.
 let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|startify'
 
