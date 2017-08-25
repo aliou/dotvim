@@ -14,10 +14,23 @@ let g:ale_sh_shellcheck_options = '-x'
 " Use the relaxed configuration for yamllint.
 let g:ale_yaml_yamllint_options = '-d relaxed'
 
+" Disable for Fastlane files and for alacritty configuration file.
 let g:ale_pattern_options =
-      \ {
-      \   'Fastfile$': { 'ale_enabled': 0 },
-      \   'Appfile$': { 'ale_enabled': 0 },
-      \   'Matchfile$': { 'ale_enabled': 0 },
-      \   'alacritty\/config\.yml$': { 'ale_enabled': 0 }
-      \ }
+   \ {
+   \   'Fastfile$': { 'ale_enabled': 0 },
+   \   'Appfile$': { 'ale_enabled': 0 },
+   \   'Matchfile$': { 'ale_enabled': 0 },
+   \   'alacritty\/config\.yml$': { 'ale_enabled': 0 }
+   \ }
+
+let g:ale_linters =
+  \ {
+  \   'javascript': ['prettier']
+  \ }
+
+" Allows you to "fix" your code.
+let g:ale_fixers =
+  \ {
+  \   'javascript': ['prettier'],
+  \   'ruby': ['rubocop']
+  \ }
