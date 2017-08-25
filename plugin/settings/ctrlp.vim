@@ -29,12 +29,12 @@ let g:ctrlp_extensions = ['tag']
 let g:ctrlp_status_func = { 'main': 'CtrlP_Statusline_Main' }
 
 function! CtrlP_Statusline_Main(focus, byfname, regexp, prv, item, nxt, marked)
-  let marked = a:marked
-  let dyncwd = getcwd()
+  let l:marked = a:marked
+  let l:dyncwd = getcwd()
 
-  let reminder = '%#CtrlPMode2#<c-f>'
-  let item     = '%#CtrlPMode1# '.a:item.' %*'
-  let dir      = '%=%<%#CtrlPMode2# '.dyncwd.' %*'
-  let stl      = reminder.item.dir
-  return stl
+  let l:item     = '%#CtrlPMode1# ' . a:item . ' %*'
+  let l:dir      = '%=%<%#CtrlPMode2# '. l:dyncwd .' %*'
+  let l:stl      = l:item . l:dir
+
+  return l:stl
 endfunction
