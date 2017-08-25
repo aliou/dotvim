@@ -28,12 +28,16 @@ endif
 " Enable tag extension.
 let g:ctrlp_extensions = ['tag']
 
-let g:ctrlp_buffer_func = { 'enter': 'HideStatusLine', 'exit':  'ShowStatusLine' }
+" Custom status function.
+let g:ctrlp_status_func = { 'main': 'CtrlP_Statusline_Main' }
 
-function! HideStatusLine()
-  set laststatus=0
-endfunc
+function! CtrlP_Statusline_Main(focus, byfname, regexp, prv, item, nxt, marked)
+  let marked = a:marked
+  let dyncwd = getcwd()
 
-function! ShowStatusLine()
- set laststatus=2
-endfunc
+  let reminder = '%#CtrlPMode2#<c-f>'
+  let item     = '%#CtrlPMode1# '.a:item.' %*'
+  let dir      = '%=%<%#CtrlPMode2# '.dyncwd.' %*'
+  let stl      = reminder.item.dir
+  return stl
+endfunction
