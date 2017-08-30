@@ -70,6 +70,7 @@ Plug 'PeterRincker/vim-argumentative'
 " Tests / Lint
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
+Plug 'junegunn/vader.vim'
 
 " Local
 Plug '~/code/src/github.com/aliou/bats.vim'
