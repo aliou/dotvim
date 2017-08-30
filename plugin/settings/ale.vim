@@ -14,13 +14,17 @@ let g:ale_sh_shellcheck_options = '-x'
 " Use the relaxed configuration for yamllint.
 let g:ale_yaml_yamllint_options = '-d relaxed'
 
+" Use the local prettier configuration file.
+let g:ale_javascript_prettier_use_local_config = 1
+
 " Disable for Fastlane files and for alacritty configuration file.
 let g:ale_pattern_options =
    \ {
    \   'Fastfile$': { 'ale_enabled': 0 },
    \   'Appfile$': { 'ale_enabled': 0 },
    \   'Matchfile$': { 'ale_enabled': 0 },
-   \   'alacritty\/config\.yml$': { 'ale_enabled': 0 }
+   \   'alacritty\/config\.yml$': { 'ale_enabled': 0 },
+   \   '.env$': { 'ale_enabled': 0 }
    \ }
 
 let g:ale_linters =
