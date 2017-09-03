@@ -29,7 +29,8 @@ let g:ale_pattern_options =
 
 let g:ale_linters =
   \ {
-  \   'javascript': ['prettier']
+  \   'javascript': ['prettier'],
+  \   'elixir': ['credo']
   \ }
 
 " Allows you to "fix" your code.
