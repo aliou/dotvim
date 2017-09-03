@@ -61,6 +61,7 @@ Plug 'tpope/vim-sleuth'
 " Languages
 Plug 'chr4/nginx.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'lifepillar/pgsql.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Text object.
