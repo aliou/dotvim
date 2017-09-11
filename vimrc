@@ -17,11 +17,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'mhinz/vim-startify'
-Plug 'reedes/vim-colors-pencil'
 Plug 'sjl/badwolf'
 Plug 'wombat256.vim'
-Plug 'AlessandroYorba/Sierra'
-Plug 'rakr/vim-one'
 
 " Settings
 Plug 'dietsche/vim-lastplace'
@@ -60,7 +57,6 @@ Plug 'tpope/vim-sleuth'
 
 " Languages
 Plug 'chr4/nginx.vim'
-Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'lifepillar/pgsql.vim'
 Plug 'sheerun/vim-polyglot'
 
