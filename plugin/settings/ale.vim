@@ -18,24 +18,35 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 let g:ale_javascript_prettier_use_local_config = 1
 
 " Disable for Fastlane files and for alacritty configuration file.
-let g:ale_pattern_options =
-   \ {
-   \   'Fastfile$': { 'ale_enabled': 0 },
-   \   'Appfile$': { 'ale_enabled': 0 },
-   \   'Matchfile$': { 'ale_enabled': 0 },
-   \   'alacritty\/config\.yml$': { 'ale_enabled': 0 },
-   \   '.env$': { 'ale_enabled': 0 }
-   \ }
+let g:ale_pattern_options = {
+\  'Fastfile$': { 'ale_enabled': 0 },
+\  'Appfile$': { 'ale_enabled': 0 },
+\  'Matchfile$': { 'ale_enabled': 0 },
+\  'alacritty\/config\.yml$': { 'ale_enabled': 0 },
+\  '.env$': { 'ale_enabled': 0 }
+\}
 
-let g:ale_linters =
-  \ {
-  \   'javascript': ['prettier'],
-  \   'elixir': ['credo']
-  \ }
+let g:ale_linters = {
+\  'javascript': ['prettier'],
+\  'elixir': ['credo']
+\}
+
+call ale#fix#registry#Add(
+\  'gofmt', 'ale_fixers#gofmt#Fix', ['go'], 'Fix Go files with gofmt'
+\)
+
+call ale#fix#registry#Add(
+\  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
+\)
+
+call ale#fix#registry#Add(
+\  'exfmt', 'ale_fixers#exfmt#Fix', ['elixir'], 'Fix Elixir files with exfmt'
+\)
 
 " Allows you to "fix" your code.
-let g:ale_fixers =
-  \ {
-  \   'javascript': ['prettier'],
-  \   'ruby': ['rubocop']
-  \ }
+let g:ale_fixers = {
+\  'javascript': ['prettier'],
+\  'ruby': ['rubocop'],
+\  'go': ['gofmt'],
+\  'rust': ['rustfmt'],
+\}
