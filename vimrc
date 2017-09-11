@@ -46,12 +46,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Projects
+" TODO: open issue on upstream.
 Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
-Plug 'tpope/vim-rake', { 'for': ['ruby', 'startify'] }
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-sleuth'
 
@@ -66,11 +67,12 @@ Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
 Plug 'junegunn/vader.vim'
+Plug 'w0rp/ale'
 
 " Local
 Plug '~/code/src/github.com/aliou/bats.vim'
+Plug '~/code/src/github.com/aliou/cargo.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/jekyll.vim'
