@@ -9,6 +9,11 @@
     "related": "app/models/%s.rb",
     "template": "class %SSerializer < ActiveModel::Serializer\nend"
   },
+  "app/policies/*_policy.rb": {
+    "command": "policy",
+    "template": "class %SPolicy\nend",
+    "test": "spec/policies/%s_spec.rb"
+  },
   "app/services/*.rb": {
     "command": "service",
     "template": "class %S\nend",
