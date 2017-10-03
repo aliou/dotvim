@@ -32,10 +32,6 @@ let g:ale_linters = {
 \}
 
 call ale#fix#registry#Add(
-\  'gofmt', 'ale_fixers#gofmt#Fix', ['go'], 'Fix Go files with gofmt'
-\)
-
-call ale#fix#registry#Add(
 \  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
 \)
 
