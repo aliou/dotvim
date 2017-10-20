@@ -1,0 +1,14 @@
+" Experiment: Loading a smaller vim configuration for quick edits (commits, PRs,
+" etc)
+
+set nocompatible
+
+" Remove main vim configuration from runtimepath.
+set runtimepath-=~/.vim runtimepath-=~/.vim/after
+
+" Load minimal configuration
+packadd vim-sensible
+packadd vim-fugitive
+packadd moriarty.vim
+
+color moriarty
