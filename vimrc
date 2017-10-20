@@ -33,6 +33,7 @@ Plug 'tpope/vim-rhubarb'
 
 " Editing
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
