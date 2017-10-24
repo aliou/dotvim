@@ -49,8 +49,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Projects
-" TODO: open issue on upstream.
-Plug 'aliou/vim-projectionist', { 'branch': 'ad-ignore-empty-completions' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
@@ -87,6 +85,7 @@ Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/spec-index.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
+Plug '~/code/src/github.com/aliou/vim-projectionist'
 
 call plug#end()
 " }}}
