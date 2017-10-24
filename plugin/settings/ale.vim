@@ -26,23 +26,17 @@ let g:ale_pattern_options = {
 \  '.env$': { 'ale_enabled': 0 }
 \}
 
-let g:ale_linters = {
-\  'javascript': ['prettier'],
-\  'elixir': ['credo']
-\}
-
 call ale#fix#registry#Add(
 \  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
 \)
 
-call ale#fix#registry#Add(
-\  'exfmt', 'ale_fixers#exfmt#Fix', ['elixir'], 'Fix Elixir files with exfmt'
-\)
-
 " Allows you to "fix" your code.
 let g:ale_fixers = {
+\  'c': ['clang-format'],
+\  'cpp': ['clang-format'],
+\  'go': ['gofmt'],
+\  'help': ['align_help_tags', 'remove_trailing_lines'],
 \  'javascript': ['prettier'],
 \  'ruby': ['rubocop'],
-\  'go': ['gofmt'],
 \  'rust': ['rustfmt'],
 \}
