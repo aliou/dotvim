@@ -87,6 +87,7 @@ Plug '~/code/src/github.com/aliou/spec-index.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
 Plug '~/code/src/github.com/aliou/vim-projectionist'
+Plug '~/code/src/github.com/aliou/wren.vim'
 
 call plug#end()
 " }}}
