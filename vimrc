@@ -15,7 +15,6 @@ call plug#begin('~/.vim/bundle')
 
 " Display
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'mhinz/vim-startify'
@@ -47,6 +46,7 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'romainl/vim-qf'
 
 " Projects
 Plug 'ctrlpvim/ctrlp.vim'
