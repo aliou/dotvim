@@ -69,10 +69,9 @@ Plug 'PeterRincker/vim-argumentative'
 " Tests / Lint
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vader.vim'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 
 " Local
-Plug '~/code/src/github.com/aliou/ale'
 Plug '~/code/src/github.com/aliou/bats.vim'
 Plug '~/code/src/github.com/aliou/cargo.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
