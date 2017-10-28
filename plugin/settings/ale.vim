@@ -34,6 +34,7 @@ call ale#fix#registry#Add(
 let g:ale_fixers = {
 \  'c': ['clang-format'],
 \  'cpp': ['clang-format'],
+\  'elixir': ['mix_format'],
 \  'go': ['gofmt'],
 \  'help': ['align_help_tags', 'remove_trailing_lines'],
 \  'javascript': ['prettier'],
