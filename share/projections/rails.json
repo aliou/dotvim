@@ -15,7 +15,7 @@
     "test": "spec/policies/%s_spec.rb"
   },
   "app/services/*.rb": {
-    "command": "service",
+    "command": "xservice",
     "template": "class %S\nend",
     "test": "spec/services/%s_spec.rb"
   },
