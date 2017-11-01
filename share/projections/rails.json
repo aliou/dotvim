@@ -53,7 +53,7 @@
     "template": [
       "require 'rails_helper'",
       "",
-      "Rspec.describe '{}' do",
+      "RSpec.describe '{}' do",
       "",
       "end"
     ]
