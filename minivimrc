@@ -9,6 +9,6 @@ set runtimepath-=~/.vim runtimepath-=~/.vim/after
 " Load minimal configuration
 packadd vim-sensible
 packadd vim-fugitive
-packadd moriarty.vim
+packadd hybrid.vim
 
-color moriarty
+color hybrid
