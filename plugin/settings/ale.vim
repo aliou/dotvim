@@ -30,6 +30,10 @@ call ale#fix#registry#Add(
 \  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
 \)
 
+call ale#fix#registry#Add(
+\  'jq', 'ale_fixers#jq#Fix', ['json'], 'Fix JSON files using jq.'
+\)
+
 " Allows you to "fix" your code.
 let g:ale_fixers = {
 \  'c': ['clang-format'],
@@ -38,6 +42,7 @@ let g:ale_fixers = {
 \  'go': ['gofmt'],
 \  'help': ['align_help_tags', 'remove_trailing_lines'],
 \  'javascript': ['prettier'],
+\  'json': ['jq'],
 \  'ruby': ['rubocop'],
 \  'rust': ['rustfmt'],
 \}
