@@ -7,26 +7,41 @@
     "affinity": "model",
     "test": "spec/serializers/%s_spec.rb",
     "related": "app/models/%s.rb",
-    "template": "class %SSerializer < ActiveModel::Serializer\nend"
+    "template": [
+      "class {camelcase|capitalize|colons}Serializer < ActiveModel::Serializer",
+      "end"
+    ]
   },
   "app/policies/*_policy.rb": {
     "command": "policy",
-    "template": "class %SPolicy\nend",
+    "template": [
+      "class {camelcase|capitalize|colons}Policy",
+      "end"
+    ],
     "test": "spec/policies/%s_spec.rb"
   },
   "app/services/*.rb": {
     "command": "xservice",
-    "template": "class %S\nend",
+    "template": [
+      "class {camelcase|capitalize|colons}",
+      "end"
+    ],
     "test": "spec/services/%s_spec.rb"
   },
-  "app/queries/*.rb": {
+  "app/queries/*_query.rb": {
     "command": "query",
-    "template": "class %S\nend",
+    "template": [
+      "class {camelcase|capitalize|colons}",
+      "end"
+    ],
     "test": "spec/queries/%s_spec.rb"
   },
   "app/validators/*.rb": {
     "command": "validators",
-    "template": "class %S\nend",
+    "template": [
+      "class {camelcase|capitalize|colons}Validator",
+      "end"
+    ],
     "test": "spec/validators/%s_spec.rb"
   },
   "app/controllers/*_controller.rb": {
@@ -45,7 +60,12 @@
     "command": "factory",
     "affinity": "model",
     "related": "app/models/%s.rb",
-    "template": "FactoryGirl.define do\n  factory :%s do\n  end\nend"
+    "template": [
+      "FactoryGirl.define do",
+      "  factory :{} do",
+      "  end",
+      "end"
+    ]
   },
   "spec/requests/*_spec.rb": {
     "command": "request",
@@ -53,7 +73,7 @@
     "template": [
       "require 'rails_helper'",
       "",
-      "RSpec.describe '{}' do",
+      "RSpec.describe '{capitalize}' do",
       "",
       "end"
     ]
