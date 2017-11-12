@@ -21,9 +21,7 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_pattern_options = {
 \  'Fastfile$': { 'ale_enabled': 0 },
 \  'Appfile$': { 'ale_enabled': 0 },
-\  'Matchfile$': { 'ale_enabled': 0 },
-\  'alacritty\/config\.yml$': { 'ale_enabled': 0 },
-\  '.env$': { 'ale_enabled': 0 }
+\  'Matchfile$': { 'ale_enabled': 0 }
 \}
 
 call ale#fix#registry#Add(
@@ -41,7 +39,7 @@ let g:ale_fixers = {
 \  'elixir': ['mix_format'],
 \  'go': ['gofmt'],
 \  'help': ['align_help_tags', 'remove_trailing_lines'],
-\  'javascript': ['prettier'],
+\  'javascript': ['prettier', 'eslint'],
 \  'json': ['jq'],
 \  'ruby': ['rubocop'],
 \  'rust': ['rustfmt'],
