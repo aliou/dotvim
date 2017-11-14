@@ -1,5 +1,6 @@
-" Prepend linter name to the message.
-let g:ale_echo_msg_format = '[%linter%] %s'
+" Prepend the linter name, the severity and the error code (when present) to
+" the error message.
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %[code] %%s'
 
 " Only run on save.
 let g:ale_lint_on_save = 1
