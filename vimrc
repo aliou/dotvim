@@ -49,7 +49,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'romainl/vim-qf'
 
 " Projects
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim', { 'on': ['<plug>(ctrlp)', 'CtrlPMRUFiles' ]}
 Plug 'tpope/vim-obsession'
 " Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'

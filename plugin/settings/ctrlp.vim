@@ -1,5 +1,7 @@
 " Set default mapping to invoke CtrlP. (Old habits die hard.)
-let g:ctrlp_map = ',t'
+" We manually create the mapping so we can load CtrlP on demand when it is call.
+" See vim-plug documentation on On-demande load of plugins.
+nmap <leader>t <Plug>(ctrlp)
 
 " Reuse CTRLP.
 let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|startify'
