@@ -18,13 +18,6 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 " Use the local prettier configuration file.
 let g:ale_javascript_prettier_use_local_config = 1
 
-" Disable for Fastlane files and for alacritty configuration file.
-let g:ale_pattern_options = {
-\  'Fastfile$': { 'ale_enabled': 0 },
-\  'Appfile$': { 'ale_enabled': 0 },
-\  'Matchfile$': { 'ale_enabled': 0 }
-\}
-
 call ale#fix#registry#Add(
 \  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
 \)
