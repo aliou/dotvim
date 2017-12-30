@@ -26,7 +26,7 @@ Plug 'dietsche/vim-lastplace'
 Plug 'tpope/vim-sensible'
 
 " Shell
-Plug 'sjl/clam.vim'
+" Plug 'sjl/clam.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
