@@ -34,7 +34,6 @@ Plug 'tpope/vim-rhubarb'
 
 " Editing
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -72,6 +71,7 @@ Plug 'junegunn/vader.vim'
 Plug 'w0rp/ale'
 
 " Local
+" Plug '~/code/src/github.com/aliou/ale'
 Plug '~/code/src/github.com/aliou/bats.vim'
 Plug '~/code/src/github.com/aliou/cargo.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
