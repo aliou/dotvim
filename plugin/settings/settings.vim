@@ -6,7 +6,10 @@ set showcmd            " Show current command.
 set number             " Show current line number.
 
 set list               " Show invisible characters.
-set listchars=tab:›\ ,eol:¬,trail:⋅ " Invisible character list.
+
+" Invisible character list.
+set listchars=tab:›\ ,eol:¬,trail:⋅
+set fillchars=diff:·
 
 set showbreak=↪        " The character to put to show a line has been wrapped
 set scrolloff=999      " Keep the cursor centered in the screen
