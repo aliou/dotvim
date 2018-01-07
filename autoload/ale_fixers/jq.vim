@@ -18,4 +18,3 @@ function! ale_fixers#jq#Fix(buffer) abort
     \       . ' %t'
     \}
 endfunction
-" \  'command': "jq '.' %t",
