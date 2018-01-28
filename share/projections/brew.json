@@ -1,0 +1,27 @@
+{
+  "Formula/*.rb": {
+    "type": "formula",
+    "template": [
+      "# Formula for {camelcase|capitalize}",
+      "class {camelcase|capitalize} < Formula",
+      "  # desc 'Description of {camelcase|capitalize}'",
+      "  # homepage 'https://github.com/aliou/{}'",
+      "  # head 'https://github.com/aliou/{}.git'",
+      "",
+      "  # version '0.1.0'",
+      "  # sha256 ''",
+      "",
+      "  # url 'https://github.com/aliou/{}/archive/v' + version + '.zip',",
+      "  #     using: GitHubPrivateRepositoryDownloadStrategy",
+      "",
+      "  def install",
+      "    # Install instructions",
+      "  end",
+      "",
+      "  test do",
+      "    # Instructions to check if the formula is correctly installed.",
+      "  end",
+      "end"
+    ]
+  }
+}
