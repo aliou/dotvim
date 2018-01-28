@@ -1,15 +1,11 @@
-set statusline=
-" Branch name or help buffer flag, or preview buffer flag.
-set statusline+=%#PmenuSel#
-set statusline+=\ %{fugitive#head(7)}%h%w\ 
+set statusline=                 " Custom status line
+set statusline+=%#PmenuSel#     " Use this for color
+set statusline+=\[%n]%y         " Buffer number and Filetype
+set statusline+=\ %f%<          " File name, truncated if too long.
+set statusline+=%m%r\           " Modified and read only flags.
 
-" Filename + Modified flag
-set statusline+=%#Menu#
-set statusline+=\ %f
-set statusline+=\ %y
-set statusline+=%m
-set statusline+=%=
+set statusline+=%=              " Right align the following
 
-set statusline+=%#CursorColumn#
-set statusline+=\ %l\|%c
-set statusline+=\ %p%%\ 
+set statusline+=%#CursorColumn# " Use this for color
+set statusline+=\ %p%%          " Percentage through file
+set statusline+=\               " Trailing space
