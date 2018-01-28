@@ -40,12 +40,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Utils.
-Plug 'mileszs/ack.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'romainl/vim-qf'
+Plug 'wincent/ferret'
 
 " Projects
 Plug 'ctrlpvim/ctrlp.vim', { 'on': ['<plug>(ctrlp)', 'CtrlPMRUFiles', 'CtrlPBuffer' ]}
