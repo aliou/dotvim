@@ -1,6 +1,6 @@
-" set cursorline         " Highlight current line.
+set cursorline         " Highlight current line.
 set hidden             " Allow buffers to be in the background without saving.
-set noshowmode         " Hide current mode.
+set showmode         " Hide current mode.
 set showcmd            " Show current command.
 
 set number             " Show current line number.
