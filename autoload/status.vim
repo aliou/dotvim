@@ -7,6 +7,7 @@ function! status#active()
 
   let l:statusline.='%='              " Right align the following
 
+  let l:statusline.='%c ' " Use this for color
   let l:statusline.='%#CursorColumn#' " Use this for color
   let l:statusline.=' %p%% '         " Percentage through file
 
