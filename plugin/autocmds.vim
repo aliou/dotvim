@@ -1,19 +1,21 @@
-if has('autocmd')
- " Auto save when leaving insert mode.
- autocmd InsertLeave * silent! wa
+augroup default
+  autocmd!
 
- " Disalbe paste mode when leaving insert mode.
- autocmd InsertLeave * set nopaste
+  " Auto save when leaving insert mode.
+  autocmd InsertLeave * silent! wa
 
- " Auto resize panes.
- autocmd VimResized * execute "normal! \<c-w>="
+  " Disalbe paste mode when leaving insert mode.
+  autocmd InsertLeave * set nopaste
 
- " Spell for commits.
- autocmd FileType gitcommit setlocal spell textwidth=72
+  " Auto resize panes.
+  autocmd VimResized * execute "normal! \<c-w>="
 
- " Spell for markdown
- autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
- autocmd FileType markdown setlocal spell textwidth=80
+  " Spell for commits.
+  autocmd FileType gitcommit setlocal spell textwidth=72
 
- autocmd FileType help setlocal textwidth=0
-endif
+  " Spell for markdown
+  autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
+  autocmd FileType markdown setlocal spell textwidth=80
+
+  autocmd FileType help setlocal textwidth=0
+augroup END
