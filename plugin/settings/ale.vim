@@ -18,6 +18,9 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 " Use the local prettier configuration file.
 let g:ale_javascript_prettier_use_local_config = 1
 
+" Disable ale on some files by default.
+let g:ale_pattern_options = { '\.env.*$': { 'ale_enabled': 0 } }
+
 call ale#fix#registry#Add(
 \  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
 \)
