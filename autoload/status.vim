@@ -51,6 +51,8 @@ endfunction
 function! status#inactive()
   " Use this for color (cursor column)
   let l:statusline='%#CursorColumn#'
+  " Buffer number
+  let l:statusline.='[%n]'
   " File name, truncated if too long.
   let l:statusline.=' %f%'
 
