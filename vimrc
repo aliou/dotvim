@@ -40,7 +40,6 @@ Plug 'tpope/vim-surround'
 
 " Utils.
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
