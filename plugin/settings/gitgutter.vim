@@ -4,3 +4,5 @@ nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
 nmap <leader>hd <Plug>GitGutterUndoHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <leader>hp <Plug>GitGutterPrevHunk
