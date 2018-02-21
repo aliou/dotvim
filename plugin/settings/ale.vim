@@ -23,7 +23,8 @@ let g:ale_javascript_prettier_use_local_config = 1
 " - Disable in Tim Pope's plugins.
 let g:ale_pattern_options = {
       \   '\.env.*$': { 'ale_enabled': 0 },
-      \   'tpope': { 'ale_enabled': 0 }
+      \   'tpope': { 'ale_enabled': 0 },
+      \   '\.tmuxinator/.*.yml$': { 'ale_enabled': 0 }
       \ }
 
 call ale#fix#registry#Add(
