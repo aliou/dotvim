@@ -21,10 +21,13 @@ let g:ale_javascript_prettier_use_local_config = 1
 " Disable ale on some files by default.
 " - Disable on `.env` files.
 " - Disable in Tim Pope's plugins.
+" - Disable when `bundle open`-ing gems. This expects gems to be installed
+"   through rbenv's `gem` command, which is the case most of the time for me.
 let g:ale_pattern_options = {
       \   '\.env.*$': { 'ale_enabled': 0 },
       \   'tpope': { 'ale_enabled': 0 },
-      \   '\.tmuxinator/.*.yml$': { 'ale_enabled': 0 }
+      \   '\.tmuxinator/.*.yml$': { 'ale_enabled': 0 },
+      \   '/usr/local/var/rbenv/.*.rb$': { 'ale_enabled': 0 }
       \ }
 
 call ale#fix#registry#Add(
