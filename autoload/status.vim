@@ -16,6 +16,15 @@ function! status#ale_post()
   redrawstatus
 endfunction
 
+" TODO: Better ?
+function! s:git_branch() abort
+  let l:head = fugitive#head()
+  if len(l:head) != 0
+    return '[' . l:head . ']'
+  endif
+  return ''
+endfunction
+
 " TODO: Use custom highlight groups ?
 function! status#active()
   " Custom status line
@@ -24,7 +33,10 @@ function! status#active()
   let l:statusline.='%#PmenuSel#'
 
   " Buffer number and Filetype
-  let l:statusline.='[%n]%y'
+  let l:statusline.='%y'
+  " Git Branch
+  let l:statusline.=s:git_branch()
+
   " File name, truncated if too long.
   let l:statusline.=' %f%<'
   " Modified and read only flags.
