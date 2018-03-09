@@ -48,7 +48,7 @@ Plug 'wincent/ferret'
 " Projects
 Plug 'ctrlpvim/ctrlp.vim', { 'on': ['<plug>(ctrlp)', 'CtrlPMRUFiles', 'CtrlPBuffer' ]}
 Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
-" Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-projectionist'
 " Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
@@ -88,7 +88,6 @@ Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/spec-index.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
-Plug '~/code/src/github.com/aliou/vim-projectionist'
 Plug '~/code/src/github.com/aliou/wren.vim'
 
 call plug#end()
