@@ -49,7 +49,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': ['<plug>(ctrlp)', 'CtrlPMRUFiles', 'CtrlPBuffer' ]}
 Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 Plug 'tpope/vim-projectionist'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-sleuth'
@@ -72,22 +72,22 @@ Plug 'junegunn/vader.vim'
 Plug 'w0rp/ale'
 
 " Local
-" Plug '~/code/src/github.com/aliou/ale'
 Plug '~/code/src/github.com/aliou/bats.vim'
 Plug '~/code/src/github.com/aliou/cargo.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
+Plug '~/code/src/github.com/aliou/irssi.vim'
 Plug '~/code/src/github.com/aliou/jekyll.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim'
 Plug '~/code/src/github.com/aliou/mix.vim'
 Plug '~/code/src/github.com/aliou/moriarty.vim'
-Plug '~/code/src/github.com/aliou/omakase.vim'
 Plug '~/code/src/github.com/aliou/phx.vim'
 Plug '~/code/src/github.com/aliou/review.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/spec-index.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
+Plug '~/code/src/github.com/aliou/vim-dispatch-terminal'
 Plug '~/code/src/github.com/aliou/wren.vim'
 
 call plug#end()
