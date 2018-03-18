@@ -1,19 +1,21 @@
 scriptencoding utf-8
 
-let s:ale_running = 0
+let s:ale_running = {'fixer': 0, 'linter': 0}
 let s:ale_error_count = 0
 
 " Set ALE as running.
-function! status#ale_pre()
-  let s:ale_running = 1
-  redrawstatus
+function! status#ale_pre(scope)
+  let s:ale_running[a:scope] = 1
+  " let s:ale_running = 1
 endfunction
 
 " Set ALE as not running and store the total error and warning count.
-function! status#ale_post()
-  let s:ale_running = 0
-  let s:ale_error_count = ale#statusline#Count(bufnr('')).total
-  redrawstatus
+function! status#ale_post(scope)
+  let s:ale_running[a:scope] = 0
+  " let s:ale_running = 0
+  if a:scope ==# 'linter'
+    let s:ale_error_count = ale#statusline#Count(bufnr('')).total
+  end
 endfunction
 
 " TODO: Better ?
@@ -52,10 +54,14 @@ function! status#active()
   " Percentage through file
   let l:statusline.=' %p%% '
 
-  " Use this color (pop up menu selected item)
+  " Ale status
+  " - linter: Running | KO | OK
+  " - Fixer:  Running | OK
+  " TODO: Better colors ? Green / Red ting ?
   let l:statusline.='%#PmenuSel#'
-  " Ale status (running, ko, ok)
-  let l:statusline.= s:ale_running ? ' ⋯ ' : s:ale_error_count ? ' ✗ ' : ' ✓ '
+  let l:statusline.= s:ale_running['linter'] ? ' ⋯ ' : s:ale_error_count ? ' ✗ ' : ' ✓ '
+  let l:statusline.='%#CursorColumn#'
+  let l:statusline.= s:ale_running['fixer'] ? ' ⋯ ' : ' ✓ '
 
   return l:statusline
 endfunction
