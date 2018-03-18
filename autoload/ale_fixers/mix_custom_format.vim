@@ -9,9 +9,9 @@ function! ale_fixers#mix_custom_format#Fix(buffer) abort
 
     return {
     \   'command': ale#Escape(ale_fixers#mix_custom_format#GetExecutable(a:buffer))
-    \       . ' format %t'
-    \       . (!(empty(l:config)) ? ' --dot-formatter ' . ale#Escape(l:config) : ''),
-    \   'read_temporary_file': 1,
+    \       . ' format'
+    \       . (!(empty(l:config)) ? ' --dot-formatter ' . ale#Escape(l:config) : '')
+    \       . ' %s'
     \}
 endfunction
 
