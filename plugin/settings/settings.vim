@@ -22,6 +22,8 @@ set colorcolumn=+1     " Highlight the column after the tw limit.
 set splitbelow         " Always split below.
 set splitright         " And always split right.
 
+set autoread           " Read file again if it has changed outside of vim.
+
 " This makes :Make work with Tmux 2.3+ (for dispatch and Ack)
 set shellpipe+=\ 
 
