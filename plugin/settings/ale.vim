@@ -58,3 +58,16 @@ let g:ale_fixers = {
 \  'ruby': ['rubocop'],
 \  'rust': ['rustfmt'],
 \}
+
+augroup ale
+  autocmd!
+
+  " > Now she want a photo, you already know, though
+  " > You only live once: that's the motto, nigga, YOLO
+  " > And we bout it every day, every day, every day
+  " > Like we sittin on the bench, nigga, we don't really play
+  " > Every day, every day, fuck what anybody say
+  " > Can't see 'em cause the money in the way, real nigga, what's up?
+  " - The Motto, Drake (2011)
+  autocmd User ALEFixPost :edit
+augroup END
