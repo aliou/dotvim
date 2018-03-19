@@ -69,5 +69,5 @@ augroup ale
   " > Every day, every day, fuck what anybody say
   " > Can't see 'em cause the money in the way, real nigga, what's up?
   " - The Motto, Drake (2011)
-  autocmd User ALEFixPost :edit
+  autocmd User ALEFixPost :silent! edit
 augroup END
