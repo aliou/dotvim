@@ -8,7 +8,7 @@ set nocompatible
 filetype indent plugin on
 syntax on
 
-let mapleader = ","
+let g:mapleader = ','
 
 " Plugins {{{
 call plug#begin('~/.vim/bundle')
