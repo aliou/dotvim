@@ -23,7 +23,7 @@ function! status#active()
   " Use this for color (cursor column)
   let l:statusline.='%#CursorColumn#'
   " Percentage through file
-  let l:statusline.=' %p%% '
+  let l:statusline.=' %03p%% '
 
   let l:statusline.=status#ale#indicators()
 
