@@ -1,24 +1,36 @@
 scriptencoding utf-8
 
-let s:ale_running = {'fixer': 0, 'linter': 0}
-let s:ale_error_count = 0
-
-" Set ALE as running.
-function! status#ale#pre(scope)
-  let s:ale_running[a:scope] = 1
-  " let s:ale_running = 1
+" TODO: Better handling of different buffers.
+function! s:init()
+  if !exists('b:ale_info')
+    let b:ale_info = {'fixer': 0, 'linter': 0, 'error_count': 0}
+  endif
 endfunction
 
-" Set ALE as not running and store the total error and warning count.
-function! status#ale#post(scope)
-  let s:ale_running[a:scope] = 0
-  " let s:ale_running = 0
-  if a:scope ==# 'linter'
-    let s:ale_error_count = ale#statusline#Count(bufnr('')).total
-  end
+function! status#ale#pre_lint()
+  call s:init()
+  let b:ale_info.linter = 1
+endfunction
+
+function! status#ale#pre_fix()
+  call s:init()
+  let b:ale_info.fixer = 1
+endfunction
+
+function! status#ale#post_lint()
+  call s:init()
+  let b:ale_info.linter = 0
+  let b:ale_info.error_count = ale#statusline#Count(bufnr('')).total
+endfunction
+
+function! status#ale#post_fix()
+  call s:init()
+  let b:ale_info.fixer = 0
 endfunction
 
 function! status#ale#indicators()
+  call s:init()
+
   let l:fragment = ''
 
   " Ale status
@@ -26,9 +38,9 @@ function! status#ale#indicators()
   " - Fixer:  Running | OK
   " TODO: Better colors ? Green / Red ting ?
   let l:fragment.='%#PmenuSel#'
-  let l:fragment.= s:ale_running['linter'] ? ' ⋯ ' : s:ale_error_count ? ' ✗ ' : ' ✓ '
+  let l:fragment.= b:ale_info.linter ? ' ⋯ ' : b:ale_info.error_count ? ' ✗ ' : ' ✓ '
   let l:fragment.='%#CursorColumn#'
-  let l:fragment.= s:ale_running['fixer'] ? ' ⋯ ' : ' ✓ '
+  let l:fragment.= b:ale_info.fixer ? ' ⋯ ' : ' ✓ '
 
   return l:fragment
 endfunction

@@ -8,8 +8,9 @@ augroup statusline
   autocmd WinLeave * setlocal statusline=%!status#inactive()
 
   " Update ALE indicators.
-  autocmd User ALELintPre  call status#ale#pre('linter')  | redrawstatus
-  autocmd User ALELintPost call status#ale#post('linter') | redrawstatus
-  autocmd User ALEFixPre   call status#ale#pre('fixer')   | redrawstatus
-  autocmd User ALEFixPost  call status#ale#post('fixer')  | redrawstatus
+  autocmd User ALELintPre  call status#ale#pre_lint()  | redrawstatus
+  autocmd User ALELintPost call status#ale#post_lint() | redrawstatus
+
+  autocmd User ALEFixPre   call status#ale#pre_fix()   | redrawstatus
+  autocmd User ALEFixPost  call status#ale#post_fix()  | redrawstatus
 augroup END
