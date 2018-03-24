@@ -15,11 +15,7 @@ call plug#begin('~/.vim/bundle')
 
 " Display
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'mhinz/vim-startify'
-Plug 'sjl/badwolf'
-Plug 'wombat256.vim'
 
 " Settings
 Plug 'dietsche/vim-lastplace'
@@ -41,7 +37,7 @@ Plug 'tpope/vim-surround'
 " Utils.
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim', { 'on': ['GundoToggle', 'GundoShow'] }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
@@ -51,7 +47,6 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
-Plug 'tpope/vim-sleuth'
 
 " Languages
 Plug 'chr4/nginx.vim'
@@ -67,7 +62,6 @@ Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-Plug 'junegunn/vader.vim'
 Plug 'w0rp/ale'
 
 " Local
@@ -87,7 +81,6 @@ Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/phx.vim'
 Plug '~/code/src/github.com/aliou/review.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
-Plug '~/code/src/github.com/aliou/spec-index.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
 Plug '~/code/src/github.com/aliou/vim-dispatch-terminal'
