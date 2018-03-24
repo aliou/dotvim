@@ -71,6 +71,10 @@ Plug 'junegunn/vader.vim'
 Plug 'w0rp/ale'
 
 " Local
+
+" This requires fzf to be installed through homebrew: `brew install fzf`.
+Plug '/usr/local/opt/fzf'
+
 Plug '~/code/src/github.com/aliou/bats.vim'
 Plug '~/code/src/github.com/aliou/cargo.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
