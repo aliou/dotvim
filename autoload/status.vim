@@ -40,3 +40,9 @@ function! status#inactive()
 
   return l:statusline
 endfunction
+
+function! status#empty()
+  let l:statusline='%#CursorColumn#'
+
+  return l:statusline
+endfunction
