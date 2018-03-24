@@ -1,4 +1,4 @@
-function! fuzzy#files(args)
+function! fuzzy#files(args) abort
   " The command to use as file source.
   let l:source = fuzzy#files#source(a:args)
 
@@ -21,7 +21,7 @@ function! fuzzy#files(args)
   call fzf#run(l:wrapped)
 endfunction
 
-function! fuzzy#buffers()
+function! fuzzy#buffers() abort
   " Don't bother doing anything if there are no buffers to choose from.
   let l:source = fuzzy#buffers#list()
   if len(l:source) < 2
@@ -40,6 +40,6 @@ function! fuzzy#buffers()
   call fzf#run(l:wrapped)
 endfunction
 
-function! fuzzy#mru(args)
+function! fuzzy#mru(args) abort
   echom 'not implemented yet'
 endfunction

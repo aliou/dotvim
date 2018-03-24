@@ -1,8 +1,8 @@
-function! s:is_valid_buffer(_index, buffer)
+function! s:is_valid_buffer(_index, buffer) abort
   return buflisted(a:buffer) && getbufvar(a:buffer, '&filetype') !=# 'qf'
 endfunction
 
-function! fuzzy#buffers#list()
+function! fuzzy#buffers#list() abort
   let l:buffers = range(1, bufnr('$'))
   let l:valid_buffers = filter(l:buffers, function('s:is_valid_buffer'))
 

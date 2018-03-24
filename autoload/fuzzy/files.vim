@@ -1,4 +1,4 @@
-function! s:rg_ignored_entries()
+function! s:rg_ignored_entries() abort
   " Memoize the ignored entries.
   if exists('s:rg_ignored_entries_value')
     return s:rg_ignored_entries_value
@@ -18,6 +18,6 @@ function! s:rg_ignored_entries()
   return l:ignore_list
 endfunction
 
-function! fuzzy#files#source(args)
+function! fuzzy#files#source(args) abort
   return 'rg ' . s:rg_ignored_entries() . ' -g "" --files ' . a:args
 endfunction
