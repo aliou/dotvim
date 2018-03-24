@@ -1,0 +1,11 @@
+{
+  "bin/*": {
+    "type": "bin"
+  },
+  "libexec/*": {
+    "type": "command"
+  },
+  "src/*": {
+    "type": "src"
+  }
+}

@@ -7,6 +7,10 @@ let s:brew_projections = [
       \   {
       \     'key': 'Formula/|cmd/',
       \     'path': $HOME . '/.vim/share/projections/brew.json'
+      \   },
+      \   {
+      \     'key': 'libexec/',
+      \     'path': $HOME . '/.vim/share/projections/sub.json'
       \   }
       \ ]
 
