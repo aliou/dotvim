@@ -23,5 +23,10 @@
       "  end",
       "end"
     ]
+  },
+  "cmd/brew-*.rb": {
+    "type": "command",
+    "template": [
+    ]
   }
 }
