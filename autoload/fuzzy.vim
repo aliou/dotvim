@@ -21,7 +21,13 @@ function! fuzzy#files(args) abort
   call fzf#run(l:wrapped)
 endfunction
 
-function! fuzzy#buffers() abort
+function! fuzzy#buffers(args) abort
+  " Open the file pass as argument if present.
+  if a:args !=# ''
+    execute 'edit ' . a:args
+    return
+  endif
+
   " Don't bother doing anything if there are no buffers to choose from.
   let l:source = fuzzy#buffers#list()
   if len(l:source) < 2
