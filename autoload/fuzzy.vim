@@ -47,5 +47,26 @@ function! fuzzy#buffers(args) abort
 endfunction
 
 function! fuzzy#mru(args) abort
-  echom 'not implemented yet'
+  " Open the file pass as argument if present.
+  if a:args !=# ''
+    execute 'edit ' . a:args
+    return
+  endif
+
+  let l:source = fuzzy#mru#list()
+  if len(l:source) < 2
+    return
+  endif
+
+
+  " Decorate the option dict to be understood by 'FZF'
+  let l:args = {
+        \   'source': l:source,
+        \   'window': 'bot 10new',
+        \   'options': '--prompt ''MRU > '''
+        \ }
+  let l:wrapped = fzf#wrap('fuzzy#mru', l:args)
+
+  " Run da ting.
+  call fzf#run(l:wrapped)
 endfunction
