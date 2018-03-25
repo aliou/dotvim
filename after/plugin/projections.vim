@@ -3,18 +3,22 @@ if !exists('g:projectionist_heuristics')
   let g:projectionist_heuristics = {}
 endif
 
-let s:brew_projections = [
+let s:projection_descriptions = [
       \   {
-      \     'key': 'Formula/|cmd/',
+      \     'test': 'Formula/|cmd/',
       \     'path': $HOME . '/.vim/share/projections/brew.json'
       \   },
       \   {
-      \     'key': 'libexec/',
+      \     'test': 'libexec/',
       \     'path': $HOME . '/.vim/share/projections/sub.json'
+      \   },
+      \   {
+      \     'test': 'plugin/&autoload/',
+      \     'path': $HOME . '/.vim/share/projections/vim_plugin.json'
       \   }
       \ ]
 
-for s:item in s:brew_projections
+for s:item in s:projection_descriptions
   let s:file_content = join(readfile(s:item.path), "\n")
-  let g:projectionist_heuristics[s:item.key] = json_decode(s:file_content)
+  let g:projectionist_heuristics[s:item.test] = json_decode(s:file_content)
 endfor
