@@ -13,7 +13,7 @@ let s:projection_descriptions = [
       \     'path': $HOME . '/.vim/share/projections/sub.json'
       \   },
       \   {
-      \     'test': 'plugin/&autoload/',
+      \     'test': 'plugin/|colors/|ftdetect/',
       \     'path': $HOME . '/.vim/share/projections/vim_plugin.json'
       \   }
       \ ]

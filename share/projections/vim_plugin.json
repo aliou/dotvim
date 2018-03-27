@@ -6,5 +6,11 @@
   "plugin/*.vim": {
     "type": "plugin",
     "alternate": "autoload/{}.vim"
+  },
+  "doc/*.txt": {
+    "type": "doc"
+  },
+  "compiler/*.vim": {
+    "type": "compiler"
   }
 }
