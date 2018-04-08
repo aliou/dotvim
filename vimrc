@@ -35,6 +35,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Utils.
+Plug 'junegunn/vim-slash'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim', { 'on': ['GundoToggle', 'GundoShow'] }
@@ -83,7 +84,6 @@ Plug '~/code/src/github.com/aliou/review.vim'
 Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
-Plug '~/code/src/github.com/aliou/vim-dispatch-terminal'
 Plug '~/code/src/github.com/aliou/wren.vim'
 
 call plug#end()

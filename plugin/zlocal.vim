@@ -1,7 +1,7 @@
 " TODO: Investigate `exrc` and `secure` for this.
 " Source local file if it exists.
-if filereadable(glob("~/.vimrc.local"))
-  let $MYLOCALVIMRC="~/.vimrc.local"
+if filereadable(glob('~/.vimrc.local'))
+  let $MYLOCALVIMRC='~/.vimrc.local'
   source $MYLOCALVIMRC
 endif
 
