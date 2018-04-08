@@ -1,7 +1,7 @@
 function! s:rg_ignored_entries() abort
-  " Memoize the ignored entries.
-  if exists('s:rg_ignored_entries_value')
-    return s:rg_ignored_entries_value
+  " Return the already computed ignore entries stored in a buffer variable.
+  if exists('b:rg_ignored_entries_value')
+    return b:rg_ignored_entries_value
   endif
 
   " Exclude wildignore entries from search using the '-g' option of `rg`.
@@ -13,7 +13,14 @@ function! s:rg_ignored_entries() abort
     let l:ignore_list .= ' -g ''!' . l:entry . ''''
   endfor
 
-  let s:rg_ignored_entries_value = l:ignore_list
+  " Add the current file to the ignored entries if it is listed as a buffer.
+  if buflisted(bufnr(''))
+    let l:current_file = expand('%')
+    let l:ignore_list .= ' -g ''!' . l:current_file . ''''
+  endif
+
+  " Memoize the ignore entries.
+  let b:rg_ignored_entries_value = l:ignore_list
 
   return l:ignore_list
 endfunction
