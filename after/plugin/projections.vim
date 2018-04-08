@@ -9,7 +9,7 @@ let s:projection_descriptions = [
       \     'path': $HOME . '/.vim/share/projections/brew.json'
       \   },
       \   {
-      \     'test': 'libexec/',
+      \     'test': 'libexec/&!.projections.json',
       \     'path': $HOME . '/.vim/share/projections/sub.json'
       \   },
       \   {
