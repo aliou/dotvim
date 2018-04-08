@@ -2,3 +2,4 @@ bundle/
 tmp/
 spell/
 pack/
+!pack/.index.json
