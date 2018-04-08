@@ -1,19 +1,14 @@
 function! fuzzy#files(args) abort
-  " The command to use as file source.
-  let l:source = fuzzy#files#source(a:args)
-
-  " Open FZF window in the bottom with a height of 10 lines.
-  let l:window = 'bot 10new'
-
-  " The options to pass to FZF.
-  " TODO: Use `args` as folder name if present.
-  let l:options = '--prompt ''' . getcwd() . '/' .  ''''
+  " By default, use the folder passed as argument. Otherwise, get the current
+  " file's project directory.
+  let l:source_dir = empty(a:args) ? fuzzy#project#directory() : a:args
+  let l:source = fuzzy#files#source(l:source_dir)
 
   " Decorate the option dict to be understood by 'FZF'
   let l:args = {
         \   'source': l:source,
-        \   'window': l:window,
-        \   'options': l:options
+        \   'window':  'bot 10new',
+        \   'options': '--prompt ''' . l:source_dir . '/' .  ''''
         \ }
   let l:wrapped = fzf#wrap('fuzzy#files', l:args)
 
@@ -24,7 +19,7 @@ endfunction
 function! fuzzy#buffers(args) abort
   " Open the file pass as argument if present.
   if a:args !=# ''
-    execute 'edit ' . a:args
+    execute 'edit' a:args
     return
   endif
 
@@ -49,7 +44,7 @@ endfunction
 function! fuzzy#mru(args) abort
   " Open the file pass as argument if present.
   if a:args !=# ''
-    execute 'edit ' . a:args
+    execute 'edit' a:args
     return
   endif
 
@@ -57,7 +52,6 @@ function! fuzzy#mru(args) abort
   if len(l:source) < 2
     return
   endif
-
 
   " Decorate the option dict to be understood by 'FZF'
   let l:args = {
