@@ -1,5 +1,6 @@
 function! s:is_valid_buffer(_index, buffer) abort
-  return buflisted(a:buffer) && getbufvar(a:buffer, '&filetype') !=# 'qf'
+  return buflisted(a:buffer) && getbufvar(a:buffer, '&filetype') !=# 'qf' &&
+        \ a:buffer != bufnr('')
 endfunction
 
 function! fuzzy#buffers#list() abort
