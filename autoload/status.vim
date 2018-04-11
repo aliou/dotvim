@@ -46,3 +46,12 @@ function! status#empty()
 
   return l:statusline
 endfunction
+
+function! status#fuzzy()
+  let l:statusline='%#CursorColumn#'
+
+  let l:statusline.='[Fuzzy] '
+  let l:statusline.=fuzzy#title()
+
+  return l:statusline
+endfunction

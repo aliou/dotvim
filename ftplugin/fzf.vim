@@ -1,2 +1,2 @@
-setlocal statusline=%!status#empty()
+setlocal statusline=%!status#fuzzy()
 setlocal termkey=<c-h>

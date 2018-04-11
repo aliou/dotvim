@@ -1,3 +1,5 @@
+let s:fuzzy_title = ''
+
 function! fuzzy#files(args) abort
   " By default, use the folder passed as argument. Otherwise, get the current
   " file's project directory.
@@ -9,6 +11,7 @@ function! fuzzy#files(args) abort
   let l:wrapped = fzf#wrap('fuzzy#files', l:args)
 
   " Run da ting.
+  let s:fuzzy_title = 'Files: ' . l:source_dir
   call fzf#run(l:wrapped)
 endfunction
 
@@ -30,6 +33,7 @@ function! fuzzy#buffers(args) abort
   let l:wrapped = fzf#wrap('fuzzy#buffers', l:args)
 
   " Run da ting.
+  let s:fuzzy_title = 'Buffers'
   call fzf#run(l:wrapped)
 endfunction
 
@@ -50,5 +54,10 @@ function! fuzzy#mru(args) abort
   let l:wrapped = fzf#wrap('fuzzy#mru', l:args)
 
   " Run da ting.
+  let s:fuzzy_title = 'MRU'
   call fzf#run(l:wrapped)
+endfunction
+
+function! fuzzy#title() abort
+  return s:fuzzy_title
 endfunction
