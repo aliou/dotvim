@@ -5,11 +5,7 @@ function! fuzzy#files(args) abort
   let l:source = fuzzy#files#source(l:source_dir)
 
   " Decorate the option dict to be understood by 'FZF'
-  let l:args = {
-        \   'source': l:source,
-        \   'window':  'bot 10new',
-        \   'options': '--prompt ''' . l:source_dir . '/' .  ''''
-        \ }
+  let l:args = { 'source': l:source, 'window':  'bot 10new' }
   let l:wrapped = fzf#wrap('fuzzy#files', l:args)
 
   " Run da ting.
@@ -30,11 +26,7 @@ function! fuzzy#buffers(args) abort
   endif
 
   " Decorate the option dict to be understood by 'FZF'
-  let l:args = {
-        \   'source': l:source,
-        \   'window': 'bot 10new',
-        \   'options': '--prompt ''Buffers > '''
-        \ }
+  let l:args = { 'source': l:source, 'window': 'bot 10new' }
   let l:wrapped = fzf#wrap('fuzzy#buffers', l:args)
 
   " Run da ting.
@@ -54,11 +46,7 @@ function! fuzzy#mru(args) abort
   endif
 
   " Decorate the option dict to be understood by 'FZF'
-  let l:args = {
-        \   'source': l:source,
-        \   'window': 'bot 10new',
-        \   'options': '--prompt ''MRU > '''
-        \ }
+  let l:args = { 'source': l:source, 'window': 'bot 10new' }
   let l:wrapped = fzf#wrap('fuzzy#mru', l:args)
 
   " Run da ting.

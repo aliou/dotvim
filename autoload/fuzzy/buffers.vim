@@ -1,5 +1,6 @@
 function! s:is_valid_buffer(_index, buffer) abort
   return buflisted(a:buffer) && getbufvar(a:buffer, '&filetype') !=# 'qf' &&
+        \ getbufvar(a:buffer, '&filetype') !=# 'netrw' &&
         \ a:buffer != bufnr('')
 endfunction
 
