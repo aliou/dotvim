@@ -61,7 +61,7 @@ let g:ale_fixers = {
 
 function! s:read_buffer() abort
   let l:view = winsaveview()
-  undojoin | silent! edit
+  silent! undojoin | silent! edit
   call winrestview(l:view)
 endfunction
 
