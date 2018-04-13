@@ -8,3 +8,5 @@ cabbrev T tabnew
 
 " I never want to encypt files.
 cabbrev X x
+
+cabbrev vhelp vertical help
