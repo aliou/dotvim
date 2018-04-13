@@ -18,4 +18,8 @@ augroup default
   autocmd FileType markdown setlocal spell textwidth=80
 
   autocmd FileType help setlocal textwidth=0
+
+  " Setup `keywordprg` hijack in Rails files.
+  " Activate by adding `let g:cstm_rails_hijack_keywordprg=1`.
+  autocmd User Rails call cstm#rails#setup()
 augroup END
