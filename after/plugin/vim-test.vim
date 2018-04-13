@@ -1,7 +1,11 @@
-" make test commands execute using dispatch.vim
-let test#strategy = 'dispatch'
+" Create custom test strategy using Vim 8's `terminal`.
+let g:test#custom_strategies = {
+      \   'cstm_terminal': function('cstm#test#terminal_strategy')
+      \ }
+
+let g:test#strategy = 'cstm_terminal'
 
 " Run all of the Bats test files.
-let test#shell#bats#options = {
+let g:test#shell#bats#options = {
       \   'suite': 'test/**/*.bats'
       \ }
