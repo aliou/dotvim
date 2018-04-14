@@ -7,10 +7,10 @@ function! s:exit_callback(job, exit_code) abort
 endfunction
 
 function! cstm#test#terminal_strategy(cmd) abort
-  " botright 10new
+  botright 10new
 
   let l:term_options = {
-        \    'term_rows': 10,
+        \    'curwin': 1,
         \    'exit_cb': function('s:exit_callback')
         \  }
   call term_start(['/bin/sh', '-c', a:cmd], l:term_options)
