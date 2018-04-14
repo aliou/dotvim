@@ -1,3 +1,0 @@
-policies:
-  ProhibitSetNoCompatible:
-    enabled: false

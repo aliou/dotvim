@@ -1,3 +1,13 @@
+" Fix current file.
+nmap <silent> <leader>af <Plug>(ale_fix)
+
+" Toggle Ale in the current buffer.
+nmap <leader>at <Plug>(ale_toggle_buffer)
+
+" Navigate between warnings.
+nmap [a <Plug>(ale_previous)
+nmap ]a <Plug>(ale_next)
+
 " Prepend the linter name, the severity and the error code (when present) to
 " the error message.
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %[code] %%s'
@@ -65,7 +75,7 @@ function! s:read_buffer() abort
   call winrestview(l:view)
 endfunction
 
-augroup ale
+augroup cstm_plugin_ale
   autocmd!
   autocmd User ALEFixPost call s:read_buffer()
 augroup END
