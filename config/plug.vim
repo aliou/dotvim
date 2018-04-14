@@ -18,7 +18,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Utils.
-Plug 'junegunn/vim-slash'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim', { 'on': ['GundoToggle', 'GundoShow'] }
