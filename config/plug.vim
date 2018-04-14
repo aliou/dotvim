@@ -33,7 +33,6 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
 
 " Languages
-Plug 'chr4/nginx.vim'
 Plug 'lifepillar/pgsql.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'elixir-editors/vim-elixir'
