@@ -4,9 +4,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 
-" Settings
-Plug 'dietsche/vim-lastplace'
-
 " Shell
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
