@@ -5,7 +5,7 @@ function! s:last_place() abort
   endif
 endfunction
 
-augroup last_place
+augroup plugin_last_place
   autocmd!
   autocmd BufWinEnter * call s:last_place()
 augroup END

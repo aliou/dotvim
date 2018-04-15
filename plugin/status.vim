@@ -1,6 +1,9 @@
+" TODO: Define custom highlight groups for the status bar sections.
+
+
 set statusline=%!status#active()
 
-augroup statusline
+augroup plugin_statusline
   autocmd!
 
   " Use a simpler status line when the window is not in focus.
