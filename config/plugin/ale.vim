@@ -37,15 +37,15 @@ let g:ale_pattern_options = {
       \ }
 
 call ale#fix#registry#Add(
-\  'rustfmt', 'ale_fixers#rustfmt#Fix', ['rust'], 'Fix Rust files with rustfmt'
+\  'rustfmt', 'cstm#fixers#rustfmt#fix', ['rust'], 'Fix Rust files with rustfmt'
 \)
 
 call ale#fix#registry#Add(
-\  'jq', 'ale_fixers#jq#Fix', ['json'], 'Fix JSON files using jq.'
+\  'jq', 'cstm#fixers#jq#fix', ['json'], 'Fix JSON files using jq.'
 \)
 
 call ale#fix#registry#Add(
-\  'mix_custom_format', 'ale_fixers#mix_custom_format#Fix', ['elixir'], 'Fix elixir files'
+\  'mix_custom_format', 'cstm#fixers#mix_format#fix', ['elixir'], 'Fix elixir files'
 \)
 
 let g:ale_linters = {
