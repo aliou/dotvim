@@ -1,5 +1,5 @@
 function! s:is_not_current(_index, file) abort
-  return buflisted(bufnr('')) && expand(a:file) !=# expand('%:p')
+  return buflisted(bufnr('')) ? expand(a:file) !=# expand('%:p') : v:true
 endfunction
 
 " TODO: Since `v:oldfiles` barely changes during a session, it might be useful to memoize it ?
