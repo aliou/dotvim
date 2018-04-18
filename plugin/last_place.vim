@@ -1,7 +1,13 @@
-" TODO: Ignore git commit files etc.
+" TODO: Make this configurable ?
+let s:ignored_types = ['gitcommit']
+
 function! s:last_place() abort
+  if index(s:ignored_types, &filetype) != -1
+    return
+  endif
+
   if line("'\"") > 0 && line("'\"") <= line('$')
-    exe "normal g'\""
+    execute "normal g'\""
   endif
 endfunction
 
