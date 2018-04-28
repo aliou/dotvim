@@ -1,4 +1,6 @@
 " Prevent my muscle memory from saving netrw files.
+" TODO: Also map saving commands to be no-ops. (My muscle memory seems to always
+" run `:w` with `!`.
 setlocal readonly
 
 " This took me 3 months to solve.
