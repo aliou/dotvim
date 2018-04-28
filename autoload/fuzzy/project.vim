@@ -1,16 +1,6 @@
 function! s:find_project_directory() abort
-  let l:project = expand('%:p:h')
-  let l:previous = ''
-
-  while l:project !=# l:previous && l:project !=# '/'
-    if isdirectory(l:project . '/.git')
-      return l:project
-    endif
-    let l:previous = l:project
-    let l:project = fnamemodify(l:project, ':h')
-  endwhile
-
-  return ''
+  let l:path = finddir('.git', expand('%:p:h').';')
+  return fnamemodify(substitute(l:path, '.git', '', ''), ':p:h')
 endfunction
 
 " Try to detect the current file's project.
