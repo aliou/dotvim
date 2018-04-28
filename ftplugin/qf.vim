@@ -1,1 +1,2 @@
-nnoremap <buffer> q :cclose<CR>
+" Close window
+nnoremap <buffer> <silent> q :cclose \| :lclose<CR>
