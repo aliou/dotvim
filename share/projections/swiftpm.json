@@ -1,0 +1,11 @@
+{
+  "Package.swift": {
+    "type": "package"
+  },
+  "Sources/*.swift": {
+    "type": "src"
+  },
+  "Tests/*.swift": {
+    "type": "test"
+  }
+}
