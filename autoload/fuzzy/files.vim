@@ -25,6 +25,7 @@ function! s:rg_ignored_entries() abort
   return l:ignore_list
 endfunction
 
+" TODO: Toggle hidden files.
 function! fuzzy#files#source(args) abort
-  return 'rg ' . s:rg_ignored_entries() . ' -g "" --files ' . a:args
+  return 'rg ' . s:rg_ignored_entries() . ' -g "" --hidden --files ' . a:args
 endfunction
