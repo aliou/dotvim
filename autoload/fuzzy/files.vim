@@ -1,31 +1,31 @@
-function! s:rg_ignored_entries() abort
-  " Return the already computed ignore entries stored in a buffer variable.
-  if exists('b:rg_ignored_entries_value')
-    return b:rg_ignored_entries_value
+" Generate an ignore file to pass to ripgrep containing the wildignore contents.
+" TODO: See if it makes sense to also use the global vimrc.
+function! s:rg_ignore_file() abort
+  if exists('b:fuzzy_rg_ignore_file')
+    return '--ignore-file ' . b:fuzzy_rg_ignore_file
   endif
 
-  " Exclude wildignore entries from search using the '-g' option of `rg`.
-  " We prepend a '!' to the glob to tell rg we want to ignore the pattern.
-  " `rg` also ignore `.gitignore`, `.hgignore`, etc files.
-  let l:entries = split(&wildignore, ',')
-  let l:ignore_list = ''
-  for l:entry in l:entries
-    let l:ignore_list .= ' -g ''!' . l:entry . ''''
-  endfor
+  let b:fuzzy_rg_ignore_file = tempname()
 
-  " Add the current file to the ignored entries if it is listed as a buffer.
-  if buflisted(bufnr(''))
-    let l:current_file = expand('%')
-    let l:ignore_list .= ' -g ''!' . l:current_file . ''''
-  endif
+  let l:current_file = buflisted(bufnr('')) ? expand('%:p') : ''
+  let l:entries = split(&wildignore, ',') + [l:current_file]
+  call writefile(l:entries, b:fuzzy_rg_ignore_file)
 
-  " Memoize the ignore entries.
-  let b:rg_ignored_entries_value = l:ignore_list
-
-  return l:ignore_list
+  return '--ignore-file ' . b:fuzzy_rg_ignore_file
 endfunction
 
 " TODO: Toggle hidden files.
 function! fuzzy#files#source(args) abort
-  return 'rg ' . s:rg_ignored_entries() . ' -g "" --hidden --files ' . a:args
+  let l:include_hidden = get(g:, 'fuzzy_include_hidden', 0)
+
+  let l:command = 'rg --files '
+        \ . s:rg_ignore_file() . ' '
+        \ . (l:include_hidden ? '--hidden ' : '')
+        \ . a:args
+
+  return l:command
+endfunction
+
+function! fuzzy#files#toggle_ignore() abort
+  let g:fuzzy_include_hidden = !get(g:, 'fuzzy_include_hidden', 0)
 endfunction
