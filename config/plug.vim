@@ -14,7 +14,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Utils.
@@ -38,7 +37,6 @@ Plug 'elixir-editors/vim-elixir'
 
 " Text object.
 Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'gilligan/textobj-gitgutter'
 Plug 'PeterRincker/vim-argumentative'
 
@@ -66,5 +64,6 @@ Plug '~/code/src/github.com/aliou/scratch.vim'
 Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
 Plug '~/code/src/github.com/aliou/wren.vim'
+Plug '~/code/src/github.com/aliou/xcode.vim'
 
 call plug#end()
