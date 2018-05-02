@@ -1,6 +1,6 @@
 function! s:find_project_directory() abort
   let l:path = finddir('.git', expand('%:p:h').';')
-  return fnamemodify(substitute(l:path, '.git', '', ''), ':p:h')
+  return fnamemodify(substitute(l:path, '\.git', '', ''), ':p:h')
 endfunction
 
 " Try to detect the current file's project.
