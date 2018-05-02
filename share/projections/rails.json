@@ -80,5 +80,8 @@
   },
   "db/data/*.rb": {
     "command": "data"
+  },
+  "db/*.yml": {
+    "command": "db"
   }
 }
