@@ -6,6 +6,8 @@ function! s:exit_callback(job, exit_code) abort
   nnoremap <buffer> q :q<Return><C-w>p
 endfunction
 
+" TODO: Delete this when either <https://git.io/vpB1j> or <https://git.io/vpBMJ>
+" gets merged.
 function! cstm#test#terminal_strategy(cmd) abort
   botright 10new
 
