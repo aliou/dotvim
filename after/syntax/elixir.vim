@@ -1,0 +1,1 @@
+syntax keyword elixirInclude import_config
