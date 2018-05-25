@@ -41,8 +41,24 @@ call ale#fix#registry#Add(
 \  'mix_custom_format', 'cstm#fixers#mix_format#fix', ['elixir'], 'Fix elixir files'
 \)
 
+let g:ale_fixers = {
+\   'c': ['clang-format'],
+\   'cpp': ['clang-format'],
+\   'elixir': ['mix_custom_format'],
+\   'go': ['gofmt'],
+\   'help': ['align_help_tags', 'remove_trailing_lines'],
+\   'javascript': ['prettier', 'eslint'],
+\   'json': ['jq'],
+\   'ruby': ['rubocop'],
+\   'rust': ['rustfmt'],
+\ }
+
 " Disable all linter by default.
-let g:ale_linters = {}
+let g:ale_linters = {
+      \   'javascript': ['eslint'],
+      \   'ruby': ['rubocop'],
+      \   'vim': ['vint'],
+      \ }
 let g:ale_linters_explicit = 1
 
 function! s:read_buffer() abort

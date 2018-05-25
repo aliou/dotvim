@@ -3,7 +3,7 @@ let g:test#custom_strategies = {
       \   'cstm_terminal': function('cstm#test#terminal_strategy')
       \ }
 
-let g:test#strategy = 'cstm_terminal'
+let g:test#strategy = 'dispatch'
 
 " Run all of the Bats test files.
 let g:test#shell#bats#options = {
