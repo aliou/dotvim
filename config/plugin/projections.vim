@@ -19,6 +19,10 @@ let s:projection_descriptions = [
       \   {
       \     'test': 'Package.swift',
       \     'path': $HOME . '/.vim/share/projections/swiftpm.json'
+      \   },
+      \   {
+      \     'test': '_config.yml',
+      \     'path': $HOME . '/.vim/share/projections/jekyll.json'
       \   }
       \ ]
 
