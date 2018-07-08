@@ -3,6 +3,7 @@ call plug#begin('~/.vim/bundle')
 " Display
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
+Plug 'sjl/badwolf'
 
 " Shell
 Plug 'tpope/vim-dispatch'
@@ -24,6 +25,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
 " Projects
+Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
@@ -31,9 +33,9 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
 
 " Languages
+Plug 'elixir-editors/vim-elixir'
 Plug 'lifepillar/pgsql.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'elixir-editors/vim-elixir'
 
 " Text object.
 Plug 'kana/vim-textobj-user'
@@ -54,7 +56,6 @@ Plug '~/code/src/github.com/aliou/cargo.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/irssi.vim'
-Plug '~/code/src/github.com/aliou/jekyll.vim'
 Plug '~/code/src/github.com/aliou/markoff.vim'
 Plug '~/code/src/github.com/aliou/mix.vim'
 Plug '~/code/src/github.com/aliou/moriarty.vim'
