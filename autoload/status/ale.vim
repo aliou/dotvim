@@ -37,9 +37,9 @@ function! status#ale#indicators()
   " - linter: Running | KO | OK
   " - Fixer:  Running | OK
   " TODO: Better colors ? Green / Red ting ?
-  let l:fragment.='%#PmenuSel#'
+  let l:fragment.='%#StatusPrimary#'
   let l:fragment.= b:ale_info.linter ? ' ⋯ ' : b:ale_info.error_count ? ' ✗ ' : ' ✓ '
-  let l:fragment.='%#CursorColumn#'
+  let l:fragment.='%#StatusSecondaryumn#'
   let l:fragment.= b:ale_info.fixer ? ' ⋯ ' : ' ✓ '
 
   return l:fragment

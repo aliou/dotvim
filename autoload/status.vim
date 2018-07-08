@@ -3,7 +3,7 @@ function! status#active()
   " Custom status line
   let l:statusline=''
   " Use this color (pop up menu selected item)
-  let l:statusline.='%#PmenuSel#'
+  let l:statusline.='%#StatusPrimary#'
 
   " Buffer number and Filetype
   let l:statusline.='%y'
@@ -21,7 +21,7 @@ function! status#active()
   " Current Column
   let l:statusline.='%c '
   " Use this for color (cursor column)
-  let l:statusline.='%#CursorColumn#'
+  let l:statusline.='%#StatusSecondaryumn#'
   " Percentage through file
   let l:statusline.=' %03p%% '
 
@@ -32,7 +32,7 @@ endfunction
 
 function! status#inactive()
   " Use this for color (cursor column)
-  let l:statusline='%#CursorColumn#'
+  let l:statusline='%#StatusSecondaryumn#'
   " Buffer number
   let l:statusline.='[%n]'
   " File name, truncated if too long.
@@ -42,13 +42,13 @@ function! status#inactive()
 endfunction
 
 function! status#empty()
-  let l:statusline='%#CursorColumn#'
+  let l:statusline='%#StatusSecondaryumn#'
 
   return l:statusline
 endfunction
 
 function! status#fuzzy()
-  let l:statusline='%#CursorColumn#'
+  let l:statusline='%#StatusSecondaryumn#'
 
   let l:statusline.='[Fuzzy] '
   let l:statusline.=fuzzy#title()
