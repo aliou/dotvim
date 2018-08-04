@@ -6,3 +6,4 @@ setlocal nocursorline
 setlocal iskeyword+=!,?
 
 nnoremap <silent> <buffer> K :call cstm#ruby#documentation()<CR>
+nnoremap <silent> <buffer> <c-\> :call cstm#ruby#ptag()<CR>

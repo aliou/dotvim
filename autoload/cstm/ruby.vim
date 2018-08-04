@@ -8,3 +8,9 @@ function! cstm#ruby#documentation() abort
         \  }
   call term_start(['/bin/sh', '-c', l:command], l:term_options)
 endfunction
+
+function! cstm#ruby#ptag() abort
+  let l:keyword = expand('<cword>')
+
+  execute 'ptag ' . l:keyword
+endfunction
