@@ -26,6 +26,7 @@ Plug 'tpope/vim-vinegar'
 
 " Projects
 Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
