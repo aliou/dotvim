@@ -83,5 +83,8 @@
   },
   "db/*.yml": {
     "command": "db"
+  },
+  "db/structure.sql": {
+    "command": "structure"
   }
 }
