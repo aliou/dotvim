@@ -25,4 +25,6 @@ if has('eval')
   let g:loaded_gzip = 'skipped'
   let g:loaded_tarPlugin = 'skipped'
   let g:loaded_zipPlugin = 'skipped'
+
+  let g:loaded_matchparen = 'skipped'
 endif
