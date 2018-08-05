@@ -15,6 +15,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
 " Utils.
