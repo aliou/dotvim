@@ -1,2 +1,2 @@
 setlocal statusline=%!status#fuzzy()
-setlocal termkey=<c-h>
+setlocal termwinkey=<c-h>
