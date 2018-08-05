@@ -5,5 +5,6 @@ if has('syntax') && !has('g:syntax_on')
   silent! syntax sync minlines=100
 
   " TODO: Try to detect the terminal background.
-  silent! colorscheme hybrid
+  set background=light
+  silent! colorscheme untitled
 endif
