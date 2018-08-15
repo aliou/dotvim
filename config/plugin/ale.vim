@@ -8,6 +8,15 @@ nmap <leader>at <Plug>(ale_toggle_buffer)
 nmap [a <Plug>(ale_previous)
 nmap ]a <Plug>(ale_next)
 
+call ale#linter#Define('elixir', {
+\   'name': 'elixir_ls',
+\   'lsp': 'stdio',
+\   'executable_callback': 'ale_linters#elixir#elixir_ls#GetExecutable',
+\   'command': '%e',
+\   'language': 'elixir',
+\   'project_root_callback': 'ale_linters#elixir#elixir_ls#GetProjectRoot'
+\})
+
 " Prepend the linter name, the severity and the error code (when present) to
 " the error message.
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %[code] %%s'
@@ -58,7 +67,10 @@ let g:ale_linters = {
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'vim': ['vint'],
+      \   'elixir': ['elixir_ls']
       \ }
+
+let g:ale_completion_enabled = 1
 let g:ale_linters_explicit = 1
 
 function! s:read_buffer() abort
