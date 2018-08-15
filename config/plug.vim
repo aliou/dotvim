@@ -19,6 +19,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
 " Utils.
+Plug 'google/vim-searchindex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim', { 'on': ['GundoToggle', 'GundoShow'] }
