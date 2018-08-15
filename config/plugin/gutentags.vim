@@ -1,1 +1,1 @@
-let g:gutentags_ctags_exclude = ['bundle', 'deps']
+let g:gutentags_ctags_exclude = ['bundle']
