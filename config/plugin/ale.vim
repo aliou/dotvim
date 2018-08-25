@@ -39,10 +39,6 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 let g:ale_javascript_prettier_use_local_config = 1
 
 call ale#fix#registry#Add(
-\  'rustfmt', 'cstm#fixers#rustfmt#fix', ['rust'], 'Fix Rust files with rustfmt'
-\)
-
-call ale#fix#registry#Add(
 \  'jq', 'cstm#fixers#jq#fix', ['json'], 'Fix JSON files using jq.'
 \)
 
