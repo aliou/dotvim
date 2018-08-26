@@ -13,5 +13,9 @@
   },
   "_drafts/*.md": {
     "type": "draft"
+  },
+  "Gemfile": {
+    "type": "lib",
+    "altername": "{}.lock"
   }
 }
