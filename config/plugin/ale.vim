@@ -63,7 +63,8 @@ let g:ale_linters = {
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'vim': ['vint'],
-      \   'elixir': ['elixir_ls']
+      \   'elixir': ['elixir_ls'],
+      \   'rust': ['rls'],
       \ }
 
 let g:ale_completion_enabled = 1
