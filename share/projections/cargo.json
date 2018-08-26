@@ -1,0 +1,26 @@
+{
+  "Cargo.toml": {
+    "type": "cargo",
+    "alternate": "cargo.lock"
+  },
+  "Cargo.lock": {
+    "alternate": "cargo.toml"
+  },
+  "src/main.rs": {
+    "type": "main"
+  },
+  "src/*.rs": {
+    "type": "src"
+  },
+  "migrations/*/up.sql": {
+    "type": "migration",
+    "alternate": "migrations/{}/down.sql"
+  },
+  "migrations/*/down.sql": {
+    "alternate": "migrations/{}/up.sql"
+  },
+  "*": {
+    "make": "cargo build",
+    "dispatch": "cargo run"
+  }
+}

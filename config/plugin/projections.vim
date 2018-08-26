@@ -8,7 +8,8 @@ let s:projection_descriptions = [
       \   { 'test': 'libexec/&!.projections.json', 'file': 'sub.json' },
       \   { 'test': 'plugin/|colors/|ftdetect/', 'file': 'vim_plugin.json' },
       \   { 'test': 'Package.swift', 'file': 'swiftpm.json' },
-      \   { 'test': '_config.yml', 'file': 'jekyll.json' }
+      \   { 'test': '_config.yml', 'file': 'jekyll.json' },
+      \   { 'test': 'cargo.toml', 'file': 'cargo.json' }
       \ ]
 
 " TODO: simplify path thingy.
