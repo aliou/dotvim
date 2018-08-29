@@ -3,11 +3,11 @@
     "type": "cargo",
     "alternate": "cargo.lock"
   },
-  "Cargo.lock": {
-    "alternate": "cargo.toml"
-  },
   "src/main.rs": {
-    "type": "main"
+    "type": "src"
+  },
+  "src/lib.rs": {
+    "type": "src"
   },
   "src/*.rs": {
     "type": "src"
