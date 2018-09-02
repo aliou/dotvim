@@ -5,6 +5,8 @@ if has('syntax') && !has('g:syntax_on')
   silent! syntax sync minlines=100
 
   " TODO: Try to detect the terminal background.
-  set background=light
-  silent! colorscheme untitled
+  " TODO: Make this work with macOS's background thing when Mojave comes out.
+  set background=dark
+  " silent! colorscheme untitled
+  silent! colorscheme hybrid
 endif
