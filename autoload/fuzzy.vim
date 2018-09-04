@@ -3,7 +3,7 @@ let s:fuzzy_title = ''
 function! fuzzy#files(args) abort
   " By default, use the folder passed as argument. Otherwise, get the current
   " file's project directory.
-  let l:source_dir = empty(a:args) ? fuzzy#project#directory() : a:args
+  let l:source_dir = empty(a:args) ? fuzzy#files#source_directory() : a:args
   let l:source = fuzzy#files#source(l:source_dir)
 
   " Decorate the option dict to be understood by 'FZF'
