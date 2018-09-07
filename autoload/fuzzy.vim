@@ -1,20 +1,27 @@
 let s:fuzzy_title = ''
 
+function! s:wrap(name, source, ...) abort
+  let s:fuzzy_title = a:name
+  let l:custom_options = a:0 ? a:1 : {}
+  let l:args = extend({
+        \   'source': a:source,
+        \   'window': 'bot 10new',
+        \   'options': '--height 40% --reverse --color=light -1'
+        \ }, l:custom_options)
+  return fzf#wrap(a:name, l:args)
+endfunction
+
 function! fuzzy#files(args) abort
   " By default, use the folder passed as argument. Otherwise, get the current
   " file's project directory.
   let l:source_dir = empty(a:args) ? fuzzy#files#source_directory() : a:args
   let l:source = fuzzy#files#source(l:source_dir)
 
-  " Decorate the option dict to be understood by 'FZF'
-  let l:args = { 'source': l:source, 'window':  'bot 10new' }
-  let l:wrapped = fzf#wrap('fuzzy#files', l:args)
-
-  " Run da ting.
-  let s:fuzzy_title = 'Files: ' . l:source_dir
-  call fzf#run(l:wrapped)
+  let l:options = s:wrap('fuzzy#files', l:source, { 'dir': l:source_dir })
+  call fzf#run(l:options)
 endfunction
 
+" TODO: Merge fuzzy#buffers and fuzzy#files into one.
 function! fuzzy#buffers(args) abort
   " Open the file pass as argument if present.
   if a:args !=# ''
@@ -28,13 +35,8 @@ function! fuzzy#buffers(args) abort
     return
   endif
 
-  " Decorate the option dict to be understood by 'FZF'
-  let l:args = { 'source': l:source, 'window': 'bot 10new' }
-  let l:wrapped = fzf#wrap('fuzzy#buffers', l:args)
-
-  " Run da ting.
-  let s:fuzzy_title = 'Buffers'
-  call fzf#run(l:wrapped)
+  let l:options = s:wrap('fuzzy#buffers', l:source)
+  call fzf#run(l:options)
 endfunction
 
 function! fuzzy#mru(args) abort
@@ -49,13 +51,20 @@ function! fuzzy#mru(args) abort
     return
   endif
 
-  " Decorate the option dict to be understood by 'FZF'
-  let l:args = { 'source': l:source, 'window': 'bot 10new' }
-  let l:wrapped = fzf#wrap('fuzzy#mru', l:args)
+  let l:options = s:wrap('fuzzy#mru', l:source)
+  call fzf#run(l:options)
+endfunction
 
-  " Run da ting.
-  let s:fuzzy_title = 'MRU'
-  call fzf#run(l:wrapped)
+function! s:project(directory) abort
+  execute 'cd' a:directory
+endfunction
+
+function! fuzzy#projects(args) abort
+  let l:source = fuzzy#projects#list()
+
+  let l:custom_options = { 'sink': function('s:project') }
+  let l:options = extend(l:custom_options, s:wrap('fuzzy#projects', l:source))
+  call fzf#run(l:options)
 endfunction
 
 function! fuzzy#title() abort
