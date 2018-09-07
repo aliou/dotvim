@@ -11,7 +11,8 @@ function! s:rg_ignore_file() abort
 
   " Ignore the wildignore entries, the current file and the defined ignore files
   " if any.
-  let l:entries = split(&wildignore, ',') + [l:current_file] + get(g:, 'fuzzy_ignored_files', [])
+  let l:entries = split(&wildignore, ',') + get(g:, 'fuzzy_ignored_files', [])
+        \ + [l:current_file]
   call writefile(l:entries, b:fuzzy_rg_ignore_file)
 
   return '--ignore-file ' . b:fuzzy_rg_ignore_file
