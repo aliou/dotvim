@@ -55,14 +55,12 @@ function! fuzzy#mru(args) abort
   call fzf#run(l:options)
 endfunction
 
-function! s:project(directory) abort
-  execute 'cd' a:directory
-endfunction
-
 function! fuzzy#projects(args) abort
+  if a:args !=# '' | return fuzzy#projects#handler(a:args) | endif
+
   let l:source = fuzzy#projects#list()
 
-  let l:custom_options = { 'sink': function('s:project') }
+  let l:custom_options = { 'sink': function('fuzzy#projects#handler') }
   let l:options = extend(l:custom_options, s:wrap('fuzzy#projects', l:source))
   call fzf#run(l:options)
 endfunction
