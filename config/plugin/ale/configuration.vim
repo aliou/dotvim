@@ -29,11 +29,12 @@ let g:ale_pattern_options = { '/usr/local': { 'ale_enabled': 0 } }
 let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
+      \   'elixir': ['elixir_ls'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
-      \   'vim': ['vint'],
-      \   'elixir': ['elixir_ls'],
       \   'rust': ['rls'],
+      \   'typescript': ['tsserver'],
+      \   'vim': ['vint'],
       \ }
 
 let g:ale_fixers = {
@@ -46,4 +47,5 @@ let g:ale_fixers = {
 \   'json': ['jq'],
 \   'ruby': ['rubocop'],
 \   'rust': ['rustfmt'],
+\   'typescript': ['prettier'],
 \ }
