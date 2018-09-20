@@ -18,3 +18,4 @@ command! -nargs=? -complete=customlist,fuzzy#projects#complete FuzzyProjects
 nnoremap <leader>t :FuzzyFiles<Return>
 nnoremap <leader>b :FuzzyBuffers<Return>
 nnoremap <leader>m :FuzzyMRU<Return>
+nnoremap <leader>p :FuzzyProjects<Return>
