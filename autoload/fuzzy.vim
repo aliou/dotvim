@@ -2,12 +2,21 @@ let s:fuzzy_title = ''
 
 function! s:wrap(name, source, ...) abort
   let s:fuzzy_title = a:name
+
+  " Note: The whole appending logic is completely overkill. /shrug
+  " See `autoload/utils/dictionnary.vim` for the steps to improve all of this.
   let l:custom_options = a:0 ? a:1 : {}
-  let l:args = extend({
+  let l:custom_options_should_append = a:0 >= 2 ? a:2 : v:false
+  let l:Resolver = l:custom_options_should_append ?
+        \ function('utils#dictionnary#append_resolver') :
+        \ function('utils#dictionnary#keep_resolver')
+
+  let l:args = utils#dictionnary#merge({
         \   'source': a:source,
         \   'window': 'bot 10new',
         \   'options': '--height 40% --reverse --color=light -1'
-        \ }, l:custom_options)
+        \ }, l:custom_options, l:Resolver)
+
   return fzf#wrap(a:name, l:args)
 endfunction
 
@@ -60,8 +69,11 @@ function! fuzzy#projects(args) abort
 
   let l:source = fuzzy#projects#list()
 
-  let l:custom_options = { 'sink': function('fuzzy#projects#handler') }
-  let l:options = extend(l:custom_options, s:wrap('fuzzy#projects', l:source))
+  let l:custom_options = {
+        \ 'sink': function('fuzzy#projects#handler'),
+        \ 'options': '--no-sort --exact'
+        \ }
+  let l:options = s:wrap('fuzzy#projects', l:source, l:custom_options, v:true)
   call fzf#run(l:options)
 endfunction
 
