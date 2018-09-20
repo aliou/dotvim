@@ -47,13 +47,14 @@ Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " Local
 
 " This requires fzf to be installed with go: `go get github.com/junegunn/fzf -u`.
 Plug '~/code/src/github.com/junegunn/fzf'
 
+Plug '~/code/src/github.com/aliou/ale'
 Plug '~/code/src/github.com/aliou/bats.vim'
 Plug '~/code/src/github.com/aliou/dope.vim'
 Plug '~/code/src/github.com/aliou/hybrid.vim'
