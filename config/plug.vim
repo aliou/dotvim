@@ -68,5 +68,6 @@ Plug '~/code/src/github.com/aliou/sql-heredoc.vim'
 Plug '~/code/src/github.com/aliou/untitled.vim'
 Plug '~/code/src/github.com/aliou/wren.vim'
 Plug '~/code/src/github.com/aliou/xcode.vim'
+Plug '~/code/src/github.com/aliou/xxxx.vim'
 
 call plug#end()
