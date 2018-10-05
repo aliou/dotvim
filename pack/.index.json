@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "packages": [
+    { "package": "dope.vim", "owner": "aliou", "type": "opt" },
+    { "package": "mix.vim", "owner": "aliou", "type": "opt" },
+    { "package": "vim-xcode", "owner": "gfontenot", "type": "opt" },
+    { "package": "sourcekittendaemon.vim", "owner": "keith", "type": "opt" },
+    { "package": "vim-qif", "owner": "ljcooke", "type": "opt" },
+    { "package": "jq.vim", "owner": "vito-c", "type": "start" }
+  ]
+}
