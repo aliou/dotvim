@@ -9,7 +9,14 @@ if !exists('s:waiting')
   let s:waiting = {}
 endif
 
+if !exists('s:exits')
+  let s:exits = {}
+endif
+
 function! dispatch#job#handle(request) abort
+  if !get(g:, 'dispatch_experimental', 1)
+    return 0
+  endif
   if !has('job') || a:request.action !=# 'make'
     return 0
   endif
@@ -29,24 +36,35 @@ function! dispatch#job#handle(request) abort
   return 2
 endfunction
 
-function! s:exit(job, status) abort
-  let ch_id = ch_info(job_info(a:job).channel).id
-  let request = s:waiting[ch_id]
-  call writefile([a:status], request.file . '.complete')
-  " unlet! s:waiting[ch_id]
-  call DispatchComplete(request.id)
+function! s:complete(ch) abort
+  let info = ch_info(a:ch)
+  if info.out_status ==# 'closed' && info.err_status ==# 'closed' && has_key(s:exits, info.id)
+    let request = remove(s:waiting, info.id)
+    call writefile([remove(s:exits, info.id)], request.file . '.complete')
+    call DispatchComplete(request.id)
+  endif
 endfunction
 
+function! s:exit(job, status) abort
+  let ch = job_info(a:job).channel
+  let ch_info = ch_info(ch)
+  let request = s:waiting[ch_info.id]
+  let s:exits[ch_info.id] = a:status
+  return s:complete(ch)
+endfunction
+
+let g:dispatch_job_log = []
 function! s:output(ch, output) abort
-  let ch_id = ch_info(a:ch).id
-  let request = s:waiting[ch_id]
+  let ch_info = ch_info(a:ch)
+  let request = s:waiting[ch_info.id]
   call writefile([a:output], request.file, 'a')
 
   if dispatch#request(getqflist({'all': 1}).title) isnot# request
     return
   endif
 
-  let efm = &l:efm
+  let lefm = &l:efm
+  let gefm = &g:efm
   let makeprg = &l:makeprg
   let compiler = get(b:, 'current_compiler', '')
   let cd = exists('*haslocaldir') && haslocaldir() ? 'lcd' : 'cd'
@@ -60,12 +78,15 @@ function! s:output(ch, output) abort
     endif
     exe cd fnameescape(request.directory)
     let &l:efm = request.format
+    let &g:efm = request.format
     let &l:makeprg = request.command
     caddexpr a:output
+    call add(g:dispatch_job_log, &l:efm)
   finally
     let &modelines = modelines
     exe cd fnameescape(dir)
-    let &l:efm = efm
+    let &l:efm = lefm
+    let &g:efm = gefm
     let &l:makeprg = makeprg
     if empty(compiler)
       unlet! b:current_compiler
@@ -74,6 +95,7 @@ function! s:output(ch, output) abort
     endif
   endtry
   cbottom
+  call s:complete(a:ch)
 endfunction
 
 function! dispatch#job#activate(pid) abort
