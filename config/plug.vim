@@ -1,3 +1,4 @@
+let g:plug_shallow = 1
 call plug#begin('~/.vim/bundle')
 
 " Display
