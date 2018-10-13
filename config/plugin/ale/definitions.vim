@@ -1,6 +1,6 @@
 " Add support for ElixirLS.
 call ale#linter#Define('elixir', {
-\   'name': 'elixir_ls',
+\   'name': 'custom_elixir_ls',
 \   'lsp': 'stdio',
 \   'executable_callback': 'ale_linters#elixir#elixir_ls#GetExecutable',
 \   'command': '%e',
