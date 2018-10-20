@@ -1,9 +1,5 @@
 " Load the version of matchit bundled with vim. Improves `%`
-if has('packages')
-  silent! packadd matchit.vim
-else
-  silent! runtime macros/matchit.vim
-end
+silent! packadd matchit.vim
 
 if has('eval')
   " Disable some of the core plugins
