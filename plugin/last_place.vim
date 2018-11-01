@@ -1,5 +1,5 @@
 " TODO: Make this configurable ?
-let s:ignored_types = ['gitcommit']
+let s:ignored_types = ['gitcommit', 'pullrequest']
 
 function! s:last_place() abort
   if index(s:ignored_types, &filetype) != -1
