@@ -14,7 +14,7 @@ function! s:wrap(name, source, ...) abort
   let l:args = utils#dictionnary#merge({
         \   'source': a:source,
         \   'window': 'bot 10new',
-        \   'options': '--height 40% --reverse --color=light -1'
+        \   'options': '--reverse --select-1'
         \ }, l:custom_options, l:Resolver)
 
   return fzf#wrap(a:name, l:args)

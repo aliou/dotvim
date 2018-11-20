@@ -29,7 +29,7 @@ function! fuzzy#files#source(args) abort
   " Then remove the path to the directory from the result.
   " The sed command is : `s_^<directory>__`, using `_` as a separator instead of
   " slashes.
-  let l:command = 'rg --files '
+  let l:command = 'rg --files --sort-files '
         \ . s:rg_ignore_file() . ' '
         \ . (l:include_hidden ? '--hidden ' : '')
         \ . a:args
