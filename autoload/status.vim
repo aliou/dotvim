@@ -21,7 +21,7 @@ function! status#active()
   " Current Column
   let l:statusline.='%c '
   " Use this for color (cursor column)
-  let l:statusline.='%#StatusSecondaryumn#'
+  let l:statusline.='%#StatusSecondary#'
   " Percentage through file
   let l:statusline.=' %03p%% '
 
@@ -32,7 +32,7 @@ endfunction
 
 function! status#inactive()
   " Use this for color (cursor column)
-  let l:statusline='%#StatusSecondaryumn#'
+  let l:statusline='%#StatusSecondary#'
   " Buffer number
   let l:statusline.='[%n]'
   " File name, truncated if too long.
@@ -42,13 +42,13 @@ function! status#inactive()
 endfunction
 
 function! status#empty()
-  let l:statusline='%#StatusSecondaryumn#'
+  let l:statusline='%#StatusSecondary#'
 
   return l:statusline
 endfunction
 
 function! status#fuzzy()
-  let l:statusline='%#StatusSecondaryumn#'
+  let l:statusline='%#StatusSecondary#'
 
   let l:statusline.='[Fuzzy] '
   let l:statusline.=fuzzy#title()

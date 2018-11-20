@@ -1,5 +1,3 @@
-" TODO: Define custom highlight groups for the status bar sections.
-
 highlight StatusPrimary term=reverse cterm=reverse ctermfg=250 ctermbg=237 guifg=#c5c8c6 guibg=#373b41
 highlight StatusSecondary ctermbg=235 guibg=#282a2e
 
