@@ -3,6 +3,7 @@ call plug#begin('~/.vim/bundle')
 
 " Display
 Plug 'airblade/vim-gitgutter'
+Plug 'machakann/vim-highlightedyank'
 Plug 'mhinz/vim-startify'
 Plug 'sjl/badwolf'
 
