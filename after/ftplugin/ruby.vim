@@ -1,7 +1,3 @@
-setlocal nonumber
-setlocal norelativenumber
-setlocal nocursorline
-
 " Consider more symbols as part of a word text object. This is probably
 " breaking some stuff but /shrug.
 setlocal iskeyword+=!,?,@
