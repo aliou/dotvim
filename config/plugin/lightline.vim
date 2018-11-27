@@ -6,13 +6,15 @@ let g:lightline.component_expand = {
       \ }
 
 let g:lightline.component_function = {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
+      \   'working_directory': 'getcwd'
       \ }
 
 let g:lightline.component_type = {
       \   'ale_linter_indicator': 'tabsel',
       \   'ale_fixer_indicator': 'tabsel',
       \   'gitbranch': 'tabsel',
+      \   'working_directory': 'tabsel',
       \ }
 
 let g:lightline.active = {
@@ -32,7 +34,7 @@ let g:lightline.tab = {
       \ }
 
 let g:lightline.tabline = {
-      \   'left': [['tabs']], 'right': []
+      \   'left': [['tabs']], 'right': [['working_directory']]
       \ }
 
 augroup lightline_config
