@@ -33,7 +33,7 @@ function! fuzzy#files#source(args) abort
         \ . s:rg_ignore_file() . ' '
         \ . (l:include_hidden ? '--hidden ' : '')
         \ . a:args
-        \ . ' | sed "s_^' . a:args . '/__"'
+        \ . ' | sed "s|^' . a:args . '/||"'
 
   return l:command
 endfunction
