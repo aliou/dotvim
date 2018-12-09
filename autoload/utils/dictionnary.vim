@@ -31,11 +31,15 @@ function! utils#dictionnary#merge(dict1, dict2, ...) abort
   let l:KeySearcher = {_idx, key -> index(keys(l:result), key) != -1}
   let l:conflicting_keys = filter(keys(a:dict2), l:KeySearcher)
 
-  " Call conflict resolver on each of the conflicting keys with both values.
-  for l:key in l:conflicting_keys
-    let l:val1 = l:result[l:key]
-    let l:val2 = a:dict2[l:key]
-    let l:result[l:key] = l:Resolver(l:key, l:val1, l:val2)
+  " Merge the dictionnaries.
+  for [l:key, l:Value] in items(a:dict2)
+    " Call conflict resolver on each of the conflicting keys with both values.
+    if index(l:conflicting_keys, l:key)
+      let l:Val2 = a:dict2[l:key]
+      let l:result[l:key] = l:Resolver(l:key, l:Value, l:Val2)
+    else
+      let l:result[l:key] = l:Value
+    endif
   endfor
 
   return l:result
