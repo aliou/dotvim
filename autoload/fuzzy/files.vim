@@ -26,14 +26,17 @@ function! fuzzy#files#source(args) abort
   " - Ignoring everything from the wildignore,
   " - Including (or not) the hidden files,
   " - from this directory.
-  " Then remove the path to the directory from the result.
-  " The sed command is : `s_^<directory>__`, using `_` as a separator instead of
-  " slashes.
   let l:command = 'rg --files --sort-files '
         \ . s:rg_ignore_file() . ' '
         \ . (l:include_hidden ? '--hidden ' : '')
         \ . a:args
-        \ . ' | sed "s|^' . a:args . '/||"'
+
+  " Remove the path to the directory from the results if we're already in it.
+  " The sed command is : `s_^<directory>__`, using `_` as a separator instead of
+  " slashes.
+  if a:args == getcwd()
+    let l:command .= ' | sed "s|^' . a:args . '/||"'
+  endif
 
   return l:command
 endfunction
