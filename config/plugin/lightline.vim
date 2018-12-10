@@ -7,7 +7,7 @@ let g:lightline.component_expand = {
 
 let g:lightline.component_function = {
       \   'gitbranch': 'fugitive#head',
-      \   'working_directory': 'getcwd'
+      \   'working_directory': 'status#cwd'
       \ }
 
 let g:lightline.component_type = {

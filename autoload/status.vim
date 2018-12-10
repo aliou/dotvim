@@ -55,3 +55,10 @@ function! status#fuzzy()
 
   return l:statusline
 endfunction
+
+function! status#cwd()
+  let l:home = $HOME
+  let l:cwd = substitute(getcwd(), l:home, '~', "")
+
+  return l:cwd
+endfunction
