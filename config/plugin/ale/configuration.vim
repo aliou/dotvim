@@ -31,7 +31,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \   'elixir': ['custom_elixir_ls', 'mix'],
       \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop'],
+      \   'ruby': ['rubocop', 'solargraph'],
       \   'rust': ['rls'],
       \   'typescript': ['tsserver'],
       \   'vim': ['vint'],
