@@ -40,12 +40,15 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
+\   'css': ['prettier'],
 \   'elixir': ['mix_custom_format'],
 \   'go': ['gofmt'],
 \   'help': ['align_help_tags', 'remove_trailing_lines'],
+\   'html': ['prettier'],
 \   'javascript': ['prettier', 'eslint'],
 \   'json': ['jq'],
 \   'ruby': ['rubocop'],
 \   'rust': ['rustfmt'],
+\   'scss': ['prettier'],
 \   'typescript': ['prettier'],
 \ }
