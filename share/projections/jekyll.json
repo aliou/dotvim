@@ -11,8 +11,17 @@
   "_posts/*.md": {
     "type": "post"
   },
+  "posts/index.md": {
+    "type": "post"
+  },
+  "posts/index.html": {
+    "type": "post"
+  },
   "_drafts/*.md": {
     "type": "draft"
+  },
+  "_assets/*": {
+    "type": "asset"
   },
   "Gemfile": {
     "type": "lib",
