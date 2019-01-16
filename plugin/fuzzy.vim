@@ -15,7 +15,7 @@ command! -nargs=? -complete=customlist,fuzzy#mru#complete FuzzyMRU
 command! -nargs=? -complete=customlist,fuzzy#projects#complete FuzzyProjects
       \ call fuzzy#projects(<q-args>)
 
-nnoremap <leader>t :FuzzyFiles<Return>
-nnoremap <leader>b :FuzzyBuffers<Return>
-nnoremap <leader>m :FuzzyMRU<Return>
-nnoremap <leader>p :FuzzyProjects<Return>
+nnoremap <silent> <leader>t :FuzzyFiles<Return>
+nnoremap <silent> <leader>b :FuzzyBuffers<Return>
+nnoremap <silent> <leader>m :FuzzyMRU<Return>
+nnoremap <silent> <leader>p :FuzzyProjects<Return>
