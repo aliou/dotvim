@@ -12,7 +12,6 @@ if has('spell')
     autocmd FileType gitcommit setlocal spell textwidth=72
 
     " Spell for markdown
-    autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
     autocmd FileType markdown setlocal spell
   augroup END
 endif
