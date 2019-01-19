@@ -13,6 +13,6 @@ if has('spell')
 
     " Spell for markdown
     autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
-    autocmd FileType markdown setlocal spell textwidth=80
+    autocmd FileType markdown setlocal spell
   augroup END
 endif
