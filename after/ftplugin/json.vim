@@ -1,2 +1,2 @@
 " Disable text width limit and color column highlight.
-setlocal textwidth=0
+set textwidth=0

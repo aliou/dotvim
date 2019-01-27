@@ -1,2 +1,2 @@
 " Disable text width for HTML files.
-setlocal textwidth=0
+set textwidth=0
