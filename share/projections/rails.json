@@ -2,6 +2,14 @@
   "config/routes.rb": {
     "command": "routes"
   },
+  "app/types/*_type.rb": {
+    "command": "type",
+    "template": [
+      "class {camelcase|capitalize|colons}Type < ActiveRecord::Type::Value",
+      "end"
+    ],
+    "test": "spec/types/%s_spec.rb"
+  },
   "app/serializers/*_serializer.rb": {
     "command": "serializer",
     "affinity": "model",
