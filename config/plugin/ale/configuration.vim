@@ -29,13 +29,15 @@ let g:ale_pattern_options = { '/usr/local': { 'ale_enabled': 0 } }
 let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
+      \   'bash': ['shellcheck'],
       \   'elixir': ['custom_elixir_ls', 'mix'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'rust': ['rls'],
+      \   'sh': ['shellcheck'],
+      \   'sql': ['sqlint'],
       \   'typescript': ['tsserver'],
       \   'vim': ['vint'],
-      \   'sql': ['sqlint']
       \ }
 
 let g:ale_fixers = {
