@@ -35,6 +35,7 @@ let g:ale_linters = {
       \   'rust': ['rls'],
       \   'typescript': ['tsserver'],
       \   'vim': ['vint'],
+      \   'sql': ['sqlint']
       \ }
 
 let g:ale_fixers = {
