@@ -9,7 +9,3 @@ set showbreak=↪
 set linebreak
 
 set display+=lastline
-
-" Clearly show when the start or end of the row does not correspond to the
-" start and end of the line
-set listchars+=precedes:<,extends:>
