@@ -2,9 +2,6 @@
 " tags.
 set complete-=i
 
-" Better defaults for ALE and LSP.
-set completeopt=menu,menuone,preview,noselect,noinsert
-
 if has('wildmenu')
   " Improve command line completion with tab. Helpful when fuzzy finding using
   " `:find` and friends.
