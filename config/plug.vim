@@ -40,7 +40,6 @@ Plug 'tpope/vim-scriptease'
 " Languages
 Plug 'elixir-editors/vim-elixir'
 Plug 'lifepillar/pgsql.vim'
-Plug 'sheerun/vim-polyglot'
 
 " Text object.
 Plug 'kana/vim-textobj-user'
