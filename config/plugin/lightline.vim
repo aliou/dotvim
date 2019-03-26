@@ -24,7 +24,7 @@ let g:lightline.active = {
       \ }
 
 let g:lightline.inactive = {
-      \   'left': [['filename']],
+      \   'left': [['bufname'], ['gitbranch'], ['readonly', 'relativepath', 'modified']],
       \   'right': []
       \ }
 
