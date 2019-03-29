@@ -19,7 +19,7 @@ function! s:closest_focusable_line() abort
   " `z` - Start at the current position.
   let l:previous_match_lnr = search(s:all_patterns, 'bnWz')
   " Check if pattern is on the current line starting at the cursor.
-  let l:next_match_lnr = search(s:all_patterns, 'nWz', line('.'))
+  let l:next_match_lnr = search(s:all_patterns, 'nz', line('.'))
 
   " Return the current line if the pattern is present. Otherwise return the next
   " line.
