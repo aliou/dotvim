@@ -2,6 +2,8 @@ if exists('g:loaded_fuzzy')
   finish
 endif
 
+let g:loaded_fuzzy = 'ok'
+
 " TODO: Configure fuzzy to work with typos ?
 command! -nargs=? -complete=dir FuzzyFiles
       \ call fuzzy#files(<q-args>)
