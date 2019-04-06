@@ -7,6 +7,8 @@ function s:is_swappable(word) abort
   return utils#fct#any(keys(s:pairs), {w -> w == a:word})
 endfunction
 
+" TODO: This will actually swap the first occurrence of the word instead of the
+" word under the cursor. This is Good Enough (TM) for now.
 function s:swap_word(word) abort
   if !has_key(s:pairs, a:word) | return | endif
   let l:other_word = s:pairs[a:word]
