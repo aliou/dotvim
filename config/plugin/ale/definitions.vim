@@ -2,10 +2,10 @@
 call ale#linter#Define('elixir', {
 \   'name': 'custom_elixir_ls',
 \   'lsp': 'stdio',
-\   'executable_callback': 'ale_linters#elixir#elixir_ls#GetExecutable',
+\   'executable': function('ale_linters#elixir#elixir_ls#GetExecutable'),
 \   'command': '%e',
 \   'language': 'elixir',
-\   'project_root_callback': 'ale_linters#elixir#elixir_ls#GetProjectRoot'
+\   'project_root': function('ale_linters#elixir#elixir_ls#GetProjectRoot')
 \})
 
 call ale#fix#registry#Add(
