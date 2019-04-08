@@ -2,17 +2,8 @@
   "config/routes.rb": {
     "command": "routes"
   },
-  "app/workers/*.rb": {
-    "command": "worker",
-    "template": [
-      "class {camelcase|capitalize|colons}",
-      "  include Sidekiq::Worker",
-      "",
-      "  def perform(*args)",
-      "",
-      "  end",
-      "end"
-    ]
+  "app/workers/application_worker.rb": {
+    "command": "worker"
   },
   "app/types/*_type.rb": {
     "command": "type",
