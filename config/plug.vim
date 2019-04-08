@@ -48,7 +48,7 @@ Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'tag': 'v2.4.0' }
 
 " Local
 
