@@ -37,6 +37,6 @@ function! cstm#swap#execute(direction) abort
   endif
 
   " Make the command that was just executed repeatable if tpope/vim-repeat is
-  " available..
+  " available.
   silent! call repeat#set(s:plug(a:direction), a:direction)
 endfunction

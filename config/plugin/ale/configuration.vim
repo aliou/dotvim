@@ -54,4 +54,5 @@ let g:ale_fixers = {
 \   'rust': ['rustfmt'],
 \   'scss': ['prettier'],
 \   'typescript': ['prettier'],
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
