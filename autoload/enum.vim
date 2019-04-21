@@ -8,7 +8,7 @@ function! enum#any(enum, predicate) abort
   return v:false
 endfunction
 
-function! util#map(enum, fct)
+function! enum#map(enum, fct)
   let l:enum = deepcopy(a:enum)
   return map(enum, a:fct)
 endfunction
