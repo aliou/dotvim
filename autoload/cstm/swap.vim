@@ -19,6 +19,10 @@ function s:swap_word(word) abort
   call setline('.', l:updated_content)
 endfunction
 
+function! s:plug(direction)
+  return a:direction > 0 ? "\<Plug>CstmSwapUp" : "\<Plug>CstmSwapDown"
+endfunction
+
 function! s:fallback(direction)
   return "normal! " . v:count1 . (a:direction > 0 ? "\<C-A>" : "\<C-X>")
 endfunction
@@ -31,4 +35,8 @@ function! cstm#swap#execute(direction) abort
   else
     execute s:fallback(a:direction)
   endif
+
+  " Make the command that was just executed repeatable if tpope/vim-repeat is
+  " available..
+  silent! call repeat#set(s:plug(a:direction), a:direction)
 endfunction

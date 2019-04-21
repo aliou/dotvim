@@ -45,6 +45,7 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'gilligan/textobj-gitgutter'
 Plug 'PeterRincker/vim-argumentative'
+Plug 'tpope/vim-repeat'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
