@@ -19,15 +19,16 @@ function s:swap_word(word) abort
   call setline('.', l:updated_content)
 endfunction
 
+function! s:fallback(direction)
+  return "normal! " . v:count1 . (a:direction > 0 ? "\<C-A>" : "\<C-X>")
+endfunction
+
 function! cstm#swap#execute(direction) abort
   let l:word = expand('<cword>')
-  if s:is_swappable(l:word)
-    return s:swap_word(l:word)
-  endif
 
-  if a:direction == 1
-    execute "normal! " . v:count1 . "\<C-A>"
+  if s:is_swappable(l:word)
+    call s:swap_word(l:word)
   else
-    execute "normal! " . v:count1 . "\<C-X>"
+    execute s:fallback(a:direction)
   endif
 endfunction
