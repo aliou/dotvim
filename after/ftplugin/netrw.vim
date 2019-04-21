@@ -1,3 +1,6 @@
+" Make sure the undo command exists.
+if !exists('b:undo_ftplugin') | let b:undo_ftplugin = '' | endif
+
 " Prevent my muscle memory from saving netrw files.
 " TODO: Also map saving commands to be no-ops. (My muscle memory seems to always
 " run `:w` with `!`.
