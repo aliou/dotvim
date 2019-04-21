@@ -49,7 +49,7 @@ Plug 'tpope/vim-repeat'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale', { 'tag': 'v2.4.0' }
+Plug 'w0rp/ale'
 
 " Local
 
