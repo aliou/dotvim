@@ -4,7 +4,7 @@ let s:pairs = {
       \ }
 
 function s:is_swappable(word) abort
-  return utils#fct#any(keys(s:pairs), {w -> w == a:word})
+  return enum#any(keys(s:pairs), {w -> w == a:word})
 endfunction
 
 " TODO: This will actually swap the first occurrence of the word instead of the

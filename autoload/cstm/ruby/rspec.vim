@@ -4,11 +4,11 @@ let s:not_focused_pattern = '\(\<' . join(s:focusable_terms, '\>\|') . '\>\)'
 let s:all_patterns = join([s:focused_pattern, s:not_focused_pattern], '\|')
 
 function! s:is_focusable(line) abort
-  return utils#fct#any(s:focusable_terms, {term -> a:line =~ '\<f*' . term . '\>'})
+  return enum#any(s:focusable_terms, {term -> a:line =~ '\<f*' . term . '\>'})
 endfunction
 
 function! s:is_focused(line) abort
-  return utils#fct#any(s:focusable_terms, {term -> a:line =~ '\<f' . term . '\>'})
+  return enum#any(s:focusable_terms, {term -> a:line =~ '\<f' . term . '\>'})
 endfunction
 
 function! s:closest_focusable_line() abort
