@@ -12,3 +12,4 @@ setlocal readonly
 " For some reason, we cannot call :unmap here. /shrug
 " We also cannot call :mapclear as this would remove the Vinegar mappings.
 nnoremap <buffer> <space> <space>
+let b:undo_ftplugin .= " | nunmap <buffer> <space>"
