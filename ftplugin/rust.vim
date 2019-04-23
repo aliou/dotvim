@@ -1,8 +1,3 @@
-if exists('b:did_ftplugin')
-  finish
-endif
-let b:did_ftplugin = 1
-
 " Manually setup tags for Rust files.
 " Add the tag from the current directory and from the Rust Standard Library.
 " TODO: Simply add the stdlib tags file path?

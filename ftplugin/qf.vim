@@ -1,8 +1,3 @@
-if exists('b:did_ftplugin')
-  finish
-endif
-let b:did_ftplugin = 1
-
 " Close window
 nnoremap <buffer> <silent> q :cclose \| :lclose<CR>
 let b:undo_ftplugin = "nunmap <buffer> q"
