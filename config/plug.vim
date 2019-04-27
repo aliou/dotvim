@@ -2,11 +2,9 @@ let g:plug_shallow = 1
 call plug#begin('~/.vim/bundle')
 
 " Display
-Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mhinz/vim-startify'
-Plug 'sjl/badwolf'
 
 " Shell
 Plug 'tpope/vim-dispatch'
@@ -24,7 +22,6 @@ Plug 'tpope/vim-surround'
 " Utils.
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
-Plug 'sjl/gundo.vim', { 'on': ['GundoToggle', 'GundoShow'] }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
