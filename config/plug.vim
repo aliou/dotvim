@@ -20,6 +20,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
 " Utils.
+Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'
