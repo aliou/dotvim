@@ -44,6 +44,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'gilligan/textobj-gitgutter'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'tpope/vim-repeat'
+Plug 'kana/vim-textobj-line'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
