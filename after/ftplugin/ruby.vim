@@ -6,10 +6,10 @@ if !exists('b:undo_ftplugin') | let b:undo_ftplugin = '' | endif
 setlocal iskeyword+=!,?,@
 let b:undo_ftplugin .= " | set iskeyword<"
 
+" TODO: Figure out why trying to removing the mapping in `b:undo_ftplugin`
+" errors. Maybe buffer maps are already removed when changing filetype?
 nnoremap <silent> <buffer> K :call cstm#ruby#documentation()<CR>
-nnoremap <silent> <buffer> <c-\> :call cstm#ruby#ptag()<CR>
-let b:undo_ftplugin .= " | unmap <buffer> K"
-let b:undo_ftplugin .= " | unmap <c-\>"
+" let b:undo_ftplugin .= " | nunmap <buffer> K"
 
 iabbrev describled_class described_class
 let b:undo_ftplugin .= " | iunabbrev describled_class"
