@@ -14,6 +14,7 @@ Plug 'tpope/vim-rhubarb'
 
 " Editing
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
