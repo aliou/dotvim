@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
@@ -40,11 +41,10 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'lifepillar/pgsql.vim'
 
 " Text object.
-Plug 'kana/vim-textobj-user'
-Plug 'gilligan/textobj-gitgutter'
 Plug 'PeterRincker/vim-argumentative'
-Plug 'tpope/vim-repeat'
+Plug 'gilligan/textobj-gitgutter'
 Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
