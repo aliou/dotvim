@@ -1,0 +1,12 @@
+{
+  "package.json": {
+    "type": "package",
+    "alternate": ["package-lock.json", "yarn.lock"]
+  },
+  "package-lock.json": {
+    "alternate": "package.json"
+  },
+  "yarn.lock": {
+    "alternate": "package.json"
+  }
+}

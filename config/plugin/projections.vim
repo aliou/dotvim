@@ -3,13 +3,16 @@ if !exists('g:projectionist_heuristics')
   let g:projectionist_heuristics = {}
 endif
 
+" TODO: Profile this against directly defining the projections in vimscript. Is
+" the trade-off worth it?
 let s:projection_descriptions = [
       \   { 'test': 'Formula/|cmd/', 'file': 'brew.json' },
       \   { 'test': 'libexec/&!.projections.json', 'file': 'sub.json' },
       \   { 'test': 'plugin/|colors/|ftdetect/', 'file': 'vim_plugin.json' },
       \   { 'test': 'Package.swift', 'file': 'swiftpm.json' },
       \   { 'test': '_config.yml', 'file': 'jekyll.json' },
-      \   { 'test': 'cargo.toml', 'file': 'cargo.json' }
+      \   { 'test': 'cargo.toml', 'file': 'cargo.json' },
+      \   { 'test': 'package.json', 'file': 'javascript.json' },
       \ ]
 
 " TODO: simplify path thingy.
