@@ -2,7 +2,7 @@
 set guioptions-=rL
 
 " Set font and size.
-set guifont=Andale\ Mono:h13.5
+set guifont=SF\ Mono:h13.5
 
 " Use same values as my terminal window.
 set lines=45 columns=180
