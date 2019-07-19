@@ -8,5 +8,11 @@
   },
   "yarn.lock": {
     "alternate": "package.json"
+  },
+  "*.js": {
+    "alternate": "{}.test.js"
+  },
+  "*.test.js": {
+    "alternate": "{}.js"
   }
 }
