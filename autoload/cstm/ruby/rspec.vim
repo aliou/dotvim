@@ -44,3 +44,9 @@ function! cstm#ruby#rspec#toggle_focus() abort
   call setline(l:line_nr, l:updated_content)
   silent write
 endfunction
+
+function! cstm#ruby#rspec#next_term(direction)
+  let l:options = a:direction == 1 ? 'bWz' : 'Wz'
+  echom a:direction l:options
+  call search(s:all_patterns, l:options)
+endfunction
