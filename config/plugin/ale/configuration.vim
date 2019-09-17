@@ -32,7 +32,7 @@ let g:ale_linters = {
       \   'bash': ['shellcheck'],
       \   'elixir': ['custom_elixir_ls', 'mix'],
       \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop'],
+      \   'ruby': ['rubocop', 'solargraph'],
       \   'rust': ['rls'],
       \   'sh': ['shellcheck'],
       \   'sql': ['sqlint'],
