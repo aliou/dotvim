@@ -56,3 +56,5 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
+
+let g:ale_ruby_rubocop_executable = 'rubocop-daemon-wrapper'
