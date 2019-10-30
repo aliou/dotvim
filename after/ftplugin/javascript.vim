@@ -5,7 +5,8 @@ let b:match_ignorecase = 0
 
 " Add JSX tags to match words.
 let s:jsx_match_words = '(:),\[:\],{:},<:>,' .
-      \ '<\@<=\([^/][^ \t>]*\)[^>]*\%(/\@<!>\|$\):<\@<=/\1>'
+      \ '<\@<=\([^/][^ \t>]*\)[^>]*\%(/\@<!>\|$\):<\@<=/\1>,' .
+      \ '<>:<\\>'
 
 let b:match_words = exists('b:match_words')
       \ ? b:match_words . ',' . s:jsx_match_words
