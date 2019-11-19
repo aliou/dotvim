@@ -49,7 +49,7 @@ Plug 'kana/vim-textobj-user'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'tag': 'v2.6.0' }
 
 " Local
 
