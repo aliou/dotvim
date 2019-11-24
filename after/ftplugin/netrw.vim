@@ -16,6 +16,3 @@ setlocal readonly
 " We also cannot call :mapclear as this would remove the Vinegar mappings.
 nnoremap <buffer> <space> <space>
 let b:undo_ftplugin .= " | nunmap <buffer> <space>"
-
-nnoremap <buffer> qq :q<cr>
-let b:undo_ftplugin .= " | nunmap <buffer> qq"
