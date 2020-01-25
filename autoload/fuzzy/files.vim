@@ -34,17 +34,20 @@ function! fuzzy#files#source(directory) abort
   return l:command
 endfunction
 
-function! fuzzy#files#toggle_ignore() abort
-  let g:fuzzy_include_hidden = !get(g:, 'fuzzy_include_hidden', 0)
-endfunction
-
-function! s:find_project_directory() abort
+" TODO: Refactor the two following functions into one.
+function! s:find_project_directory_git() abort
   let l:path = finddir('.git', expand('%:p:h').';')
   return fnamemodify(substitute(l:path, '\.git', '', ''), ':p:h')
 endfunction
 
+function! s:find_project_directory_root() abort
+  let l:path = findfile('.root', expand('%:p:h').';')
+  return fnamemodify(substitute(l:path, '\.root', '', ''), ':p:h')
+endfunction
+
 " Try to detect the current file's project.
-" It tries to find the closest parent with a `.git` directory.
+" It tries to find the closest parent with a `.root` file.
+" If it doesn't find it, it tries to find the closest parent with a `.git` directory.
 " If it doesn't find it, it uses the current file's directory.
 "
 " This should work most of the time /shrug.
@@ -53,9 +56,10 @@ function! fuzzy#files#source_directory() abort
     return b:fuzzy_project_directory
   endif
 
-  let l:project_directory = s:find_project_directory()
-  if l:project_directory !=# ''
-    let b:fuzzy_project_directory = l:project_directory
+  if s:find_project_directory_root() !=# ''
+    let b:fuzzy_project_directory = s:find_project_directory_root()
+  elseif s:find_project_directory_git() != ''
+    let b:fuzzy_project_directory = s:find_project_directory_git()
   else
     let b:fuzzy_project_directory = expand('%:p:h')
   endif
