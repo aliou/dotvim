@@ -27,11 +27,9 @@ function! fuzzy#files#source(directory) abort
         \ . a:directory
 
   " Remove the path to the directory from the results if we're already in it.
-  " The sed command is : `s_^<directory>__`, using `_` as a separator instead of
-  " slashes.
-  if a:args == getcwd()
-    let l:command .= ' | sed "s|^' . a:args . '/||"'
-  endif
+  " The sed command is : `s|^<directory>||`, using `|` as a separator instead of
+  " slashes to avoid having to escape the directory path.
+  let l:command .= ' | sed "s|^' . a:directory . '/||"'
 
   return l:command
 endfunction
