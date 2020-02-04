@@ -19,6 +19,7 @@ endfunction
 " TODO: Tests lol
 " TODO: Allow passing a string to know which resolver to use. Look at how
 " vim-projectionist handles transformations.
+" TODO: Allow passing more thant two dicts.
 function! utils#dictionnary#merge(dict1, dict2, ...) abort
   " If no conflict resolver is passed, use a default conflict resolver returning
   " the value in the first dictionary.
