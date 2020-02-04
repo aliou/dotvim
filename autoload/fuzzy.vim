@@ -5,17 +5,28 @@ function! s:wrap(name, source, ...) abort
 
   " Note: The whole appending logic is completely overkill. /shrug
   " See `autoload/utils/dictionnary.vim` for the steps to improve all of this.
-  let l:custom_options = a:0 ? a:1 : {}
+  let l:arg_options = a:0 ? a:1 : {}
   let l:custom_options_should_append = a:0 >= 2 ? a:2 : v:false
   let l:Resolver = l:custom_options_should_append ?
         \ function('utils#dictionnary#append_resolver') :
         \ function('utils#dictionnary#keep_resolver')
 
-  let l:args = utils#dictionnary#merge({
+  let l:default_options = {
         \   'source': a:source,
-        \   'window': 'bot 10new',
         \   'options': '--reverse --select-1'
-        \ }, l:custom_options, l:Resolver)
+        \ }
+
+  if get(g:, 'fuzzy_use_window', 0)
+    let l:window_option = { 'window': 'bot 10new' }
+  else
+    let l:window_option = { 'window': { 'width': 0.7, 'height': 0.5 } }
+  endif
+
+  let l:options = utils#dictionnary#merge({
+        \   'source': a:source, 'options': '--select-1'
+        \ }, l:window_option)
+
+  let l:args = utils#dictionnary#merge(l:options, l:arg_options, l:Resolver)
 
   return fzf#wrap(a:name, l:args)
 endfunction
