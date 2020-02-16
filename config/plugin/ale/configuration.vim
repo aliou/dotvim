@@ -49,11 +49,13 @@ let g:ale_fixers = {
 \   'help': ['align_help_tags', 'remove_trailing_lines'],
 \   'html': ['prettier'],
 \   'javascript': ['prettier', 'eslint'],
+\   'javascriptreact': ['prettier', 'eslint'],
 \   'json': ['jq'],
 \   'ruby': ['rubocop'],
 \   'rust': ['rustfmt'],
 \   'scss': ['prettier'],
-\   'typescript': ['prettier'],
+\   'typescript': ['prettier', 'eslint'],
+\   'typescriptreact': ['prettier', 'eslint'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
 
