@@ -25,6 +25,11 @@
       "owner": "cormacrelf",
       "package": "vim-colors-github",
       "type": "start"
+    },
+    {
+      "owner": "ap",
+      "package": "vim-css-color",
+      "type": "start"
     }
   ]
 }
