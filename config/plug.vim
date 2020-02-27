@@ -43,9 +43,6 @@ Plug 'lifepillar/pgsql.vim'
 
 " Text object.
 Plug 'PeterRincker/vim-argumentative'
-Plug 'gilligan/textobj-gitgutter'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-user'
 
 " Tests / Lint
 Plug 'janko-m/vim-test'

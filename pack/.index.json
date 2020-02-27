@@ -30,6 +30,16 @@
       "owner": "ap",
       "package": "vim-css-color",
       "type": "start"
+    },
+    {
+      "owner": "hashivim",
+      "package": "vim-terraform",
+      "type": "opt"
+    },
+    {
+      "owner": "arzg",
+      "package": "vim-colors-xcode",
+      "type": "start"
     }
   ]
 }
