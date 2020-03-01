@@ -9,8 +9,9 @@ if has('wildmenu')
 
   if has('wildignore')
     " Ignored file patterns for file completion, `expand`, `glob` and `glopath`.
+
     " Version control
-    set wildignore+=.hg,.git,.svn
+    set wildignore+=.hg,.git,.svn,.gitkeep
 
     " JS vendored files.
     set wildignore+=*bower_components,*node_modules,_build
@@ -25,7 +26,7 @@ if has('wildmenu')
     set wildignore+=*.DS_Store
 
     " Personal bullshit
-    set wildignore+=.tmux,.tags
+    set wildignore+=.tmux,.tags,.root
   endif
 
   " Complete files without case sensitivity, if the option is available
