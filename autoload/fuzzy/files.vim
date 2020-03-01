@@ -22,7 +22,7 @@ function! fuzzy#files#source(directory) abort
   " List the files using rg,
   " - Ignoring everything from the wildignore,
   " - from this directory.
-  let l:command = 'rg --files --sort-files '
+  let l:command = 'rg --files --sort-files --hidden '
         \ . s:rg_ignore_file() . ' '
         \ . a:directory
 
