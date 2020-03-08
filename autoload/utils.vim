@@ -1,3 +1,3 @@
-function! util#random() abort
-  return util#random#number()
+function! utils#random() abort
+  return utils#random#number()
 endfunction
