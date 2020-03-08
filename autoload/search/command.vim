@@ -38,7 +38,12 @@ function! s:closed(channel) abort
     return l:request.status
   endif
 
-  call setqflist([]) " Empty current quick fix list. shrug
+  if empty(l:request.output)
+    call utils#message#error('No results')
+    return 1
+  endif
+
+  call setqflist([]) " Empty the current quick fix list. shrug
   caddexpr l:request.output
   copen
 endfunction
