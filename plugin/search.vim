@@ -4,4 +4,4 @@
 
 " let g:loaded_search = 'ok'
 
-command! -nargs=? -range=0 Search call search#run(<q-args>, <count>)
+command! -nargs=* -range=0 -complete=dir Search call search#run(<q-args>, <count>)
