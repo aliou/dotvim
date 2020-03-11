@@ -45,7 +45,7 @@ function! s:closed(channel) abort
 
   call setqflist([]) " Empty the current quick fix list. shrug
   caddexpr l:request.output
-  copen
+  botright cwindow
 endfunction
 
 function! s:exit(job, status) abort
