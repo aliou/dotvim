@@ -23,7 +23,6 @@ Plug 'tpope/vim-surround'
 " Utils.
 Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'

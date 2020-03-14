@@ -22,3 +22,10 @@ function! search#run(args, count) abort
 
   call search#command#execute(l:search_command)
 endfunction
+
+function! search#ack_legacy(args, count) abort
+  echom "Use Search instead of Ack"
+  execute '2sleep'
+
+  call search#run(a:args, a:count)
+endfunction
