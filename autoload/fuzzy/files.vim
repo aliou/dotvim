@@ -45,6 +45,11 @@ function! s:find_project_directory_root() abort
   return fnamemodify(substitute(l:path, '\.root', '', ''), ':p:h')
 endfunction
 
+let s:invalid_patterns = ['^fugitive://']
+function! s:is_invalid_directory(directory) abort
+  return enum#any(s:invalid_patterns, {pat -> match(a:directory, pat) != -1})
+endfunction
+
 " Try to detect the current file's project.
 " It tries to find the closest parent with a `.root` file.
 " If it doesn't find it, it tries to find the closest parent with a `.git` directory.
@@ -57,12 +62,17 @@ function! fuzzy#files#source_directory() abort
   endif
 
   if s:find_project_directory_root() !=# ''
-    let b:fuzzy_project_directory = s:find_project_directory_root()
+    let l:fuzzy_project_directory = s:find_project_directory_root()
   elseif s:find_project_directory_git() != ''
-    let b:fuzzy_project_directory = s:find_project_directory_git()
+    let l:fuzzy_project_directory = s:find_project_directory_git()
   else
-    let b:fuzzy_project_directory = expand('%:p:h')
+    let l:fuzzy_project_directory = expand('%:p:h')
   endif
 
+  if s:is_invalid_directory(l:fuzzy_project_directory)
+    return v:null
+  endif
+
+  let b:fuzzy_project_directory = l:fuzzy_project_directory
   return b:fuzzy_project_directory
 endfunction

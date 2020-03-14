@@ -25,6 +25,12 @@ function! fuzzy#files(args) abort
   " By default, use the folder passed as argument. Otherwise, get the current
   " file's project directory.
   let l:source_dir = empty(a:args) ? fuzzy#files#source_directory() : a:args
+
+  if l:source_dir == v:null
+    call utils#message#error('Invalid source directory')
+    return 1
+  endif
+
   let l:source = fuzzy#files#source(l:source_dir)
 
   let l:options = s:wrap('fuzzy#files', l:source, { 'dir': l:source_dir })
