@@ -11,21 +11,11 @@ function! s:wrap(name, source, ...) abort
         \ function('utils#dictionnary#append_resolver') :
         \ function('utils#dictionnary#keep_resolver')
 
-  let l:default_options = {
+  let l:options = {
         \   'source': a:source,
-        \   'options': '--reverse --select-1'
+        \   'options': "--reverse --select-1 --preview 'cat {}'",
+        \   'window': { 'width': 0.9, 'height': 0.8 }
         \ }
-
-  if get(g:, 'fuzzy_use_window', 0)
-    let l:window_option = { 'window': 'bot 10new' }
-  else
-    let l:window_option = { 'window': { 'width': 0.7, 'height': 0.5 } }
-  endif
-
-  let l:options = utils#dictionnary#merge({
-        \   'source': a:source, 'options': '--select-1'
-        \ }, l:window_option)
-
   let l:args = utils#dictionnary#merge(l:options, l:arg_options, l:Resolver)
 
   return fzf#wrap(a:name, l:args)
