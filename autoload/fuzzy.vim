@@ -1,5 +1,12 @@
 let s:fuzzy_title = ''
 
+function! s:fzf_options() abort
+  let l:bat_theme = &background == 'light' ? 'ansi-light' : 'ansi-dark'
+  return "--reverse --select-1 "
+        \ . "--preview "
+        \ . "'bat --style=numbers --theme=" . l:bat_theme . " --color=always {}'"
+endfunction
+
 function! s:wrap(name, source, ...) abort
   let s:fuzzy_title = a:name
 
@@ -13,7 +20,7 @@ function! s:wrap(name, source, ...) abort
 
   let l:options = {
         \   'source': a:source,
-        \   'options': "--reverse --select-1 --preview 'cat {}'",
+        \   'options': s:fzf_options(),
         \   'window': { 'width': 0.9, 'height': 0.8 }
         \ }
   let l:args = utils#dictionnary#merge(l:options, l:arg_options, l:Resolver)
