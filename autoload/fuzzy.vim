@@ -2,9 +2,11 @@ let s:fuzzy_title = ''
 
 function! s:fzf_options() abort
   let l:bat_theme = &background == 'light' ? 'ansi-light' : 'ansi-dark'
-  return "--reverse --select-1 "
-        \ . "--preview "
-        \ . "'bat --style=numbers --theme=" . l:bat_theme . " --color=always {}'"
+  return '--reverse --select-1'
+        \ . ' --preview '
+        \ . " 'bat --style=numbers --theme=" . l:bat_theme . " --color=always {}'"
+        \ . ' --preview-window right:66%'
+        \ . ' --bind ctrl-k:preview-up,ctrl-j:preview-down'
 endfunction
 
 function! s:wrap(name, source, ...) abort
@@ -39,8 +41,8 @@ function! fuzzy#files(args) abort
   endif
 
   let l:source = fuzzy#files#source(l:source_dir)
-
   let l:options = s:wrap('fuzzy#files', l:source, { 'dir': l:source_dir })
+
   call fzf#run(l:options)
 endfunction
 
