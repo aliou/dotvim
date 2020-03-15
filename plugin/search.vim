@@ -9,3 +9,5 @@ command! -nargs=* -range=0 -complete=dir Search
 
 command! -nargs=* -range=0 -complete=dir Ack
       \ call search#ack_legacy(<q-args>, <count>)
+
+nnoremap <silent> <leader>ss :Search<Return>
