@@ -2,7 +2,7 @@ if !exists('s:requests')
   let s:requests = {}
 endif
 
-function! search#command#execute(command) abort
+function! search#job#execute(command) abort
   let l:job = job_start([&shell, &shellcmdflag, a:command], {
         \   'in_io': 'null',
         \   'out_mode': 'nl',

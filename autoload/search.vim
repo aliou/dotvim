@@ -20,7 +20,7 @@ function! search#run(args, count) abort
   let l:term = s:get_search_term(a:args, a:count)
   let l:search_command = s:build_command(l:term)
 
-  call search#command#execute(l:search_command)
+  call search#job#execute(l:search_command)
 endfunction
 
 function! search#ack_legacy(args, count) abort
