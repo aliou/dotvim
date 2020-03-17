@@ -13,7 +13,7 @@ function! s:get_search_term(args, count) abort
 endfunction
 
 function! s:build_command(term) abort
-  return join(['rg --vimgrep', a:term], ' ')
+  return join(['rg --vimgrep --smart-case', a:term], ' ')
 endfunction
 
 function! search#run(args, count) abort
