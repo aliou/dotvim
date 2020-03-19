@@ -3,12 +3,12 @@ function! s:is_not_current(_index, file) abort
 endfunction
 
 " TODO: Since `v:oldfiles` barely changes during a session, it might be useful to memoize it ?
-function! fuzzy#mru#list() abort
+function! cstm#fuzzy#mru#list() abort
   " Limit the number of files to be returned.
-  if !exists('g:fuzzy#mru#limit')
-    let g:fuzzy#mru#limit = 500
+  if !exists('g:cstm#fuzzy#mru#limit')
+    let g:cstm#fuzzy#mru#limit = 500
   endif
-  let l:sublimit = g:fuzzy#mru#limit < 2 ? 2 : g:fuzzy#mru#limit
+  let l:sublimit = g:cstm#fuzzy#mru#limit < 2 ? 2 : g:cstm#fuzzy#mru#limit
 
   " Slice the file list and filter out the current file.
   let l:files = filter(copy(v:oldfiles[:l:sublimit]), function('s:is_not_current'))
@@ -16,6 +16,6 @@ function! fuzzy#mru#list() abort
   return l:files
 endfunction
 
-function! fuzzy#mru#complete(argument_lead, cmd_line, cursor_position) abort
-  return filter(fuzzy#mru#list(), 'v:val =~ a:argument_lead')
+function! cstm#fuzzy#mru#complete(argument_lead, cmd_line, cursor_position) abort
+  return filter(cstm#fuzzy#mru#list(), 'v:val =~ a:argument_lead')
 endfunction

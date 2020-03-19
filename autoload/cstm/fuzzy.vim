@@ -30,24 +30,24 @@ function! s:wrap(name, source, ...) abort
   return fzf#wrap(a:name, l:args)
 endfunction
 
-function! fuzzy#files(args) abort
+function! cstm#fuzzy#files(args) abort
   " By default, use the folder passed as argument. Otherwise, get the current
   " file's project directory.
-  let l:source_dir = empty(a:args) ? fuzzy#files#source_directory() : a:args
+  let l:source_dir = empty(a:args) ? cstm#fuzzy#files#source_directory() : a:args
 
   if l:source_dir == v:null
     call utils#message#error('Invalid source directory')
     return 1
   endif
 
-  let l:source = fuzzy#files#source(l:source_dir)
-  let l:options = s:wrap('fuzzy#files', l:source, { 'dir': l:source_dir })
+  let l:source = cstm#fuzzy#files#source(l:source_dir)
+  let l:options = s:wrap('cstm#fuzzy#files', l:source, { 'dir': l:source_dir })
 
   call fzf#run(l:options)
 endfunction
 
-" TODO: Merge fuzzy#buffers and fuzzy#files into one.
-function! fuzzy#buffers(args) abort
+" TODO: Merge cstm#fuzzy#buffers and cstm#fuzzy#files into one.
+function! cstm#fuzzy#buffers(args) abort
   " Open the file pass as argument if present.
   if a:args !=# ''
     execute 'edit' a:args
@@ -55,44 +55,44 @@ function! fuzzy#buffers(args) abort
   endif
 
   " Don't bother doing anything if there are no buffers to choose from.
-  let l:source = fuzzy#buffers#list()
+  let l:source = cstm#fuzzy#buffers#list()
   if len(l:source) < 2
     return
   endif
 
-  let l:options = s:wrap('fuzzy#buffers', l:source)
+  let l:options = s:wrap('cstm#fuzzy#buffers', l:source)
   call fzf#run(l:options)
 endfunction
 
-function! fuzzy#mru(args) abort
+function! cstm#fuzzy#mru(args) abort
   " Open the file pass as argument if present.
   if a:args !=# ''
     execute 'edit' a:args
     return
   endif
 
-  let l:source = fuzzy#mru#list()
+  let l:source = cstm#fuzzy#mru#list()
   if len(l:source) < 2
     return
   endif
 
-  let l:options = s:wrap('fuzzy#mru', l:source)
+  let l:options = s:wrap('cstm#fuzzy#mru', l:source)
   call fzf#run(l:options)
 endfunction
 
-function! fuzzy#projects(args) abort
-  if a:args !=# '' | return fuzzy#projects#handler(a:args) | endif
+function! cstm#fuzzy#projects(args) abort
+  if a:args !=# '' | return cstm#fuzzy#projects#handler(a:args) | endif
 
-  let l:source = fuzzy#projects#list()
+  let l:source = cstm#fuzzy#projects#list()
 
   let l:custom_options = {
-        \ 'sink': function('fuzzy#projects#handler'),
+        \ 'sink': function('cstm#fuzzy#projects#handler'),
         \ 'options': '--no-sort --exact'
         \ }
-  let l:options = s:wrap('fuzzy#projects', l:source, l:custom_options, v:true)
+  let l:options = s:wrap('cstm#fuzzy#projects', l:source, l:custom_options, v:true)
   call fzf#run(l:options)
 endfunction
 
-function! fuzzy#title() abort
+function! cstm#fuzzy#title() abort
   return s:fuzzy_title
 endfunction

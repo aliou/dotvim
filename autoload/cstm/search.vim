@@ -16,13 +16,13 @@ function! s:build_command(term) abort
   return join(['rg --vimgrep --smart-case', a:term], ' ')
 endfunction
 
-function! search#run(args, count) abort
+function! cstm#search#run(args, count) abort
   let l:term = s:get_search_term(a:args, a:count)
   let l:search_command = s:build_command(l:term)
 
-  call search#job#execute(l:search_command)
+  call cstm#search#job#execute(l:search_command)
 endfunction
 
-function! search#ack_legacy(args, count) abort
+function! cstm#search#ack_legacy(args, count) abort
   call utils#message#error("Use Search instead of Ack.")
 endfunction

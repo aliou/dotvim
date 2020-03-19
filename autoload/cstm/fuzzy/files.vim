@@ -18,7 +18,7 @@ function! s:rg_ignore_file() abort
   return '--ignore-file ' . b:fuzzy_rg_ignore_file
 endfunction
 
-function! fuzzy#files#source(directory) abort
+function! cstm#fuzzy#files#source(directory) abort
   " List the files using rg,
   " - Ignoring everything from the wildignore,
   " - from this directory.
@@ -56,7 +56,7 @@ endfunction
 " If it doesn't find it, it uses the current file's directory.
 "
 " This should work most of the time /shrug.
-function! fuzzy#files#source_directory() abort
+function! cstm#fuzzy#files#source_directory() abort
   if exists('b:fuzzy_project_directory')
     return b:fuzzy_project_directory
   endif
