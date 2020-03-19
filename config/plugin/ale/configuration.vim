@@ -44,7 +44,6 @@ let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
 \   'css': ['prettier'],
-\   'elixir': ['mix_custom_format'],
 \   'go': ['gofmt'],
 \   'help': ['align_help_tags', 'remove_trailing_lines'],
 \   'html': ['prettier'],
