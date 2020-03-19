@@ -8,19 +8,19 @@ function! enum#any(enum, predicate) abort
   return v:false
 endfunction
 
-function! enum#map(enum, fct)
+function! enum#map(enum, fct) abort
   let l:enum = deepcopy(a:enum)
   return map(enum, a:fct)
 endfunction
 
-function! enum#each(enum, fct)
+function! enum#each(enum, fct) abort
   for l:element in a:enum
     call a:fct(l:element)
   endfor
 endfunction
 
 
-function! enum#filter(enum, predicate)
+function! enum#filter(enum, predicate) abort
   let l:result = []
 
   for l:element in a:enum
