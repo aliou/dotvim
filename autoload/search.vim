@@ -24,8 +24,5 @@ function! search#run(args, count) abort
 endfunction
 
 function! search#ack_legacy(args, count) abort
-  call utils#message#error("Use Search instead of Ack. Sleeping for 2 seconds.")
-  execute '2sleep'
-
-  call search#run(a:args, a:count)
+  call utils#message#error("Use Search instead of Ack.")
 endfunction
