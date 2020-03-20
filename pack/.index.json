@@ -40,6 +40,16 @@
       "owner": "arzg",
       "package": "vim-colors-xcode",
       "type": "start"
+    },
+    {
+      "owner": "plasticboy",
+      "package": "vim-markdown",
+      "type": "start"
+    },
+    {
+      "owner": "pechorin",
+      "package": "any-jump.vim",
+      "type": "start"
     }
   ]
 }
