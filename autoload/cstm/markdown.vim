@@ -7,7 +7,7 @@ function! s:preview(filepath)
   call job_start(['/bin/sh', '-c', l:command])
 endfunction
 
-function! markdown#preview(...) abort
+function! cstm#markdown#preview(...) abort
   let l:file = get(a:000, 1, expand('%'))
   call s:preview(l:file)
 endfunction

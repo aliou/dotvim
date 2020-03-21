@@ -1,1 +1,1 @@
-command! -buffer -nargs=? -complete=file Preview call markdown#preview(<f-args>)
+command! -buffer -nargs=? -complete=file Preview call cstm#markdown#preview(<f-args>)
