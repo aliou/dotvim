@@ -30,6 +30,7 @@ let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
       \   'bash': ['shellcheck'],
+      \   'css': ['stylelint'],
       \   'elixir': ['custom_elixir_ls', 'mix'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop', 'solargraph'],
@@ -43,7 +44,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
-\   'css': ['prettier'],
+\   'css': ['prettier', 'stylelint'],
 \   'go': ['gofmt'],
 \   'help': ['align_help_tags', 'remove_trailing_lines'],
 \   'html': ['prettier'],
