@@ -11,3 +11,6 @@ command! -nargs=* -range=0 -complete=dir Ack
       \ call cstm#search#legacy#ack()
 
 nnoremap <silent> <leader>ss :Search<Return>
+
+nnoremap <silent> s :set operatorfunc=cstm#search#operator<CR>g@
+vnoremap <silent> s :<C-U>call cstm#search#operator(visualmode())<CR>

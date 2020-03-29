@@ -16,6 +16,10 @@ function! s:build_command(term) abort
   return join(['rg --vimgrep --smart-case', a:term], ' ')
 endfunction
 
+function! cstm#search#operator(type) abort
+  call cstm#search#run('', a:type ==# 'v' ? 1 : 0)
+endfunction
+
 function! cstm#search#run(args, count) abort
   let l:term = s:get_search_term(a:args, a:count)
   let l:search_command = s:build_command(l:term)
