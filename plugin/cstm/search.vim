@@ -8,6 +8,6 @@ command! -nargs=* -range=0 -complete=dir Search
       \ call cstm#search#run(<q-args>, <count>)
 
 command! -nargs=* -range=0 -complete=dir Ack
-      \ call cstm#search#ack_legacy(<q-args>, <count>)
+      \ call cstm#search#legacy#ack()
 
 nnoremap <silent> <leader>ss :Search<Return>

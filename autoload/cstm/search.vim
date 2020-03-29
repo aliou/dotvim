@@ -22,7 +22,3 @@ function! cstm#search#run(args, count) abort
 
   call cstm#search#job#execute(l:search_command)
 endfunction
-
-function! cstm#search#ack_legacy(args, count) abort
-  call utils#message#error("Use Search instead of Ack.")
-endfunction
