@@ -23,6 +23,9 @@
   "_assets/*": {
     "type": "asset"
   },
+  "_plugins/*": {
+    "type": "plugin"
+  },
   "Gemfile": {
     "type": "lib",
     "altername": "{}.lock"
