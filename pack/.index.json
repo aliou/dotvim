@@ -40,6 +40,16 @@
       "owner": "arzg",
       "package": "vim-colors-xcode",
       "type": "start"
+    },
+    {
+      "owner": "leafgarland",
+      "package": "typescript-vim",
+      "type": "start"
+    },
+    {
+      "owner": "peitalin",
+      "package": "vim-jsx-typescript",
+      "type": "start"
     }
   ]
 }
