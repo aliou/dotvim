@@ -17,6 +17,9 @@
     ],
     "test": "spec/types/%s_spec.rb"
   },
+  "app/channels/application_channel.rb": {
+    "command": "channel"
+  },
   "app/serializers/*_serializer.rb": {
     "command": "serializer",
     "affinity": "model",
