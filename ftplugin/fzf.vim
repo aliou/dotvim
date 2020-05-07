@@ -1,4 +1,7 @@
 setlocal statusline=%!status#fuzzy()
-setlocal termwinkey=<c-h>
+let b:undo_ftplugin = "setlocal statusline<"
 
-let b:undo_ftplugin = "setlocal statusline< termwinkey<"
+if !has('nvim')
+  setlocal termwinkey=<c-h>
+  let b:undo_ftplugin .= ' termwinkey<'
+endif
