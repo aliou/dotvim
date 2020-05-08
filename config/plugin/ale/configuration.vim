@@ -33,11 +33,11 @@ let g:ale_linters = {
       \   'css': ['stylelint'],
       \   'elixir': ['custom_elixir_ls', 'mix'],
       \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop', 'solargraph'],
+      \   'ruby': ['rubocop'],
       \   'rust': ['rls'],
       \   'sh': ['shellcheck'],
       \   'sql': ['sqlint'],
-      \   'typescript': ['tsserver', 'eslint'],
+      \   'typescript': ['tsserver', 'tslint', 'eslint'],
       \   'vim': ['vint'],
       \ }
 
@@ -54,8 +54,8 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'rust': ['rustfmt'],
 \   'scss': ['prettier'],
-\   'typescript': ['prettier', 'eslint'],
-\   'typescriptreact': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'tslint', 'eslint'],
+\   'typescriptreact': ['prettier', 'tslint', 'eslint'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
 
