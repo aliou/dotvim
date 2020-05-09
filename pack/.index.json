@@ -50,6 +50,11 @@
       "owner": "peitalin",
       "package": "vim-jsx-typescript",
       "type": "start"
+    },
+    {
+      "owner": "lifepillar",
+      "package": "vim-colortemplate",
+      "type": "opt"
     }
   ]
 }
