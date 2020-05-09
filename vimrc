@@ -2,5 +2,5 @@ if has('eval')
   let g:mapleader = ','
 endif
 
-" Load splitted configuration files.
+" Load split configuration files.
 runtime! config/**/*.vim
