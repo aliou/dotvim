@@ -4,7 +4,6 @@ endif
 
 let g:loaded_cstm_fuzzy = 'ok'
 
-" TODO: Configure fuzzy to work with typos ?
 command! -nargs=? -complete=dir FuzzyFiles
       \ call cstm#fuzzy#files(<q-args>)
 

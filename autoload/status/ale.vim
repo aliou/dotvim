@@ -1,6 +1,5 @@
 scriptencoding utf-8
 
-" TODO: Better handling of different buffers.
 function! s:init()
   if !exists('b:ale_info')
     let b:ale_info = {'fixer': 0, 'linter': 0, 'error_count': 0}
