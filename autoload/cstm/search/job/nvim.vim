@@ -24,7 +24,7 @@ function! s:on_exit(job_id, exit_code, _event_type) abort
   let l:request = g:requests[string(a:job_id)]
 
   " Remove trailing empty strings returned by neovim.
-  filter(l:request.output, "!empty(v:val)")
+  let l:request.output = enum#filter(l:request.output, {row -> empty(row) != 1})
 
   if l:request.status != 0 || empty(l:request.output)
     call utils#message#error('Search: no results')
