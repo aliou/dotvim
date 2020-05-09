@@ -92,19 +92,6 @@ function! cstm#fuzzy#mru(args) abort
   call fzf#run(l:options)
 endfunction
 
-function! cstm#fuzzy#projects(args) abort
-  if a:args !=# '' | return cstm#fuzzy#projects#handler(a:args) | endif
-
-  let l:source = cstm#fuzzy#projects#list()
-
-  let l:custom_options = {
-        \ 'sink': function('cstm#fuzzy#projects#handler'),
-        \ 'options': '--no-sort --exact'
-        \ }
-  let l:options = s:wrap('cstm#fuzzy#projects', l:source, l:custom_options, v:true)
-  call fzf#run(l:options)
-endfunction
-
 function! cstm#fuzzy#title() abort
   return s:fuzzy_title
 endfunction
