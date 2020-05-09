@@ -1,8 +1,7 @@
-" TODO: Make this configurable ?
-let s:ignored_types = ['gitcommit', 'pullrequest', 'qif']
+let g:cstm_last_place_ignored_types = ['gitcommit', 'pullrequest', 'qif']
 
 function! s:last_place() abort
-  if index(s:ignored_types, &filetype) != -1
+  if index(g:cstm_last_place_ignored_types, &filetype) != -1
     return
   endif
 
