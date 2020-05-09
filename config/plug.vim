@@ -44,8 +44,8 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
+Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
-Plug 'w0rp/ale', { 'tag': 'v2.6.0' }
 
 " Local
 
