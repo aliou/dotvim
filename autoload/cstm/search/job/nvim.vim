@@ -1,5 +1,5 @@
-if !exists('g:requests')
-  let g:requests = {}
+if !exists('s:requests')
+  let s:requests = {}
 endif
 
 function! cstm#search#job#nvim#execute(command) abort
@@ -8,7 +8,7 @@ function! cstm#search#job#nvim#execute(command) abort
         \  'on_stderr': function('s:on_output'),
         \  'on_exit': function('s:on_exit')
         \ })
-  let g:requests[string(l:job_id)] = {
+  let s:requests[string(l:job_id)] = {
         \   'command': a:command,
         \   'output': [],
         \   'status': 0
@@ -16,12 +16,12 @@ function! cstm#search#job#nvim#execute(command) abort
 endfunction
 
 function! s:on_output(job_id, data, name) abort
-  call extend(g:requests[string(a:job_id)].output, a:data)
+  call extend(s:requests[string(a:job_id)].output, a:data)
 endfunction
 
 function! s:on_exit(job_id, exit_code, _event_type) abort
-  let g:requests[string(a:job_id)].status = a:exit_code
-  let l:request = g:requests[string(a:job_id)]
+  let s:requests[string(a:job_id)].status = a:exit_code
+  let l:request = s:requests[string(a:job_id)]
 
   " Remove trailing empty strings returned by neovim.
   let l:request.output = enum#filter(l:request.output, {row -> empty(row) != 1})
