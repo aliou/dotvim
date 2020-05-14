@@ -28,6 +28,9 @@ let g:ale_pattern_options = { '/usr/local': { 'ale_enabled': 0 } }
 " Only use the linters defined below.
 let g:ale_linters_explicit = 1
 
+" Always use local executables vs global executables.
+let g:ale_use_global_executables = 0
+
 let g:ale_linters = {
       \   'bash': ['shellcheck'],
       \   'css': ['stylelint'],
