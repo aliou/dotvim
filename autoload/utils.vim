@@ -17,3 +17,12 @@ function! utils#current_selection()
 
   return l:text
 endfunction
+
+function! utils#is_vim() abort
+  return exists('*job_start')
+endfunction
+
+
+function! utils#is_neovim() abort
+  return has('nvim') && exists('*jobwait')
+endfunction
