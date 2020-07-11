@@ -2,9 +2,17 @@
 " TODO: Allow configuration of command.
 let s:markdown_preview_command = 'vmd'
 
+function! s:run_command(command)
+  if utils#is_vim()
+    call job_start(['/bin/sh', '-c', a:command])
+  elseif utils#is_neovim()
+    call jobstart(['/bin/sh', '-c', a:command])
+  endif
+endfunction
+
 function! s:preview(filepath)
   let l:command = s:markdown_preview_command . ' ' . a:filepath
-  call job_start(['/bin/sh', '-c', l:command])
+  call s:run_command(l:command)
 endfunction
 
 function! cstm#markdown#preview(...) abort
