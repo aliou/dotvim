@@ -19,3 +19,11 @@ function! cstm#markdown#preview(...) abort
   let l:file = get(a:000, 1, expand('%'))
   call s:preview(l:file)
 endfunction
+
+" TODO: Allow configuration of command.
+let s:markdown_toc_command = 'npx markdown-toc -i'
+
+function! cstm#markdown#insert_toc() abort
+  let l:file = get(a:000, 1, expand('%'))
+  call s:run_command(s:markdown_toc_command . ' ' . l:file)
+endfunction
