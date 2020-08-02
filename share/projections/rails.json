@@ -3,6 +3,9 @@
     "command": "routes"
   },
   "app/workers/application_worker.rb": {
+    "command": "worker"
+  },
+  "app/workers/*_worker.rb": {
     "command": "worker",
     "template": [
       "class {camelcase|capitalize|colons}Worker < ApplicationWorker",
