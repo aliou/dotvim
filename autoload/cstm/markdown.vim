@@ -23,7 +23,9 @@ endfunction
 " TODO: Allow configuration of command.
 let s:markdown_toc_command = 'npx markdown-toc -i'
 
+" TODO: Display warning if "<!-- toc -->" is not in the file.
 function! cstm#markdown#insert_toc() abort
   let l:file = get(a:000, 1, expand('%'))
-  call s:run_command(s:markdown_toc_command . ' ' . l:file)
+  call system(s:markdown_toc_command . ' ' . l:file)
+  execute 'edit'
 endfunction
