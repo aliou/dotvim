@@ -2,6 +2,9 @@
   "config/routes.rb": {
     "command": "routes"
   },
+  "app/models/application_record.rb": {
+    "command": "model"
+  },
   "app/workers/application_worker.rb": {
     "command": "worker"
   },
