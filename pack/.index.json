@@ -55,6 +55,11 @@
       "owner": "lifepillar",
       "package": "vim-colortemplate",
       "type": "opt"
+    },
+    {
+      "owner": "mg979",
+      "package": "vim-visual-multi",
+      "type": "start"
     }
   ]
 }
