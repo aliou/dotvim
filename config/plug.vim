@@ -38,8 +38,9 @@ Plug 'tpope/vim-scriptease'
 
 " Languages
 Plug 'elixir-editors/vim-elixir'
-Plug 'lifepillar/pgsql.vim'
+Plug 'fatih/vim-go'
 Plug 'keith/swift.vim'
+Plug 'lifepillar/pgsql.vim'
 
 " Text object.
 Plug 'PeterRincker/vim-argumentative'
