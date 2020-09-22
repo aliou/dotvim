@@ -26,6 +26,9 @@ let s:markdown_toc_command = 'npx markdown-toc -i'
 " TODO: Display warning if "<!-- toc -->" is not in the file.
 function! cstm#markdown#insert_toc() abort
   let l:file = get(a:000, 1, expand('%'))
+  echom "Generating table of content..."
   call system(s:markdown_toc_command . ' ' . l:file)
   execute 'edit'
+
+  echom "Table of content inserted / updated."
 endfunction
