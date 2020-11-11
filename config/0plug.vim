@@ -63,6 +63,8 @@ if has('nvim')
   " Diagnostic navigation and settings for built-in LSP
   " XXX: Deprecated, will be included in nvim-core.
   Plug 'nvim-lua/diagnostic-nvim'
+
+  Plug 'nvim-treesitter/nvim-treesitter'
 endif
 
 " Local
