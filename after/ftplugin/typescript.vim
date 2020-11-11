@@ -2,6 +2,7 @@
 if !exists('b:undo_ftplugin') | let b:undo_ftplugin = '' | endif
 
 if has('nvim')
+  let b:ale_enabled = 0
   call cstm#lsp#setup_maps()
   call cstm#lsp#setup_completion()
 else
