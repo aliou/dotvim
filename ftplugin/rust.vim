@@ -8,6 +8,3 @@ let b:undo_ftplugin = "setlocal tags<"
 " Disable Gutentags to prevent overwriting the `tags` file.
 let g:gutentags_enabled = 0
 let b:undo_ftplugin .= " | unlet g:gutentags_enabled"
-
-call cstm#lsp#setup_maps()
-call cstm#lsp#setup_completion()
