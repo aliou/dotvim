@@ -41,6 +41,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'keith/swift.vim'
 Plug 'lifepillar/pgsql.vim'
+Plug 'tbastos/vim-lua'
 
 " Text object.
 Plug 'PeterRincker/vim-argumentative'
