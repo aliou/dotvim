@@ -61,6 +61,7 @@ if has('nvim')
   Plug 'nvim-lua/completion-nvim'
 
   " Diagnostic navigation and settings for built-in LSP
+  " XXX: Deprecated, will be included in nvim-core.
   Plug 'nvim-lua/diagnostic-nvim'
 endif
 
