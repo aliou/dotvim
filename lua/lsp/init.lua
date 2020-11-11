@@ -10,5 +10,5 @@ end
 
 -- Enable LSP servers.
 nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-nvim_lsp.solargraph.setup({})
-nvim_lsp.tsserver.setup({})
+nvim_lsp.solargraph.setup({ on_attach=on_attach })
+nvim_lsp.tsserver.setup({ on_attach=on_attach })
