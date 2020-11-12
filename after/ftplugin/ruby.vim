@@ -12,5 +12,4 @@ set regexpengine=1
 if has('nvim')
   let b:ale_enabled = 0
   call cstm#lsp#setup_maps()
-  call cstm#lsp#setup_completion()
 endif
