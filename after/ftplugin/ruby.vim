@@ -10,6 +10,6 @@ let b:undo_ftplugin .= " | setlocal iskeyword<"
 set regexpengine=1
 
 if has('nvim')
-  let b:ale_enabled = 0
+  let b:ale_disable_lsp = 1
   call cstm#lsp#setup_maps()
 endif
