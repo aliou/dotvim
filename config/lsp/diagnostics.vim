@@ -1,5 +1,3 @@
-" XXX: Deprecated, will be in nvim-core. Might require to have the configuration
-" in lua instead of vimscript.
 if has('nvim')
   lua require('lsp/diagnostics')
 
