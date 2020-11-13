@@ -35,6 +35,7 @@ end
 function enable_buffer()
   local current_bufnr = vim.api.nvim_eval('bufnr()')
   disabled_buffers[current_bufnr] = nil
+  vim.cmd('edit')
 end
 
 return M
