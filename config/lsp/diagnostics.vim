@@ -1,5 +1,5 @@
 if has('nvim')
-  lua require('lsp/diagnostic')
+  lua require('cstm.lsp.diagnostic')
 
   " Navigate around warnings / errors.
   " TODO: At some point merge these maps with the error maps from ALE, see

@@ -1,3 +1,3 @@
 if has('nvim')
-  lua require('lsp/init')
+  lua require('cstm.lsp.init')
 endif

@@ -1,5 +1,5 @@
 if has('nvim')
-  lua require('treesitter')
+  lua require('cstm.config.treesitter')
 
   augroup nvim.treesitter
     autocmd!
