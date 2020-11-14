@@ -1,4 +1,4 @@
-local cstm_diagnostics = require('cstm.lsp.diagnostic')
+local bd = require('cstm.buffer.diagnostic')
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -8,8 +8,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --   LspDiagnosticsVirtualTextWarning
     --   LspDiagnosticsVirtualTextInformation
     --   LspDiagnosticsVirtualTextHint
-    virtual_text = function(bufnr, client_id)
-      if cstm_diagnostics.buffer_is_disabled(bufnr) then
+    virtual_text = function(bufnr, _client_id)
+      if bd.is_disabled(bufnr) then
         return false
       end
 

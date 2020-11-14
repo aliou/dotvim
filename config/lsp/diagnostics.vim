@@ -9,5 +9,5 @@ if has('nvim')
 
   " TODO: At some point, also merge this map with the buffer toggle from ALE,
   " see config/plugin/ale/maps.vim
-  nnoremap <silent> <leader>dt <cmd>lua require('cstm.lsp.diagnostic').toggle_buffer()<CR>
+  nnoremap <silent> <leader>dt <cmd>lua require('cstm.buffer.diagnostic').toggle()<CR>
 endif
