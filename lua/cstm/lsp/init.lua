@@ -1,8 +1,7 @@
 -- nvim_lsp object
 local nvim_lsp = require('lspconfig')
 
--- function to attach completion and diagnostics
--- when setting up lsp
+-- Configure completion with the LSP client.
 local on_attach = function(client)
   require('completion').on_attach(client)
 end

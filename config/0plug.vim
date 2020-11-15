@@ -61,6 +61,7 @@ if has('nvim')
   " Autocompletion framework for built-in LSP
   Plug 'nvim-lua/completion-nvim'
 
+  " Treesitter configuration and abstraction.
   Plug 'nvim-treesitter/nvim-treesitter'
 endif
 
