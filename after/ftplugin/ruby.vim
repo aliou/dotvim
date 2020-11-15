@@ -8,8 +8,3 @@ let b:undo_ftplugin .= " | setlocal iskeyword<"
 
 " Manually set the regexp engine to try to improve performance.
 set regexpengine=1
-
-if has('nvim')
-  let b:ale_disable_lsp = 1
-  call cstm#lsp#setup_maps()
-endif
