@@ -21,3 +21,4 @@ nvim_lsp.sumneko_lua.setup({
   },
 })
 nvim_lsp.tsserver.setup({ on_attach = on_attach })
+nvim_lsp.vimls.setup({ on_attach = on_attach })
