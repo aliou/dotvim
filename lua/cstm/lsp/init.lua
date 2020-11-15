@@ -7,10 +7,10 @@ local on_attach = function(client)
 end
 
 -- Enable LSP servers.
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-nvim_lsp.solargraph.setup({ on_attach=on_attach })
+nvim_lsp.rust_analyzer.setup({ on_attach = on_attach })
+nvim_lsp.solargraph.setup({ on_attach = on_attach })
 nvim_lsp.sumneko_lua.setup({
-  on_attach=on_attach,
+  on_attach = on_attach,
   settings = {
     Lua = {
       diagnostics = {
@@ -20,4 +20,4 @@ nvim_lsp.sumneko_lua.setup({
     }
   },
 })
-nvim_lsp.tsserver.setup({ on_attach=on_attach })
+nvim_lsp.tsserver.setup({ on_attach = on_attach })
