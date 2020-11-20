@@ -1,4 +1,10 @@
-local bd = require('cstm.buffer.diagnostic')
+local function virtual_text(_, _)
+  return vim.b.lsp_diagnostics_enabled and { spacing = 4 }
+end
+
+local function buffer_diagnostics_enabled(_, _)
+  return vim.b.lsp_diagnostics_enabled
+end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -8,19 +14,18 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --   LspDiagnosticsVirtualTextWarning
     --   LspDiagnosticsVirtualTextInformation
     --   LspDiagnosticsVirtualTextHint
-    virtual_text = function(bufnr, _client_id)
-      if bd.is_disabled(bufnr) then
-        return false
-      end
-
-      return { spacing = 4 }
+    virtual_text = function(bufnr, client_id)
+      return virtual_text(bufnr, client_id)
     end,
 
-    -- Wait for InsertLeave before displaying diagnostics.
-    update_in_insert = false,
+    update_in_insert = function(_, _)
+      return vim.b.lsp_diagnostics_enabled and
+             vim.b.lsp_diagnostics_update_in_insert_enabled
+    end,
 
-    -- NOTE: Defining defaults here to quickly test them.
-    underline = true,
-    signs = true,
+    -- Enable / Disable the diagnostics depending on
+    -- `b:lsp_diagnostics_enabled`.
+    underline = buffer_diagnostics_enabled,
+    signs = buffer_diagnostics_enabled,
   }
 )

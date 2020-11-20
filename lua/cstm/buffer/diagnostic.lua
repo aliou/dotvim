@@ -1,19 +1,5 @@
-local M = {}
-
--- Table storing the disabled buffers.
-local disabled_buffers = {}
-
-function M.is_disabled(bufnr)
-  return disabled_buffers[bufnr] == true
-end
-
-function M.toggle()
-  _ = M.is_disabled(vim.fn.bufnr()) and M.enable() or M.disable()
-end
-
-function M.disable()
-  -- Make the current buffer as diagnostics disabled.
-  disabled_buffers[vim.fn.bufnr()] = true
+local function disable()
+  vim.b.lsp_diagnostics_enabled = false
 
   -- Clear existing diagnostics
   local clients = vim.lsp.get_active_clients()
@@ -22,13 +8,22 @@ function M.disable()
   end
 end
 
-function M.enable()
-  -- Remove the current buffer from the disabled buffers table.
-  disabled_buffers[vim.fn.bufnr()] = nil
+local function enable()
+  vim.b.lsp_diagnostics_enabled = true
 
-  -- Cheat and write the file to trigger a `publishDiagnostics` event.
+  -- Cheat and reload the file to trigger a `publishDiagnostics` event.
   -- TODO: Find a way to actually reload the thing :(
   vim.cmd('edit')
 end
 
-return M
+local function toggle()
+  if vim.b.lsp_diagnostics_enabled then
+    disable()
+  else
+    enable()
+  end
+end
+
+return {
+  toggle = toggle,
+}
