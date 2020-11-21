@@ -1,9 +1,6 @@
-local function virtual_text(_, _)
-  return vim.b.lsp_diagnostics_enabled and { spacing = 4 }
-end
-
 local function buffer_diagnostics_enabled(_, _)
-  return vim.b.lsp_diagnostics_enabled
+  return vim.g.lsp_diagnostics_enabled and
+         vim.b.lsp_diagnostics_enabled
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -15,11 +12,12 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --   LspDiagnosticsVirtualTextInformation
     --   LspDiagnosticsVirtualTextHint
     virtual_text = function(bufnr, client_id)
-      return virtual_text(bufnr, client_id)
+      return buffer_diagnostics_enabled(bufnr, client_id) and
+             { spacing = 4 }
     end,
 
-    update_in_insert = function(_, _)
-      return vim.b.lsp_diagnostics_enabled and
+    update_in_insert = function(bufnr, client_id)
+      return buffer_diagnostics_enabled(bufnr, client_id) and
              vim.b.lsp_diagnostics_update_in_insert_enabled
     end,
 

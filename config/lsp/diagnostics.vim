@@ -1,4 +1,6 @@
 if has('nvim')
+  let g:lsp_diagnostics_enabled = v:true
+
   lua require('cstm.lsp.diagnostic')
 
   function! s:setup_diagnostics()
