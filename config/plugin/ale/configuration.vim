@@ -19,9 +19,6 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 " Use the local prettier configuration file.
 let g:ale_javascript_prettier_use_local_config = 1
 
-" Enable completion for LSP linters.
-let g:ale_completion_enabled = 1
-
 " Disable ALE when reading some source files.
 let g:ale_pattern_options = { '/usr/local': { 'ale_enabled': 0 } }
 
