@@ -1,11 +1,30 @@
-function! cstm#lsp#setup_maps() abort
-  nnoremap <buffer> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-  nnoremap <buffer> K     <cmd>lua vim.lsp.buf.hover()<CR>
-  nnoremap <buffer> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-  nnoremap <buffer> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-  nnoremap <buffer> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-  nnoremap <buffer> gr    <cmd>lua vim.lsp.buf.references()<CR>
-  nnoremap <buffer> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-  nnoremap <buffer> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-  nnoremap <buffer> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+function! cstm#lsp#is_running() abort
+  if !has('nvim')
+    return v:false
+  endif
+
+  " TODO: Figure out why v:lua doesn't work here.
+  return luaeval('require("cstm.lsp.util").is_running()')
+endfunction
+
+" TODO: Refactor the two functions below as they're basically the same one.
+let s:ignored_filetypes_definition = ['vim', 'ruby']
+
+function! cstm#lsp#definition() abort
+  if !cstm#lsp#is_running() || index(s:ignored_filetypes_definition, &ft) != -1
+    execute "normal! \<c-]>"
+    return
+  endif
+
+  lua vim.lsp.buf.definition()
+endfunction
+
+let s:ignored_filetypes_hover = ['ruby']
+function! cstm#lsp#hover()
+  if !cstm#lsp#is_running() || index(s:ignored_filetypes_hover, &ft) != -1
+    execute "normal! K"
+    return
+  endif
+
+  lua vim.lsp.buf.hover()
 endfunction
