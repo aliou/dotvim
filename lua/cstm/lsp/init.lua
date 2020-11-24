@@ -8,6 +8,7 @@ local on_attach = function(client)
 end
 
 -- Enable LSP servers.
+-- TODO: Move this into a directory with a file per server?
 nvim_lsp.rust_analyzer.setup({ on_attach = on_attach })
 nvim_lsp.solargraph.setup({ on_attach = on_attach })
 nvim_lsp.sumneko_lua.setup({

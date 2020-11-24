@@ -1,3 +1,7 @@
+" TODO: Move all of this into a `on_attach` callback. This way, we're sure this
+" is only execute for a running LSP client. The mapping will be done only for
+" the current buffer, so we won't bother other buffer that don't have a running
+" LSP server.
 function! cstm#lsp#is_running() abort
   if !has('nvim')
     return v:false
