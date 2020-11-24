@@ -4,6 +4,7 @@ local nvim_lsp = require('lspconfig')
 -- Configure completion with the LSP client.
 local on_attach = function(client)
   require('cstm.lsp.inlay_hints').on_attach(client)
+  require('cstm.lsp.completion').on_attach(client)
 end
 
 -- Enable LSP servers.
