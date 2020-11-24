@@ -63,6 +63,9 @@ if has('nvim')
 
   " Treesitter configuration and abstraction.
   Plug 'nvim-treesitter/nvim-treesitter'
+
+  " Popup menu handling.
+  Plug 'kamykn/popup-menu.nvim'
 endif
 
 " Local
