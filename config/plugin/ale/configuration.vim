@@ -36,7 +36,7 @@ let g:ale_linters = {
       \   'ruby': ['rubocop'],
       \   'sh': ['shellcheck'],
       \   'sql': ['sqlint'],
-      \   'typescript': ['tsserver', 'tslint', 'eslint'],
+      \   'typescript': ['tslint', 'eslint'],
       \   'vim': ['vint'],
       \ }
 
