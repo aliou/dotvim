@@ -58,9 +58,6 @@ if has('nvim')
   " Extensions to built-in LSP, for example, providing type inlay hints
   Plug 'tjdevries/lsp_extensions.nvim'
 
-  " Autocompletion framework for built-in LSP
-  Plug 'nvim-lua/completion-nvim'
-
   " Treesitter configuration and abstraction.
   Plug 'nvim-treesitter/nvim-treesitter'
 
