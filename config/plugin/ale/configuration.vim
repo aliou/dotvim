@@ -19,9 +19,6 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 " Use the local prettier configuration file.
 let g:ale_javascript_prettier_use_local_config = 1
 
-" Enable completion for LSP linters.
-let g:ale_completion_enabled = 1
-
 " Disable ALE when reading some source files.
 let g:ale_pattern_options = { '/usr/local': { 'ale_enabled': 0 } }
 
@@ -37,10 +34,9 @@ let g:ale_linters = {
       \   'elixir': ['custom_elixir_ls', 'mix'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
-      \   'rust': ['rls'],
       \   'sh': ['shellcheck'],
       \   'sql': ['sqlint'],
-      \   'typescript': ['tsserver', 'tslint', 'eslint'],
+      \   'typescript': ['tslint', 'eslint'],
       \   'vim': ['vint'],
       \ }
 
@@ -55,7 +51,6 @@ let g:ale_fixers = {
 \   'javascriptreact': ['prettier', 'eslint'],
 \   'json': ['jq'],
 \   'ruby': ['rubocop'],
-\   'rust': ['rustfmt'],
 \   'scss': ['prettier'],
 \   'typescript': ['prettier', 'tslint', 'eslint'],
 \   'typescriptreact': ['prettier', 'tslint', 'eslint'],

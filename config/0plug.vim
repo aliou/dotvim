@@ -41,6 +41,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'keith/swift.vim'
 Plug 'lifepillar/pgsql.vim'
+Plug 'tbastos/vim-lua'
 
 " Text object.
 Plug 'PeterRincker/vim-argumentative'
@@ -48,6 +49,21 @@ Plug 'PeterRincker/vim-argumentative'
 " Tests / Lint
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
+
+" nvim things
+if has('nvim')
+  " Collection of common configurations for the Nvim LSP client
+  Plug 'neovim/nvim-lspconfig'
+
+  " Extensions to built-in LSP, for example, providing type inlay hints
+  Plug 'tjdevries/lsp_extensions.nvim'
+
+  " Treesitter configuration and abstraction.
+  Plug 'nvim-treesitter/nvim-treesitter'
+
+  " Popup menu handling.
+  Plug 'kamykn/popup-menu.nvim'
+endif
 
 " Local
 
