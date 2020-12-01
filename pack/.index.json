@@ -44,12 +44,12 @@
     {
       "owner": "leafgarland",
       "package": "typescript-vim",
-      "type": "start"
+      "type": "opt"
     },
     {
       "owner": "peitalin",
       "package": "vim-jsx-typescript",
-      "type": "start"
+      "type": "opt"
     },
     {
       "owner": "lifepillar",
