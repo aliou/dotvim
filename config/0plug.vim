@@ -38,7 +38,6 @@ Plug 'tpope/vim-scriptease'
 
 " Languages
 Plug 'elixir-editors/vim-elixir'
-Plug 'fatih/vim-go'
 Plug 'keith/swift.vim'
 Plug 'lifepillar/pgsql.vim'
 Plug 'tbastos/vim-lua'
