@@ -6,4 +6,7 @@ if has('nvim')
 
   " Avoid showing message extra message when using completion
   set shortmess+=c
+
+  " Toggle completion.
+  nnoremap <silent> <leader>ct :CompletionToggle<CR>
 end

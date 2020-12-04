@@ -63,6 +63,7 @@ if has('nvim')
   " Popup menu handling.
   Plug 'kamykn/popup-menu.nvim'
 
+  " Better completion.
   Plug 'nvim-lua/completion-nvim'
   Plug 'kristijanhusak/completion-tags'
 endif
