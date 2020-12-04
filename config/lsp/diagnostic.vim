@@ -13,7 +13,7 @@ if has('nvim')
     endif
   endfunction
 
-  augroup lsp.diagnostics
+  augroup lsp.diagnostic
     autocmd!
     autocmd BufEnter * call s:setup_diagnostics()
   augroup END
