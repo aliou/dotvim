@@ -1,4 +1,3 @@
 if has('nvim')
-  " TODO: Add mappings to toggle inlay hints on the current buffer.
-  " See diagnostic.
+  nnoremap <silent> <leader>ht <cmd>lua require('cstm.buffer.inlay_hints').toggle()<CR>
 endif
