@@ -14,10 +14,11 @@ endfunction
 function! s:closest_focusable_line() abort
   " Search for the patterns
   " `b` - backward,
+  " `c` - accept match at the position.
   " `n` - without moving the cursor,
   " `W` - without wrapping around at the end of the file,
   " `z` - Start at the current position.
-  let l:previous_match_lnr = search(s:all_patterns, 'bnWz')
+  let l:previous_match_lnr = search(s:all_patterns, 'bcnWz')
   " Check if pattern is on the current line starting at the cursor.
   let l:next_match_lnr = search(s:all_patterns, 'nz', line('.'))
 
