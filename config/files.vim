@@ -8,6 +8,12 @@ set autoread
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
 
+" Go to file under cursor, create it if it doesn't exist.
+" Two maps to handle HERP DERP's from my fingers.
+" TODO: At some point simply remap `gf`?
+nnoremap <silent> Gf :e <cfile><cr>
+nnoremap <silent> gF :e <cfile><cr>
+
 augroup cstm_files
   autocmd!
 
