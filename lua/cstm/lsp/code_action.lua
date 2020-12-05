@@ -4,6 +4,7 @@
 local buf = require('vim.lsp.buf')
 local util = require('vim.lsp.util')
 
+-- TODO: Write own popup thing as the used plugin has weird edge cases.
 local popup_open = vim.fn['popup_menu#open']
 
 local extract_index = function(selection)
