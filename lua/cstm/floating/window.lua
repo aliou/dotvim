@@ -40,12 +40,13 @@ local extract_dimensions = function(options)
   local columns = vim.o.columns
   local lines = vim.o.lines
 
-  local dimensions = {
-    width = min({ max({ 0, math.floor(columns * options.width) }), columns }),
-    height = min({ max({ 0, math.floor(lines * options.height) }), lines })
-  }
+  local width = options.width > 1 and options.width or
+    min({ max({ 0, math.floor(columns * options.width) }), columns })
 
-  return dimensions
+  local height = options.height > 1 and options.height or
+    min({ max({ 0, math.floor(lines * options.height) }), lines })
+
+  return { width = width, height = height }
 end
 
 -- For now, only configure floating windows in the center of the current window.
