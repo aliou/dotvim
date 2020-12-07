@@ -5,7 +5,7 @@ if has('spell')
   set dictionary=/usr/share/dict/words
   set spellfile=~/.vim/spell/custom-dictionary.utf8.add
 
-  augroup cstm_spell
+  augroup cstm.spell
     autocmd!
 
     " Spell for commits.

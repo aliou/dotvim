@@ -14,7 +14,7 @@ nnoremap <Leader><Leader> <C-^>
 nnoremap <silent> Gf :e <cfile><cr>
 nnoremap <silent> gF :e <cfile><cr>
 
-augroup cstm_files
+augroup cstm.files
   autocmd!
 
   " Auto save when leaving insert mode.

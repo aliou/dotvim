@@ -9,7 +9,7 @@ if has('persistent_undo')
   " Don't keep undo files from temporary directories or shared memory in case
   " they're secrets
   if has('autocmd')
-    augroup cstm_undo
+    augroup cstm.undo
       autocmd!
       autocmd BufWritePre
             \ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*

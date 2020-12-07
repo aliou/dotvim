@@ -1,4 +1,4 @@
-augroup cstm_paste
+augroup cstm.paste
   autocmd!
 
   " Disable paste mode when leaving insert mode.

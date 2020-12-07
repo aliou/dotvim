@@ -10,7 +10,7 @@ if has('viminfo')
   " Don't keep .viminfo information for files in temp directories. This prevents
   " those files from appearing in `v:oldfiles` and `:oldfiles`.
   if has('autocmd')
-    augroup cstm_viminfo
+    augroup cstm.viminfo
       autocmd!
       autocmd BufNewFile,BufReadPre /tmp/*,$TMPDIR/* setlocal viminfo=
     augroup END
