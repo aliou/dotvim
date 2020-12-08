@@ -1,6 +1,3 @@
--- nvim_lsp object
-local nvim_lsp = require('lspconfig')
-
 -- Configure completion with the LSP client.
 local on_attach = function(client)
   require('cstm.lsp.inlay_hints').on_attach(client)
@@ -8,19 +5,17 @@ local on_attach = function(client)
 end
 
 -- Enable LSP servers.
--- TODO: Move this into a directory with a file per server?
-nvim_lsp.rust_analyzer.setup({ on_attach = on_attach })
-nvim_lsp.solargraph.setup({ on_attach = on_attach })
-nvim_lsp.sumneko_lua.setup({
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        enable = true,
-        globals = { "vim" },
-      },
-    }
-  },
-})
-nvim_lsp.tsserver.setup({ on_attach = on_attach })
-nvim_lsp.vimls.setup({ on_attach = on_attach })
+-- Each server is configured in its own file and uses the `on_attach` function
+-- above.
+local servers = {
+  'rust_analyzer',
+  'solargraph',
+  'sumneko_lua',
+  'tsserver',
+  'vimls',
+}
+
+for i = 1, #servers do
+  local module = 'cstm.lsp.server.' .. servers[i]
+  require(module).setup(on_attach)
+end
