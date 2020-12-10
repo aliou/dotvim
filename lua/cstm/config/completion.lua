@@ -1,5 +1,14 @@
+-- menuone: Display popup menu for a single entry, so we can see the floating
+-- window.
+-- noinsert: Don't insert text until a match is selected to handle async
+-- filling of the menu.
+vim.o.completeopt="menuone,noinsert"
+
+-- Avoid showing message extra message when using completion
+vim.o.shortmess = vim.o.shortmess .. "c"
+
 -- Start suggesting completion after two characters.
-vim.g.completion_trigger_keyword_length = 2
+vim.g.completion_trigger_keyword_length = 1
 
 -- Trigger when deleting stuff.
 vim.g.completion_trigger_on_delete = true

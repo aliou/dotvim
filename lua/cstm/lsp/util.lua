@@ -10,4 +10,8 @@ M.is_running = function()
   return #lsp.buf_get_clients() > 0
 end
 
+M.map = function(mode, key, result)
+  vim.api.nvim_buf_set_keymap(0, mode, key, result, { noremap = true, silent = true })
+end
+
 return M

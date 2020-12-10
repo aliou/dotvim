@@ -1,3 +1,4 @@
+local map = require('cstm.lsp.util').map
 local inlay_hints = require('cstm.buffer.inlay_hints')
 
 -- Setup inlay hints in this file.
@@ -8,7 +9,11 @@ local on_attach = function(_)
     return
   end
 
+  -- Enable hints for the current buffer.
   inlay_hints.enable()
+
+  -- Toggle inlay hints.
+  map('n', '<leader>ht', "<cmd>lua require('cstm.buffer.inlay_hints').toggle()<CR>")
 end
 
 return {

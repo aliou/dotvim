@@ -1,29 +1,27 @@
-local function buffer_diagnostics_enabled(_, _)
-  return vim.g.lsp_diagnostics_enabled and
-         vim.b.lsp_diagnostics_enabled
+local map = require('cstm.lsp.util').map
+
+-- Globally enable diagnostics.
+vim.g.lsp_diagnostics_enabled = true
+
+local on_attach = function(_)
+  -- Setup local diagnostics toggles.
+  vim.b.lsp_diagnostics_enabled = true
+  vim.b.lsp_diagnostics_update_in_insert_enabled = true
+
+  -- Navigate around warnings / errors.
+  -- TODO: At some point merge these maps with the error maps from ALE, see
+  -- config/plugin/ale/maps.vim
+  map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev({ wrap = true })<cr>")
+  map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({ wrap = true })<cr>")
+  map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({ wrap = true })<cr>")
+
+
+  -- Toggle diagnostics for current buffer.
+  -- TODO: At some point, also merge this map with the buffer toggle from ALE,
+  -- see config/plugin/ale/maps.vim
+  map("n", "<leader>dt", "<cmd>lua require('cstm.buffer.diagnostic').toggle()<cr>")
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- Display diagnostics in virtual text.
-    -- TODO: Define custom Highlight groups:
-    --   LspDiagnosticsVirtualTextError
-    --   LspDiagnosticsVirtualTextWarning
-    --   LspDiagnosticsVirtualTextInformation
-    --   LspDiagnosticsVirtualTextHint
-    virtual_text = function(bufnr, client_id)
-      return buffer_diagnostics_enabled(bufnr, client_id) and
-             { spacing = 4 }
-    end,
-
-    update_in_insert = function(bufnr, client_id)
-      return buffer_diagnostics_enabled(bufnr, client_id) and
-             vim.b.lsp_diagnostics_update_in_insert_enabled
-    end,
-
-    -- Enable / Disable the diagnostics depending on
-    -- `b:lsp_diagnostics_enabled`.
-    underline = buffer_diagnostics_enabled,
-    signs = buffer_diagnostics_enabled,
-  }
-)
+return {
+  on_attach = on_attach
+}
