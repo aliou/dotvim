@@ -1,3 +1,7 @@
+if has('nvim')
+  finish
+endif
+
 " Fix current file.
 nmap <leader>af <Plug>(ale_fix)
 

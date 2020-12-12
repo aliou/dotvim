@@ -1,3 +1,7 @@
+if has('nvim')
+ finish
+end
+
 function! s:read_buffer() abort
   let l:view = winsaveview()
   silent! undojoin | silent! edit

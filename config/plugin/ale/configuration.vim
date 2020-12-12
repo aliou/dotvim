@@ -1,3 +1,7 @@
+if has('nvim')
+ finish
+end
+
 " Prepend the linter name, the severity and the error code (when present) to
 " the error message.
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %[code] %%s'

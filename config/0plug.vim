@@ -46,7 +46,9 @@ Plug 'tbastos/vim-lua'
 Plug 'PeterRincker/vim-argumentative'
 
 " Tests / Lint
-Plug 'dense-analysis/ale'
+if !has('nvim') " Use LSP when using nvim :)
+  Plug 'dense-analysis/ale'
+endif
 Plug 'janko-m/vim-test'
 
 " nvim things
