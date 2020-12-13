@@ -7,7 +7,7 @@ local setup = function(on_attach)
       Lua = {
         diagnostics = {
           enable = true,
-          globals = { "vim" },
+          globals = { "vim", "unpack" },
         },
       }
     },
