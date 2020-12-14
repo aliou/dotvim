@@ -1,8 +1,15 @@
 " Set undo and backups directories. The two trailing slashes prompt vim to
 " include the full escaped path of the relevant buffer, to avoid colisions
 " between files with the same name.
-set undodir=~/.config/vim/tmp/undo//
-set backupdir=~/.config/vim/tmp/backup//
+
+" Don't store data in the same directory for vim and nvim.
+if has('nvim')
+  set undodir=~/.config/nvim/tmp/undo//
+  set backupdir=~/.config/nvim/tmp/backup//
+else
+  set undodir=~/.config/vim/tmp/undo//
+  set backupdir=~/.config/vim/tmp/backup//
+end
 
 " Create these directory if they don't exist.
 if !isdirectory(expand(&undodir))
