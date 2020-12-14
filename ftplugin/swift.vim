@@ -1,1 +1,0 @@
-silent! packadd vim-xcode

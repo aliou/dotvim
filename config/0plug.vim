@@ -1,10 +1,14 @@
 let g:plug_shallow = 1
 call plug#begin('~/.vim/bundle')
 
+" TODO: Migrate to https://github.com/wbthomason/packer.nvim and use optional
+" configuration for most of this plugins.
+
 " Display
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mhinz/vim-startify'
+Plug 'junegunn/goyo.vim' " opt
 
 " Shell
 Plug 'tpope/vim-dispatch'
@@ -19,6 +23,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'mg979/vim-visual-multi'
 
 " Utils.
 Plug 'airblade/vim-gitgutter'
@@ -37,10 +42,14 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-scriptease'
 
 " Languages
+Plug 'ap/vim-css-color'
 Plug 'elixir-editors/vim-elixir'
 Plug 'keith/swift.vim'
 Plug 'lifepillar/pgsql.vim'
 Plug 'tbastos/vim-lua'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vito-c/jq.vim'
+Plug 'hashivim/vim-terraform'
 
 " Text object.
 Plug 'PeterRincker/vim-argumentative'
@@ -81,7 +90,7 @@ Plug '~/code/src/github.com/aliou/hybrid.vim'
 Plug '~/code/src/github.com/aliou/irssi.vim'
 Plug '~/code/src/github.com/aliou/mando', { 'rtp': 'vim' }
 Plug '~/code/src/github.com/aliou/markoff.vim'
-Plug '~/code/src/github.com/aliou/mix.vim'
+Plug '~/code/src/github.com/aliou/mix.vim' " opt
 Plug '~/code/src/github.com/aliou/moriarty.vim'
 Plug '~/code/src/github.com/aliou/phx.vim'
 Plug '~/code/src/github.com/aliou/review.vim'
