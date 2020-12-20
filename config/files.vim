@@ -1,6 +1,4 @@
-if has('autocmd')
-  filetype plugin indent on
-endif
+filetype plugin indent on
 
 " If the buffer has been changed outside of vim, quietly update it.
 set autoread
