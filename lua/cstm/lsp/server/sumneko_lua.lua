@@ -9,8 +9,15 @@ local setup = function(on_attach)
           enable = true,
           globals = { "vim", "unpack", "use" },
         },
-      }
-    },
+        workspace = {
+          -- Make the server aware of nvim runtime files
+          library = {
+            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          },
+        },
+      },
+    }
   })
 end
 
