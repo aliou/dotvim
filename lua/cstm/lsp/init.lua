@@ -1,15 +1,19 @@
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
-  -- TODO: require outside of on attach function ? Check if lua caches requires
-  -- or not.
+  -- Configuration of capabilities.
   require('cstm.lsp.code_action').on_attach(client)
   require('cstm.lsp.completion').on_attach(client)
   require('cstm.lsp.definition').on_attach(client)
   require('cstm.lsp.diagnostic').on_attach(client)
   require('cstm.lsp.format').on_attach(client)
   require('cstm.lsp.hover').on_attach(client)
-  require('cstm.lsp.inlay_hints').on_attach(client)
   require('cstm.lsp.rename').on_attach(client)
+
+  -- Configuration of additional capabilities.
+  require('cstm.lsp.inlay_hints').on_attach(client)
+
+  -- TODO: Populate a vim.b.lsp_attached_clients with the list of attached
+  -- clients lel.
 end
 
 -- Configure LSP servers.
