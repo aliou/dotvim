@@ -2,6 +2,7 @@ local map = require('cstm.lsp.util').map
 
 -- Globally enable diagnostics.
 vim.g.lsp_diagnostics_enabled = true
+vim.g.lsp_diagnostics_update_in_insert_enabled = true
 
 local on_attach = function(_)
   -- Setup local diagnostics toggles.

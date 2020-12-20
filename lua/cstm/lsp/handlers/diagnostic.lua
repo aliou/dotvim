@@ -18,6 +18,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
     update_in_insert = function(bufnr, client_id)
       return buffer_diagnostics_enabled(bufnr, client_id) and
+             vim.g.lsp_diagnostics_update_in_insert_enabled and
              vim.b.lsp_diagnostics_update_in_insert_enabled
     end,
 
