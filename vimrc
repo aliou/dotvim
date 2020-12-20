@@ -1,6 +1,4 @@
-if has('eval')
-  let g:mapleader = ','
+if !has('nvim')
+  echom "not running neovim :eyes:"
+  exit
 endif
-
-" Load split configuration files.
-runtime! config/**/*.vim
