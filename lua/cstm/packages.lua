@@ -26,7 +26,10 @@ local spec = function()
   use { 'mg979/vim-visual-multi' }
 
   -- Utils.
-  use { 'airblade/vim-gitgutter' }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
   use { 'ludovicchabant/vim-gutentags' }
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-unimpaired' }
