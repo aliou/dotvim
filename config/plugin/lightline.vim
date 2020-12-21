@@ -36,13 +36,3 @@ let g:lightline.tab = {
 let g:lightline.tabline = {
       \   'left': [['tabs']], 'right': [['working_directory']]
       \ }
-
-augroup lightline.config
-  autocmd!
-
-  autocmd User ALELintPre  call status#ale#pre_lint()  | call lightline#update()
-  autocmd User ALELintPost call status#ale#post_lint() | call lightline#update()
-
-  autocmd User ALEFixPre   call status#ale#pre_fix()   | call lightline#update()
-  autocmd User ALEFixPost  call status#ale#post_fix()  | call lightline#update()
-augroup END
