@@ -24,3 +24,6 @@ require('cstm.packages')
 -- Load split configuration files.
 -- TODO: Rewrite some (all?) of those in lua.
 vim.cmd [[ runtime! config/**/*.vim ]]
+
+-- Load custom thingies.
+require('ad')
