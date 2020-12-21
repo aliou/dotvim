@@ -18,8 +18,8 @@ api.nvim_set_option('packpath', runtimepath)
 -- Setting up early so mappings with <leader> use the this value.
 vim.g.mapleader = ','
 
--- Require plugins.
-require('cstm.plugins')
+-- Require packages.
+require('cstm.packages')
 
 -- Load split configuration files.
 -- TODO: Rewrite some (all?) of those in lua.
