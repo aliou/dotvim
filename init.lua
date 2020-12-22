@@ -25,6 +25,8 @@ require('cstm.lsp')
 -- Load split configuration files.
 -- TODO: Rewrite some (all?) of those in lua.
 vim.cmd [[ runtime! config/**/*.vim ]]
+require('cstm.config.treesitter')
+require('cstm.config.completion')
 
 -- Load custom thingies.
 require('ad')

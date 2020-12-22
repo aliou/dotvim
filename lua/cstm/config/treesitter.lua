@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
   ensure_installed = { "ruby", "rust", "lua" },
   highlight = {
     enable = true,
@@ -7,4 +7,14 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     disable = { "lua" }
   },
-}
+})
+
+-- Fix issue with nvim-treesitter and Ruby where `%` and highlighting pairs
+-- don't correctly work.
+vim.api.nvim_exec([[
+  augroup nvim.treesitter
+    autocmd!
+
+    autocmd BufNewFile,BufRead *.rb set syntax=ruby
+  augroup END
+]], true)

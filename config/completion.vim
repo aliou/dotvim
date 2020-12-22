@@ -34,7 +34,3 @@ if has('wildmenu')
     set wildignorecase
   endif
 endif
-
-if has('nvim')
-  lua require('cstm.config.completion')
-end
