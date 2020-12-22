@@ -9,6 +9,7 @@ local setup = function(on_attach)
   nvim_lsp.efm.setup({
     on_attach = on_attach,
     cmd = { "efm-langserver", "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" },
+    filetypes = { 'ruby', 'json', 'bash', 'sh' },
     init_options = { documentFormatting = true },
     root_dir = nvim_lsp.util.find_git_ancestor,
     on_new_config = function(new_config, new_root_dir)
