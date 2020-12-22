@@ -1,12 +1,18 @@
+-- Custom highlight groups for diffs.
+vim.highlight.create('GitSignsDiffAdd', { guifg = "#5F875F", ctermfg = 65 })
+vim.highlight.create('GitSignsDelete', { guifg = '#CC6666', ctermfg = 167 })
+vim.highlight.create('GitSignsChange', { guifg = '#5F5F87', ctermfg = 60 })
+vim.highlight.create('GitSignsChangeDelete', { guifg = '#5F5F87', ctermfg = 60 })
+
 require('gitsigns').setup({
   signs = {
-    add          = {hl = 'DiffAdd'   , text = '┃', numhl='GitSignsAddNr'},
-    change       = {hl = 'DiffChange', text = '┃', numhl='GitSignsChangeNr'},
-    delete       = {hl = 'DiffDelete', text = '┃', numhl='GitSignsDeleteNr'},
-    topdelete    = {hl = 'DiffDelete', text = '┃', numhl='GitSignsDeleteNr'},
-    changedelete = {hl = 'DiffChange', text = '┃', numhl='GitSignsChangeNr'},
+    add          = { hl = 'GitSignsDiffAdd', text = '┃', numhl='GitSignsAddNr' },
+    change       = { hl = 'GitSignsChange',  text = '┃', numhl='GitSignsChangeNr' },
+    delete       = { hl = 'GitSignsDelete',  text = '┃', numhl='GitSignsDeleteNr' },
+    topdelete    = { hl = 'GitSignsDelete',  text = '┃', numhl='GitSignsDeleteNr' },
+    changedelete = { hl = 'GitSignsChange',  text = '┃', numhl='GitSignsChangeNr' },
   },
-  numhl = false,
+  numhl = true,
   keymaps = {
     -- Default keymap options
     noremap = true,
