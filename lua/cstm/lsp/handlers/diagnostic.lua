@@ -6,11 +6,6 @@ end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     -- Display diagnostics in virtual text.
-    -- TODO: Define custom Highlight groups:
-    --   LspDiagnosticsVirtualTextError
-    --   LspDiagnosticsVirtualTextWarning
-    --   LspDiagnosticsVirtualTextInformation
-    --   LspDiagnosticsVirtualTextHint
     virtual_text = function(bufnr, client_id)
       return buffer_diagnostics_enabled(bufnr, client_id) and
              { spacing = 4 }

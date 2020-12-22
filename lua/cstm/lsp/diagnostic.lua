@@ -4,6 +4,12 @@ local map = require('cstm.lsp.util').map
 vim.g.lsp_diagnostics_enabled = true
 vim.g.lsp_diagnostics_update_in_insert_enabled = true
 
+-- Configure virtual text colors.
+vim.highlight.create('LspDiagnosticsVirtualTextError', { cterm = 'bold', ctermfg = 167, gui = 'bold', guifg = '#CC6666' })
+vim.highlight.create('LspDiagnosticsVirtualTextWarning', { ctermfg = 173, gui = 'bold', guifg = '#de935f' })
+vim.highlight.create('LspDiagnosticsVirtualTextInformation', { cterm = 'bold', ctermfg = 60, gui = 'bold', guifg = '#5F5F87' })
+vim.highlight.create('LspDiagnosticsVirtualTextHint', { cterm = 'bold', ctermfg = 173, gui = 'bold', guifg = '#c7915b' })
+
 local on_attach = function(_)
   -- Setup local diagnostics toggles.
   vim.b.lsp_diagnostics_enabled = true
