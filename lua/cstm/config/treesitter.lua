@@ -1,5 +1,6 @@
 require('nvim-treesitter.configs').setup({
   ensure_installed = { "ruby", "rust", "lua" },
+  -- TODO: Add custom highlights for rspec focus and skipped things.
   highlight = {
     enable = true,
   },
