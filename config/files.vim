@@ -6,9 +6,6 @@ set autoread
 " Switch to alternate file.
 nnoremap <Leader><Leader> <C-^>
 
-" Go to file under cursor, create it if it doesn't exist.
-nnoremap <silent> gf :e <cfile><cr>
-
 augroup cstm.files
   autocmd!
 
