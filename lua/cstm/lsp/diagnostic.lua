@@ -16,9 +16,8 @@ local on_attach = function(_)
   vim.b.lsp_diagnostics_update_in_insert_enabled = true
 
   -- Navigate around warnings / errors.
-  map("n", "[a", "<cmd>silent lua vim.lsp.diagnostic.goto_prev({ wrap = true })<cr>")
-  map("n", "]a", "<cmd>silent lua vim.lsp.diagnostic.goto_next({ wrap = true })<cr>")
-
+  map("n", "[a", "<cmd>silent lua vim.lsp.diagnostic.goto_prev({ wrap = false })<cr>")
+  map("n", "]a", "<cmd>silent lua vim.lsp.diagnostic.goto_next({ wrap = false })<cr>")
 
   -- Toggle diagnostics for current buffer.
   map("n", "<leader>at", "<cmd>lua require('cstm.buffer.diagnostic').toggle()<cr>")
