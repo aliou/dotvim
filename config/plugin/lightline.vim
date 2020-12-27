@@ -1,8 +1,7 @@
 let g:lightline = {}
 
 let g:lightline.component_expand = {
-      \   'ale_linter_indicator': 'status#ale#lightline#linter_indicator',
-      \   'ale_fixer_indicator': 'status#ale#lightline#fixer_indicator',
+      \   'lsp_diagnostic_indicator': 'status#lsp#diagnostic',
       \ }
 
 let g:lightline.component_function = {
@@ -11,16 +10,14 @@ let g:lightline.component_function = {
       \ }
 
 let g:lightline.component_type = {
-      \   'ale_linter_indicator': 'tabsel',
-      \   'ale_fixer_indicator': 'tabsel',
+      \   'lsp_diagnostic_indicator': 'tabsel',
       \   'gitbranch': 'tabsel',
       \   'working_directory': 'tabsel',
       \ }
 
 let g:lightline.active = {
       \   'left': [['bufname'], ['gitbranch'], ['readonly', 'relativepath', 'modified']],
-      \   'right': [['lineinfo'], ['percent'], ['filetype'],
-      \             ['ale_linter_indicator', 'ale_fixer_indicator']]
+      \   'right': [['lineinfo'], ['percent'], ['filetype'], ['lsp_diagnostic_indicator']]
       \ }
 
 let g:lightline.inactive = {
