@@ -5,17 +5,18 @@ local rubocop = require('cstm.lsp.server.efm.rubocop')
 local shellcheck = require('cstm.lsp.server.efm.shellcheck')
 local vint = require('cstm.lsp.server.efm.vint')
 
+local cmd = { "efm-langserver" }
+if vim.g.lsp_efm_log_events then
+  cmd = vim.tbl_extend("keep", { "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" })
+end
+
 local setup = function(on_attach)
   nvim_lsp.efm.setup({
     on_attach = on_attach,
-    cmd = { "efm-langserver", "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" },
+    cmd = cmd,
     filetypes = { 'ruby', 'json', 'bash', 'sh' },
     init_options = { documentFormatting = true },
     root_dir = nvim_lsp.util.find_git_ancestor,
-    on_new_config = function(new_config, new_root_dir)
-      print(vim.inspect(new_config))
-      print(vim.inspect(new_root_dir))
-    end,
     settings = {
       languages = {
         bash = { shellcheck },
