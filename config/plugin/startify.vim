@@ -11,13 +11,5 @@ let g:startify_list_order = [
       \ 'bookmarks',
       \ ]
 
-" When opening recent file, change to `%w(git svn hg).sample` root folder.
-let g:startify_change_to_vcs_root = 1
-
+let g:startify_change_to_dir = 0
 let g:startify_files_number = 5
-
-" Append bookmarks using `call add(g:startify_bookmarks, { 'x': 'xxxx' })` in
-" custom config files.
-let g:startify_bookmarks = [
-                  \  { 'v': '~/.vim/vimrc' }
-                  \ ]
