@@ -12,6 +12,12 @@
   "src/*.rs": {
     "type": "src"
   },
+  "src/models.rs": {
+    "type": "model"
+  },
+  "src/schema.rs": {
+    "type": "schema"
+  },
   "migrations/*/up.sql": {
     "type": "migration",
     "alternate": "migrations/{}/down.sql"
