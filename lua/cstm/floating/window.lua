@@ -2,8 +2,6 @@ local api = vim.api
 local min = vim.fn.min
 local max = vim.fn.max
 
-local util = require('cstm.util')
-
 local _opened_windows = {}
 
 local edges = {'╔', '╗', '╚', '╝'}
@@ -24,7 +22,7 @@ local generate_border = function(options)
   local mid = '║' .. string.rep(' ', width - 2) .. '║'
   local bot = edges[3] .. bar .. edges[4]
 
-  return util.tables.concat({top}, vim.fn['repeat']({mid}, height - 2), {bot})
+  return vim.tbl_flatten({{top}, vim.fn['repeat']({mid}, height - 2), {bot}})
 end
 
 local extract_position = function(dimensions)
@@ -56,7 +54,7 @@ local extract_win_config = function(options)
   local dimensions = extract_dimensions(options)
   local position = extract_position(dimensions)
 
-  return util.tables.merge(position, dimensions, {
+  return vim.tbl_extend('force', position, dimensions, {
     relative = 'editor',
     style = 'minimal',
   })
@@ -66,7 +64,7 @@ local create
 local close
 
 local create_frame = function(win_options)
-  local frame_options = util.tables.merge(win_options, {
+  local frame_options = vim.tbl_extend('force', win_options, {
     width = win_options.width + 0.01,
     height = win_options.height + 0.05,
     bufnr = nil,
@@ -79,7 +77,7 @@ local create_frame = function(win_options)
 
   api.nvim_buf_set_lines(bufnr, 0, -1, true, border)
 
-  return create(util.tables.merge(frame_options, {
+  return create(vim.tbl_extend('force', frame_options, {
     bufnr = bufnr,
     highlight = 'Comment'
   }))
@@ -92,7 +90,7 @@ end
 --   bufnr: Buffer number
 --   highlight: 'Normal' or 'Comment'
 create = function(win_options)
-  local options = util.tables.merge(default_win_options, (win_options or {}))
+  local options = vim.tbl_extend('force', default_win_options, (win_options or {}))
   local window_config = extract_win_config(options)
 
   -- Create frame before creating pricinpal window.

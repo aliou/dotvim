@@ -16,6 +16,5 @@ local map = function(mode, key, result, options)
 end
 
 return {
-  tables = require('cstm.util.tables'),
   map = map
 }
