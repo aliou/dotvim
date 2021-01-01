@@ -1,4 +1,5 @@
-local map = require('cstm.lsp.util').map
+local map = require('cstm.util').map
+
 local on_attach = function(client)
   -- -- Sometimes, code_action is a boolena, other times an object.
   -- if not client.resolved_capabilities.code_action then return end

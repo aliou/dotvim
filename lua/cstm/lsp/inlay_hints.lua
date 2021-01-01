@@ -1,4 +1,4 @@
-local map = require('cstm.lsp.util').map
+local map = require('cstm.util').map
 local inlay_hints = require('cstm.buffer.inlay_hints')
 
 -- Setup inlay hints in this file.

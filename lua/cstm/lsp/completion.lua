@@ -1,5 +1,5 @@
 local completion = require('completion')
-local map = require('cstm.lsp.util').map
+local map = require('cstm.util').map
 
 local on_attach = function(client)
   if not client.resolved_capabilities.completion then

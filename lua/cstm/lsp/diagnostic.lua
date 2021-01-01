@@ -1,4 +1,4 @@
-local map = require('cstm.lsp.util').map
+local map = require('cstm.util').map
 
 -- Globally enable diagnostics.
 vim.g.lsp_diagnostics_enabled = true
