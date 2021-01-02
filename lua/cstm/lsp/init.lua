@@ -1,3 +1,5 @@
+require('cstm.lsp.legacy')
+
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
   -- Configuration of capabilities.
