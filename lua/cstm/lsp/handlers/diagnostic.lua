@@ -27,5 +27,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
     }
   )(...)
 
+  -- TODO: When / if neovim/neovim/pull/13295 is merged, use this instead of
+  -- this override of the handler.
   status.refresh()
 end
