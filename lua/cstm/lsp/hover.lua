@@ -10,7 +10,7 @@ local on_attach = function(_)
   if vim.b.is_lua_runtime_file then return end
 
   local buf_fts = get_buf_filetypes()
-  local has_skipped_filter = vim.tbl_filter(is_skipped_filetype, buf_fts)
+  local has_skipped_filter = not vim.tbl_isempty(vim.tbl_filter(is_skipped_filetype, buf_fts))
 
   if has_skipped_filter then return end
 
