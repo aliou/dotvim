@@ -1,4 +1,5 @@
 require('cstm.lsp.legacy')
+local status = require('cstm.status')
 
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
@@ -16,6 +17,9 @@ local on_attach = function(client)
 
   -- TODO: Populate a vim.b.lsp_attached_clients with the list of attached
   -- clients lel.
+
+  -- Refresh status line to display diagnostic progress.
+  status.refresh()
 end
 
 -- Configure LSP servers.

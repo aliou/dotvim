@@ -2,12 +2,7 @@ let s:in_progress = '⋯'
 let s:failure = '✗'
 let s:success = '✓'
 
-let s:status_map = {
-      \   'in_progress': s:in_progress,
-      \   'error': s:failure,
-      \   'done': s:success,
-      \ }
-
+" TODO: In some cases this seems to silently fail? (maybe when there's no lsp client running?)
 function! status#lsp#diagnostic() abort
   if luaeval('not vim.tbl_isempty(vim.lsp.diagnostic.get_all()[' . bufnr() . '])')
     return s:failure

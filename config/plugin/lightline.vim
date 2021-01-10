@@ -6,13 +6,11 @@ let g:lightline.component_expand = {
 
 let g:lightline.component_function = {
       \   'gitbranch': 'fugitive#head',
-      \   'working_directory': 'status#cwd'
       \ }
 
 let g:lightline.component_type = {
       \   'lsp_diagnostic_indicator': 'tabsel',
       \   'gitbranch': 'tabsel',
-      \   'working_directory': 'tabsel',
       \ }
 
 let g:lightline.active = {
@@ -22,7 +20,7 @@ let g:lightline.active = {
 
 let g:lightline.inactive = {
       \   'left': [['bufname'], ['gitbranch'], ['readonly', 'relativepath', 'modified']],
-      \   'right': []
+      \   'right': [['lsp_diagnostic_indicator']]
       \ }
 
 let g:lightline.tab = {
@@ -31,5 +29,5 @@ let g:lightline.tab = {
       \ }
 
 let g:lightline.tabline = {
-      \   'left': [['tabs']], 'right': [['working_directory']]
+      \   'left': [['tabs']], 'right': []
       \ }
