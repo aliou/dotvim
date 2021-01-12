@@ -34,7 +34,7 @@ for i = 1, #servers do
 end
 
 -- Load custom responses to LSP servers.
-local custom_handlers = { 'code_action', 'diagnostic', 'format', 'hover' }
+local custom_handlers = { 'diagnostic', 'format', 'hover' }
 for i = 1, #custom_handlers do
   local module = 'cstm.lsp.handlers.' .. custom_handlers[i]
   require(module)

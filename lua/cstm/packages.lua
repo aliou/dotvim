@@ -47,12 +47,12 @@ local spec = function()
   -- Languages
   use { 'ap/vim-css-color' }
   use { 'elixir-editors/vim-elixir' }
+  use { 'hashivim/vim-terraform' }
   use { 'keith/swift.vim' }
   use { 'lifepillar/pgsql.vim' }
   use { 'tbastos/vim-lua' }
   use { 'vim-ruby/vim-ruby' }
   use { 'vito-c/jq.vim' }
-  use { 'hashivim/vim-terraform' }
 
   -- Text object.
   use { 'PeterRincker/vim-argumentative' }
@@ -64,11 +64,6 @@ local spec = function()
 
   -- Treesitter configuration and abstraction.
   use { 'nvim-treesitter/nvim-treesitter' }
-
-  -- Popup menu handling.
-  -- TODO: Remove this with either a custom implementation or a "native" one in
-  -- core (hopefully).
-  use { 'kamykn/popup-menu.nvim' }
 
   -- Completion
   use { 'nvim-lua/completion-nvim' }
