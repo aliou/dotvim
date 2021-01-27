@@ -5,10 +5,10 @@ local rubocop = require('cstm.lsp.server.efm.rubocop')
 local shellcheck = require('cstm.lsp.server.efm.shellcheck')
 local vint = require('cstm.lsp.server.efm.vint')
 
-local cmd = { "efm-langserver" }
-if vim.g.lsp_efm_log_events then
-  cmd = vim.tbl_extend("keep", { "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" })
-end
+local cmd = { "efm-langserver", "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" }
+-- if vim.g.lsp_efm_log_events then
+--   cmd = vim.tbl_extend("keep", { "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" })
+-- end
 
 local setup = function(on_attach)
   nvim_lsp.efm.setup({

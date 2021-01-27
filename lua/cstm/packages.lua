@@ -9,6 +9,7 @@ local spec = function()
   use { 'machakann/vim-highlightedyank' }
   use { 'mhinz/vim-startify' }
   use { 'junegunn/goyo.vim', opt = true }
+  use { 'cormacrelf/vim-colors-github' }
 
   -- Shell
   use { 'tpope/vim-dispatch' }
