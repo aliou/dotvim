@@ -8,7 +8,7 @@ vim.o.completeopt="menuone,noinsert"
 vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- Start suggesting completion after two characters.
-vim.g.completion_trigger_keyword_length = 1
+vim.g.completion_trigger_keyword_length = 3
 
 -- Trigger when deleting stuff.
 vim.g.completion_trigger_on_delete = true
