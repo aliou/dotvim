@@ -13,9 +13,11 @@ let s:projection_descriptions = [
       \   { 'test': '_config.yml', 'file': 'jekyll.json' },
       \   { 'test': 'cargo.toml', 'file': 'cargo.json' },
       \   { 'test': 'package.json', 'file': 'javascript.json' },
+      \   { 'test': 'go.mod', 'file': 'go.json' },
       \ ]
 
 " TODO: simplify path thingy.
+" TODO: Stop using hard coded path.
 for s:item in s:projection_descriptions
   let s:file = $HOME . "/.vim/share/projections/" . s:item.file
   let s:file_content = join(readfile(s:file), "\n")
