@@ -1,5 +1,5 @@
 local map = require('cstm.util').map
-local get_buf_filetypes = require('cstm.lsp.util').get_buf_filetypes
+local get_buf_filetypes = require('cstm.util').get_buf_filetypes
 
 local SKIPPED_FILETYPES = {'ruby'}
 local is_skipped_filetype = function(ft)

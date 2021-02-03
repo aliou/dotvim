@@ -15,6 +15,16 @@ local map = function(mode, key, result, options)
   end
 end
 
+local get_buf_filetypes = function()
+  return vim.split(vim.api.nvim_buf_get_option(0, 'filetype'), '.', true)
+end
+
+local current_buf_has_filetype = function(filetype)
+  return vim.tbl_contains(get_buf_filetypes(), filetype)
+end
+
 return {
+  current_buf_has_filetype = current_buf_has_filetype,
+  get_buf_filetypes = get_buf_filetypes,
   map = map
 }
