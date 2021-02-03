@@ -9,6 +9,7 @@ local on_attach = function(client)
   require('cstm.lsp.diagnostic').on_attach(client)
   require('cstm.lsp.format').on_attach(client)
   require('cstm.lsp.hover').on_attach(client)
+  require('cstm.lsp.references').on_attach(client)
   require('cstm.lsp.rename').on_attach(client)
 
   -- Configuration of additional capabilities.
