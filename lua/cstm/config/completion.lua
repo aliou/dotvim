@@ -7,9 +7,6 @@ vim.o.completeopt="menuone,noinsert"
 -- Avoid showing message extra message when using completion
 vim.o.shortmess = vim.o.shortmess .. "c"
 
--- Start suggesting completion after two characters.
-vim.g.completion_trigger_keyword_length = 3
-
 -- Trigger when deleting stuff.
 vim.g.completion_trigger_on_delete = true
 
@@ -29,3 +26,11 @@ vim.g.completion_chain_complete_list = {
     comment = {}
   }
 }
+
+vim.api.nvim_exec([[
+  augroup cstm.completion
+    autocmd!
+
+    autocmd BufEnter * lua require('cstm.completion').on_attach()
+  augroup END
+]], true)

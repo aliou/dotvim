@@ -5,7 +5,6 @@ local status = require('cstm.status')
 local on_attach = function(client)
   -- Configuration of capabilities.
   require('cstm.lsp.code_action').on_attach(client)
-  require('cstm.lsp.completion').on_attach(client)
   require('cstm.lsp.definition').on_attach(client)
   require('cstm.lsp.diagnostic').on_attach(client)
   require('cstm.lsp.format').on_attach(client)
