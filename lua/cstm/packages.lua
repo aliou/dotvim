@@ -66,8 +66,7 @@ local spec = function()
   use { 'nvim-treesitter/nvim-treesitter' }
 
   -- Completion
-  use { 'nvim-lua/completion-nvim' }
-  use { 'kristijanhusak/completion-tags' }
+  use { 'hrsh7th/nvim-compe' }
 
   -- Local plugins.
 
