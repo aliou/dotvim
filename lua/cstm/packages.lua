@@ -46,6 +46,7 @@ local spec = function()
 
   -- Languages
   use { 'ap/vim-css-color' }
+  use { 'chr4/nginx.vim' }
   use { 'elixir-editors/vim-elixir' }
   use { 'hashivim/vim-terraform' }
   use { 'keith/swift.vim' }
