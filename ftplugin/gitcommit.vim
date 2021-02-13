@@ -5,4 +5,4 @@ let s:compe_config.source = {
       \    'spell': v:true,
       \  }
 
-autocmd Filetype markdown call compe#setup(s:compe_config, 0)
+autocmd Filetype gitcommit call compe#setup(s:compe_config, 0)
