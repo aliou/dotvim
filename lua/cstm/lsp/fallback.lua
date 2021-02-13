@@ -21,6 +21,8 @@ map("n", "<leader>rn", rhs, { buffer = false })
 
 map("n", "<C-\\>", rhs, { buffer = false })
 
+map("n", "<leader>ll", rhs, { buffer = false })
+
 return {
   print_message = print_message
 }
