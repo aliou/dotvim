@@ -15,9 +15,6 @@ local on_attach = function(client)
   -- Configuration of additional capabilities.
   require('cstm.lsp.inlay_hints').on_attach(client)
 
-  -- TODO: Populate a vim.b.lsp_attached_clients with the list of attached
-  -- clients lel.
-
   -- Refresh status line to display diagnostic progress.
   status.refresh()
 end
