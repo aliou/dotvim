@@ -1,4 +1,4 @@
-require('cstm.lsp.legacy')
+require('cstm.lsp.fallback')
 local status = require('cstm.status')
 
 -- Configure LSP features when attaching a client to a buffer.
