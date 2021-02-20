@@ -1,6 +1,33 @@
 local util = require('vim.lsp.util')
+local fzf = require('fzf')
 
-local handler =  function(_, _, result, _, bufnr)
+local go_to_symbol = function(action, symbol)
+  local filename = symbol.filename
+  local row = symbol.lnum
+  local col = symbol.col - 1
+
+  local edit_command = fzf.actions[action] or 'edit'
+  local command = string.format(':%s %s', edit_command, filename)
+
+  vim.cmd(command)
+  vim.api.nvim_win_set_cursor(0, { row, col })
+end
+
+local build_sink = function(symbols)
+  local curried_handler = function(response)
+    local action = response[1]
+    local selected_line = response[2]
+    if selected_line == "" then return end
+
+    local idx = tonumber(vim.split(selected_line, '.', true)[1])
+    local symbol = symbols[idx]
+    go_to_symbol(action, symbol)
+  end
+
+  return curried_handler
+end
+
+local handler = function(_, _, result, _, bufnr)
   if not result or vim.tbl_isempty(result) then return end
 
   local symbols = util.symbols_to_items(result, bufnr)
@@ -16,17 +43,10 @@ local handler =  function(_, _, result, _, bufnr)
     window = { width = 0.6, height = 0.5 },
   }
 
-  local options = vim.fn['fzf#wrap']('lsp/workspace_symbol', pre_options)
+  local options = fzf.wrap('lsp/workspace_symbol', pre_options)
+  options['sink*'] = build_sink(symbols)
 
-  options["sink*"] = nil
-  options.sink = function(selected_line)
-    if selected_line == "" then return end
-
-    local idx = tonumber(vim.split(selected_line, '.', true)[1])
-    local symbol = symbols[idx]
-  end
-
-  vim.fn['fzf#run'](options)
+  fzf.run(options)
 end
 
 vim.lsp.handlers['workspace/symbol'] = handler
