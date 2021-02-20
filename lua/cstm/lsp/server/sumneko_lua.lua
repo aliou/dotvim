@@ -3,6 +3,7 @@ local nvim_lsp = require('lspconfig')
 local setup = function(on_attach)
   nvim_lsp.sumneko_lua.setup({
     on_attach = on_attach,
+    cmd = {"lua-language-server"},
     settings = {
       Lua = {
         diagnostics = {
