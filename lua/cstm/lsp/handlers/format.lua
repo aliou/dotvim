@@ -1,5 +1,5 @@
 local apply_format = function(_, _, result)
-  if not result then return end
+  if not result or result == 0 then return end
 
   -- To not have the formatting update be too jarring, save and restore the view
   -- of the current window around the application of the formatting.
