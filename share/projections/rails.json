@@ -44,7 +44,7 @@
     ],
     "test": "spec/policies/%s_spec.rb"
   },
-  "app/services/*_service.rb": {
+  "app/services/*.rb": {
     "command": "service",
     "template": [
       "class {camelcase|capitalize|colons}",
