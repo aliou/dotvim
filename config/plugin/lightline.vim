@@ -1,5 +1,7 @@
 let g:lightline = {}
 
+let g:lightline.colorscheme = 'one'
+
 let g:lightline.component_expand = {
       \   'lsp_diagnostic_indicator': 'status#lsp#diagnostic',
       \ }
