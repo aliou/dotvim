@@ -22,7 +22,7 @@ let g:lightline.active = {
 
 let g:lightline.inactive = {
       \   'left': [['bufname'], ['gitbranch'], ['readonly', 'relativepath', 'modified']],
-      \   'right': [['lsp_diagnostic_indicator']]
+      \   'right': []
       \ }
 
 let g:lightline.tab = {
