@@ -18,4 +18,4 @@ let s:compe_config.source = {
       \    'tags': v:false,
       \  }
 
-autocmd Filetype gitcommit call compe#setup(s:compe_config, 0)
+autocmd Filetype rust call compe#setup(s:compe_config, 0)
