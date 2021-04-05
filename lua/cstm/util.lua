@@ -23,8 +23,11 @@ local current_buf_has_filetype = function(filetype)
   return vim.tbl_contains(get_buf_filetypes(), filetype)
 end
 
+local print_err = print
+
 return {
   current_buf_has_filetype = current_buf_has_filetype,
   get_buf_filetypes = get_buf_filetypes,
-  map = map
+  map = map,
+  print_err = print_err
 }
