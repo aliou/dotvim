@@ -3,6 +3,17 @@ local print_err = require('cstm.util').print_err
 FILE_PATH = '/tmp/.cstm.theme'
 DEFAULT_CONFIG = { dark = 'xcodedarkhc', light = 'xcodelighthc' }
 
+local change_fns = {}
+local on_theme_change = function(fn)
+  table.insert(change_fns, fn)
+end
+
+local execute_on_theme_change = function(theme)
+  for i = 1, #change_fns do
+    change_fns[i](theme)
+  end
+end
+
 local update_theme = function(new_scheme)
   if new_scheme == "" then return end
 
@@ -14,6 +25,7 @@ local update_theme = function(new_scheme)
   next_theme = configuration[string.lower(new_scheme)]
   if next_theme ~= current_theme then
     vim.api.nvim_command("colorscheme " .. next_theme)
+    execute_on_theme_change(next_theme)
   end
 end
 
@@ -48,5 +60,12 @@ watch_file = function()
 end
 
 -- Start the thing
-update_theme(read_file())
-watch_file()
+local start = function()
+  update_theme(read_file())
+  watch_file()
+end
+
+return {
+  on_theme_change = on_theme_change,
+  start = start,
+}

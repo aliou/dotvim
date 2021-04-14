@@ -1,17 +1,12 @@
+local on_theme_change = require('ad.theme').on_theme_change
+
 -- Custom highlight groups for diffs.
-local apply_highlights = function()
+on_theme_change(function(_)
   vim.highlight.create('GitSignsDiffAdd', { guifg = "#5F875F", ctermfg = 65 })
   vim.highlight.create('GitSignsDelete', { guifg = '#CC6666', ctermfg = 167 })
   vim.highlight.create('GitSignsChange', { guifg = '#5F5F87', ctermfg = 60 })
   vim.highlight.create('GitSignsChangeDelete', { guifg = '#5F5F87', ctermfg = 60 })
-end
-
-vim.cmd [[augroup ad.gitsigns]]
-vim.cmd [[  autocmd!]]
-vim.cmd [[  autocmd ColorScheme :lua require('ad.gitsigns').apply_highlights()]]
-vim.cmd [[augroup END]]
-
-apply_highlights()
+end)
 
 require('gitsigns').setup({
   signs = {
@@ -41,7 +36,3 @@ require('gitsigns').setup({
   sign_priority = 6,
   status_formatter = nil, -- Use default
 })
-
-return {
-  apply_highlights = apply_highlights
-}
