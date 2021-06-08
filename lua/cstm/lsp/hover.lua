@@ -1,7 +1,8 @@
 local map = require('cstm.util').map
 local get_buf_filetypes = require('cstm.util').get_buf_filetypes
 
-local SKIPPED_FILETYPES = {'vim', 'ruby'}
+-- local SKIPPED_FILETYPES = {'vim', 'ruby'}
+local SKIPPED_FILETYPES = {'vim'}
 local is_skipped_filetype = function(ft)
   return vim.tbl_contains(SKIPPED_FILETYPES, ft)
 end
