@@ -1,16 +1,8 @@
-local api = vim.api
-
--- Setup runtimepath and packpath to include ~/.vim directory..
--- TODO: Use tjdevries's vim.opt when / if it is merged into core.
-local runtimepath = api.nvim_get_option('runtimepath')
-
+-- Setup runtimepath and packpath to include ~/.vim directory.
 -- Set the vim directory as the first directory to search into and the after
 -- directory as the last to search into.
-runtimepath = '~/.vim,' .. runtimepath .. ',~/.vim/after'
-
--- Save the option and update the packpath value to match.
-api.nvim_set_option('runtimepath', runtimepath)
-api.nvim_set_option('packpath', runtimepath)
+vim.opt.runtimepath = vim.opt.runtimepath:prepend({'~/.vim'}):append({'~/.vim/after'})
+vim.opt.packpath = vim.opt.packpath:prepend({'~/.vim'}):append({'~/.vim/after'})
 
 -- Setting up early so mappings with <leader> use the this value.
 vim.g.mapleader = ','
