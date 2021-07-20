@@ -16,7 +16,6 @@ map("n", "<leader>at", rhs, { buffer = false })
 
 map("n", "<leader>af", rhs, { buffer = false })
 map('n', '<leader>ht', rhs, { buffer = false })
-map("n", "<leader>lr", rhs, { buffer = false })
 map("n", "<leader>rn", rhs, { buffer = false })
 
 map("n", "<C-\\>", rhs, { buffer = false })
