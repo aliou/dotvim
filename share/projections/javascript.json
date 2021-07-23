@@ -8,5 +8,17 @@
   },
   "yarn.lock": {
     "alternate": "package.json"
+  },
+  "*.test.js": {
+    "type": "test",
+    "alternate": "{}.stories.js"
+  },
+  "*.stories.js": {
+    "type": "story",
+    "alternate": "{}.js"
+  },
+  "*.js": {
+    "type": "src",
+    "alternate": "{}.test.js"
   }
 }
