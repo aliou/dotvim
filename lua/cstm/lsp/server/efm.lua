@@ -1,5 +1,6 @@
 local nvim_lsp = require('lspconfig')
 
+local eslint = require('cstm.lsp.server.efm.eslint')
 local jq = require('cstm.lsp.server.efm.jq')
 local rubocop = require('cstm.lsp.server.efm.rubocop')
 local shellcheck = require('cstm.lsp.server.efm.shellcheck')
@@ -14,13 +15,15 @@ local setup = function(on_attach)
   nvim_lsp.efm.setup({
     on_attach = on_attach,
     cmd = cmd,
-    filetypes = { 'ruby', 'json', 'bash', 'sh' },
+    filetypes = { 'ruby', 'json', 'bash', 'sh', 'javascript' },
     init_options = { documentFormatting = true },
     root_dir = nvim_lsp.util.find_git_ancestor,
     settings = {
       languages = {
         bash = { shellcheck },
         sh = { shellcheck },
+
+        javascript = { eslint },
 
         json = { jq },
         ruby = { rubocop },
