@@ -30,7 +30,12 @@ local update_theme = function(new_scheme)
 end
 
 local read_file = function()
-  return vim.fn.readfile(FILE_PATH)[1] or ""
+  local ok, value = pcall(vim.fn.readfile, FILE_PATH)
+  if ok and #value == 1 then
+    return value[1]
+  end
+
+  return ""
 end
 
 local w = vim.loop.new_fs_event()
