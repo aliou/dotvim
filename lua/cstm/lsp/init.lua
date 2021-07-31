@@ -18,6 +18,8 @@ local on_attach = function(client)
 
   -- Refresh status line to display diagnostic progress.
   status.refresh()
+
+  print("lsp: Attaching to client " .. client.name)
 end
 
 -- Configure LSP servers.
