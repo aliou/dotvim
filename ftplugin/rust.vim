@@ -5,10 +5,6 @@
 setlocal tags=./tags;/,$RUST_SRC_PATH/tags
 let b:undo_ftplugin = "setlocal tags<"
 
-" Disable Gutentags to prevent overwriting the `tags` file.
-let g:gutentags_enabled = 0
-let b:undo_ftplugin .= " | unlet g:gutentags_enabled"
-
 let s:compe_config = {}
 let s:compe_config.source = {
       \    'nvim_lsp': v:true,

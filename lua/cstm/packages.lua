@@ -31,7 +31,6 @@ local spec = function()
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   }
-  use { 'ludovicchabant/vim-gutentags' }
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-unimpaired' }
   use { 'tpope/vim-vinegar' }
