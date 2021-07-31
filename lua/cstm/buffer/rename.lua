@@ -1,6 +1,30 @@
 local Input = require("nui.input")
 local event = require("nui.utils.autocmd").event
 
+local input_options = {
+  -- border for the window
+  border = {
+    style = "rounded",
+    text = {
+      top = "[Rename]",
+      top_align = "left"
+    },
+  },
+  -- highlight for the window.
+  highlight = "Normal:Comment",
+  relative = "cursor",
+  -- position the popup window on the line below identifier
+  position = {
+    row = 1,
+    col = 0,
+  },
+  -- 25 cells wide, should be enough for most identifier names
+  size = {
+    width = 25,
+    height = 1,
+  },
+}
+
 local rename = function()
   -- Retrieve the word under cursor.
   local current_term = vim.fn.expand('<cword>')
@@ -17,40 +41,22 @@ local rename = function()
     vim.lsp.buf.rename(new_term)
   end
 
-  local input_options = {
-    -- border for the window
-    border = {
-      style = "rounded",
-      text = {
-        top = "[Rename]",
-        top_align = "left"
-      },
-    },
-    -- highlight for the window.
-    highlight = "Normal:Comment",
-    relative = "cursor",
-    -- position the popup window on the line below identifier
-    position = {
-      row = 1,
-      col = 0,
-    },
-    -- 25 cells wide, should be enough for most identifier names
-    size = {
-      width = 25,
-      height = 1,
-    },
-  }
+  local on_close = function()
+    -- Get back to normal mode when closing the Input.
+    vim.cmd('stopinsert')
+  end
 
   local input = Input(input_options, {
     default_value = current_term,
     on_submit = on_submit,
+    on_close = on_close,
     prompt = "",
   })
 
   input:mount()
 
   -- close on <esc> in normal mode
-  input:map("n", "<esc>", input.input_props.on_close, { noremap = true })
+  input:map("i", "<esc>", input.input_props.on_close, { noremap = true })
 
   -- close when cursor leaves the buffer
   input:on(event.BufLeave, input.input_props.on_close, { once = true })
