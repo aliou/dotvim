@@ -6,6 +6,7 @@ local register_mt = {
   end,
 
   __newindex = function(_, register_name, value)
+    if value == nil then value = {} end
     vim.fn.setreg(register_name, value)
   end,
 }
