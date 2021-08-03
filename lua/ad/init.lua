@@ -1,3 +1,5 @@
+local theme = require('ad.theme')
 require('ad.gitsigns')
 require('ad.visual_search')
-require('ad.theme').start()
+
+theme.watch()

@@ -25,7 +25,6 @@ local update_theme = function(new_scheme)
   next_theme = configuration[string.lower(new_scheme)]
   if next_theme ~= current_theme then
     vim.api.nvim_command("colorscheme " .. next_theme)
-    execute_on_theme_change(next_theme)
   end
 end
 
@@ -65,12 +64,19 @@ watch_file = function()
 end
 
 -- Start the thing
-local start = function()
+local watch = function()
   update_theme(read_file())
   watch_file()
 end
 
+-- Apply callbacks on colorscheme change.
+vim.cmd [[augroup ad.theme]]
+vim.cmd [[  autocmd!]]
+vim.cmd [[  autocmd ColorScheme * :lua require('ad.theme').execute_on_theme_change(vim.fn.expand('<amatch>'))]]
+vim.cmd [[augroup END]]
+
 return {
+  execute_on_theme_change = execute_on_theme_change,
   on_theme_change = on_theme_change,
-  start = start,
+  watch = watch,
 }
