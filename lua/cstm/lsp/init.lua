@@ -42,11 +42,13 @@ end
 
 -- Load custom responses to LSP servers.
 local custom_handlers = {
+  'code_action',
   'diagnostic',
   'format',
   'references',
   'workspace_symbol',
 }
+
 for i = 1, #custom_handlers do
   local module = 'cstm.lsp.handlers.' .. custom_handlers[i]
   require(module)
