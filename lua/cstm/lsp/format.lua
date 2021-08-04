@@ -1,6 +1,8 @@
 local map = require('cstm.util').map
 
-local on_attach = function(_)
+local on_attach = function(client)
+  if not client.resolved_capabilities.document_formatting then return end
+
   map("n", "<leader>af", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 end
 
