@@ -12,8 +12,13 @@ if vim.g.lsp_efm_log_events then
 end
 
 local setup = function(on_attach)
+  local on_local_attach = function(client, bufnr)
+    client.resolved_capabilities.goto_definition = false
+    on_attach(client, bufnr)
+  end
+
   nvim_lsp.efm.setup({
-    on_attach = on_attach,
+    on_attach = on_local_attach,
     cmd = cmd,
     filetypes = { 'ruby', 'json', 'bash', 'sh', 'javascript' },
     init_options = { documentFormatting = true },
