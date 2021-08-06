@@ -17,7 +17,6 @@ local setup = function(on_attach)
     cmd = cmd,
     filetypes = { 'ruby', 'json', 'bash', 'sh', 'javascript' },
     init_options = { documentFormatting = true },
-    root_dir = nvim_lsp.util.find_git_ancestor,
     settings = {
       languages = {
         bash = { shellcheck },
