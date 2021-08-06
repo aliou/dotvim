@@ -27,6 +27,7 @@ end
 -- above.
 local servers = {
   'efm',
+  'golangci',
   'gopls',
   'rust_analyzer',
   'solargraph',
