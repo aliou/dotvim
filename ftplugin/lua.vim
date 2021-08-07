@@ -4,4 +4,4 @@ let g:lua_path = split(system('lua -e "print(package.path)"')[0:-2], ';')
 call extend(g:lua_path, [$VIMRUNTIME . '/lua', expand('~/.vim/lua/?.lua')])
 
 " TODO: Limit this to files in `$VIMRUNTIME` and `~/.vim`.
-nnoremap <buffer> <leader>so :luafile %<return>
+nnoremap <buffer> <leader>so :source %<Return>
