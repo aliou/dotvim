@@ -1,4 +1,22 @@
+local Menu = require('nui.menu')
 local lsp = require('vim.lsp')
+
+local menu_options = {
+  border = {
+    style = "rounded",
+  },
+  -- highlight for the window.
+  highlight = "Normal:Comment",
+  relative = "cursor",
+  -- position the popup window on the line below identifier
+  position = {
+    row = 1,
+    col = 0,
+  },
+  size = {
+    width = 50,
+  },
+}
 
 local apply_action = function(action)
   -- textDocument/codeAction can return either Command[] or CodeAction[].
@@ -23,25 +41,28 @@ local handler = function(_, _, actions)
 
   -- Don't bother building the action list if there's only one; directly apply
   -- the action.
+  -- NOTE: This might be dangerous, but we can easily undo this change.
   if #actions == 1 then
     apply_action(actions[1])
     return
   end
 
-  local option_strings = {"Code Actions:"}
+  local lines = {}
   for i, action in ipairs(actions) do
-    local title = action.title:gsub('\r\n', '\\r\\n')
-    title = title:gsub('\n', '\\n')
-    table.insert(option_strings, string.format("%d. %s", i, title))
+    local title = string.format("%s. %s", i, action.title)
+    table.insert(lines, Menu.item(title, action))
   end
 
-  local choice = vim.fn.inputlist(option_strings)
-  if choice < 1 or choice > #actions then
-    return
-  end
+  local menu = Menu(menu_options, {
+    lines = lines,
+    separator = {
+      char = "-",
+      text_align = "right",
+    },
+    on_submit = apply_action,
+  })
 
-  local action_chosen = actions[choice]
-  apply_action(action_chosen)
+  menu:mount()
 end
 
 vim.lsp.handlers['textDocument/codeAction'] = handler
