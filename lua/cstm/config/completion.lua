@@ -1,4 +1,5 @@
 local compe = require('compe')
+local map = require('cstm.util').map
 
 -- menuone: Display popup menu for a single entry, so we can see the floating
 -- window.
@@ -18,3 +19,6 @@ compe.setup({
     spell = true,
   }
 })
+
+-- Confirm snippet insertion.
+map('i', '<CR>', [[compe#confirm('<CR>')]], { silent = true, expr = true })
