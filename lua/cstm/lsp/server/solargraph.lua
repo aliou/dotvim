@@ -7,6 +7,8 @@ local setup = function(on_attach)
 
     -- Remove goto_definition capabilities and let ctags handle it.
     client.resolved_capabilities.goto_definition = false
+
+    -- TODO: Remove hover to let ri.vim handle documentation.
     on_attach(client, bufnr)
   end
 
