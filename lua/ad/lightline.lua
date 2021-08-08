@@ -1,4 +1,4 @@
-local on_theme_change = require('ad.theme').on_theme_change
+local on_theme_change = require('ad.theme.callbacks').on_theme_change
 
 -- TODO: Change this with custom cool themes :)
 DEFAULT_CONFIG = { dark = 'default', light = 'one' }

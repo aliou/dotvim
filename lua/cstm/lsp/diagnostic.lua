@@ -1,5 +1,5 @@
 local map = require('cstm.util').map
-local on_theme_change = require('ad.theme').on_theme_change
+local on_theme_change = require('ad.theme.callbacks').on_theme_change
 
 -- Globally enable diagnostics.
 vim.g.lsp_diagnostics_enabled = true

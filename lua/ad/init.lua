@@ -1,5 +1,5 @@
-local theme = require('ad.theme')
 require('ad.gitsigns')
 require('ad.visual_search')
 
-theme.watch()
+-- Load theme last to make sure all callbacks are registered.
+require('ad.theme')

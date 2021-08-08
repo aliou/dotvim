@@ -10,6 +10,7 @@ local spec = function()
   use { 'mhinz/vim-startify' }
   use { 'junegunn/goyo.vim', opt = true }
   use { 'MunifTanjim/nui.nvim' }
+  use { 'projekt0n/github-nvim-theme' }
 
   -- Shell
   use { 'tpope/vim-dispatch' }
