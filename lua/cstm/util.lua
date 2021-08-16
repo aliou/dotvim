@@ -58,6 +58,15 @@ fn = {
 
     return fn.filter(t, filter)
   end,
+
+  map = function(t, func)
+    local result = {}
+    for k, v in pairs(t) do
+      result[k] = func(v)
+    end
+
+    return result
+  end,
 }
 
 return {

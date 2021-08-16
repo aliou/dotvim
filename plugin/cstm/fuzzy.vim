@@ -13,6 +13,9 @@ command! -nargs=? -complete=buffer FuzzyBuffers
 command! -nargs=? -complete=customlist,cstm#fuzzy#mru#complete FuzzyMRU
       \ call cstm#fuzzy#mru(<q-args>)
 
+" Temporarly disable fuzzy while trying telescope.
+finish
+
 nnoremap <silent> <leader>t :FuzzyFiles<Return>
 nnoremap <silent> <leader>b :FuzzyBuffers<Return>
 nnoremap <silent> <leader>m :FuzzyMRU<Return>
