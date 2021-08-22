@@ -1,0 +1,5 @@
+require('cstm.lsp.handlers.code_action')
+require('cstm.lsp.handlers.diagnostic')
+require('cstm.lsp.handlers.format')
+require('cstm.lsp.handlers.references')
+require('cstm.lsp.handlers.workspace_symbol')

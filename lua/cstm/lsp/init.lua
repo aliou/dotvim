@@ -1,6 +1,9 @@
 require('cstm.lsp.fallback')
 local status = require('cstm.status')
 
+-- Require custom LSP handlers.
+require('cstm.lsp.handlers')
+
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
   -- Configuration of capabilities.
@@ -39,18 +42,4 @@ local servers = {
 for i = 1, #servers do
   local module = 'cstm.lsp.server.' .. servers[i]
   require(module).setup(on_attach)
-end
-
--- Load custom responses to LSP servers.
-local custom_handlers = {
-  'code_action',
-  'diagnostic',
-  'format',
-  'references',
-  'workspace_symbol',
-}
-
-for i = 1, #custom_handlers do
-  local module = 'cstm.lsp.handlers.' .. custom_handlers[i]
-  require(module)
 end
