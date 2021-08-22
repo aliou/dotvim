@@ -1,15 +1,31 @@
 local u = require('cstm.util')
 
--- TODO: Filter out hidden directories by default?
-local complete_directories = function(lead)
-  local filter_directories = function(entry)
+local  curried_filter_directories = function(lead)
+  return function(entry)
     local is_directory = vim.fn.isdirectory(entry) == 1
     local starts_with_lead = lead == "" or vim.startswith(entry, lead)
 
     return is_directory and starts_with_lead
   end
+end
 
-  return vim.fn.readdir('.', filter_directories)
+-- TODO: Filter out hidden directories by default?
+local complete_directories = function(lead)
+  local root = './'
+
+  if lead ~= "" and vim.fn.isdirectory(lead) == 1 then
+    root = lead
+  end
+
+  print(vim.inspect(root))
+  local directories = vim.fn.readdir(root, curried_filter_directories(lead))
+
+  local result = u.fn.map(directories, function(entry)
+    return root .. entry
+  end)
+  print(vim.inspect(result))
+
+  return result
 end
 
 -- TODO: Add tags from current project using `taglist()`.
