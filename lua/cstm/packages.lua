@@ -91,6 +91,12 @@ local spec = function()
   use '~/code/src/github.com/aliou/sql-heredoc.vim'
   use '~/code/src/github.com/aliou/untitled.vim'
   use '~/code/src/github.com/aliou/wren.vim'
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end
 
 require('packer').startup(spec)
