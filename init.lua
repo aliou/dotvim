@@ -11,7 +11,7 @@ vim.g.mapleader = ','
 require('vim.registers')
 
 -- Require plugins.
-require('cstm.packages')
+require('ad.packages')
 require('cstm.lsp')
 
 -- Load split configuration files.
