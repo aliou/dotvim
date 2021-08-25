@@ -34,9 +34,7 @@ require('gitsigns').setup({
     ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
     ['n <leader>hd'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
   },
-  watch_index = {
-    interval = 1000
-  },
+  watch_index = { interval = 5000 },
   status_formatter = nil, -- Use default
 
   current_line_blame = true,
