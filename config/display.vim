@@ -18,3 +18,6 @@ set listchars+=extends:>
 set listchars+=precedes:<
 
 set fillchars=diff:·
+
+" Highlight cursorline.
+set cursorline
