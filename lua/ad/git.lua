@@ -41,3 +41,7 @@ require('gitsigns').setup({
   current_line_blame_opts = { delay = 250 },
   current_line_blame_formatter = blame_formatter,
 })
+
+vim.cmd [[
+  command! Gcommit vertical Git commit
+]]

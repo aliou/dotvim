@@ -1,4 +1,4 @@
-require('ad.gitsigns')
+require('ad.git')
 require('ad.telescope')
 require('ad.visual_search')
 
