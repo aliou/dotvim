@@ -38,7 +38,7 @@ require('gitsigns').setup({
   status_formatter = nil, -- Use default
 
   current_line_blame = true,
-  current_line_blame_opts = { delay = 250 },
+  current_line_blame_opts = { delay = 5000 },
   current_line_blame_formatter = blame_formatter,
 })
 
