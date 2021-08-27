@@ -1,7 +1,10 @@
 local nvim_lsp = require('lspconfig')
 
-local setup = function(on_attach)
-  nvim_lsp.rust_analyzer.setup({ on_attach = on_attach })
+local setup = function(on_attach, capabilities)
+  nvim_lsp.rust_analyzer.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
 end
 
 return {

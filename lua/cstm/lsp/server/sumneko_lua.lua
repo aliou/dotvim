@@ -1,6 +1,6 @@
 local nvim_lsp = require('lspconfig')
 
-local setup = function(on_attach)
+local setup = function(on_attach, capabilities)
   local on_local_attach = function(client, bufnr)
     -- TODO: Remove some capabilities when this is a vim runtime file.
     on_attach(client, bufnr)
@@ -8,6 +8,7 @@ local setup = function(on_attach)
 
   nvim_lsp.sumneko_lua.setup({
     on_attach = on_local_attach,
+    capabilities = capabilities,
     cmd = {"lua-language-server"},
     settings = {
       Lua = {

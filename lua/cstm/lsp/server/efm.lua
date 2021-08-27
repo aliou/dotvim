@@ -11,7 +11,7 @@ if vim.g.lsp_efm_log_events then
   cmd = vim.tbl_extend("keep", { "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" })
 end
 
-local setup = function(on_attach)
+local setup = function(on_attach, capabilities)
   local on_local_attach = function(client, bufnr)
     client.resolved_capabilities.goto_definition = false
     on_attach(client, bufnr)
@@ -19,6 +19,7 @@ local setup = function(on_attach)
 
   nvim_lsp.efm.setup({
     on_attach = on_local_attach,
+    capabilities = capabilities,
     cmd = cmd,
     filetypes = { 'ruby', 'json', 'bash', 'sh', 'javascript' },
     init_options = { documentFormatting = true },

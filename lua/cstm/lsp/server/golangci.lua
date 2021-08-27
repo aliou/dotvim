@@ -13,9 +13,10 @@ if not lspconfig.golangcilsp then
   }
 end
 
-local setup = function(on_attach)
+local setup = function(on_attach, capabilities)
   lspconfig.golangcilsp.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = {'go'}
   }
 end

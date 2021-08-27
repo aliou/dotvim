@@ -25,6 +25,13 @@ local on_attach = function(client)
   print("lsp: Attaching to client " .. client.name)
 end
 
+-- Pass custom capabilities to each server. Currently, we only overide
+-- completion cabilities to enable them all.
+-- For other capabilities, we configure them in a case by case basis in the
+-- files above mainly depending on the LSP server or on the filetype of the
+-- buffer where the LSP client is being attached to.
+local capabilities = require('cstm.lsp.completion')
+
 -- Configure LSP servers.
 -- Each server is configured in its own file and uses the `on_attach` function
 -- above.
@@ -39,7 +46,8 @@ local servers = {
   'vimls',
 }
 
+
 for i = 1, #servers do
   local module = 'cstm.lsp.server.' .. servers[i]
-  require(module).setup(on_attach)
+  require(module).setup(on_attach, capabilities)
 end
