@@ -5,13 +5,13 @@
 setlocal tags=./tags;/,$RUST_SRC_PATH/tags
 let b:undo_ftplugin = "setlocal tags<"
 
-let s:compe_config = {}
-let s:compe_config.source = {
-      \    'nvim_lsp': v:true,
-      \    'path': v:true,
-      \    'buffer': v:false,
-      \    'spell': v:false,
-      \    'tags': v:false,
-      \  }
+lua << EOF
+local cmp = require('cmp')
 
-autocmd Filetype rust call compe#setup(s:compe_config, 0)
+cmp.setup.buffer({
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+  }
+})
+EOF

@@ -69,7 +69,11 @@ local spec = function()
   use { 'nvim-treesitter/nvim-treesitter' }
 
   -- Completion
-  use { 'hrsh7th/nvim-compe' }
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/cmp-path' }
+  use { 'hrsh7th/cmp-nvim-lua' }
 
   -- Local plugins.
 
