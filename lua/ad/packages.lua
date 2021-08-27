@@ -36,6 +36,7 @@ local spec = function()
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-unimpaired' }
   use { 'tpope/vim-vinegar' }
+  use { 'tjdevries/vlog.nvim' }
 
   -- Projects
   use { 'tpope/vim-apathy' }
@@ -75,6 +76,13 @@ local spec = function()
   use { 'hrsh7th/cmp-path' }
   use { 'hrsh7th/cmp-nvim-lua' }
 
+  -- Telescope.
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
   -- Local plugins.
 
   -- This requires fzf to be installed with go:
@@ -95,12 +103,6 @@ local spec = function()
   use '~/code/src/github.com/aliou/sql-heredoc.vim'
   use '~/code/src/github.com/aliou/untitled.vim'
   use '~/code/src/github.com/aliou/wren.vim'
-
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end
 
 require('packer').startup(spec)
