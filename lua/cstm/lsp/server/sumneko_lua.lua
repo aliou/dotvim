@@ -1,5 +1,9 @@
 local nvim_lsp = require('lspconfig')
 
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
+
 local setup = function(on_attach, capabilities)
   local on_local_attach = function(client, bufnr)
     -- TODO: Remove some capabilities when this is a vim runtime file.
@@ -12,16 +16,20 @@ local setup = function(on_attach, capabilities)
     cmd = {"lua-language-server"},
     settings = {
       Lua = {
+        runtime = {
+          version = 'LuaJIT',
+          path = runtime_path,
+        },
         diagnostics = {
           enable = true,
           globals = { "vim", "unpack", "use" },
         },
         workspace = {
           -- Make the server aware of nvim runtime files
-          library = {
-            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-          },
+          library = vim.api.nvim_get_runtime_file('', true),
+        },
+        telemetry = {
+          enable = false,
         },
       },
     }
