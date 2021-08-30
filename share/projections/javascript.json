@@ -17,6 +17,10 @@
     "type": "story",
     "alternate": "{}.js"
   },
+  "*/index.js": {
+    "type": "src",
+    "alternate": "{}.test.js"
+  },
   "*.js": {
     "type": "src",
     "alternate": "{}.test.js"
