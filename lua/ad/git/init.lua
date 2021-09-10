@@ -1,3 +1,4 @@
+local jump = require('ad.git.jump')
 require('ad.git.signs')
 
 vim.cmd [[
