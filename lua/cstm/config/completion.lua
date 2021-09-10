@@ -11,9 +11,28 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 
 cmp.setup({
   sources = {
-    { name = 'buffer' },
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'nvim_lua' },
+  },
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm()
+  },
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Lua]",
+        path = "[Path]",
+      })[entry.source.name]
+
+      return vim_item
+    end,
   },
 })
