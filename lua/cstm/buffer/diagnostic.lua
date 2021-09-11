@@ -25,11 +25,17 @@ local function toggle()
 end
 
 local goto_next = function()
-  vim.lsp.diagnostic.goto_next({ wrap = true, severity_limit = vim.b.lsp_diagnostics_goto_severity_limit })
+  vim.lsp.diagnostic.goto_next({
+    wrap = true,
+    severity_limit = vim.b.lsp_diagnostics_goto_severity_limit
+  })
 end
 
 local goto_prev = function()
-  vim.lsp.diagnostic.goto_prev({ wrap = true, severity_limit = vim.b.lsp_diagnostics_goto_severity_limit })
+  vim.lsp.diagnostic.goto_prev({
+    wrap = true,
+    severity_limit = vim.b.lsp_diagnostics_goto_severity_limit
+  })
 end
 
 return {

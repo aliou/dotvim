@@ -1,4 +1,5 @@
 require('ad.git')
+require('ad.lsp')
 require('ad.telescope')
 require('ad.visual_search')
 

@@ -1,10 +1,10 @@
 local nvim_lsp = require('lspconfig')
 
-local eslint = require('cstm.lsp.server.efm.eslint')
-local jq = require('cstm.lsp.server.efm.jq')
-local rubocop = require('cstm.lsp.server.efm.rubocop')
-local shellcheck = require('cstm.lsp.server.efm.shellcheck')
-local vint = require('cstm.lsp.server.efm.vint')
+local eslint = require('ad.lsp.server.efm.eslint')
+local jq = require('ad.lsp.server.efm.jq')
+local rubocop = require('ad.lsp.server.efm.rubocop')
+local shellcheck = require('ad.lsp.server.efm.shellcheck')
+local vint = require('ad.lsp.server.efm.vint')
 
 local cmd = { "efm-langserver" }
 if vim.g.lsp_efm_log_events then

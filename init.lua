@@ -12,7 +12,6 @@ require('vim.registers')
 
 -- Require plugins.
 require('ad.packages')
-require('cstm.lsp')
 
 -- Load split configuration files.
 -- TODO: Rewrite some (all?) of those in lua.

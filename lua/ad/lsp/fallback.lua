@@ -4,7 +4,7 @@ local print_message = function()
   print("lsp: not supported for current buffer")
 end
 
-local rhs = "<cmd>lua require('cstm.lsp.fallback').print_message()<cr>"
+local rhs = "<cmd>lua require('ad.lsp.fallback').print_message()<cr>"
 
 map("n", "<leader>ca", rhs, { buffer = false })
 
