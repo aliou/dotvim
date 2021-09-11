@@ -30,7 +30,7 @@ end
 -- For other capabilities, we configure them in a case by case basis in the
 -- files above mainly depending on the LSP server or on the filetype of the
 -- buffer where the LSP client is being attached to.
-local capabilities = require('cstm.lsp.completion')
+local capabilities = require('cstm.lsp.completion').capabilities
 
 -- Configure LSP servers.
 -- Each server is configured in its own file and uses the `on_attach` function
