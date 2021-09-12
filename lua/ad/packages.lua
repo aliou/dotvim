@@ -83,7 +83,7 @@ local spec = function()
 
   -- Telescope.
   use {
-    'nvim-telescope/telescope.nvim',
+    '~/code/src/github.com/aliou/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
