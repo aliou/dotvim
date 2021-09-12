@@ -1,3 +1,5 @@
+require('ad.globals')
+
 require('ad.git')
 require('ad.lsp')
 require('ad.telescope')
