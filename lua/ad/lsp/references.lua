@@ -1,8 +1,7 @@
 local map = require('cstm.util').map
 
 local on_attach = function(_)
-  map("n", "<C-\\>",
-    "<cmd>lua require('telescope.builtin').lsp_references({ includeDeclaration = false })<CR>")
+  map("n", "<C-\\>", "<cmd>lua require('ad.telescope.lsp').references()<CR>")
 end
 
 return {
