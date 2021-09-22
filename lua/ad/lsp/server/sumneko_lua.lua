@@ -22,7 +22,7 @@ local setup = function(on_attach, capabilities)
         },
         diagnostics = {
           enable = true,
-          globals = { "vim", "unpack", "use" },
+          globals = { "vim", "unpack", "use", "P",  "RELOAD", "R" },
         },
         workspace = {
           -- Make the server aware of nvim runtime files
