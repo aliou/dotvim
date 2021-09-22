@@ -27,10 +27,10 @@ local build_sink = function(symbols)
   return curried_handler
 end
 
-local handler = function(_, _, result, _, bufnr)
+local handler = function(_, result, ctx)
   if not result or vim.tbl_isempty(result) then return end
 
-  local symbols = util.symbols_to_items(result, bufnr)
+  local symbols = util.symbols_to_items(result, ctx.bufnr)
   local items = {}
 
   for idx, symbol in ipairs(symbols) do

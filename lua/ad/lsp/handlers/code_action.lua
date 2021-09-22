@@ -34,21 +34,21 @@ local apply_action = function(action)
   end
 end
 
-local handler = function(_, _, actions)
-  if actions == nil or vim.tbl_isempty(actions) then
+local handler = function(_, results)
+  if results == nil or vim.tbl_isempty(results) then
     return
   end
 
   -- Don't bother building the action list if there's only one; directly apply
   -- the action.
   -- NOTE: This might be dangerous, but we can easily undo this change.
-  if #actions == 1 then
-    apply_action(actions[1])
+  if #results == 1 then
+    apply_action(results[1])
     return
   end
 
   local lines = {}
-  for i, action in ipairs(actions) do
+  for i, action in ipairs(results) do
     local title = string.format("%s. %s", i, action.title)
     table.insert(lines, Menu.item(title, action))
   end
