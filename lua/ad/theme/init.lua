@@ -6,15 +6,15 @@ local util = require('github-theme.util')
 vim.g.color_auto_switch = false
 
 local default_options = {
-  commentStyle = "NONE",
-  keywordStyle = "NONE",
-  functionStyle = "NONE",
-  variableStyle = "NONE"
+  comment_style = "NONE",
+  keyword_style = "NONE",
+  function_style = "NONE",
+  variable_style = "NONE"
 }
 
 local configure_theme = function(scheme)
   local options = vim.tbl_extend('force', default_options, {
-    themeStyle = scheme,
+    theme_style = scheme,
   })
 
   require('github-theme').setup(options)
