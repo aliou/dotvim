@@ -6,7 +6,6 @@ table.insert(runtime_path, 'lua/?/init.lua')
 
 local setup = function(on_attach, capabilities)
   local on_local_attach = function(client, bufnr)
-    -- TODO: Remove some capabilities when this is a vim runtime file.
     on_attach(client, bufnr)
   end
 

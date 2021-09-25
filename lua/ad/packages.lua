@@ -1,6 +1,5 @@
 vim.cmd [[ packadd packer.nvim ]]
 
--- TODO: Clean and remove unused plugins.
 local spec = function()
   use { 'wbthomason/packer.nvim', opt = true }
 

@@ -8,7 +8,6 @@ set undolevels=1500
 if has('persistent_undo')
   " Don't keep undo files from temporary directories or shared memory in case
   " they're secrets
-  " TODO: Ignore commit messages?
   augroup cstm.undo
     autocmd!
     autocmd BufWritePre

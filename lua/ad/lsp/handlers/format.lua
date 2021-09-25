@@ -8,7 +8,6 @@ local apply_format = function(_, result, ctx)
   vim.fn.winrestview(view)
 
   -- Write changes witout triggering autocommands.
-  -- TODO: Check if we should trigger autocommands.
   vim.cmd("noautocmd :update")
 end
 

@@ -17,7 +17,7 @@ let s:projection_descriptions = [
       \ ]
 
 " TODO: simplify path thingy.
-" TODO: Stop using hard coded path.
+" TODO: Stop using hard coded paths.
 for s:item in s:projection_descriptions
   let s:file = $HOME . "/.vim/share/projections/" . s:item.file
   let s:file_content = join(readfile(s:file), "\n")
