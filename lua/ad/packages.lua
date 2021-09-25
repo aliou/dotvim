@@ -5,7 +5,6 @@ local spec = function()
 
   -- Display
   use { 'itchyny/lightline.vim' }
-  use { 'machakann/vim-highlightedyank' }
   use { 'mhinz/vim-startify' }
   use { 'junegunn/goyo.vim', opt = true }
   use { 'MunifTanjim/nui.nvim' }
