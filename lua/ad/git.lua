@@ -44,5 +44,5 @@ require('gitsigns').setup({
 
 vim.cmd [[
   command! Gcommit vertical Git commit
-  command! GitSignsToggleBlame Gitsigns toggle_current_line_blame
+  command! Gblame vertical Git blame
 ]]
