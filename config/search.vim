@@ -13,4 +13,4 @@ endif
 
 " Clear searches.
 nnoremap <silent> <C-L>
-      \ :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>:silent<space>ClearIW<CR><C-L>
+      \ :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
