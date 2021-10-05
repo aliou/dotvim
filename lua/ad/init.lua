@@ -2,6 +2,7 @@ require('ad.globals')
 
 require('ad.git')
 require('ad.lsp')
+require('ad.search')
 require('ad.telescope')
 require('ad.visual_search')
 

@@ -33,5 +33,4 @@ vim.api.nvim_exec([[
   nnoremap <silent> <leader>t <cmd>Telescope find_files<cr>
   nnoremap <silent> <leader>b <cmd>Telescope buffers<cr>
   nnoremap <silent> <leader>m <cmd>Telescope oldfiles<cr>
-  nnoremap <silent> <leader>s <cmd>Telescope grep_string<cr>
 ]], true)
