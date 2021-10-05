@@ -1,32 +1,34 @@
 local Input = require("nui.input")
 local event = require("nui.utils.autocmd").event
 
-local input_options = {
-  -- border for the window
-  border = {
-    style = "rounded",
-    text = {
-      top = "[Rename]",
-      top_align = "left"
+local compute_input_options = function(term_length)
+  return {
+    border = {
+      style = "rounded",
+      text = {
+        top = "[Rename]",
+        top_align = "left"
+      },
     },
-  },
-  -- highlight for the window.
-  highlight = "Normal:Comment",
-  relative = "cursor",
-  -- position the popup window on the line below identifier
-  position = {
-    row = 1,
-    col = 0,
-  },
-  -- 25 cells wide, should be enough for most identifier names
-  size = {
-    width = 25,
-    height = 1,
-  },
-}
+    -- highlight for the window.
+    highlight = "Normal:Comment",
+    relative = "cursor",
+    -- position the popup window on the line below identifier
+    position = {
+      row = 1,
+      col = 0,
+    },
+    -- 25 cells wide, should be enough for most identifier names
+    size = {
+      width = term_length + 5,
+      height = 1,
+    },
+  }
+end
 
 local rename = function()
   -- Retrieve the word under cursor.
+  -- TODO: This can be different based on languages.
   local current_term = vim.fn.expand('<cword>')
   if current_term == '' then return end
 
@@ -46,7 +48,7 @@ local rename = function()
     vim.cmd('stopinsert')
   end
 
-  local input = Input(input_options, {
+  local input = Input(compute_input_options(string.len(current_term)), {
     default_value = current_term,
     on_submit = on_submit,
     on_close = on_close,
