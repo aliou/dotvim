@@ -27,10 +27,10 @@ local configure_theme = function(scheme)
   vim.highlight.create('GitSignsChangeDelete', { guifg = '#5F5F87', ctermfg = 60 })
   vim.highlight.create('GitSignsCurrentLineBlame', { guifg = '#5F5F87' })
 
-  vim.highlight.create('LspDiagnosticsVirtualTextError', { cterm = 'bold', ctermfg = 167, gui = 'bold', guifg = '#CC6666' })
-  vim.highlight.create('LspDiagnosticsVirtualTextWarning', { ctermfg = 173, gui = 'bold', guifg = '#de935f' })
-  vim.highlight.create('LspDiagnosticsVirtualTextInformation', { cterm = 'bold', ctermfg = 60, gui = 'bold', guifg = '#5F5F87' })
-  vim.highlight.create('LspDiagnosticsVirtualTextHint', { cterm = 'bold', ctermfg = 173, gui = 'bold', guifg = '#c7915b' })
+  vim.highlight.create('DiagnosticsError', { cterm = 'bold', ctermfg = 167, gui = 'bold', guifg = '#CC6666' })
+  vim.highlight.create('DiagnosticsWarning', { ctermfg = 173, gui = 'bold', guifg = '#de935f' })
+  vim.highlight.create('DiagnosticsInformation', { cterm = 'bold', ctermfg = 60, gui = 'bold', guifg = '#5F5F87' })
+  vim.highlight.create('DiagnosticsHint', { cterm = 'bold', ctermfg = 173, gui = 'bold', guifg = '#c7915b' })
 end
 callbacks.on_theme_change(configure_theme)
 

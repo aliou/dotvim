@@ -9,7 +9,6 @@ local on_attach = function(client)
   -- Configuration of capabilities.
   require('ad.lsp.code_action').on_attach(client)
   require('ad.lsp.definition').on_attach(client)
-  require('ad.lsp.diagnostic').on_attach(client)
   require('ad.lsp.format').on_attach(client)
   require('ad.lsp.hover').on_attach(client)
   require('ad.lsp.references').on_attach(client)
@@ -45,7 +44,6 @@ local servers = {
   'tsserver',
   'vimls',
 }
-
 
 for i = 1, #servers do
   local module = 'ad.lsp.server.' .. servers[i]

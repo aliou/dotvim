@@ -1,5 +1,6 @@
 require('ad.globals')
 
+require('ad.diagnostic')
 require('ad.git')
 require('ad.lsp')
 require('ad.search')

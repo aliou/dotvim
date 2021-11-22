@@ -10,10 +10,6 @@ map("n", "<leader>ca", rhs, { buffer = false })
 
 map("n", "<leader>ct", rhs, { buffer = false })
 
-map("n", "[a", rhs, { buffer = false })
-map("n", "]a", rhs, { buffer = false })
-map("n", "<leader>at", rhs, { buffer = false })
-
 map("n", "<leader>af", rhs, { buffer = false })
 map('n', '<leader>ht', rhs, { buffer = false })
 map("n", "<leader>rn", rhs, { buffer = false })
