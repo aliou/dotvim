@@ -7,9 +7,6 @@ vim.opt.packpath = vim.opt.packpath:prepend({'~/.vim'}):append({'~/.vim/after'})
 -- Setting up early so mappings with <leader> use the this value.
 vim.g.mapleader = ','
 
--- Require files to bootstrap configuration.
-require('vim.registers')
-
 -- Require plugins.
 require('ad.packages')
 
