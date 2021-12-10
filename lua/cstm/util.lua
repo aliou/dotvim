@@ -15,6 +15,10 @@ local map = function(mode, key, result, options)
   end
 end
 
+local gnmap = function(key, result)
+  map("n", key, result, { buffer = false })
+end
+
 local print_err = print
 
 -- Extract into own file when this becomes too big.
@@ -63,5 +67,6 @@ fn = {
 return {
   fn = fn,
   map = map,
+  gnmap = gnmap,
   print_err = print_err,
 }

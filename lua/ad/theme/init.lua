@@ -38,7 +38,7 @@ callbacks.on_theme_change(configure_theme)
 if not vim.g.color_auto_switch then
   vim.cmd [[augroup ad.theme]]
   vim.cmd [[  autocmd!]]
-  vim.cmd [[  autocmd ColorScheme * :lua require('ad.theme.callbacks').execute_on_theme_change(vim.fn.expand('<amatch>'))]]
+  -- vim.cmd [[  autocmd ColorScheme * :lua require('ad.theme.callbacks').execute_on_theme_change(vim.fn.expand('<amatch>'))]]
   vim.cmd [[augroup END]]
 end
 
