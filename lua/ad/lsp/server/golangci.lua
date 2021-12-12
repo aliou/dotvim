@@ -1,7 +1,7 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 
-if not lspconfig.golangcilsp then
+if not configs.golangcilsp then
   configs.golangcilsp = {
     default_config = {
       cmd = {'golangci-lint-langserver'},
@@ -14,11 +14,11 @@ if not lspconfig.golangcilsp then
 end
 
 local setup = function(on_attach, capabilities)
-  lspconfig.golangcilsp.setup {
+  configs.golangcilsp.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = {'go'}
-  }
+  })
 end
 
 
