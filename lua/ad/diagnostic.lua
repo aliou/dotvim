@@ -45,7 +45,7 @@ gnmap("<leader>at", "<cmd>lua require('ad.diagnostic').toggle()<cr>")
 -- Can be overriden in vimrc.local files by clearing the autocmd augroup.
 vim.cmd [[ augroup ad.diagnostic ]]
 vim.cmd [[   autocmd! ]]
-vim.cmd [[   autocmd BufNew * lua require('ad.diagnostic').setup() ]]
+vim.cmd [[   autocmd BufRead * lua require('ad.diagnostic').setup() ]]
 vim.cmd [[   autocmd DiagnosticChanged * lua require('ad.diagnostic').refresh_status() ]]
 vim.cmd [[ augroup END ]]
 
