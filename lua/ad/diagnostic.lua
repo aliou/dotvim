@@ -14,7 +14,9 @@ local prev = function()
 end
 
 local setup = function()
-  vim.b.diagnostic_displayed = true
+  if vim.fn.exists('b:diagnostic_displayed') == 0 then
+    vim.b.diagnostic_displayed = true
+  end
 end
 
 local toggle = function()
