@@ -1,7 +1,9 @@
-local map = require('cstm.util').map
+local symbol = require('cstm.buffer.workspace').symbol
 
-local on_attach = function(_)
-  map("n", "<leader>ll", "<cmd>lua vim.lsp.buf.workspace_symbol('')<CR>")
+local on_attach = function(client, _)
+  if not client.resolved_capabilities.workspace_symbol then return end
+
+  vim.keymap.set('n', '<leader>ll', symbol, { desc = "[lsp] workspace symbol", buffer = true })
 end
 
 return {
