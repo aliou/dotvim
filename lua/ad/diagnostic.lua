@@ -1,5 +1,6 @@
 local map = require('cstm.util').map
 local status = require('cstm.status')
+local theme_callbacks = require('ad.theme.callbacks')
 
 local gnmap = function(key, result)
   map("n", key, result, { buffer = false })
@@ -38,6 +39,14 @@ local refresh_status = function()
   end
 end
 
+-- Customize Diagnostic highlights.
+local configure_theme = function(_)
+  vim.highlight.create('DiagnosticError', { cterm = 'bold', ctermfg = 167, gui = 'bold', guifg = '#CC6666' })
+  vim.highlight.create('DiagnosticWarn', { ctermfg = 173, gui = 'bold', guifg = '#de935f' })
+  vim.highlight.create('DiagnosticInfo', { cterm = 'bold', ctermfg = 60, gui = 'bold', guifg = '#5F5F87' })
+  vim.highlight.create('DiagnosticHint', { cterm = 'bold', ctermfg = 173, gui = 'bold', guifg = '#c7915b' })
+end
+
 -- Navigate around errors or warnings.
 gnmap("[a", "<cmd>lua require('ad.diagnostic').prev()<cr>")
 gnmap("]a", "<cmd>lua require('ad.diagnostic').next()<cr>")
@@ -50,6 +59,9 @@ vim.cmd [[   autocmd! ]]
 vim.cmd [[   autocmd BufRead * lua require('ad.diagnostic').setup() ]]
 vim.cmd [[   autocmd DiagnosticChanged * lua require('ad.diagnostic').refresh_status() ]]
 vim.cmd [[ augroup END ]]
+
+-- Re-apply highlights on theme changes.
+theme_callbacks.on_theme_change(configure_theme)
 
 return {
   next = next,

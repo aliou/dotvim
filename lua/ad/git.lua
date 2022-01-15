@@ -1,3 +1,5 @@
+local theme_callbacks = require('ad.theme.callbacks')
+
 local blame_formatter = function(name, blame_info, _)
   if blame_info.author == 'Not Committed Yet' then
     return {{ '-- ' .. blame_info.author, 'GitSignsCurrentLineBlame' }}
@@ -41,6 +43,18 @@ require('gitsigns').setup({
   current_line_blame_opts = { delay = 500 },
   current_line_blame_formatter = blame_formatter,
 })
+
+-- Customize GitSigns highlights.
+local configure_theme = function(_)
+  vim.highlight.create('GitSignsDiffAdd', { guifg = "#5F875F", ctermfg = 65 })
+  vim.highlight.create('GitSignsDelete', { guifg = '#CC6666', ctermfg = 167 })
+  vim.highlight.create('GitSignsChange', { guifg = '#5F5F87', ctermfg = 60 })
+  vim.highlight.create('GitSignsChangeDelete', { guifg = '#5F5F87', ctermfg = 60 })
+  vim.highlight.create('GitSignsCurrentLineBlame', { guifg = '#5F5F87' })
+end
+
+-- Re-apply highlights on theme changes.
+theme_callbacks.on_theme_change(configure_theme)
 
 vim.cmd [[
   command! Gcommit vertical Git commit

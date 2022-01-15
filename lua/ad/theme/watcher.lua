@@ -12,13 +12,6 @@ local update_theme = function(new_scheme)
 
   local configuration = vim.g.colors or DEFAULT_CONFIG
 
-  -- If we're not automatically switching the theme using "colorscheme", we
-  -- manually need to call the callbacks.
-  if not vim.g.color_auto_switch then
-    callbacks.execute_on_theme_change(new_scheme)
-    return
-  end
-
   next_theme = configuration[string.lower(new_scheme)]
   if next_theme ~= current_theme then
     vim.api.nvim_command("colorscheme " .. next_theme)
@@ -61,7 +54,11 @@ watch_file = function()
 end
 
 local run = function()
-  update_theme(read_file())
+  local initial_theme = read_file()
+
+  update_theme(initial_theme)
+  callbacks.execute_on_theme_change(initial_theme)
+
   watch_file()
 end
 
