@@ -69,6 +69,7 @@ function! cstm#fuzzy#buffers(args) abort
   " Don't bother doing anything if there are no buffers to choose from.
   let l:source = cstm#fuzzy#buffers#list()
   if len(l:source) < 2
+    echoerr "Fuzzy: not enough buffers to choose from"
     return
   endif
 
