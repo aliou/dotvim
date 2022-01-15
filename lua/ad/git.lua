@@ -57,6 +57,5 @@ end
 theme_callbacks.on_theme_change(configure_theme)
 
 vim.cmd [[
-  command! Gcommit vertical Git commit
   command! Gblame vertical Git blame
 ]]
