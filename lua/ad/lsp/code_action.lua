@@ -1,7 +1,5 @@
-local map = require('cstm.util').map
-
 local on_attach = function(_)
-  map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "[lsp] code action", buffer = true })
 end
 
 return {

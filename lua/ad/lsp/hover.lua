@@ -1,9 +1,7 @@
-local map = require('cstm.util').map
-
 local on_attach = function(client, _)
   if not client.resolved_capabilities.hover then return end
 
-  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "[lsp] hover", buffer = true })
 end
 
 return {

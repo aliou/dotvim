@@ -1,4 +1,3 @@
-local map = require('cstm.util').map
 local inlay_hints = require('cstm.buffer.inlay_hints')
 
 -- Setup inlay hints in this file, but only for rust_analyzer.
@@ -9,7 +8,7 @@ local on_attach = function(client)
   inlay_hints.enable()
 
   -- Toggle inlay hints.
-  map('n', '<leader>ht', "<cmd>lua require('cstm.buffer.inlay_hints').toggle()<CR>")
+  vim.keymap.set('n', '<leader>ht', require('cstm.buffer.inlay_hints').toggle, { desc = "[lsp] toggle inlay hints", buffer = true })
 end
 
 return {

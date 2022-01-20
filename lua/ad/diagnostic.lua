@@ -1,10 +1,5 @@
-local map = require('cstm.util').map
 local status = require('cstm.status')
 local theme_callbacks = require('ad.theme.callbacks')
-
-local gnmap = function(key, result)
-  map("n", key, result, { buffer = false })
-end
 
 local next = function()
   vim.diagnostic.goto_next({ wrap = true })
@@ -48,9 +43,9 @@ local configure_theme = function(_)
 end
 
 -- Navigate around errors or warnings.
-gnmap("[a", "<cmd>lua require('ad.diagnostic').prev()<cr>")
-gnmap("]a", "<cmd>lua require('ad.diagnostic').next()<cr>")
-gnmap("<leader>at", "<cmd>lua require('ad.diagnostic').toggle()<cr>")
+vim.keymap.set('n', '[a', next, { desc = "[diagnostic] go to next" })
+vim.keymap.set('n', ']a', prev, { desc = "[diagnostic] go to prev" })
+vim.keymap.set('n', '<leader>at', toggle, { desc = "[diagnostic] toggle display of diagnostic" })
 
 -- Setup diagnostics default values.
 -- Can be overriden in vimrc.local files by clearing the autocmd augroup.

@@ -1,7 +1,5 @@
-local map = require('cstm.util').map
-
 local on_attach = function(_)
-  map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = "[lsp] rename", buffer = true })
 end
 
 return {

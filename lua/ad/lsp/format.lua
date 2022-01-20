@@ -1,9 +1,7 @@
-local map = require('cstm.util').map
-
 local on_attach = function(client)
   if not client.resolved_capabilities.document_formatting then return end
 
-  map("n", "<leader>af", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+  vim.keymap.set('n', '<leader>af', vim.lsp.buf.formatting, { desc = "[lsp] format document", buffer = true })
 end
 
 return {

@@ -1,22 +1,19 @@
-local map = require('cstm.util').map
-
+local desc = "[lsp] not supported for current buffer"
 local print_message = function()
-  print("lsp: not supported for current buffer")
+  print(desc)
 end
 
-local rhs = "<cmd>lua require('ad.lsp.fallback').print_message()<cr>"
+vim.keymap.set("n", "<leader>ca", print_message, { desc = desc , buffer = false })
 
-map("n", "<leader>ca", rhs, { buffer = false })
+vim.keymap.set("n", "<leader>ct", print_message, { desc = desc , buffer = false })
 
-map("n", "<leader>ct", rhs, { buffer = false })
+vim.keymap.set("n", "<leader>af", print_message, { desc = desc , buffer = false })
+vim.keymap.set('n', '<leader>ht', print_message, { desc = desc , buffer = false })
+vim.keymap.set("n", "<leader>rn", print_message, { desc = desc , buffer = false })
 
-map("n", "<leader>af", rhs, { buffer = false })
-map('n', '<leader>ht', rhs, { buffer = false })
-map("n", "<leader>rn", rhs, { buffer = false })
+vim.keymap.set("n", "<C-\\>", print_message, { desc = desc , buffer = false })
 
-map("n", "<C-\\>", rhs, { buffer = false })
-
-map("n", "<leader>ll", rhs, { buffer = false })
+vim.keymap.set("n", "<leader>ll", print_message, { desc = desc , buffer = false })
 
 return {
   print_message = print_message
