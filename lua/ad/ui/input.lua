@@ -38,6 +38,8 @@ return function(options, on_confirm)
   local input_options = default_options
   if options.prompt == "New Name: " then
     input_options = compute_rename_options(#options.default)
+  else
+    input_options.border.text.top = options.prompt
   end
 
   local input = Input(input_options, {
