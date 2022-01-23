@@ -1,3 +1,4 @@
+" Rewrite in Lua
 " TODO: Allow custom pairs. These simply become the default pairs, and are
 " overriden by the custom pairs.
 let s:pairs = {
@@ -7,6 +8,8 @@ let s:pairs = {
       \   'max': 'min',
       \   'start': 'end',
       \   'end': 'start',
+      \   'yes': 'no',
+      \   'no': 'yes',
       \ }
 
 function s:is_swappable(word) abort
