@@ -34,7 +34,7 @@ local spec = function()
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-unimpaired' }
   use { 'tpope/vim-vinegar' }
-  use { 'tjdevries/vlog.nvim' }
+  use { 'junegunn/fzf.vim' }
 
   -- Projects
   use { 'tpope/vim-apathy' }
