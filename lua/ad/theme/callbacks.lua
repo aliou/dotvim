@@ -1,11 +1,12 @@
-local change_fns = {}
-local on_theme_change = function(fn)
-  table.insert(change_fns, fn)
+local callbacks = {}
+local on_theme_change = function(description, fn)
+  table.insert(callbacks, { fn = fn, description = description })
 end
 
 local execute_on_theme_change = function(theme)
-  for i = 1, #change_fns do
-    change_fns[i](theme)
+  for i = 1, #callbacks do
+    local callback = callbacks[i]
+    callback.fn(theme)
   end
 end
 

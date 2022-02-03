@@ -56,7 +56,7 @@ vim.cmd [[   autocmd DiagnosticChanged * lua require('ad.diagnostic').refresh_st
 vim.cmd [[ augroup END ]]
 
 -- Re-apply highlights on theme changes.
-theme_callbacks.on_theme_change(configure_theme)
+theme_callbacks.on_theme_change('ad.diagnostic', configure_theme)
 
 return {
   next = next,

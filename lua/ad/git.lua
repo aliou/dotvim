@@ -54,7 +54,7 @@ local configure_theme = function(_)
 end
 
 -- Re-apply highlights on theme changes.
-theme_callbacks.on_theme_change(configure_theme)
+theme_callbacks.on_theme_change('ad.git', configure_theme)
 
 vim.cmd [[
   command! Gblame vertical Git blame
