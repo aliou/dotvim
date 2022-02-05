@@ -1,7 +1,9 @@
-local ui_select = vim.ui.select
-
 vim.ui.input = require('ad.ui.input')
+vim.ui.select = require('ad.ui.select')
 
-vim.ui.select = function(items, opts, on_choice)
-  ui_select(items, opts, on_choice)
+local prev_notify = vim.notify
+
+-- TODO: Ignore some messages, e.g. the "no code action available"
+vim.notify = function(message, level, options)
+  prev_notify(message, level, options)
 end
