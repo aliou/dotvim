@@ -15,8 +15,6 @@ local map = function(mode, key, result, options)
   end
 end
 
-local print_err = print
-
 -- Extract into own file when this becomes too big.
 local fn
 fn = {
@@ -63,5 +61,4 @@ fn = {
 return {
   fn = fn,
   map = map,
-  print_err = print_err,
 }

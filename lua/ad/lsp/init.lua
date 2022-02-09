@@ -21,7 +21,7 @@ local on_attach = function(client)
   -- Refresh status line to display diagnostic progress.
   status.refresh()
 
-  print("lsp: Attaching to client " .. client.name)
+  vim.notify("lsp: Attaching to client " .. client.name, vim.log.levels.INFO)
 end
 
 -- Pass custom capabilities to each server. Currently, we only overide

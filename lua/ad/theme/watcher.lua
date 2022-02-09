@@ -1,5 +1,4 @@
 local callbacks = require('ad.theme.callbacks')
-local print_err = require('cstm.util').print_err
 
 FILE_PATH = '/tmp/.cstm.theme'
 DEFAULT_CONFIG = { dark = 'xcodedarkhc', light = 'xcodelighthc' }
@@ -40,12 +39,12 @@ local on_change = function(err, _, status)
   end
 
   if status["rename"] then
-    print_err("theme: error while listening to theme: file was moved or deleted")
+    vim.notify("theme: error while listening to theme: file was moved or deleted", vim.log.levels.ERROR)
   end
 
   if err then
-    print_err("theme: error occured:")
-    print(vim.inspect(err))
+    vim.notify("theme: error occured:", vim.log.levels.ERROR)
+    vim.notify(vim.inspect(err), vim.log.levels.ERROR)
   end
 end
 
