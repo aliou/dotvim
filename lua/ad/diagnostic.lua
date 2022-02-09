@@ -59,9 +59,6 @@ vim.cmd [[ augroup END ]]
 theme_callbacks.on_theme_change('ad.diagnostic', configure_theme)
 
 return {
-  next = next,
-  prev = prev,
   setup = setup,
   refresh_status = refresh_status,
-  toggle = toggle,
 }
