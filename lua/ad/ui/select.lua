@@ -12,6 +12,7 @@ local code_action_select = function(items, opts, on_choice)
   default_select(items, opts, on_choice)
 end
 
+-- TODO: Figure out if it's a bad idea to auto-select the first item.
 return function(items, opts, on_choice)
   if opts.kind == "codeaction" then
     return code_action_select(items, opts, on_choice)
