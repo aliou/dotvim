@@ -18,3 +18,6 @@ require('cstm.config.completion')
 
 -- Load custom thingies.
 require('ad')
+
+-- Require local thingies last.
+require('ad.local')
