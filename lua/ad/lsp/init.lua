@@ -2,7 +2,7 @@ require('ad.lsp.fallback')
 local status = require('cstm.status')
 
 -- Require custom LSP handlers.
-require('ad.lsp.handlers')
+require('ad.lsp.handlers.format')
 
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
