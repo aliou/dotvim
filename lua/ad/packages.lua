@@ -21,7 +21,7 @@ local spec = function()
   use { 'AndrewRadev/splitjoin.vim' }
   use { 'andymass/vim-matchup' }
   use { 'tpope/vim-commentary' }
-  use { 'tpope/vim-endwise' }
+  use { 'RRethy/nvim-treesitter-endwise' }
   use { 'tpope/vim-sleuth' }
   use { 'tpope/vim-surround' }
   use { 'mg979/vim-visual-multi' }
