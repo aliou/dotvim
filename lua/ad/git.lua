@@ -1,3 +1,5 @@
+local gs = require('gitsigns')
+
 local theme_callbacks = require('ad.theme.callbacks')
 
 local blame_formatter = function(name, blame_info, _)
@@ -14,6 +16,15 @@ local blame_formatter = function(name, blame_info, _)
   return {{ '-- '..text, 'GitSignsCurrentLineBlame' }}
 end
 
+-- Navigate around hunks
+local next = function()
+  gs.next_hunk({ wrap = false })
+end
+
+local prev = function()
+  gs.prev_hunk({ wrap = false })
+end
+
 require('gitsigns').setup({
   signs = {
     add          = { hl = 'GitSignsDiffAdd', text = '┃' },
@@ -22,20 +33,17 @@ require('gitsigns').setup({
     topdelete    = { hl = 'GitSignsDelete',  text = '┃' },
     changedelete = { hl = 'GitSignsChange',  text = '┃' },
   },
-  keymaps = {
-    -- Default keymap options
-    -- TODO: Use neovim's API functions instead of gitsigns options?
-    noremap = true,
-    buffer = true,
+  on_attach = function(_)
+    if not vim.o.diff then
+      vim.keymap.set('n', ']c', next, { buffer = true, desc = '[git] go to next hunk' })
+      vim.keymap.set('n', '[c', prev, { buffer = true, desc = '[git] go to prev hunk' })
+    end
 
-    ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk({ wrap = false })<CR>'"},
-    ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk({ wrap = false })<CR>'"},
-
-    ['n <leader>ha'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-    ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-    ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-    ['n <leader>hd'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-  },
+    vim.keymap.set('n', '<leader>ha', gs.stage_hunk, { buffer = true, desc = '[git] stage hunk' })
+    vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk, { buffer = true, desc = '[git] undo stage hunk' })
+    vim.keymap.set('n', '<leader>hp', gs.preview_hunk, { buffer = true, desc = '[git] preview hunk' })
+    vim.keymap.set('n', '<leader>hd', gs.reset_hunk, { buffer = true, desc = '[git] reset hunk' })
+  end,
   watch_gitdir = { interval = 5000 },
   status_formatter = nil, -- Use default
 
