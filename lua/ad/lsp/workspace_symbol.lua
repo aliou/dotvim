@@ -1,9 +1,29 @@
-local symbol = require('cstm.buffer.workspace').symbol
+local workspace_symbol = function(query)
+  local on_submit = function(input)
+    vim.notify("[lsp] searching for workspace_symbol '" .. input .. "'...", vim.log.levels.INFO)
+    vim.lsp.buf.workspace_symbol(input)
+  end
+
+  if query and #query ~= 0 then
+    return on_submit(query)
+  end
+
+  if query == nil then
+    query = vim.fn.expand("<cword>")
+  end
+
+  local opts = {
+    prompt = "[Symbol]",
+    default = query,
+  }
+  vim.ui.input(opts, on_submit)
+end
+
 
 local on_attach = function(client, _)
   if not client.resolved_capabilities.workspace_symbol then return end
 
-  vim.keymap.set('n', '<leader>ll', symbol, { desc = "[lsp] workspace symbol", buffer = true })
+  vim.keymap.set('n', '<leader>ll', workspace_symbol, { desc = "[lsp] workspace symbol", buffer = true })
 end
 
 return {
