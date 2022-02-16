@@ -18,9 +18,6 @@ local on_attach = function(client)
   -- Configuration of additional capabilities.
   require('ad.lsp.inlay_hints').on_attach(client)
 
-  -- Refresh status line to display diagnostic progress.
-  status.refresh()
-
   vim.notify("lsp: Attaching to client " .. client.name, vim.log.levels.INFO)
 end
 
