@@ -1,6 +1,8 @@
 local status = require('cstm.status')
 local theme_callbacks = require('ad.theme.callbacks')
 
+local refresh_status
+
 local next = function()
   vim.diagnostic.goto_next({ wrap = true })
 end
@@ -13,6 +15,8 @@ local setup = function()
   if vim.fn.exists('b:diagnostic_displayed') == 0 then
     vim.b.diagnostic_displayed = true
   end
+
+  refresh_status()
 end
 
 local toggle = function()
@@ -25,7 +29,7 @@ local toggle = function()
   vim.b.diagnostic_displayed = not vim.b.diagnostic_displayed
 end
 
-local refresh_status = function()
+refresh_status = function()
   local values = vim.diagnostic.get(0, nil)
   if vim.tbl_isempty(values) then
     status.set_status(status.success)
