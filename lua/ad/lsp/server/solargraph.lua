@@ -1,6 +1,10 @@
 local nvim_lsp = require('lspconfig')
 
-local setup = function(on_attach, capabilities)
+local publish_diagnostics_handler = function(_, _, _, _)
+  vim.notify_once('[lsp] Ignored diagnostic from solagraph server.', vim.log.levels.INFO)
+end
+
+local setup = function(on_attach, _)
   local on_local_attach = function(client, bufnr)
     -- Remove formatting capabilities to let efm handle it.
     client.resolved_capabilities.document_formatting = false
@@ -8,13 +12,14 @@ local setup = function(on_attach, capabilities)
     -- Remove goto_definition capabilities and let ctags handle it.
     client.resolved_capabilities.goto_definition = false
 
-    -- TODO: Remove hover to let ri.vim handle documentation.
     on_attach(client, bufnr)
   end
 
   nvim_lsp.solargraph.setup({
     on_attach = on_local_attach,
-    capabilities = capabilities,
+    handlers = {
+      ['textDocument/publishDiagnostics'] = publish_diagnostics_handler,
+    },
     flags = {
       debounce_text_changes = 150,
     }
