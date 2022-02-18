@@ -6,10 +6,7 @@ local rubocop = require('ad.lsp.server.efm.rubocop')
 local shellcheck = require('ad.lsp.server.efm.shellcheck')
 local vint = require('ad.lsp.server.efm.vint')
 
-local cmd = { "efm-langserver" }
-if vim.g.lsp_efm_log_events then
-  cmd = vim.tbl_extend("keep", { "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" })
-end
+local cmd = { "efm-langserver", "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" }
 
 local setup = function(on_attach, capabilities)
   local on_local_attach = function(client, bufnr)
