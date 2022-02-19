@@ -41,6 +41,20 @@ fn = {
   end,
 }
 
+local files = {
+  is_readable = function(filename)
+    local file = io.open(filename, 'r')
+
+    if file ~= nil then
+      io.close(file)
+      return true
+    end
+
+    return false
+  end
+}
+
 return {
+  files = files,
   fn = fn,
 }
