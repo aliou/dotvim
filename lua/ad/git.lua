@@ -64,6 +64,8 @@ end
 -- Re-apply highlights on theme changes.
 theme_callbacks.on_theme_change('ad.git', configure_theme)
 
+-- Re-enable deprecated commands from vim-fugitive.
 vim.cmd [[
   command! Gblame vertical Git blame
+  command! Gcommit Git commit
 ]]
