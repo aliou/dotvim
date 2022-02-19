@@ -1,6 +1,6 @@
-local desc = "[lsp] not supported for current buffer"
+local desc = "not supported for current buffer"
 local print_message = function()
-  vim.notify(desc, vim.log.levels.WARN)
+  vim.notify(desc, vim.log.levels.WARN, { prefix = "ad.lsp" })
 end
 
 vim.keymap.set("n", "<leader>ca", print_message, { desc = desc , buffer = false })

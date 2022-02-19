@@ -26,6 +26,10 @@ local read_file = function()
   return "dark"
 end
 
+local notify = function(message, level)
+  vim.notify(message, level, { prefix = "ad.theme" })
+end
+
 local w = vim.loop.new_fs_event()
 local watch_file
 local on_change = function(err, _, status)
@@ -39,12 +43,12 @@ local on_change = function(err, _, status)
   end
 
   if status["rename"] then
-    vim.notify("theme: error while listening to theme: file was moved or deleted", vim.log.levels.ERROR)
+    notify("error while listening to theme: file was moved or deleted", vim.log.levels.ERROR)
   end
 
   if err then
-    vim.notify("theme: error occured:", vim.log.levels.ERROR)
-    vim.notify(vim.inspect(err), vim.log.levels.ERROR)
+    notify("theme: error occured:", vim.log.levels.ERROR)
+    notify(vim.inspect(err), vim.log.levels.ERROR)
   end
 end
 

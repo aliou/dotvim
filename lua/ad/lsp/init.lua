@@ -1,5 +1,4 @@
 require('ad.lsp.fallback')
-local status = require('cstm.status')
 
 -- Require custom LSP handlers.
 require('ad.lsp.handlers.format')
@@ -18,7 +17,7 @@ local on_attach = function(client)
   -- Configuration of additional capabilities.
   require('ad.lsp.inlay_hints').on_attach(client)
 
-  vim.notify("lsp: Attaching to client " .. client.name, vim.log.levels.INFO)
+  vim.notify("Attaching to client " .. client.name, vim.log.levels.DEBUG, { prefix = "ad.lsp" })
 end
 
 -- Pass custom capabilities to each server. Currently, we only overide

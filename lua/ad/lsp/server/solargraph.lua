@@ -1,7 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
 local publish_diagnostics_handler = function(_, _, _, _)
-  vim.notify_once('[lsp] Ignored diagnostic from solagraph server.', vim.log.levels.INFO)
+  vim.notify_once('Ignored diagnostic from solagraph server', vim.log.levels.INFO, { prefix = { "ad.lsp" } })
 end
 
 local setup = function(on_attach, _)
