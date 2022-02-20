@@ -2,6 +2,10 @@ vim.log.level = vim.log.levels.INFO
 
 local default_log_options = {}
 
+-- NOTE: This might not be a good idea.
+local ignored_messages = {}
+ignored_messages['No code actions available'] = true
+
 local prefix_message = function(prefix, message)
   if not prefix then
     return message
@@ -10,12 +14,13 @@ local prefix_message = function(prefix, message)
   return string.format("[%s] %s", prefix, message)
 end
 
--- TODO: Ignore some messages, e.g. the "no code action available"
 -- TODO: Prefix messages with log level.
+-- TODO: Or have different highlight groups depending on the level?
 return function(msg, level, options)
   options = options or default_log_options
 
-  -- TODO: Check minimum level (vim.notify_level)
+  if ignored_messages[msg] then return end
+
   if vim.log.level > level then
     return
   end
