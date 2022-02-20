@@ -1,5 +1,7 @@
 vim.log.level = vim.log.levels.INFO
 
+local default_log_options = {}
+
 local prefix_message = function(prefix, message)
   if not prefix then
     return message
@@ -11,6 +13,8 @@ end
 -- TODO: Ignore some messages, e.g. the "no code action available"
 -- TODO: Prefix messages with log level.
 return function(msg, level, options)
+  options = options or default_log_options
+
   -- TODO: Check minimum level (vim.notify_level)
   if vim.log.level > level then
     return
