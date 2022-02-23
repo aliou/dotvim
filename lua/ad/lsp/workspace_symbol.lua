@@ -1,6 +1,6 @@
 local workspace_symbol = function(query)
   local on_submit = function(input)
-    local message = vim.format("searching for workspace_symbol '%s' ...", input)
+    local message = string.format("searching for workspace_symbol '%s' ...", input)
     vim.notify(message, vim.log.levels.INFO, { prefix = "ad.lsp" })
 
     vim.lsp.buf.workspace_symbol(input)
