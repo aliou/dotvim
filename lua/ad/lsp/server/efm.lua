@@ -1,7 +1,6 @@
 local nvim_lsp = require('lspconfig')
 
 local eslint = require('ad.lsp.server.efm.eslint')
-local jq = require('ad.lsp.server.efm.jq')
 local rubocop = require('ad.lsp.server.efm.rubocop')
 local shellcheck = require('ad.lsp.server.efm.shellcheck')
 local vint = require('ad.lsp.server.efm.vint')
@@ -18,7 +17,7 @@ local setup = function(on_attach, capabilities)
     on_attach = on_local_attach,
     capabilities = capabilities,
     cmd = cmd,
-    filetypes = { 'ruby', 'json', 'bash', 'sh', 'javascript' },
+    filetypes = { 'ruby', 'bash', 'sh', 'javascript' },
     init_options = { documentFormatting = true },
     settings = {
       languages = {
@@ -27,7 +26,6 @@ local setup = function(on_attach, capabilities)
 
         javascript = { eslint },
 
-        json = { jq },
         ruby = { rubocop },
         vim = { vint },
       }
