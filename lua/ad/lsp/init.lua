@@ -34,6 +34,7 @@ local servers = {
   'efm',
   'golangci',
   'gopls',
+  'null_ls',
   'rust_analyzer',
   'solargraph',
   'sumneko_lua',

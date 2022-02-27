@@ -64,6 +64,7 @@ local spec = function()
   use { 'janko-m/vim-test' }
   use { 'neovim/nvim-lspconfig' }
   use { 'tjdevries/lsp_extensions.nvim' }
+  use { 'jose-elias-alvarez/null-ls.nvim' }
 
   -- Treesitter configuration and abstraction.
   use { 'nvim-treesitter/nvim-treesitter' }
