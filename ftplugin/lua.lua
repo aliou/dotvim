@@ -12,6 +12,4 @@ table.insert(runtime_paths, vim.fn.expand('~/.vim/lua/?.lua'))
 vim.g.lua_path = runtime_paths
 
 -- TODO: Limit this to files in `$VIMRUNTIME` and `~/.vim`.
-vim.cmd [[
-  nnoremap <buffer> <leader>so :source %<Return>
-]]
+vim.keymap.set('n',  '<leader>so', 'source %<return>', { buffer = true })
