@@ -12,4 +12,7 @@ table.insert(runtime_paths, vim.fn.expand('~/.vim/lua/?.lua'))
 vim.g.lua_path = runtime_paths
 
 -- TODO: Limit this to files in `$VIMRUNTIME` and `~/.vim`.
-vim.keymap.set('n',  '<leader>so', 'source %<return>', { buffer = true })
+-- The best way to do this would probably be to have the map call a
+-- function that checks if the current file matches one of the pattern
+-- in the runtime_paths variable.
+vim.keymap.set('n',  '<leader>so', ':source %<return>', { buffer = true })
