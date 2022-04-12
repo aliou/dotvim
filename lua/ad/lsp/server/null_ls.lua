@@ -6,6 +6,7 @@ require('ad.lsp.server.null_ls.ruby')
 require('ad.lsp.server.null_ls.shared')
 
 local jq = require('ad.lsp.server.null_ls.jq')
+local rubocop = require('ad.lsp.server.null_ls.rubocop')
 
 local sources = {
   null_ls.builtins.formatting.trim_whitespace.with({
@@ -14,6 +15,7 @@ local sources = {
   }),
 
   jq.formatter,
+  rubocop.diagnostic,
 }
 
 local setup = function(on_attach, _)
