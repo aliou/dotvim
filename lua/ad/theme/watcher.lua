@@ -7,11 +7,9 @@ local update_theme = function(new_scheme)
   if new_scheme == "" then return end
 
   local current_theme = vim.g.colors_name
-  local next_theme
-
   local configuration = vim.g.colors or DEFAULT_CONFIG
 
-  next_theme = configuration[string.lower(new_scheme)]
+  local next_theme = configuration[string.lower(new_scheme)]
   if next_theme ~= current_theme then
     vim.api.nvim_command("colorscheme " .. next_theme)
   end
