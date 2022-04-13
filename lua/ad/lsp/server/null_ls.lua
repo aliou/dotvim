@@ -13,6 +13,8 @@ local sources = {
     -- Remove filetypes who already remove whitespace when formatting.
     disabled_filetypes = { "go" },
   }),
+  null_ls.builtins.diagnostics.shellcheck,
+  null_ls.builtins.code_actions.shellcheck,
 
   jq.formatter,
   rubocop.diagnostic,
