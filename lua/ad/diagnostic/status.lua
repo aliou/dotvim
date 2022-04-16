@@ -19,13 +19,18 @@ end
 
 -- Setup diagnostics default values.
 -- Can be overriden in vimrc.local files by clearing the autocmd augroup.
-vim.cmd [[ augroup ad.diagnostic ]]
-vim.cmd [[   autocmd! ]]
-vim.cmd [[   autocmd BufRead * lua require('ad.diagnostic.status').setup() ]]
-vim.cmd [[   autocmd DiagnosticChanged * lua require('ad.diagnostic.status').refresh_status() ]]
-vim.cmd [[ augroup END ]]
+local augroup = vim.api.nvim_create_augroup('ad.diagnostics', { clear = true })
+
+vim.api.nvim_create_autocmd('BufRead', {
+  group = augroup, pattern = '*', callback = setup,
+  desc = '[diagnostic] Setup diagnostic in buffer',
+})
+
+vim.api.nvim_create_autocmd('DiagnosticChanged', {
+  group = augroup, pattern = '*', callback = refresh_status,
+  desc = '[diagnostic] Update statusline on diagnostic change',
+})
 
 return {
-  setup = setup,
-  refresh_status = refresh_status,
+  augroup = augroup
 }
