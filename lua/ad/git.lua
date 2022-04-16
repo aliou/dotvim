@@ -65,6 +65,6 @@ end
 theme_callbacks.on_theme_change('ad.git', configure_theme)
 
 -- Re-enable deprecated commands from vim-fugitive.
-vim.api.nvim_add_user_command('Gblame', 'vertical Git blame', { desc = '[git] run blame in a vertical split', force = true })
-vim.api.nvim_add_user_command('Gcommit', 'Git commit', { desc = '[git] commit staged changes', force = true })
-vim.api.nvim_add_user_command('Gbrowse', 'GBrowse', { desc = '[git] browse commit on GitHub', force = true })
+vim.api.nvim_create_user_command('Gblame', 'vertical Git blame', { desc = '[git] run blame in a vertical split', force = true })
+vim.api.nvim_create_user_command('Gcommit', 'Git commit', { desc = '[git] commit staged changes', force = true })
+vim.api.nvim_create_user_command('Gbrowse', 'GBrowse', { desc = '[git] browse commit on GitHub', force = true })
