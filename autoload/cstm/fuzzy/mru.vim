@@ -6,6 +6,10 @@ function! s:resolve_file(_index, file) abort
   return substitute(a:file, '\~', $HOME, '')
 endfunction
 
+function! s:is_not_directory(_index, file) abort
+  return isdirectory(a:file) == 0
+endfunction
+
 " TODO: Since `v:oldfiles` barely changes during a session, it might be useful to memoize it ?
 function! cstm#fuzzy#mru#list() abort
   " Limit the number of files to be returned.
@@ -19,6 +23,9 @@ function! cstm#fuzzy#mru#list() abort
 
   " Resolve the path of the files.
   let l:resolved_files = map(l:files, function('s:resolve_file'))
+
+  " Ignore directories as I rarely want to access a recently used directory. :rolling_eyes:
+  call filter(l:resolved_files, function('s:is_not_directory'))
 
   return l:resolved_files
 endfunction
