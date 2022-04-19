@@ -15,7 +15,6 @@ function! s:fzf_options() abort
     let l:options .= ' --preview '
           \ . " 'bat --style=numbers --theme=" . l:bat_theme . " --color=always {}'"
           \ . ' --preview-window right:66%'
-          \ . ' --bind ctrl-k:preview-up,ctrl-j:preview-down'
   endif
 
   return l:options
