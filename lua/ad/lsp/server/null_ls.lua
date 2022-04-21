@@ -17,7 +17,9 @@ local sources = {
   null_ls.builtins.code_actions.shellcheck,
 
   jq.formatter,
+  rubocop.formatter,
   rubocop.diagnostic,
+
 }
 
 local setup = function(on_attach, _)

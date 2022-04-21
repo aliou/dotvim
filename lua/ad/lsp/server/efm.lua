@@ -1,7 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
 local eslint = require('ad.lsp.server.efm.eslint')
-local rubocop = require('ad.lsp.server.efm.rubocop')
+-- local rubocop = require('ad.lsp.server.efm.rubocop')
 local vint = require('ad.lsp.server.efm.vint')
 
 local cmd = { "efm-langserver", "-logfile", "/Users/alioudiallo/.local/share/nvim/efm.log", "-loglevel", "3" }
@@ -16,13 +16,13 @@ local setup = function(on_attach, capabilities)
     on_attach = on_local_attach,
     capabilities = capabilities,
     cmd = cmd,
-    filetypes = { 'ruby', 'javascript' },
+    filetypes = { 'javascript' },
     init_options = { documentFormatting = true },
     settings = {
       languages = {
         javascript = { eslint },
 
-        ruby = { rubocop },
+        -- ruby = { rubocop },
         vim = { vint },
       }
     }

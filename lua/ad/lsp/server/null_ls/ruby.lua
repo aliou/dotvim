@@ -79,5 +79,22 @@ local begin_rescue_block = {
   }
 }
 
+local toggle_focus = {
+  method = null_ls.methods.CODE_ACTION,
+  filetypes = { "ruby" },
+  generator = {
+    fn = function(context)
+      -- Check that the current line contains something toggleable.
+      -- If it does, toggle the focus term.
+      -- Rules:
+      --   - By default, use the fdescribe / fcontext / fit versions and not the focus: true
+      --   - When finding a focus: true, remove it.
+      --   - When toggling a line who previously had a focus: true, use the fTERM form because life is short.
+      return nil
+    end
+  }
+}
+
 null_ls.register(begin_rescue_block)
 null_ls.register(frozen_string_actions)
+null_ls.register(toggle_focus)

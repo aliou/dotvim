@@ -36,7 +36,7 @@ local servers = {
   'gopls',
   'null_ls',
   'rust_analyzer',
-  'solargraph',
+  -- 'solargraph',
   'sumneko_lua',
   'tsserver',
   'vimls',

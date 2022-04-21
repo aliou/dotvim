@@ -44,6 +44,26 @@ local diagnostic = null_ls.builtins.diagnostics.rubocop.with({
   end,
 })
 
+local formatter =  h.make_builtin({
+  name = "rubocop-daemon",
+  method = methods.internal.FORMATTING,
+  filetypes = { "ruby" },
+  generator_opts = {
+    command = "rubocop-daemon-wrapper",
+    args = {
+      "--auto-correct",
+      "-f",
+      "quiet",
+      "--stderr",
+      "--stdin",
+      "$FILENAME",
+    },
+    to_stdin = true,
+  },
+  factory = h.formatter_factory,
+})
+
 return {
+  formatter = formatter,
   diagnostic = diagnostic,
 }
