@@ -23,6 +23,7 @@ function! cstm#fuzzy#files#source(directory) abort
   " - Ignoring everything from the wildignore,
   " - from this directory.
   let l:command = 'rg --files --sort-files --hidden '
+        \ . '--no-ignore-exclude '
         \ . s:rg_ignore_file() . ' '
         \ . a:directory
 
