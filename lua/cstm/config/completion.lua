@@ -15,9 +15,9 @@ cmp.setup({
     { name = 'path' },
     { name = 'nvim_lua' },
   },
-  mapping = {
-    ['<CR>'] = cmp.mapping.confirm()
-  },
+  mapping = cmp.mapping.preset.insert({
+      ['<CR>'] = cmp.mapping.confirm()
+  }),
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
