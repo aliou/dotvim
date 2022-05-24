@@ -1,3 +1,6 @@
+-- For luarocks support, force this env variable.
+vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
+
 vim.cmd [[ packadd packer.nvim ]]
 
 local spec = function()
@@ -87,6 +90,9 @@ local spec = function()
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  -- Lua utils
+  use_rocks { 'penlight' }
 
   -- Local plugins.
 

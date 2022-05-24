@@ -1,3 +1,5 @@
+-- require('pl.stringx')
+
 local null_ls = require('null-ls')
 local u = require('ad.lsp.server.null_ls.util')
 
@@ -14,6 +16,9 @@ local binding_pry = {
   generator = {
     fn = function(context)
       local current_line = context.content[context.row]
+      -- TODO: Split filetypes on `.`
+      -- local filetypes = pl.stringx.split(context.ft, '.')
+      -- P(filetypes)
       local statement = debugger_statements[context.ft]
 
       if statement == nil then
