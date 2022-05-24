@@ -18,6 +18,7 @@ end
 -- TODO: Or have different highlight groups depending on the level?
 return function(msg, level, options)
   options = options or default_log_options
+  level = level or vim.log.level
 
   if ignored_messages[msg] then return end
 
