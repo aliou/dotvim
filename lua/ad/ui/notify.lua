@@ -14,8 +14,6 @@ local prefix_message = function(prefix, message)
   return string.format("[%s] %s", prefix, message)
 end
 
--- TODO: Prefix messages with log level.
--- TODO: Or have different highlight groups depending on the level?
 return function(msg, level, options)
   options = options or default_log_options
   level = level or vim.log.level
