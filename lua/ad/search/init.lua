@@ -1,4 +1,6 @@
-local grep_string = require('telescope.builtin').grep_string
+local grep_string = function (_)
+  vim.notify('NOT IMPLEMENTED', vim.log.levels.ERROR)
+end
 
 -- TODO: State to allow history navigation and completion.
 -- TODO: Toggle regexp: on keymap toggle regex and update input title (like
@@ -6,6 +8,7 @@ local grep_string = require('telescope.builtin').grep_string
 
 local on_submit = function(term)
   -- Cleanup term.
+  term = term or ""
   term = vim.trim(term)
   if not term or #term == 0 then return end
 
