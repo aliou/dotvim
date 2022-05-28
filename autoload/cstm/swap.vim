@@ -10,6 +10,8 @@ let s:pairs = {
       \   'end': 'start',
       \   'yes': 'no',
       \   'no': 'yes',
+      \   'before': 'after',
+      \   'after': 'before',
       \ }
 
 function s:is_swappable(word) abort
