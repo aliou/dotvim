@@ -2,35 +2,29 @@
 " tags.
 set complete-=i
 
-if has('wildmenu')
-  " Improve command line completion with tab. Helpful when fuzzy finding using
-  " `:find` and friends.
-  set wildmenu
+" Improve command line completion with tab. Helpful when fuzzy finding using
+" `:find` and friends.
+set wildmenu
 
-  if has('wildignore')
-    " Ignored file patterns for file completion, `expand`, `glob` and `glopath`.
+" Ignored file patterns for file completion, `expand`, `glob`, `glopath`
+" and FuzzyFiles.
+" Version control
+set wildignore+=.hg,.git,.svn,.gitkeep
 
-    " Version control
-    set wildignore+=.hg,.git,.svn,.gitkeep
+" JS vendored files.
+set wildignore+=*bower_components,*node_modules,_build,.yarn
 
-    " JS vendored files.
-    set wildignore+=*bower_components,*node_modules,_build
+" Binary images
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 
-    " Binary images
-    set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
+" Compiled object files
+set wildignore+=*.o,*.out
 
-    " Compiled object files
-    set wildignore+=*.o,*.out
+" System files
+set wildignore+=*.DS_Store
 
-    " macOS bullshit
-    set wildignore+=*.DS_Store
+" Project files
+set wildignore+=.tmux,.tags,.root
 
-    " Personal bullshit
-    set wildignore+=.tmux,.tags,.root
-  endif
-
-  " Complete files without case sensitivity, if the option is available
-  if exists('+wildignorecase')
-    set wildignorecase
-  endif
-endif
+" Complete files without case sensitivity.
+set wildignorecase
