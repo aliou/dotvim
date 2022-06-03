@@ -9,7 +9,7 @@ require('ad.lsp.server.null_ls.shared')
 local jq = require('ad.lsp.server.null_ls.jq')
 local rubocop = require('ad.lsp.server.null_ls.rubocop')
 
-local eslint_overrides = {
+local yarn_overrides = {
   dynamic_command = function(params)
     return command_resolver.from_yarn_pnp(params)
       or command_resolver.from_node_modules(params)
@@ -18,16 +18,16 @@ local eslint_overrides = {
 }
 
 local sources = {
-  null_ls.builtins.formatting.eslint.with(eslint_overrides),
+  null_ls.builtins.formatting.prettier.with(yarn_overrides),
   null_ls.builtins.formatting.trim_whitespace.with({
     -- Remove filetypes who already remove whitespace when formatting.
     disabled_filetypes = { "go" },
   }),
 
-  null_ls.builtins.diagnostics.eslint.with(eslint_overrides),
+  null_ls.builtins.diagnostics.eslint.with(yarn_overrides),
   null_ls.builtins.diagnostics.shellcheck,
 
-  null_ls.builtins.code_actions.eslint.with(eslint_overrides),
+  null_ls.builtins.code_actions.eslint.with(yarn_overrides),
   null_ls.builtins.code_actions.shellcheck,
 
   jq.formatter,
