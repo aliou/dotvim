@@ -28,7 +28,10 @@ require('nvim-treesitter.configs').setup({
   sync_install = false,
 
   highlight = {
-    enable = { "go" },
+    enable = true,
+  },
+  indent = {
+    enable = true,
   },
   endwise = {
     enable = true,
