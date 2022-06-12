@@ -21,7 +21,6 @@ local spec = function()
   use { 'AndrewRadev/splitjoin.vim' }
   use { 'andymass/vim-matchup' }
   use { 'tpope/vim-commentary' }
-  use { 'RRethy/nvim-treesitter-endwise' }
   use { 'tpope/vim-sleuth' }
   use { 'tpope/vim-surround' }
   use { 'mg979/vim-visual-multi' }
@@ -68,6 +67,7 @@ local spec = function()
 
   -- Treesitter configuration and abstraction.
   use { 'nvim-treesitter/nvim-treesitter' }
+  use { 'RRethy/nvim-treesitter-endwise' }
 
   -- Completion
   use {
