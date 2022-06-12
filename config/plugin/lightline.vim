@@ -7,7 +7,7 @@ let g:lightline.component_expand = {
       \ }
 
 let g:lightline.component_function = {
-      \   'gitbranch': 'fugitive#head',
+      \   'gitbranch': 'FugitiveHead',
       \ }
 
 let g:lightline.component_type = {
