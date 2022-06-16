@@ -31,7 +31,6 @@ local capabilities = require('ad.lsp.completion').capabilities
 -- Each server is configured in its own file and uses the `on_attach` function
 -- above.
 local servers = {
-  'efm',
   'golangci',
   'gopls',
   'null_ls',

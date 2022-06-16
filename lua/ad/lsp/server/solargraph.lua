@@ -9,7 +9,7 @@ end
 -- rubocop-deamon does).
 local setup = function(on_attach, _)
   local on_local_attach = function(client, bufnr)
-    -- Remove formatting capabilities to let efm handle it.
+    -- Remove formatting capabilities to let null_ls handle it.
     client.resolved_capabilities.document_formatting = false
 
     -- Remove goto_definition capabilities and let ctags handle it.
@@ -29,7 +29,7 @@ local setup = function(on_attach, _)
     -- `on_local_attach` function and the custom handler.
     settings = {
       solargraph = {
-        -- Disable diagnostics and formatting as efm + rubocop-deamon-wrapper
+        -- Disable diagnostics and formatting as null_ls + rubocop-deamon-wrapper
         -- handles those.
         diagnostics = false,
         formatting = false,
