@@ -26,6 +26,7 @@ local sources = {
 
   null_ls.builtins.diagnostics.eslint.with(yarn_overrides),
   null_ls.builtins.diagnostics.shellcheck,
+  null_ls.builtins.diagnostics.vint,
 
   null_ls.builtins.code_actions.eslint.with(yarn_overrides),
   null_ls.builtins.code_actions.shellcheck,
