@@ -32,6 +32,7 @@ local sources = {
 
   jq.formatter,
   rubocop.diagnostic,
+  rubocop.formatting,
 }
 
 local setup = function(on_attach, _)

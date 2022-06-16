@@ -39,6 +39,14 @@ fn = {
 
     return fn.filter(t, filter)
   end,
+
+  indexOf = function(t, v)
+    for index, value in ipairs(t) do
+      if value == v then return index end
+    end
+
+    return nil
+  end,
 }
 
 local files = {
