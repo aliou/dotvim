@@ -23,6 +23,11 @@ local setup = function(on_attach, capabilities)
           enable = true,
           globals = { "vim", "unpack", "use", "P",  "RELOAD", "R" },
         },
+        format = {
+          enable = true,
+          indent_style = "space",
+          indent_size = "2",
+        },
         workspace = {
           -- Make the server aware of nvim runtime files
           library = vim.api.nvim_get_runtime_file('', true),
