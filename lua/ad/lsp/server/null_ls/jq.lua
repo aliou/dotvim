@@ -7,6 +7,7 @@ local formatter = h.make_builtin({
   filetypes = { "json" },
   generator_opts = { command = "jq", args = { "." }, to_stdin = true },
   factory = h.formatter_factory,
+  temp_file = true,
 })
 
 return {
