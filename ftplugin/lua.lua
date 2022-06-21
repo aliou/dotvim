@@ -1,3 +1,5 @@
+local u = require('cstm.util')
+
 local runtime_paths = vim.split(package.path, ';')
 
 table.insert(runtime_paths, 'lua/?.lua')
@@ -11,8 +13,12 @@ table.insert(runtime_paths, vim.fn.expand('~/.vim/lua/?.lua'))
 
 vim.g.lua_path = runtime_paths
 
--- TODO: Limit this to files in `$VIMRUNTIME` and `~/.vim`.
--- The best way to do this would probably be to have the map call a
--- function that checks if the current file matches one of the pattern
--- in the runtime_paths variable.
-vim.keymap.set('n',  '<leader>so', ':source %<return>', { buffer = true })
+if u.files.find_in_root('pdxinfo') then
+  vim.b.lua_context = "playdate"
+else
+  vim.b.lua_context = "vim"
+end
+
+if vim.b.lua_context == 'vim' then
+  vim.keymap.set('n',  '<leader>so', ':source %<return>', { buffer = true })
+end
