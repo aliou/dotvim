@@ -11,7 +11,7 @@ local prefix_message = function(prefix, message)
     return message
   end
 
-  return string.format("[%s] %s", prefix, message)
+  return string.format("%s: %s", prefix, message)
 end
 
 return function(msg, level, options)
@@ -19,10 +19,7 @@ return function(msg, level, options)
   level = level or vim.log.level
 
   if ignored_messages[msg] then return end
-
-  if vim.log.level > level then
-    return
-  end
+  if vim.log.level > level then return end
 
   local message = prefix_message(options.prefix, msg)
 
