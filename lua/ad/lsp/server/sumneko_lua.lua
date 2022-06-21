@@ -1,11 +1,9 @@
 local nvim_lsp = require('lspconfig')
-local u = require('cstm.util')
 
 -- TODO:
 -- * Figure out diff between workspace.library and runtime.path
 -- * is the notification useful and required?
 -- * figure out formatting (if options below are used or not)
-
 local setup = function(on_attach, capabilities)
   local on_init = function(client, _)
     if vim.b.lua_context == "playdate" then

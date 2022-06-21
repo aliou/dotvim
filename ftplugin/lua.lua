@@ -13,6 +13,8 @@ table.insert(runtime_paths, vim.fn.expand('~/.vim/lua/?.lua'))
 
 vim.g.lua_path = runtime_paths
 
+-- TODO: Locally update path so `gf` works.
+
 if u.files.find_in_root('pdxinfo') then
   vim.b.lua_context = "playdate"
 else
