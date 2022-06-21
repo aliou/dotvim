@@ -1,6 +1,5 @@
--- Extract into own file when this becomes too big.
-local fn
-fn = {
+local M
+M = {
   uniq = function(t)
     local uniq_items = {}
     for _, v in pairs(t) do
@@ -26,7 +25,7 @@ fn = {
       return v ~= "" and (not (not v))
     end
 
-    return fn.filter(t, filter)
+    return M.filter(t, filter)
   end,
 
   indexOf = function(t, v)
@@ -38,20 +37,4 @@ fn = {
   end,
 }
 
-local files = {
-  is_readable = function(filename)
-    local file = io.open(filename, 'r')
-
-    if file ~= nil then
-      io.close(file)
-      return true
-    end
-
-    return false
-  end
-}
-
-return {
-  files = files,
-  fn = fn,
-}
+return M
