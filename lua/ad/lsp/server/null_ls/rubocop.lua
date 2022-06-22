@@ -56,7 +56,8 @@ local generator = h.generator_factory({
     format = "raw",
     on_output = function(params, done)
         if params.err then
-            vim.notify('error while generating formatted content', vim.log.levels.ERROR, { prefix = '[null_ls.rubocop]' })
+            vim.notify('error while generating formatted content:', vim.log.levels.ERROR, { prefix = '[null_ls.rubocop]' })
+            vim.notify(params.err, vim.log.levels.ERROR, { prefix = '[null_ls.rubocop]' })
             done()
         end
 
