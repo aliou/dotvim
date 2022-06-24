@@ -55,7 +55,16 @@ local generator = h.generator_factory({
     to_stdin = true,
     format = "raw",
     on_output = function(params, done)
-        if params.err then
+        local raw_output = params.output
+        -- For some reason, in some cases, the output is returned as an error.
+        if params.err and raw_output == nil then
+            raw_output = params.err
+        end
+
+        -- For now, don't handle error as we can't really differentiate output correctly returned
+        -- from output returned as an error.
+        -- For now, keep the code but don't do anything.
+        if params.err and false then
             vim.notify('error while generating formatted content:', vim.log.levels.ERROR, { prefix = '[null_ls.rubocop]' })
             vim.notify(params.err, vim.log.levels.ERROR, { prefix = '[null_ls.rubocop]' })
             done()
@@ -64,7 +73,7 @@ local generator = h.generator_factory({
         -- Rubocop fixer outputs diagnostics first and then the fixed
         -- output. These are delimited by a separator string that we
         -- look for to remove everything before it.
-        local output = vim.split(params.output, '\n')
+        local output = vim.split(raw_output, '\n')
         if vim.tbl_contains(output, SEPARATOR) then
             local separator_index = u.fn.indexOf(output, SEPARATOR) + 1
             output = vim.fn.join(vim.list_slice(output, separator_index, #output), "\n")
