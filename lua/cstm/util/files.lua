@@ -27,6 +27,13 @@ M = {
 
     return nil
   end,
+
+  is_in_directory = function(directory)
+    local file_path = vim.fn.expand('%:p')
+    local resolved_directory = vim.fn.resolve(vim.fn.expand(directory))
+
+    return vim.startswith(file_path, resolved_directory)
+  end,
 }
 
 return M
