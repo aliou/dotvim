@@ -1,5 +1,5 @@
-local grep_string = function (_)
-  vim.notify('NOT IMPLEMENTED', vim.log.levels.ERROR)
+local grep_string = function(term)
+  vim.fn['cstm#search#run'](term, 0)
 end
 
 -- TODO: State to allow history navigation and completion.
@@ -13,7 +13,7 @@ local on_submit = function(term)
   if not term or #term == 0 then return end
 
   -- Execute search in the background.
-  grep_string({ search = term })
+  grep_string(term)
 end
 
 local exec = function(term)
@@ -29,16 +29,10 @@ local exec = function(term)
   -- above).
 
   local options = {
-    prompt = "Search: ",
+    prompt = "Search",
     default = term,
   }
   vim.ui.input(options, on_submit)
 end
 
-vim.cmd [[
-  nnoremap <silent> <leader>s <cmd>lua require('ad.search').exec()<cr>
-]]
-
-return {
-  exec = exec
-}
+vim.keymap.set('n', '<leader>s', exec, { silent = true })
