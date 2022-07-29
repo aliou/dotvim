@@ -10,9 +10,20 @@ local set_status = function(status)
   refresh()
 end
 
+local highlight = function(buf)
+  buf = buf or 0
+
+  if vim.b[buf].status_value == in_progress then return nil end
+  if vim.b[buf].status_value == failure then return 'DiagnosticError' end
+  if vim.b[buf].status_value == success then return 'DiagnosticSuccess' end
+
+  return nil
+end
+
 return {
   refresh = refresh,
   set_status = set_status,
+  highlight = highlight,
 
   in_progress = in_progress,
   failure = failure,
