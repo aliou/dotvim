@@ -10,6 +10,7 @@ local spec = function()
   use { 'MunifTanjim/nui.nvim' }
   use { 'projekt0n/github-nvim-theme' }
   use { 'p00f/alabaster_dark.nvim', requires = { 'rktjmp/lush.nvim' } }
+  use { 'b0o/incline.nvim' }
 
   -- Shell
   use { 'tpope/vim-dispatch' }
