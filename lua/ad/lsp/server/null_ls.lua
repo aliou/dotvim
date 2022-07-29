@@ -25,6 +25,7 @@ local sources = {
   }),
 
   null_ls.builtins.diagnostics.eslint.with(yarn_overrides),
+  null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.shellcheck,
   null_ls.builtins.diagnostics.vint,
 
