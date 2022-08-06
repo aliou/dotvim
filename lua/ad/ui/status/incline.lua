@@ -32,5 +32,8 @@ incline.setup({
   },
   ignore = {
     buftypes = {},
+  },
+  hide = {
+    cursorline = 'focused_win'
   }
 })
