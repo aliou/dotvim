@@ -42,8 +42,18 @@ local setup = function(on_attach, _)
     on_attach(client, bufnr)
   end
 
+  local should_attach = function(bufnr)
+    -- Disable null-ls for rust.
+    if vim.bo[bufnr].filetype == 'rust' then
+      return false
+    end
+
+    return true
+  end
+
   null_ls.setup({
     on_attach = on_local_attach,
+    should_attach = should_attach,
     sources = sources,
   })
 end
