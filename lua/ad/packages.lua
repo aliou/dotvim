@@ -56,6 +56,13 @@ local packages = {
   { 'tbastos/vim-lua' },
   { 'vim-ruby/vim-ruby' },
   { 'vito-c/jq.vim' },
+  {
+    'simrat39/rust-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'mfussenegger/nvim-dap'
+    }
+  },
 
   -- Text object.
   { 'PeterRincker/vim-argumentative' },

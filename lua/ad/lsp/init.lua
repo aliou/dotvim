@@ -14,9 +14,6 @@ local on_attach = function(client)
   require('ad.lsp.rename').on_attach(client)
   require('ad.lsp.workspace_symbol').on_attach(client)
 
-  -- Configuration of additional capabilities.
-  require('ad.lsp.inlay_hints').on_attach(client)
-
   vim.notify("Attaching to client " .. client.name, vim.log.levels.DEBUG, { prefix = "ad.lsp" })
 end
 
@@ -34,7 +31,7 @@ local servers = {
   'golangci',
   'gopls',
   'null_ls',
-  'rust_analyzer',
+  'rust_tools',
   'solargraph',
   'sumneko_lua',
   'tsserver',
