@@ -1,7 +1,7 @@
 local null_ls = require('null-ls')
 local u = require('ad.lsp.server.null_ls.util')
 
-local PRINT_STR = 'fmt.Printf("%s\\n", %s)'
+local PRINT_STR = 'fmt.Printf("DEBUG: %s=%s\\n", %s)'
 
 -- NOTE: For some reason, gopls has the following error when the code action runs:
 -- "gopls: -32700: JSON RPC parse error: json: cannot unmarshal object into Go struct field ExecuteCommandParams.arguments of type []json.RawMessage: JSON RPC parse error"
@@ -13,7 +13,7 @@ local print_var = {
       local current_line = context.content[context.row]
       local current_word = vim.fn.expand("<cword>")
 
-      local print_statement = string.format(PRINT_STR, "%+v", current_word)
+      local print_statement = string.format(PRINT_STR, current_word, "%+v", current_word)
 
       local indent = vim.fn.indent(context.row)
       local lines = { u.indent_str(print_statement, indent), current_line }
