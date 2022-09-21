@@ -17,6 +17,24 @@ local yarn_overrides = {
   end,
 }
 
+local node_ignored_errors = {
+  "(node:27554)",
+  "(node:26482)"
+}
+
+local eslint_overrides = {
+  dynamic_command = yarn_overrides.dynamic_command,
+  filter = function(diagnostic)
+    for _, prefix in ipairs(node_ignored_errors) do
+      if vim.startswith(diagnostic.message, prefix) then
+        return false
+      end
+    end
+
+    return true
+  end
+}
+
 local sources = {
   null_ls.builtins.formatting.prettier.with(yarn_overrides),
   null_ls.builtins.formatting.trim_whitespace.with({
@@ -24,7 +42,7 @@ local sources = {
     disabled_filetypes = { "go" },
   }),
 
-  null_ls.builtins.diagnostics.eslint.with(yarn_overrides),
+  null_ls.builtins.diagnostics.eslint.with(eslint_overrides),
   null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.shellcheck,
   null_ls.builtins.diagnostics.vint,
