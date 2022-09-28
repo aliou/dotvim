@@ -5,6 +5,7 @@ local default_log_options = {}
 -- NOTE: This might not be a good idea.
 local ignored_messages = {}
 ignored_messages['No code actions available'] = true
+ignored_messages['Cargo workspace reloaded'] = true
 
 local prefix_message = function(prefix, message)
   if not prefix then
