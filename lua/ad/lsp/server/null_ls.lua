@@ -9,46 +9,51 @@ require('ad.lsp.server.null_ls.shared')
 local jq = require('ad.lsp.server.null_ls.jq')
 local rubocop = require('ad.lsp.server.null_ls.rubocop')
 
-local yarn_overrides = {
-  dynamic_command = function(params)
-    return command_resolver.from_yarn_pnp(params)
-      or command_resolver.from_node_modules(params)
-      or vim.fn.executable(params.command) == 1 and params.command
-  end,
-}
+local yarn_command_resolver = function(params)
+  return command_resolver.from_yarn_pnp(params)
+    or command_resolver.from_node_modules(params)
+    or vim.fn.executable(params.command) == 1 and params.command
+end
 
+-- TODO: Move this to project configuration file.
+-- (something like vim.g.lsp_null_ls_node_ignored_errors).
 local node_ignored_errors = {
-  "(node:27554)",
   "(node:26482)",
-  "(node:29712)"
+  "(node:27554)",
+  "(node:29712)",
+  "(node:36835)"
 }
 
-local eslint_overrides = {
-  dynamic_command = yarn_overrides.dynamic_command,
-  filter = function(diagnostic)
-    for _, prefix in ipairs(node_ignored_errors) do
-      if vim.startswith(diagnostic.message, prefix) then
-        return false
-      end
+local node_error_diagnostic_filter = function(diagnostic)
+  for _, prefix in ipairs(node_ignored_errors) do
+    if vim.startswith(diagnostic.message, prefix) then
+      return false
     end
-
-    return true
   end
-}
+
+  return true
+end
 
 local sources = {
-  null_ls.builtins.formatting.prettier.with(yarn_overrides),
+  null_ls.builtins.formatting.prettier.with({
+    dynamic_command = yarn_command_resolver,
+  }),
   null_ls.builtins.formatting.trim_whitespace.with({
     -- Remove filetypes who already remove whitespace when formatting.
     disabled_filetypes = { "go" },
   }),
 
-  null_ls.builtins.diagnostics.eslint.with(eslint_overrides),
+  null_ls.builtins.diagnostics.eslint.with({
+    dynamic_command = yarn_command_resolver,
+    filter = node_error_diagnostic_filter,
+  }),
   null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.shellcheck,
   null_ls.builtins.diagnostics.vint,
 
-  null_ls.builtins.code_actions.eslint.with(yarn_overrides),
+  null_ls.builtins.code_actions.eslint.with({
+    dynamic_command = yarn_command_resolver,
+  }),
   null_ls.builtins.code_actions.shellcheck,
 
   jq.formatter,
