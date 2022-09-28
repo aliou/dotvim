@@ -19,7 +19,8 @@ local yarn_overrides = {
 
 local node_ignored_errors = {
   "(node:27554)",
-  "(node:26482)"
+  "(node:26482)",
+  "(node:29712)"
 }
 
 local eslint_overrides = {
