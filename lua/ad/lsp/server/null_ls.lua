@@ -1,3 +1,4 @@
+local u = require('cstm.util')
 local null_ls = require('null-ls')
 local command_resolver = require("null-ls.helpers.command_resolver")
 
@@ -66,6 +67,11 @@ local setup = function(on_attach, _)
   local should_attach = function(bufnr)
     -- Disable null-ls for rust.
     if vim.bo[bufnr].filetype == 'rust' then
+      return false
+    end
+
+    -- Disable for tmp directories.
+    if u.files.is_in_tmp_directory() then
       return false
     end
 

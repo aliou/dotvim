@@ -34,6 +34,10 @@ M = {
 
     return vim.startswith(file_path, resolved_directory)
   end,
+
+  is_in_tmp_directory = function()
+    return M.is_in_directory('~/tmp') or M.is_in_directory('~/code/tmp') or M.is_in_directory('/tmp')
+  end,
 }
 
 return M
