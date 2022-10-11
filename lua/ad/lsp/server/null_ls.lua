@@ -18,10 +18,7 @@ end
 -- TODO: Move this to project configuration file.
 -- (something like vim.g.lsp_null_ls_node_ignored_errors).
 local node_ignored_errors = {
-  "(node:26482)",
-  "(node:27554)",
-  "(node:29712)",
-  "(node:36835)"
+  "(node:",
 }
 
 local node_error_diagnostic_filter = function(diagnostic)
