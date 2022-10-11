@@ -35,6 +35,7 @@ local servers = {
   'solargraph',
   'sumneko_lua',
   'tsserver',
+  'terraformls',
   'vimls',
 }
 
