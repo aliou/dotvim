@@ -11,6 +11,14 @@ local code_action_select = function(items, opts, on_choice)
   return native_select(items, opts, on_choice)
 end
 
+-- TODO:
+-- * Format items to add a title
+-- * Pass the title to the native_select function
+-- * in the on_choice, deduce the selected value from the formatted items.
+local references_select = function(items, opts, on_choice)
+  return native_select(items, opts, on_choice)
+end
+
 local fallback_select = function (items, opts, on_choice)
   if #items == 1 and not kind_auto_execute_deny_list[opts.kind] then
     return on_choice(items[1])
@@ -21,6 +29,7 @@ end
 
 local custom_select_handlers = {
   ["codeaction"] = code_action_select,
+  ["lsp/handlers/references"] = references_select,
 }
 
 return function(items, opts, on_choice)
