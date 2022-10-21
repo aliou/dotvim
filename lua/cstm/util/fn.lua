@@ -35,6 +35,14 @@ M = {
 
     return nil
   end,
+
+  first = function(t, fn)
+    for _, value in pairs(t) do
+      if fn(value) then return value end
+    end
+
+    return nil
+  end,
 }
 
 return M

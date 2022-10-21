@@ -1,4 +1,5 @@
 local null_ls = require('null-ls')
+local util = require('cstm.util')
 local u = require('ad.lsp.server.null_ls.util')
 
 local debugger_statements = {
@@ -6,15 +7,19 @@ local debugger_statements = {
   javascript = "debugger",
   typescript = "debugger",
 }
+local handled_filetypes = vim.tbl_keys(debugger_statements)
 
 local binding_pry = {
   method = null_ls.methods.CODE_ACTION,
-  -- NOTE: Probably overkill to deduce the filetype list from the list above.
-  filetypes = { "javascript", "typescript", "ruby" },
+  filetypes = handled_filetypes,
   generator = {
     fn = function(context)
       local current_line = context.content[context.row]
-      local statement = debugger_statements[context.ft]
+      local filetypes = vim.split(context.ft, '.')
+      local filetype = util.fn.first(filetypes, function (ft)
+        return vim.tbl_contains(handled_filetypes, ft)
+      end)
+      local statement = debugger_statements[filetype]
 
       if statement == nil then
         vim.notify(
