@@ -19,6 +19,8 @@ if u.files.find_in_root('pdxinfo') then
   vim.b.lua_context = "playdate"
 elseif u.files.is_in_directory('~/.vim') then
   vim.b.lua_context = "vim"
+elseif u.files.is_in_directory('~/.local/share/nvim') then
+  vim.b.lua_context = "vim"
 else
   vim.b.lua_context = ''
 end
