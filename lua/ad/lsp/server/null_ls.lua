@@ -40,6 +40,7 @@ local sources = {
     -- Remove filetypes who already remove whitespace when formatting.
     disabled_filetypes = { "go" },
   }),
+  null_ls.builtins.formatting.xmllint,
 
   null_ls.builtins.diagnostics.eslint.with({
     dynamic_command = yarn_command_resolver,
