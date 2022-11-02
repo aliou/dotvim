@@ -2,6 +2,7 @@ require('ad.lsp.fallback')
 
 -- Require custom LSP handlers.
 require('ad.lsp.handlers.format')
+require('ad.lsp.handlers.references')
 
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
@@ -28,7 +29,7 @@ local capabilities = require('ad.lsp.completion').capabilities
 -- Each server is configured in its own file and uses the `on_attach` function
 -- above.
 local servers = {
-  'golangci',
+  -- 'golangci',
   'gopls',
   'null_ls',
   'rust_tools',

@@ -9,7 +9,17 @@ local complete_directories = function(lead)
     return is_directory and starts_with_lead
   end
 
-  return vim.fn.readdir('.', filter_directories)
+  local suffix_path = function(path)
+    return path .. '/'
+  end
+
+  local prefix = vim.endswith(lead, '/') and lead or '.'
+
+  P(vim.fn.readdir(vim.fn.readdir(prefix)))
+  local directories = vim.fn.readdir(prefix, filter_directories)
+  directories = vim.tbl_map(suffix_path, directories)
+
+  return directories
 end
 
 -- TODO: Add tags from current project using `taglist()`.
@@ -42,6 +52,7 @@ local complete = function(arg_lead, cmd_line, cursor_pos)
   -- we're completing the search term.
   if #argv == 1 then return complete_term(arg_lead) end
   if #argv == 2 and arg_lead ~= "" then return complete_term(arg_lead) end
+
   if #argv == 2 and arg_lead == "" then return complete_directories(arg_lead) end
   if #argv == 3 and arg_lead ~= "" then return complete_directories(arg_lead) end
 
