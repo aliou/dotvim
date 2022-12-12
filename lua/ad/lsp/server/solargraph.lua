@@ -10,10 +10,10 @@ end
 local setup = function(on_attach, _)
   local on_local_attach = function(client, bufnr)
     -- Remove formatting capabilities to let null_ls handle it.
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = nil
 
     -- Remove goto_definition capabilities and let ctags handle it.
-    client.resolved_capabilities.goto_definition = false
+    client.server_capabilities.definitionProvider = nil
 
     on_attach(client, bufnr)
   end

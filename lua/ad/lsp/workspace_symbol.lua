@@ -23,7 +23,7 @@ end
 
 
 local on_attach = function(client, _)
-  if not client.resolved_capabilities.workspace_symbol then return end
+  if not client.server_capabilities.workspaceSymbolProvider then return end
 
   vim.keymap.set('n', '<leader>ll', workspace_symbol, { desc = "[lsp] workspace symbol", buffer = true })
 end

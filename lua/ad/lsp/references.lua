@@ -3,7 +3,7 @@ local find_references = function()
 end
 
 local on_attach = function(client)
-  if not client.resolved_capabilities.find_references then return end
+  if not client.server_capabilities.referencesProvider then return end
 
   vim.keymap.set('n', '<C-\\>', find_references, { desc = "[lsp] references", buffer = true })
 end
