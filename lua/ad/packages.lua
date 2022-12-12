@@ -63,6 +63,15 @@ local packages = {
       'mfussenegger/nvim-dap'
     }
   },
+  {
+    'xbase-lab/xbase',
+    run = 'make install',
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "neovim/nvim-lspconfig"
+    },
+  },
 
   -- Text object.
   { 'PeterRincker/vim-argumentative' },

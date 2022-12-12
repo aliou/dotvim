@@ -33,9 +33,10 @@ local servers = {
   'null_ls',
   'rust_tools',
   'solargraph',
+  'sourcekit',
   'sumneko_lua',
-  'tsserver',
   'terraformls',
+  'tsserver',
   'vimls',
 }
 
