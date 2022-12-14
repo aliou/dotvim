@@ -26,8 +26,12 @@ end
 incline.setup({
   render = render,
   window = {
+    placement = {
+      vertical = "bottom"
+    },
     margin = {
-      horizontal = 0,
+      vertical = 0,
+      horizontal = 0
     }
   },
   ignore = {
