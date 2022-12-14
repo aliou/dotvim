@@ -22,11 +22,6 @@ local binding_pry = {
       local statement = debugger_statements[filetype]
 
       if statement == nil then
-        vim.notify(
-          string.format("missing debugger statement for ft=%s", context.ft),
-          vim.log.levels.WARN,
-          { prefix = "ad.lsp.null_ls" }
-        )
         return nil
       end
 
@@ -50,7 +45,10 @@ local binding_pry = {
 local PRINT_STR = 'console.log("DEBUG", { %s });'
 local print_var = {
   method = null_ls.methods.CODE_ACTION,
-  filetypes = { "javascript", "typescript" },
+  filetypes = {
+    "javascript",
+    "typescript",
+  },
   generator = {
     fn = function(context)
       local current_line = context.content[context.row]
