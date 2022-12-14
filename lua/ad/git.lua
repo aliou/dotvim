@@ -54,11 +54,11 @@ require('gitsigns').setup({
 
 -- Customize GitSigns highlights.
 local configure_theme = function(_)
-  vim.highlight.create('GitSignsDiffAdd', { guifg = "#5F875F", ctermfg = 65 })
-  vim.highlight.create('GitSignsDelete', { guifg = '#CC6666', ctermfg = 167 })
-  vim.highlight.create('GitSignsChange', { guifg = '#5F5F87', ctermfg = 60 })
-  vim.highlight.create('GitSignsChangeDelete', { guifg = '#5F5F87', ctermfg = 60 })
-  vim.highlight.create('GitSignsCurrentLineBlame', { guifg = '#5F5F87' })
+  vim.api.nvim_set_hl(0, 'GitSignsDiffAdd', { fg = "#5F875F", ctermfg = 65 })
+  vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#CC6666', ctermfg = 167 })
+  vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#5F5F87', ctermfg = 60 })
+  vim.api.nvim_set_hl(0, 'GitSignsChangeDelete', { fg = '#5F5F87', ctermfg = 60 })
+  vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#5F5F87' })
 end
 
 -- Re-apply highlights on theme changes.

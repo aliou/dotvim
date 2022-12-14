@@ -2,11 +2,11 @@ local theme_callbacks = require('ad.theme.callbacks')
 
 -- Customize Diagnostic highlights.
 local configure_theme = function(_)
-  vim.highlight.create('DiagnosticError', { cterm = 'bold', ctermfg = 167, gui = 'bold', guifg = '#CC6666' })
-  vim.highlight.create('DiagnosticWarn', { ctermfg = 173, gui = 'bold', guifg = '#de935f' })
-  vim.highlight.create('DiagnosticInfo', { cterm = 'bold', ctermfg = 60, gui = 'bold', guifg = '#5F5F87' })
-  vim.highlight.create('DiagnosticHint', { cterm = 'bold', ctermfg = 173, gui = 'bold', guifg = '#c7915b' })
-  vim.highlight.create('DiagnosticSuccess', { guifg = "#5F875F", ctermfg = 65 })
+  vim.api.nvim_set_hl(0, 'DiagnosticError', { bold = true, fg = '#CC6666', ctermfg = 167 })
+  vim.api.nvim_set_hl(0, 'DiagnosticWarn', { bold = true, fg = '#de935f', ctermfg = 173 })
+  vim.api.nvim_set_hl(0, 'DiagnosticInfo', { bold = true, fg = '#5F5F87', ctermfg = 60 })
+  vim.api.nvim_set_hl(0, 'DiagnosticHint', { bold = true, fg = '#c7915b', ctermfg = 173 })
+  vim.api.nvim_set_hl(0, 'DiagnosticSuccess', { bold = true, fg = "#5F875F", ctermfg = 65 })
 end
 
 -- Re-apply highlights on theme changes.
