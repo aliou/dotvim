@@ -1,4 +1,4 @@
-set textwidth=80       " Default text width is 80 characters.
+set textwidth=100      " Default text width is 80 characters.
 set colorcolumn=+1     " Highlight the column after the tw limit.
 set splitbelow         " Always split below.
 set splitright         " And always split right.
