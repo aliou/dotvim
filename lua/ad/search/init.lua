@@ -1,38 +1,45 @@
-local grep_string = function(term)
-  vim.fn['cstm#search#run'](term, 0)
-end
-
--- TODO: State to allow history navigation and completion.
--- TODO: Toggle regexp: on keymap toggle regex and update input title (like
--- appending a (r) to the top text of the input).
-
-local on_submit = function(term)
-  -- Cleanup term.
-  term = term or ""
-  term = vim.trim(term)
-  if not term or #term == 0 then return end
-
-  -- Execute search in the background.
-  grep_string(term)
-end
+local live_grep = require('telescope.builtin').live_grep
+local actions = require('telescope.actions')
 
 local exec = function(term)
-  -- Fallback to word under cursor if no term is given.
-  -- TODO: Try to have this work differently depending on the language (thanks
-  -- to treesitter?).
-  if not term or #term == 0 then
-    term = vim.fn.expand("<cword>")
-  end
-
-  -- TODO: Update (vim|ad).ui.input to allow additional configuration of
-  -- nui.input. (in particular adding keymaps for history and other options, see
-  -- above).
+  term = term or vim.fn.expand("<cword>")
+  -- TODO(ad): Remove things that are not word.
 
   local options = {
-    prompt = "Search",
-    default = term,
+    default_text = term,
+    attach_mappings = function(prompt_number, _)
+      actions.select_default:replace(function()
+        vim.fn.setqflist({})
+        actions.add_to_qflist(prompt_number)
+        vim.cmd [[ copen ]]
+        vim.cmd [[ cc! 1 ]]
+      end)
+      return true
+    end,
   }
-  vim.ui.input(options, on_submit)
+
+  live_grep(options)
+end
+
+local command_exec = function(options)
+  exec(options.args)
+end
+
+-- False positive.
+---@diagnostic disable-next-line: duplicate-set-field
+_G.ad_search_operator = function(mode)
+  local term = nil
+  if mode == "v" then
+    term = vim.fn['utils#current_selection']()
+  end
+
+  exec(term)
 end
 
 vim.keymap.set('n', '<leader>s', exec, { silent = true })
+vim.api.nvim_create_user_command('Search', command_exec, { nargs = "*", range = 0 })
+
+vim.cmd [[
+  nnoremap <silent> s :set operatorfunc=v:lua.ad_search_operator<CR>g@
+  vnoremap <silent> s :<C-U>call v:lua.ad_search_operator(visualmode())<CR>
+]]
