@@ -6,7 +6,7 @@ function! s:is_preview_enabled() abort
 endfunction
 
 function! s:fzf_options() abort
-  let l:bat_theme = &background == 'light' ? 'ansi-light' : 'ansi-dark'
+  let l:bat_theme = 'ansi'
   let l:preview_enabled = get(g:, 'cstm_fuzzy_preview_enabled', v:true)
 
   let l:options = '--reverse --select-1'
