@@ -106,9 +106,9 @@ local packages = {
 
   -- Local plugins.
 
-  -- This requires fzf to be installed with go:
-  -- `go get github.com/junegunn/fzf -u`.
-  '~/code/src/github.com/junegunn/fzf',
+  -- This requires fzf to be installed with brew:
+  -- `brew install fzf`.
+  '/opt/homebrew/opt/fzf',
 
   '~/code/src/github.com/aliou/bats.vim',
   '~/code/src/github.com/aliou/dope.vim',
