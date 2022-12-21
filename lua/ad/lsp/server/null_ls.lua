@@ -11,6 +11,7 @@ local rubocop = require('ad.lsp.server.null_ls.rubocop')
 
 local sources = {
   null_ls.builtins.formatting.prettier,
+  null_ls.builtins.formatting.swiftformat,
   null_ls.builtins.formatting.trim_whitespace.with({
     -- Remove filetypes who already remove whitespace when formatting.
     disabled_filetypes = { "go" },
@@ -20,7 +21,6 @@ local sources = {
   null_ls.builtins.diagnostics.eslint,
   null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.shellcheck,
-  null_ls.builtins.diagnostics.vint,
 
   null_ls.builtins.code_actions.eslint,
   null_ls.builtins.code_actions.shellcheck,
