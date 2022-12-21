@@ -31,11 +31,17 @@ local packages = {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   },
-  { 'ludovicchabant/vim-gutentags' },
   { 'tpope/vim-repeat' },
   { 'tpope/vim-unimpaired' },
   { 'tpope/vim-vinegar' },
   { 'junegunn/fzf.vim' },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    }
+  },
 
   -- Projects
   { 'tpope/vim-apathy' },
