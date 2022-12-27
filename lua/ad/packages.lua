@@ -91,6 +91,7 @@ local packages = {
   -- Treesitter configuration and abstraction.
   { 'nvim-treesitter/nvim-treesitter' },
   { 'RRethy/nvim-treesitter-endwise' },
+  { 'nvim-treesitter/playground' },
 
   -- Completion
   {
@@ -100,6 +101,7 @@ local packages = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-omni',
       'L3MON4D3/LuaSnip',
     }
   },
