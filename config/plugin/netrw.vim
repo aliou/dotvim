@@ -9,3 +9,6 @@ let g:netrw_localrmdir='rm -r'
 
 " Try to mimic NERDTree.
 let g:netrw_winsize = 15
+
+" Don't save netrw buffers in jumplist.
+let g:netrw_altfile = 1
