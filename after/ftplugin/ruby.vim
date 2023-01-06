@@ -8,3 +8,8 @@ let b:undo_ftplugin .= " | setlocal iskeyword<"
 
 " Manually set the regexp engine to try to improve performance.
 set regexpengine=1
+
+" Disable max textwidth and don't highlight color column for schema files.
+if expand('%:t') == "schema.rb"
+  set tw=0
+endif
