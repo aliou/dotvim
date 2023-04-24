@@ -62,6 +62,7 @@ local packages = {
   { 'tbastos/vim-lua' },
   { 'vim-ruby/vim-ruby' },
   { 'vito-c/jq.vim' },
+  { 'jxnblk/vim-mdx-js' },
   {
     'simrat39/rust-tools.nvim',
     requires = {
