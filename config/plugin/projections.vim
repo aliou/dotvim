@@ -14,6 +14,7 @@ let s:projection_descriptions = [
       \   { 'test': 'cargo.toml', 'file': 'cargo.json' },
       \   { 'test': 'package.json', 'file': 'javascript.json' },
       \   { 'test': 'go.mod', 'file': 'go.json' },
+      \   { 'test': 'buildServer.json', 'file': 'swift.json' },
       \ ]
 
 " TODO: simplify path thingy.

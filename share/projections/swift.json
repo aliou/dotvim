@@ -1,0 +1,10 @@
+{
+  "*Container.swift": {
+    "type": "container",
+    "alternate": "{}.swift"
+  },
+  "*.swift": {
+    "type": "view",
+    "alternate": "{}Container.swift"
+  }
+}
