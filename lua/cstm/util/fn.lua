@@ -29,8 +29,15 @@ M = {
   end,
 
   indexOf = function(t, v)
+    local fn
+    if type(v) == "function" then
+      fn = v
+    else
+      fn = rawequal
+    end
+
     for index, value in ipairs(t) do
-      if value == v then return index end
+      if fn(value, v) then return index end
     end
 
     return nil
@@ -43,6 +50,10 @@ M = {
 
     return nil
   end,
+
+  any = function(t, fn)
+    return nil ~= M.first(t, fn)
+  end
 }
 
 return M
