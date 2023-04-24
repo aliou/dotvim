@@ -81,6 +81,7 @@ local packages = {
 
   -- Text object.
   { 'PeterRincker/vim-argumentative' },
+  { 'kana/vim-textobj-user' },
 
   -- Tests / Lint / LSP
   { 'janko-m/vim-test' },
