@@ -1,7 +1,10 @@
 {
   "Cargo.toml": {
     "type": "cargo",
-    "alternate": "cargo.lock"
+    "alternate": "Cargo.lock"
+  },
+  "Cargo.lock": {
+    "aleternate": "Cargo.toml"
   },
   "src/main.rs": {
     "type": "src"
