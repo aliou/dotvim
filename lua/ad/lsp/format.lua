@@ -1,7 +1,11 @@
+local format = function()
+  vim.lsp.buf.format({ timeout_ms = 2000 })
+end
+
 local on_attach = function(client)
   if not client.server_capabilities.documentFormattingProvider then return end
 
-  vim.keymap.set('n', '<leader>af', vim.lsp.buf.format, { desc = "[lsp] format document", buffer = true })
+  vim.keymap.set('n', '<leader>af', format, { desc = "[lsp] format document", buffer = true })
 end
 
 return {
