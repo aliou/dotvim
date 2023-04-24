@@ -3,6 +3,8 @@ require('ad.lsp.fallback')
 -- Require custom LSP handlers.
 require('ad.lsp.handlers.format')
 
+require('mason').setup()
+
 -- Configure LSP features when attaching a client to a buffer.
 local on_attach = function(client)
   -- Configuration of capabilities.

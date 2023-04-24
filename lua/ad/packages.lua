@@ -87,6 +87,7 @@ local packages = {
   { 'neovim/nvim-lspconfig' },
   { 'tjdevries/lsp_extensions.nvim' },
   { 'jose-elias-alvarez/null-ls.nvim' },
+  { "williamboman/mason.nvim" },
 
   -- Treesitter configuration and abstraction.
   { 'nvim-treesitter/nvim-treesitter' },
