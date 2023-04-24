@@ -1,5 +1,5 @@
-local u = require('cstm.util')
 local null_ls = require('null-ls')
+local u = require('cstm.util')
 
 -- Register custom code actions.
 require('ad.lsp.server.null_ls.go')
@@ -9,20 +9,33 @@ require('ad.lsp.server.null_ls.shared')
 local jq = require('ad.lsp.server.null_ls.jq')
 local rubocop = require('ad.lsp.server.null_ls.rubocop')
 
+-- TODO: Dynamic sources? Per project sources?
 local sources = {
-  null_ls.builtins.formatting.prettier,
-  null_ls.builtins.formatting.swiftformat,
-  null_ls.builtins.formatting.trim_whitespace.with({
-    -- Remove filetypes who already remove whitespace when formatting.
-    disabled_filetypes = { "go" },
+  -- null_ls.builtins.formatting.prettierd,
+  null_ls.builtins.formatting.eslint_d.with({
+    condition = function(utils)
+      return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+    end,
   }),
+  null_ls.builtins.formatting.swiftformat.with({
+    extra_args = { "--indentcase", "true" }
+  }),
+  null_ls.builtins.formatting.trim_whitespace,
   null_ls.builtins.formatting.xmllint,
 
-  null_ls.builtins.diagnostics.eslint,
+  null_ls.builtins.diagnostics.eslint_d.with({
+    condition = function(utils)
+      return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+    end,
+  }),
   null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.shellcheck,
 
-  null_ls.builtins.code_actions.eslint,
+  null_ls.builtins.code_actions.eslint_d.with({
+    condition = function(utils)
+      return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+    end,
+  }),
   null_ls.builtins.code_actions.shellcheck,
 
   jq.formatter,
@@ -41,10 +54,13 @@ local setup = function(on_attach, _)
       return false
     end
 
-    -- Disable for tmp directories.
-    if u.files.is_in_tmp_directory() then
+    -- Disable when inside a node_modules directory.
+    local full_path = vim.fn.expand('%:p')
+    if full_path:match("node_modules") then
+      vim.notify("lsp: skipping attach because file is in node_modules directory", vim.log.levels.DEBUG)
       return false
     end
+
 
     return true
   end
