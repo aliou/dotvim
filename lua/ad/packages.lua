@@ -39,7 +39,8 @@ local packages = {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = {
       { 'nvim-lua/plenary.nvim' },
-      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { "nvim-telescope/telescope-live-grep-args.nvim" }
     }
   },
 
@@ -105,7 +106,6 @@ local packages = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-omni',
       'L3MON4D3/LuaSnip',
     }
   },

@@ -21,8 +21,7 @@ local telescope_options = {
       "--with-filename",
       "--line-number",
       "--column",
-      "--smart-case",
-      "--fixed-strings" -- TODO: Find a way to toggle this?
+      "--smart-case"
     }
   },
   extensions = {
@@ -31,9 +30,13 @@ local telescope_options = {
       override_generic_sorter = true,
       override_file_sorter = true,
       case_mode = "smart_case",
+    },
+    live_grep_args = {
+      auto_quoting = true
     }
   }
 }
 
 telescope.setup(telescope_options)
 telescope.load_extension('fzf')
+telescope.load_extension('live_grep_args')
