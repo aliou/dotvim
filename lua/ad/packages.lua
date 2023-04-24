@@ -140,10 +140,14 @@ local snapshot_name = '.packages-snapshot'
 
 vim.api.nvim_del_user_command('PackerSnapshot')
 vim.api.nvim_create_user_command('PackerSnapshot', function()
-  require('packer').snapshot(snapshot_name)
+  vim.ui.notify_with_level(vim.log.levels.DEBUG, function()
+    require('packer').snapshot(snapshot_name)
+  end)
 end, { desc = 'serialize installed plugins' })
 
 vim.api.nvim_del_user_command('PackerSnapshotRollback')
 vim.api.nvim_create_user_command('PackerSnapshotRollback', function()
-  require('packer').rollback(snapshot_name)
+  vim.ui.notify_with_level(vim.log.levels.DEBUG, function()
+    require('packer').rollback(snapshot_name)
+  end)
 end, { desc = 'rollbacks plugins to version in snapshot' })
