@@ -14,7 +14,7 @@ function! s:fzf_options() abort
   if s:is_preview_enabled()
     let l:options .= ' --preview '
           \ . " 'bat --style=numbers --theme=" . l:bat_theme . " --color=always {}'"
-          \ . ' --preview-window right:66%'
+          \ . ' --preview-window right:60%'
   endif
 
   return l:options
