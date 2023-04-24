@@ -78,6 +78,7 @@ local packages = {
       "neovim/nvim-lspconfig"
     },
   },
+  { "jose-elias-alvarez/typescript.nvim" },
 
   -- Text object.
   { 'PeterRincker/vim-argumentative' },
