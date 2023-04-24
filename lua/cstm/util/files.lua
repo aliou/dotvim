@@ -32,6 +32,10 @@ M = {
     local file_path = vim.fn.expand('%:p')
     local resolved_directory = vim.fn.resolve(vim.fn.expand(directory))
 
+    if resolved_directory == "" then
+      resolved_directory = directory
+    end
+
     return vim.startswith(file_path, resolved_directory)
   end,
 
