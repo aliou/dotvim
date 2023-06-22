@@ -14,3 +14,5 @@ vim.keymap.set("n", "<leader>rn", print_message, { desc = desc , buffer = false 
 vim.keymap.set("n", "<C-\\>", print_message, { desc = desc , buffer = false })
 
 vim.keymap.set("n", "<leader>ll", print_message, { desc = desc , buffer = false })
+
+vim.keymap.set("n", "<leader>li", print_message, { desc = desc , buffer = false })

@@ -17,17 +17,17 @@ let g:lightline.component_type = {
 
 let g:lightline.active = {
       \   'left': [['bufname'], ['gitbranch'], ['readonly', 'relativepath', 'modified']],
-      \   'right': [['lineinfo'], ['percent'], ['filetype'], ['diagnostic_indicator']]
+      \   'right': [['lineinfo'], ['filetype'], ['diagnostic_indicator']]
       \ }
 
 let g:lightline.inactive = {
-      \   'left': [['bufname'], ['gitbranch'], ['readonly', 'relativepath', 'modified']],
-      \   'right': []
+      \   'left': [['bufname'], ['readonly', 'relativepath', 'modified']],
+      \   'right': [['filetype'], ['diagnostic_indicator']]
       \ }
 
 let g:lightline.tab = {
       \   'active': ['filename', 'modified'],
-      \   'inactive': ['tabnum', 'filename', 'modified']
+      \   'inactive': ['filename', 'modified']
       \ }
 
 let g:lightline.tabline = {

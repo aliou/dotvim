@@ -9,8 +9,7 @@ local packages = {
   { 'junegunn/goyo.vim', opt = true },
   { 'MunifTanjim/nui.nvim' },
   { 'projekt0n/github-nvim-theme' },
-  { 'p00f/alabaster_dark.nvim', requires = { 'rktjmp/lush.nvim' } },
-  { 'b0o/incline.nvim' },
+  { "felipeagc/fleet-theme-nvim", requires = { "rktjmp/lush.nvim" } },
 
   -- Shell
   { 'tpope/vim-dispatch' },
@@ -92,6 +91,7 @@ local packages = {
   { 'tjdevries/lsp_extensions.nvim' },
   { 'jose-elias-alvarez/null-ls.nvim' },
   { "williamboman/mason.nvim" },
+  { "dnlhc/glance.nvim" },
 
   -- Treesitter configuration and abstraction.
   { 'nvim-treesitter/nvim-treesitter' },

@@ -1,4 +1,5 @@
 require('ad.lsp.fallback')
+require('ad.lsp.glance')
 
 -- Require custom LSP handlers.
 require('ad.lsp.handlers.format')
@@ -15,6 +16,8 @@ local on_attach = function(client)
   require('ad.lsp.references').on_attach(client)
   require('ad.lsp.rename').on_attach(client)
   require('ad.lsp.workspace_symbol').on_attach(client)
+
+  -- TODO: Add mapping (<leader>ls) to display menu for all LSP actions.
 
   vim.notify("Attaching to client " .. client.name, vim.log.levels.DEBUG, { prefix = "ad.lsp" })
 end
