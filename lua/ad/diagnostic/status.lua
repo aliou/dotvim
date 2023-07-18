@@ -9,7 +9,7 @@ local refresh_status = function()
   end
 end
 
-local setup = function()
+local configure = function()
   if vim.fn.exists('b:diagnostic_displayed') == 0 then
     vim.b.diagnostic_displayed = true
   end
@@ -17,20 +17,18 @@ local setup = function()
   refresh_status()
 end
 
--- Setup diagnostics default values.
--- Can be overriden in vimrc.local files by clearing the autocmd augroup.
-local augroup = vim.api.nvim_create_augroup('ad.diagnostics', { clear = true })
+local setup = function(augroup)
+  vim.api.nvim_create_autocmd('BufRead', {
+    group = augroup, pattern = '*', callback = configure,
+    desc = '[diagnostic] Configure diagnostic in buffer',
+  })
 
-vim.api.nvim_create_autocmd('BufRead', {
-  group = augroup, pattern = '*', callback = setup,
-  desc = '[diagnostic] Setup diagnostic in buffer',
-})
-
-vim.api.nvim_create_autocmd('DiagnosticChanged', {
-  group = augroup, pattern = '*', callback = refresh_status,
-  desc = '[diagnostic] Update statusline on diagnostic change',
-})
+  vim.api.nvim_create_autocmd('DiagnosticChanged', {
+    group = augroup, pattern = '*', callback = refresh_status,
+    desc = '[diagnostic] Update statusline on diagnostic change',
+  })
+end
 
 return {
-  augroup = augroup
+  setup = setup
 }

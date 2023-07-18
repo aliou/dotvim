@@ -2,9 +2,12 @@ require('ad.diagnostic.config')
 require('ad.diagnostic.maps')
 require('ad.diagnostic.theme')
 
-local augroup = require('ad.diagnostic.status').augroup
+-- Setup diagnostics default values.
+-- Can be overriden in vimrc.local files by clearing the autocmd augroup.
+local augroup = vim.api.nvim_create_augroup('ad.diagnostics', { clear = true })
 
--- Expose augroup id so it is easy to delete using `nvim_del_augroup_by_id`.
-return {
-  augroup = augroup
-}
+local lint = require('ad.diagnostic.lint')
+local status = require('ad.diagnostic.status')
+
+lint.setup(augroup)
+status.setup(augroup)
