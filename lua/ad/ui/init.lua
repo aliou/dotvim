@@ -6,7 +6,7 @@ vim.ui.select = require('ad.ui.select')
 vim.notify = require('ad.ui.notify')
 
 ---@diagnostic disable-next-line: duplicate-set-field
-vim.ui.notifiy_with_level = function(level, fct)
+vim.ui.notify_with_level = function(level, fct)
   local previous_level = vim.log.level
   vim.log.level = level
 

@@ -63,5 +63,5 @@
   "vim-unimpaired": { "commit": "6d44a6d" },
   "vim-vinegar": { "commit": "bb1bcdd" },
   "vim-visual-multi": { "commit": "724bd53" },
-  "xbase": { "commit": "1484959" },
+  "xbase": { "commit": "1484959" }
 }
