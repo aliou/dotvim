@@ -79,7 +79,10 @@ local packages = {
       "neovim/nvim-lspconfig"
     },
   },
-  { "jose-elias-alvarez/typescript.nvim" },
+  {
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  },
 
   -- Text object.
   { 'PeterRincker/vim-argumentative' },
