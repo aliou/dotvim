@@ -35,10 +35,10 @@ local capabilities = require('ad.lsp.completion').capabilities
 local servers = {
   'golangci',
   'gopls',
+  'lua_ls',
   'rust_tools',
   'solargraph',
   'sourcekit',
-  'sumneko_lua',
   'terraformls',
   'typescript',
   'vimls',
