@@ -36,6 +36,7 @@ local servers = {
   'golangci',
   'gopls',
   'lua_ls',
+  'ruby_lsp',
   'rust_tools',
   'solargraph',
   'sourcekit',
