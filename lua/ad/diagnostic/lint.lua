@@ -1,7 +1,11 @@
 local lint = require('lint')
 
 lint.linters_by_ft = {
-  sh = { "shellcheck" }
+  go = { "golangcilint" },
+  javascript = { "eslint_d" },
+  ruby = { "rubocop" },
+  sh = { "shellcheck" },
+  typescript = { "eslint_d" },
 }
 
 local setup = function(augroup)
@@ -9,7 +13,7 @@ local setup = function(augroup)
     group = augroup, pattern = "*", callback = function()
       lint.try_lint()
     end,
-    desc = '[diagnostic] Setup nvim-lint in buffer',
+    desc = '[diagnostic] Lint on file write',
   })
 end
 
