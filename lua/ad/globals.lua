@@ -11,3 +11,6 @@ R = function(name)
   RELOAD(name)
   return require(name)
 end
+
+-- Set the log level early.
+vim.log.level = vim.log.levels.INFO

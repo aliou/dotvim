@@ -1,5 +1,4 @@
-vim.log.level = vim.log.levels.INFO
-
+-- The default log level is defined in ad/globals
 local default_log_options = {}
 
 -- NOTE: This might not be a good idea.
