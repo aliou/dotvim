@@ -24,6 +24,7 @@ local packages = {
   { 'tpope/vim-sleuth' },
   { 'tpope/vim-surround' },
   { 'mg979/vim-visual-multi' },
+  { 'mhartington/formatter.nvim' },
 
   -- Utils.
   {
