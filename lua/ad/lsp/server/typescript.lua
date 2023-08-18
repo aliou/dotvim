@@ -19,7 +19,7 @@ local setup = function(on_attach)
   end
 
   ts.setup({
-    on_attach = on_attach,
+    on_attach = on_local_attach,
     settings = {
       expose_as_code_action = { "fix_all", "add_missing_impots", "remove_unused" },
     },
