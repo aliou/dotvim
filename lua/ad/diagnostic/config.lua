@@ -1,6 +1,6 @@
 local format_message = function(diagnostic)
   if diagnostic.code then
-    return string.format("%s: %s", diagnostic.code, diagnostic.message)
+    return string.format("%s (%s)", diagnostic.message, diagnostic.code)
   end
 
   return diagnostic.message
