@@ -95,7 +95,7 @@ local packages = {
   { 'tjdevries/lsp_extensions.nvim' },
   { "williamboman/mason.nvim" },
   { "dnlhc/glance.nvim" },
-  { "mfussenegger/nvim-lint" },
+  { "jose-elias-alvarez/null-ls.nvim" },
 
   -- Treesitter configuration and abstraction.
   { 'nvim-treesitter/nvim-treesitter' },

@@ -1,7 +1,6 @@
 require('ad.globals')
 
 require('ad.diagnostic')
-require('ad.format')
 require('ad.git')
 require('ad.lsp')
 require('ad.maps')
