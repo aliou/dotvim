@@ -2,7 +2,7 @@ local glance = require('glance')
 local actions = glance.actions
 
 glance.setup({
-  detached = false,
+  detached = true,
   border = {
     enable = true,
     top_char = '―',
@@ -35,6 +35,7 @@ glance.setup({
 
       ['q'] = actions.close,
       ['<Esc>'] = actions.close,
+      ['<leader><leader>'] = actions.enter_win('preview'), -- Focus list window
     },
     preview = {
       ['q'] = actions.close,
@@ -43,7 +44,7 @@ glance.setup({
 
       ['<Tab>'] = actions.next_location,
       ['<S-Tab>'] = actions.previous_location,
-      ['<leader>l'] = actions.enter_win('list'), -- Focus list window
+      ['<leader><leader>'] = actions.enter_win('list'), -- Focus list window
     },
   },
   hooks = {
