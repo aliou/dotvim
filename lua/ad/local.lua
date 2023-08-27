@@ -9,3 +9,8 @@ end
 if u.files.is_readable('.vimrc.local') and vim.fn.getcwd() ~= vim.fn.expand('~') then
   vim.cmd [[ source .vimrc.local ]]
 end
+
+-- Source project file if it exists.
+if u.files.is_readable('.vimrc.local.lua') and vim.fn.getcwd() ~= vim.fn.expand('~') then
+  vim.cmd [[ source .vimrc.local.lua ]]
+end
