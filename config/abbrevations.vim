@@ -6,4 +6,4 @@ cabbrev E e
 " I never want to encypt files.
 cabbrev X x
 
-cabbrev vhelp vertical help
+cabbrev vhelp vertical botright help
