@@ -64,3 +64,8 @@ for i = 1, #optional_servers do
     vim.notify('Issue with optional server ' .. optional_servers[i] .. '.', vim.log.levels.WARN)
   end
 end
+
+return {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
