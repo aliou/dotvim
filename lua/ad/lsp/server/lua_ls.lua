@@ -17,13 +17,11 @@ local setup = function(on_attach, capabilities)
 
     if vim.b.lua_context == "vim" then
       client.config.settings.Lua.diagnostics.globals = { "unpack", "use", "P", "RELOAD", "R", "vim" }
-      table.insert(client.config.settings.Lua.diagnostics.globals, "vim")
 
       client.config.settings.Lua.workspace.library = vim.api.nvim_get_runtime_file('', true)
     end
 
     client.notify("workspace/didChangeConfiguration")
-    vim.notify(vim.inspect(client.config.settings.Lua.diagnostics), vim.log.levels.DEBUG)
   end
 
   nvim_lsp.lua_ls.setup({
@@ -46,7 +44,9 @@ local setup = function(on_attach, capabilities)
           indent_style = "space",
           indent_size = "2",
         },
-        workspace = {}, -- Overriden on init.
+        workspace = { -- Updated on init.
+          checkThirdParty = false,
+        },
         telemetry = {
           enable = false,
         },
