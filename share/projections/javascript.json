@@ -43,12 +43,12 @@
   },
   "*.tsx": {
     "type": "source",
-    "alternate": ["{}.module.scss", "{}.test.ts", "{}.stories.tsx"]
+    "alternate": ["{}.module.scss", "{}.test.tsx", "{}.stories.tsx"]
   },
   "sequelize/migrations/*": {
     "type": "migration"
   },
-  "prisma/migrations/*": {
+  "prisma/migrations/*/migration.sql": {
     "type": "migration"
   }
 }
