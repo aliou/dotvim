@@ -12,11 +12,12 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'path' },
     { name = 'nvim_lua' },
+    { name = 'path' },
+    { name = 'luasnip' },
   },
   mapping = cmp.mapping.preset.insert({
-      ['<CR>'] = cmp.mapping.confirm()
+    ['<CR>'] = cmp.mapping.confirm()
   }),
   snippet = {
     expand = function(args)
@@ -25,12 +26,21 @@ cmp.setup({
   },
   formatting = {
     format = function(entry, vim_item)
-      vim_item.menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
-        path = "[Path]",
-      })[entry.source.name]
+      local client = entry.source.source.client
+      local client_name = ''
+
+      if client then
+        client_name = client.name
+      else
+        client_name = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          nvim_lua = "[Lua]",
+          path = "[Path]",
+        })[entry.source.name]
+      end
+
+      vim_item.menu = client_name
 
       return vim_item
     end,
