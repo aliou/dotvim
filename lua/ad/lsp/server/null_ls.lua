@@ -1,10 +1,8 @@
 local null_ls = require('null-ls')
-local u = require('cstm.util')
 
 -- Register custom code actions.
 require('ad.lsp.server.null_ls.go')
 require('ad.lsp.server.null_ls.ruby')
-require('ad.lsp.server.null_ls.shared')
 
 local jq = require('ad.lsp.server.null_ls.jq')
 local rubocop = require('ad.lsp.server.null_ls.rubocop')
