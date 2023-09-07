@@ -12,7 +12,7 @@ set wildmenu
 set wildignore+=.hg,.git,.svn,.gitkeep
 
 " JS vendored files.
-set wildignore+=*bower_components,*node_modules,_build,.yarn
+set wildignore+=*bower_components,*node_modules,_build,.yarn,*/node_modules/*,*/dist/*
 
 " Binary images
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
