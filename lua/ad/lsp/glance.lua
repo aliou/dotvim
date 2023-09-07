@@ -23,10 +23,13 @@ glance.setup({
 
       ['<Tab>'] = actions.next,
       ['<S-Tab>'] = actions.previous,
+      ['J'] = actions.next,
+      ['K'] = actions.previous,
 
-      ['v'] = actions.jump_vsplit,
-      ['s'] = actions.jump_split,
-      ['t'] = actions.jump_tab,
+
+      ['<C-v>'] = actions.jump_vsplit,
+      ['<C-s>'] = actions.jump_split,
+      ['<C-t>'] = actions.jump_tab,
 
       ['<CR>'] = actions.jump,
       ['o'] = false,
