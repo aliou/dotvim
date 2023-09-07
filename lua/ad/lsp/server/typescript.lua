@@ -2,12 +2,12 @@ local ts = require("typescript-tools")
 local api = require("typescript-tools.api")
 
 local update_imports = function()
-    api.add_missing_imports()
-    api.remove_unused()
+  api.add_missing_imports(false)
+  api.remove_unused_imports(false)
 end
 
 local go_to_source_definition = function()
-    api.go_to_source_definition()
+  api.go_to_source_definition(false)
 end
 
 local setup = function(on_attach)
@@ -15,13 +15,20 @@ local setup = function(on_attach)
     on_attach(client, bufnr)
 
     vim.keymap.set('n', '<leader>li', update_imports, { desc = "[lsp/ts] add missing imports", buffer = true })
-    vim.keymap.set('n', '<C-]>', go_to_source_definition, { desc = "[lsp] go to definition", buffer = true })
+    vim.keymap.set('n', '<C-]>', go_to_source_definition, { desc = "[lsp/ts] go to definition", buffer = true })
   end
 
   ts.setup({
     on_attach = on_local_attach,
+    single_file_support = false,
     settings = {
-      expose_as_code_action = { "fix_all", "add_missing_impots", "remove_unused" },
+      expose_as_code_action = { "add_missing_imports", "remove_unused_imports" },
+      tsserver_file_preferences = {
+        quotePreference = 'single', -- TODO: Try to have this be a project based conf.
+      },
+      tsserver_format_options = {
+        insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+      },
     },
   })
 end
