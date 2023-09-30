@@ -44,6 +44,7 @@ local servers = {
   'terraformls',
   'typescript',
   'vimls',
+  'eslint',
 }
 
 local optional_servers = {
