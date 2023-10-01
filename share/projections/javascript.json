@@ -41,6 +41,10 @@
     "type": "src",
     "alternate": "{}.test.ts"
   },
+  "*.test.tsx": {
+    "type": "test",
+    "alternate": "{}.tsx"
+  },
   "*.tsx": {
     "type": "source",
     "alternate": ["{}.module.scss", "{}.test.tsx", "{}.stories.tsx"]
