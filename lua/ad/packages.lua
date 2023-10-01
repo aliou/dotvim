@@ -6,10 +6,8 @@ local packages = {
   -- Display
   { 'itchyny/lightline.vim' },
   { 'mhinz/vim-startify' },
-  { 'junegunn/goyo.vim', opt = true },
   { 'MunifTanjim/nui.nvim' },
   { 'projekt0n/github-nvim-theme' },
-  { "felipeagc/fleet-theme-nvim", requires = { "rktjmp/lush.nvim" } },
 
   -- Shell
   { 'tpope/vim-dispatch' },
@@ -24,7 +22,6 @@ local packages = {
   { 'tpope/vim-sleuth' },
   { 'tpope/vim-surround' },
   { 'mg979/vim-visual-multi' },
-  { 'mhartington/formatter.nvim' },
 
   -- Utils.
   {
@@ -49,9 +46,8 @@ local packages = {
   { 'tpope/vim-bundler' },
   { 'tpope/vim-obsession', cmd = { 'Obsession' } },
   { 'tpope/vim-projectionist' },
-  { 'tpope/vim-rails' },
-  { 'tpope/vim-rake' },
-  { 'tpope/vim-scriptease' },
+  { 'tpope/vim-rails', opt = true },
+  { 'tpope/vim-rake', opt = true },
 
   -- Languages
   { 'ap/vim-css-color' },
@@ -92,9 +88,9 @@ local packages = {
   -- Tests / Lint / LSP
   { 'janko-m/vim-test' },
   { 'neovim/nvim-lspconfig' },
-  { 'tjdevries/lsp_extensions.nvim' },
   { "williamboman/mason.nvim" },
   { "dnlhc/glance.nvim" },
+  -- TODO: Replace with fork.
   { "jose-elias-alvarez/null-ls.nvim" },
 
   -- Treesitter configuration and abstraction.
