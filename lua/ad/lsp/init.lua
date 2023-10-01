@@ -47,23 +47,9 @@ local servers = {
   'eslint',
 }
 
-local optional_servers = {
-  'graphql',
-  'prisma',
-}
-
 for i = 1, #servers do
   local module = 'ad.lsp.server.' .. servers[i]
   require(module).setup(on_attach, capabilities)
-end
-
-for i = 1, #optional_servers do
-  local module = 'ad.lsp.server.' .. optional_servers[i]
-  local ok, _ = pcall(require, module)
-
-  if not ok then
-    vim.notify('Issue with optional server ' .. optional_servers[i] .. '.', vim.log.levels.WARN)
-  end
 end
 
 return {
