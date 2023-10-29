@@ -124,6 +124,7 @@ local packages = {
   '~/code/src/github.com/aliou/mix.vim',
   '~/code/src/github.com/aliou/moriarty.vim',
   '~/code/src/github.com/aliou/phx.vim',
+  '~/code/src/github.com/aliou/pnpm.nvim',
   '~/code/src/github.com/aliou/review.vim',
   '~/code/src/github.com/aliou/ri.vim',
   '~/code/src/github.com/aliou/rspec-extra.vim',
