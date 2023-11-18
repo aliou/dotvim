@@ -42,6 +42,10 @@ local setup = function(on_attach, _)
       return false
     end
 
+    local filename = vim.fn.expand('%:t')
+    if filename == ".env" then
+      return false
+    end
 
     return true
   end
