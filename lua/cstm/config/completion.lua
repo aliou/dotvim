@@ -4,17 +4,22 @@ local cmp = require('cmp')
 -- window.
 -- noinsert: Don't insert text until a match is selected to handle async
 -- filling of the menu.
-vim.o.completeopt="menuone,noinsert,noselect"
+vim.o.completeopt = "menuone,noinsert,noselect"
 
 -- Avoid showing message extra message when using completion
 vim.o.shortmess = vim.o.shortmess .. "c"
 
 cmp.setup({
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
-    { name = 'path' },
-  },
+  sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'nvim_lua' },
+    },
+    {
+      { name = 'copilot' },
+      { name = 'buffer' },
+      { name = 'path' },
+    }
+  ),
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm()
   }),
