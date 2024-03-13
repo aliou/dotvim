@@ -2,12 +2,12 @@ local ts = require("typescript-tools")
 local api = require("typescript-tools.api")
 
 local update_imports = function()
-  api.remove_unused_imports(false)
-  api.add_missing_imports(false)
+  api.remove_unused_imports(true)
+  api.add_missing_imports(true)
 end
 
 local go_to_source_definition = function()
-  api.go_to_source_definition(false)
+  api.go_to_source_definition(true)
 end
 
 local setup = function(on_attach)
@@ -28,6 +28,7 @@ local setup = function(on_attach)
     settings = {
       tsserver_file_preferences = {
         quotePreference = 'single', -- TODO: Try to have this be a project based conf.
+        includeInlayParameterNameHints = 'all',
       },
       tsserver_format_options = {
         insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,

@@ -29,7 +29,7 @@
   "telescope-fzf-native.nvim": { "commit": "9bc8237" },
   "telescope-live-grep-args.nvim": { "commit": "851c099" },
   "telescope.nvim": { "commit": "b79cd6c" },
-  "typescript-tools.nvim": { "commit": "98165e3" },
+  "typescript-tools.nvim": { "commit": "102ba31" },
   "vim-apathy": { "commit": "27128a0" },
   "vim-argumentative": { "commit": "63a5f7d" },
   "vim-bundler": { "commit": "c261509" },

@@ -12,4 +12,3 @@ augroup after_ftplugin_json
 augroup END
 
 setlocal formatprg='jq'
-nnoremap <silent> <leader>af :normal ggvGgq<cr>

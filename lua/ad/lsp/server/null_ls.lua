@@ -7,16 +7,26 @@ require('ad.lsp.server.null_ls.ruby')
 local jq = require('ad.lsp.server.null_ls.jq')
 local rubocop = require('ad.lsp.server.null_ls.rubocop')
 
+-- TODO: Dynamic sources? Per project sources?
 local sources = {
+  null_ls.builtins.formatting.eslint_d,
   null_ls.builtins.formatting.swiftformat.with({
     extra_args = { "--indentcase", "true" }
+  }),
+  null_ls.builtins.formatting.sqlfluff.with({
+    extra_args = { "--dialect", "postgres" },     -- change to your dialect
   }),
   null_ls.builtins.formatting.trim_whitespace,
   null_ls.builtins.formatting.xmllint,
 
+  null_ls.builtins.diagnostics.eslint_d,
   null_ls.builtins.diagnostics.golangci_lint,
   null_ls.builtins.diagnostics.shellcheck,
+  null_ls.builtins.diagnostics.sqlfluff.with({
+    extra_args = { "--dialect", "postgres" },
+  }),
 
+  null_ls.builtins.code_actions.eslint_d,
   null_ls.builtins.code_actions.shellcheck,
 
   jq.formatter,

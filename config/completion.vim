@@ -24,7 +24,7 @@ set wildignore+=*.o,*.out
 set wildignore+=*.DS_Store
 
 " Project files
-set wildignore+=.tmux,.tags,.root
+set wildignore+=.tmux,.root
 
 " Complete files without case sensitivity.
 set wildignorecase

@@ -8,6 +8,7 @@ local packages = {
   { 'mhinz/vim-startify' },
   { 'MunifTanjim/nui.nvim' },
   { 'projekt0n/github-nvim-theme' },
+  { 'miikanissi/modus-themes.nvim' },
 
   -- Shell
   { 'tpope/vim-dispatch' },
@@ -28,9 +29,10 @@ local packages = {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   },
+  { 'stevearc/oil.nvim' },
   { 'tpope/vim-repeat' },
   { 'tpope/vim-unimpaired' },
-  { 'tpope/vim-vinegar' },
+  -- { 'tpope/vim-vinegar' },
   { 'junegunn/fzf.vim' },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -80,6 +82,7 @@ local packages = {
     "pmizio/typescript-tools.nvim",
     requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
+  { 'dmmulroy/tsc.nvim' },
 
   -- Text object.
   { 'PeterRincker/vim-argumentative' },
@@ -87,6 +90,14 @@ local packages = {
 
   -- Tests / Lint / LSP
   { 'janko-m/vim-test' },
+  { "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      'nvim-neotest/neotest-jest'
+    },
+  },
   { 'neovim/nvim-lspconfig' },
   { "williamboman/mason.nvim" },
   { "dnlhc/glance.nvim" },
@@ -112,6 +123,8 @@ local packages = {
     }
   },
 
+  { 'echasnovski/mini.nvim', branch = 'stable' },
+
   -- Local plugins.
 
   -- This requires fzf to be installed with brew:
@@ -131,6 +144,7 @@ local packages = {
   '~/code/src/github.com/aliou/ri.vim',
   '~/code/src/github.com/aliou/rspec-extra.vim',
   '~/code/src/github.com/aliou/sql-heredoc.vim',
+  '~/code/src/github.com/aliou/swimm.nvim',
   '~/code/src/github.com/aliou/untitled.vim',
   '~/code/src/github.com/aliou/wren.vim',
 }
@@ -154,3 +168,4 @@ vim.api.nvim_create_user_command('PackerSnapshotRollback', function()
     require('packer').rollback(snapshot_name)
   end)
 end, { desc = 'rollbacks plugins to version in snapshot' })
+

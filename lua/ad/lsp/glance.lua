@@ -51,6 +51,7 @@ glance.setup({
     },
   },
   hooks = {
+    -- TODO: configuration to filter out test files in some cases.
     before_open = function(results, open, jump, _method)
       if #results == 1 then
         jump(results[1]) -- argument is optional

@@ -15,7 +15,7 @@ cmp.setup({
       { name = 'nvim_lua' },
     },
     {
-      { name = 'copilot' },
+      -- { name = 'copilot' },
       { name = 'buffer' },
       { name = 'path' },
     }
